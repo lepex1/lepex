@@ -85,12 +85,50 @@ let lanyardSocket = null;
 let heartbeatInterval = null;
 let reconnectTimeout = null;
 
+const DISCORD_CACHE_KEY = 'lepex:discord';
+const DISCORD_AVATAR_KEY = 'lepex:discord-avatar';
+
+function loadDiscordCache() {
+    try {
+        const raw = localStorage.getItem(DISCORD_CACHE_KEY);
+        return raw ? JSON.parse(raw) : null;
+    } catch {
+        return null;
+    }
+}
+
+function saveDiscordCache(data) {
+    try {
+        localStorage.setItem(DISCORD_CACHE_KEY, JSON.stringify(data));
+    } catch {}
+}
+
+function cacheAvatarDataUrl(url) {
+    if (!url) return;
+    fetch(url)
+        .then(r => r.blob())
+        .then(b => {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                try { localStorage.setItem(DISCORD_AVATAR_KEY, reader.result); } catch {}
+            };
+            reader.readAsDataURL(b);
+        })
+        .catch(() => {});
+}
+
 async function initializeDiscord() {
+    const cached = loadDiscordCache();
+    if (cached) {
+        renderDiscord(cached);
+    }
+
     try {
         const res = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`);
         const body = await res.json();
         if (body.success) {
             renderDiscord(body.data);
+            saveDiscordCache(body.data);
         }
     } catch {
         console.warn('Initial Lanyard REST fetch failed, relying on WebSocket');
@@ -133,9 +171,10 @@ function connectLanyardWS() {
             }
 
             if (msg.op === 0) {
-                if (msg.t === 'INIT_STATE' || msg.t === 'PRESENCE_UPDATE') {
-                    renderDiscord(msg.d);
-                }
+            if (msg.t === 'INIT_STATE' || msg.t === 'PRESENCE_UPDATE') {
+                renderDiscord(msg.d);
+                saveDiscordCache(msg.d);
+            }
             }
         } catch (err) {
             console.error('Error handling Lanyard message:', err);
@@ -182,7 +221,11 @@ function renderDiscord(data) {
     const activity = document.getElementById('discordActivity');
 
     if (data.discord_user && data.discord_user.avatar) {
-        avatar.src = `https://cdn.discordapp.com/avatars/${DISCORD_ID}/${data.discord_user.avatar}.webp?size=1024`;
+        const avatarUrl = `https://cdn.discordapp.com/avatars/${DISCORD_ID}/${data.discord_user.avatar}.webp?size=1024`;
+        let cachedAvatar = null;
+        try { cachedAvatar = localStorage.getItem(DISCORD_AVATAR_KEY); } catch {}
+        avatar.src = cachedAvatar || avatarUrl;
+        cacheAvatarDataUrl(avatarUrl);
     }
 
     status.className = 'md3-discord__status ' + (data.discord_status || 'offline');
