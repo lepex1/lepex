@@ -325,6 +325,15 @@ body {
 body.loading { opacity: 0; }
 body.loaded { animation: md3FadeIn 0.8s var(--md-transition-easing) forwards; }
 
+/* Smooth cross-document transition when navigating between / and /portfolio */
+@view-transition {
+    navigation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.4s;
+}
+
 @keyframes md3FadeIn {
     from { opacity: 0; transform: scale(0.99); }
     to { opacity: 1; transform: scale(1); }

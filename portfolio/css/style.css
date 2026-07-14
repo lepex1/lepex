@@ -342,6 +342,15 @@ body {
 body.loading { opacity: 0; }
 body.loaded { animation: md3FadeIn 0.8s var(--md-transition-easing) forwards; }
 
+/* Smooth cross-document transition when navigating between / and /portfolio */
+@view-transition {
+    navigation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.4s;
+}
+
 /* i18n: both languages rendered, no layout shift on switch */
 .i18n-container {
     display: grid;
