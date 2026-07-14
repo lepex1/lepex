@@ -30,7 +30,10 @@ function initializeApp() {
 function initializeLanguage() {
     const russianLangs = ['ru', 'kk', 'be', 'uk'];
     const userLang = navigator.language.split('-')[0];
-    currentLanguage = russianLangs.includes(userLang) ? 'ru' : 'en';
+    const savedLang = localStorage.getItem('lang');
+    currentLanguage = (savedLang === 'ru' || savedLang === 'en')
+        ? savedLang
+        : (russianLangs.includes(userLang) ? 'ru' : 'en');
 
     document.querySelectorAll('[data-lang-ru][data-lang-en]').forEach(element => {
         const ruContent = element.getAttribute('data-lang-ru');
@@ -60,6 +63,7 @@ function initializeLanguage() {
         langToggle.addEventListener('click', () => {
             currentLanguage = currentLanguage === 'ru' ? 'en' : 'ru';
             switchLanguage(currentLanguage);
+            localStorage.setItem('lang', currentLanguage);
         });
     }
 }
