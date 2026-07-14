@@ -342,6 +342,17 @@ body {
 body.loading { opacity: 0; }
 body.loaded { animation: md3FadeIn 0.8s var(--md-transition-easing) forwards; }
 
+/* Firefox/Safari fallback: fade page out before navigating (native view transitions handle Chrome/Edge) */
+body.page-exit {
+    animation: md3FadeOut 0.35s var(--md-transition-easing) forwards;
+    pointer-events: none;
+}
+
+@keyframes md3FadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
 /* Smooth cross-document transition when navigating between / and /portfolio */
 @view-transition {
     navigation: auto;
