@@ -39,7 +39,7 @@ function preloadGifs() {
 function initializeGifTheme() {
     preloadGifs();
 
-    const gifElement = document.getElementById('gifPreview');
+    const gifElement = document.getElementById('clickable-gif');
     const html = document.documentElement;
 
     if (!gifElement) return;
@@ -54,7 +54,7 @@ function initializeGifTheme() {
         }
     }
 
-    const switcher = document.getElementById('gifSwitcher');
+    const switcher = document.getElementById('clickable-gif');
     if (switcher) {
         switcher.addEventListener('click', () => {
             switcher.classList.add('clicked', 'no-hover');
