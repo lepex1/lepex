@@ -999,6 +999,29 @@ body.loaded { animation: md3FadeIn 0.8s var(--md-transition-easing) forwards; }
     color: var(--md-sys-color-primary);
 }
 
+.footer-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-bottom: 0.5rem;
+}
+
+.footer-credit {
+    font-size: 0.8rem;
+    color: var(--md-sys-color-on-surface-variant);
+    opacity: 0.7;
+}
+
+.footer-credit a {
+    color: var(--md-sys-color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-credit a:hover {
+    text-decoration: underline;
+}
+
 /* ==========================================================================
    RESPONSIVE
    ========================================================================== */
