@@ -1,0 +1,9 @@
+{
+  "name": "lepex-profile",
+  "private": true,
+  "version": "1.0.0",
+  "description": "lepex profile page with MD3 design",
+  "scripts": {
+    "dev": "npx live-server . --port=3000"
+  }
+}

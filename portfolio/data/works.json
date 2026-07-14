@@ -1,0 +1,32 @@
+{
+  "works": [
+    {
+      "title": "PxAY OFF! - ANIMATED FILM",
+      "author": "Marco Cárdenas",
+      "link": "https://www.youtube.com/watch?v=IE0kvIbVmwk",
+      "image": "assets/previews/portfolio/PxAY-OFF.webp",
+      "admin_note": "PxAY OFF! - ANIMATED FILM"
+    },
+    {
+      "title": "Clover meeting asgore in no mercy run",
+      "author": "Nesrine 201",
+      "link": "https://www.youtube.com/watch?v=iznGnD1dr-4",
+      "image": "assets/previews/portfolio/undertale-yellow-animation.webp",
+      "admin_note": "Clover meeting asgore in no mercy run"
+    },
+    {
+      "title": "When OneDrive Ruins Your Day",
+      "author": "James Lee",
+      "link": "https://www.youtube.com/watch?v=xzbPJ9_CoZ8",
+      "image": "assets/previews/portfolio/when-onedrive-ruins-your-day.webp",
+      "admin_note": "When OneDrive Ruins Your Day"
+    },
+    {
+      "title": "Mamma Told Me - Deltarune Animatic",
+      "author": "Ace_Of_Spades",
+      "link": "https://youtu.be/J5ImwOlPebM",
+      "image": "assets/previews/portfolio/Mamma-told-me.webp",
+      "admin_note": "Mamma Told Me - Deltarune Animatic"
+    }
+  ]
+}

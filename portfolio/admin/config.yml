@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: lepex1/lepex1.github.io
+  branch: main
+  base_url: https://lepex.vercel.app
+  auth_endpoint: /api/auth
+
+media_folder: "assets/previews/portfolio"
+public_folder: "assets/previews/portfolio"
+
+collections:
+  - name: "content"
+    label: "Контент"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - label: "Мои работы"
+        name: "works_list"
+        file: "data/works.json"
+        fields:
+          - label: "Список работ"
+            name: "works"
+            widget: "list"
+            # ТЕПЕРЬ В СПИСКЕ ВИДНО ТВОЮ ЗАМЕТКУ
+            summary: '{{fields.admin_note}}' 
+            fields:
+              - { 
+                  label: "ЗАМЕТКА ДЛЯ АДМИНКИ (видишь только ты)", 
+                  name: "admin_note", 
+                  widget: "string", 
+                  required: false 
+                }
+              - { 
+                  label: "Название (оставь ПУСТЫМ для авто-заголовка YouTube)", 
+                  name: "title", 
+                  widget: "string", 
+                  required: false 
+                }
+              - { 
+                  label: "Автор оригинала (оставь ПУСТЫМ для авто-автора)", 
+                  name: "author", 
+                  widget: "string", 
+                  required: false 
+                }
+              - { label: "Ссылка на YouTube", name: "link", widget: "string" }
+              - { label: "Обложка (пусто для авто)", name: "image", widget: "image", required: false }

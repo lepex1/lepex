@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-gif-theme="storm">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="lepex">
+    <meta name="author" content="lepex">
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>lepex</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="loading">
+    <header class="md3-top-app-bar">
+        <div class="md3-top-app-bar__leading">
+            <span class="material-symbols-outlined md3-top-app-bar__icon">person</span>
+            <span class="md3-top-app-bar__title">lepex</span>
+        </div>
+        <div class="md3-top-app-bar__trailing">
+            <button class="md3-gif-switcher" id="gifSwitcher" aria-label="Switch theme">
+                <img src="assets/previews/gif-themes/storm.gif" alt="Theme" id="gifPreview" width="28" height="28">
+            </button>
+        </div>
+    </header>
+
+    <main class="md3-main-content">
+        <div class="md3-bento-grid">
+
+            <!-- Discord Profile -->
+            <div class="md3-bento-card md3-bento-card--full reveal-card" id="discordCard">
+                <div class="md3-discord">
+                    <div class="md3-discord__header">
+                        <div class="md3-discord__avatar">
+                            <img src="images/og-preview.png" alt="discord avatar" id="discordAvatar">
+                            <span class="md3-discord__status" id="discordStatus"></span>
+                        </div>
+                        <div class="md3-discord__info">
+                            <span class="md3-discord__username" id="discordUsername">lepex</span>
+                            <div class="md3-discord__location">
+                                <span class="material-symbols-outlined">location_on</span>
+                                <span>Russia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md3-discord__activity" id="discordActivity">
+                        <div class="md3-discord__activity-skeleton">Loading...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div class="md3-layout-grid">
+                <a href="/portfolio" rel="noopener noreferrer" class="md3-grid-link">
+                    <span class="material-symbols-outlined">language</span>
+                    <span>Portfolio</span>
+                </a>
+                <a href="https://steamcommunity.com/id/lepex1" target="_blank" rel="noopener noreferrer" class="md3-grid-link">
+                    <span class="material-symbols-outlined">sports_esports</span>
+                    <span>Steam</span>
+                </a>
+                <a href="https://github.com/lepex1" target="_blank" rel="noopener noreferrer" class="md3-grid-link">
+                    <span class="material-symbols-outlined">code</span>
+                    <span>GitHub</span>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="md3-footer"></footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
