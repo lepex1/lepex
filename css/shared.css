@@ -97,6 +97,12 @@ body.page-exit {
     align-items: center;
 }
 
+.md3-top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .md3-brand {
     display: flex;
     align-items: center;

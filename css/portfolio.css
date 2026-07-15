@@ -34,12 +34,6 @@
     transform: translateY(-4px) scale(1.01);
 }
 
-.md3-top-bar-left {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
 .md3-back-link {
     display: flex;
     align-items: center;
