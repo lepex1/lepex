@@ -1,3 +1,5 @@
+let currentLanguage = 'ru';
+
 document.addEventListener('DOMContentLoaded', () => {
     initializeApp();
 });
@@ -8,6 +10,7 @@ function initializeApp() {
         document.body.classList.add('loaded');
     }, 100);
 
+    initializeLanguage();
     initializeGifTheme();
     initializeDiscord();
     initializeScrollAndLayout();
@@ -78,6 +81,74 @@ function initializeGifTheme() {
             if (navigator.vibrate) navigator.vibrate(10);
         });
     }
+}
+
+// ==========================================================================
+// LANGUAGE SYSTEM
+// ==========================================================================
+
+function initializeLanguage() {
+    const russianLangs = ['ru', 'kk', 'be', 'uk'];
+    const userLang = navigator.language.split('-')[0];
+    const savedLang = localStorage.getItem('lang');
+    currentLanguage = (savedLang === 'ru' || savedLang === 'en')
+        ? savedLang
+        : (russianLangs.includes(userLang) ? 'ru' : 'en');
+
+    document.querySelectorAll('[data-lang-ru][data-lang-en]').forEach(element => {
+        const ruContent = element.getAttribute('data-lang-ru');
+        const enContent = element.getAttribute('data-lang-en');
+
+        element.innerHTML = '';
+        element.removeAttribute('data-lang-ru');
+        element.removeAttribute('data-lang-en');
+        element.classList.add('i18n-container');
+
+        const ruSpan = document.createElement('span');
+        ruSpan.className = 'lang-ru';
+        ruSpan.innerHTML = ruContent;
+
+        const enSpan = document.createElement('span');
+        enSpan.className = 'lang-en';
+        enSpan.innerHTML = enContent;
+
+        element.appendChild(ruSpan);
+        element.appendChild(enSpan);
+    });
+
+    const langToggle = document.getElementById('lang-toggle');
+    switchLanguage(currentLanguage);
+
+    if (langToggle) {
+        langToggle.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'ru' ? 'en' : 'ru';
+            switchLanguage(currentLanguage);
+            localStorage.setItem('lang', currentLanguage);
+        });
+    }
+}
+
+function switchLanguage(lang) {
+    currentLanguage = lang;
+
+    document.querySelectorAll('.i18n-container').forEach(container => {
+        container.querySelectorAll('.lang-ru, .lang-en').forEach(el => {
+            el.classList.toggle('active', el.classList.contains('lang-' + lang));
+        });
+    });
+
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+        const textNode = langToggle.querySelector('.lang-text');
+        if (textNode) {
+            textNode.textContent = lang === 'ru' ? 'EN' : 'RU';
+        } else {
+            langToggle.textContent = lang === 'ru' ? 'EN' : 'RU';
+        }
+    }
+
+    const discordCache = loadDiscordCache();
+    if (discordCache) renderDiscord(discordCache);
 }
 
 const DISCORD_ID = '912749532062830703';
@@ -192,13 +263,14 @@ function connectLanyardWS() {
 }
 
 function getActivityPrefix(type) {
+    const ru = currentLanguage === 'ru';
     switch (type) {
-        case 0: return 'Playing';
-        case 1: return 'Streaming';
-        case 2: return 'Listening to';
-        case 3: return 'Watching';
-        case 5: return 'Competing in';
-        default: return 'Playing';
+        case 0: return ru ? 'Играет' : 'Playing';
+        case 1: return ru ? 'Стримит' : 'Streaming';
+        case 2: return ru ? 'Слушает' : 'Listening to';
+        case 3: return ru ? 'Смотрит' : 'Watching';
+        case 5: return ru ? 'Соревнуется в' : 'Competing in';
+        default: return ru ? 'Играет' : 'Playing';
     }
 }
 
@@ -245,7 +317,7 @@ function renderDiscord(data) {
         const block = document.createElement('div');
         block.className = 'discord-activity__item';
         block.innerHTML = `
-            <div class="discord-activity__header">Listening to Spotify</div>
+            <div class="discord-activity__header">${currentLanguage === 'ru' ? 'Слушает Spotify' : 'Listening to Spotify'}</div>
             <div class="discord-activity__body">
                 <img src="${spotify.album_art_url}" alt="album" class="discord-activity__art" loading="lazy">
                 <div class="discord-activity__details">
@@ -326,7 +398,7 @@ function renderDiscord(data) {
     if (activityBlocks.length > 0) {
         activityBlocks.forEach(block => activity.appendChild(block));
     } else {
-        activity.innerHTML = '<div class="md3-discord__activity-skeleton">No activity</div>';
+        activity.innerHTML = '<div class="md3-discord__activity-skeleton">' + (currentLanguage === 'ru' ? 'Нет активности' : 'No activity') + '</div>';
     }
 
     const card = document.getElementById('discordCard');
@@ -365,7 +437,7 @@ function updateAllProgress() {
             el.innerHTML = `
                 <span class="discord-activity__elapsed">
                     <span class="material-symbols-outlined discord-activity__elapsed-icon">schedule</span>
-                    ${formatTime(elapsed)} elapsed
+                    ${formatTime(elapsed)} ${currentLanguage === 'ru' ? 'прошло' : 'elapsed'}
                 </span>
             `;
         }

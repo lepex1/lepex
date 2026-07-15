@@ -350,6 +350,21 @@ body.page-exit {
     to { opacity: 1; transform: scale(1); }
 }
 
+/* i18n: both languages rendered, no layout shift on switch */
+.i18n-container {
+    display: inline-grid;
+}
+.i18n-container > .lang-ru,
+.i18n-container > .lang-en {
+    grid-area: 1 / 1;
+    visibility: hidden;
+    text-align: center;
+}
+.i18n-container > .lang-ru.active,
+.i18n-container > .lang-en.active {
+    visibility: visible;
+}
+
 /* ==========================================================================
    MD3 TOP APP BAR
    ========================================================================== */
@@ -366,8 +381,6 @@ body.page-exit {
     -webkit-backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 2rem;
     transition: background-color 0.3s var(--md-transition-easing),
                 border-color 0.3s var(--md-transition-easing);
     border-bottom: 1px solid var(--md-sys-color-outline-variant);
