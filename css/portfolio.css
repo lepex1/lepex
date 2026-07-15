@@ -80,11 +80,6 @@
     display: inline-grid;
 }
 
-.btn-icon-leading {
-    margin-right: 6px;
-    font-size: 1.25rem !important;
-}
-
 .hero-card {
     grid-column: span 2;
     grid-row: span 1;
