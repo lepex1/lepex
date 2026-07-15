@@ -408,3 +408,8 @@
         grid-template-columns: 1fr;
     }
 }
+
+.md3-top-bar-container {
+    max-width: 680px;
+    padding: 0 1rem;
+}

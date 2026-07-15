@@ -34,29 +34,6 @@
     transform: translateY(-4px) scale(1.01);
 }
 
-.md3-back-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: var(--md-shape-corner-full);
-    color: var(--md-sys-color-on-surface-variant);
-    text-decoration: none;
-    transition: all var(--md-transition-duration) var(--md-transition-bounce);
-    flex-shrink: 0;
-}
-
-.md3-back-link:hover {
-    background: var(--md-sys-color-surface-container-high);
-    color: var(--md-sys-color-primary);
-    transform: scale(1.1);
-}
-
-.md3-back-link .material-symbols-outlined {
-    font-size: 1.5rem;
-}
-
 .md3-badge {
     display: inline-flex;
     align-items: center;
@@ -74,10 +51,6 @@
     position: relative;
     align-self: flex-start;
     backdrop-filter: blur(8px);
-}
-
-.md3-badge.i18n-container {
-    display: inline-grid;
 }
 
 .hero-card {
@@ -600,19 +573,6 @@
     color: var(--md-sys-color-on-primary-container);
     transform: translateY(-4px) scale(1.03);
     box-shadow: 0 8px 16px var(--md-sys-color-shadow);
-}
-
-.i18n-container {
-    display: grid;
-}
-.i18n-container > .lang-ru,
-.i18n-container > .lang-en {
-    grid-area: 1 / 1;
-    visibility: hidden;
-}
-.i18n-container > .lang-ru.active,
-.i18n-container > .lang-en.active {
-    visibility: visible;
 }
 
 .md3-footer {

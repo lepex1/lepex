@@ -104,10 +104,29 @@ body.page-exit {
     gap: 0.5rem;
 }
 
+/* Кнопка возврата назад и её заглушка */
+.md3-back-link,
 .md3-back-link-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
+    border-radius: var(--md-shape-corner-full);
+    color: var(--md-sys-color-on-surface-variant);
+    text-decoration: none;
+    transition: all var(--md-transition-duration) var(--md-transition-bounce);
     flex-shrink: 0;
+}
+
+.md3-back-link:hover {
+    background: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-primary);
+    transform: scale(1.1);
+}
+
+.md3-back-link .material-symbols-outlined {
+    font-size: 1.5rem;
 }
 
 .md3-brand {
