@@ -25,14 +25,13 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    backface-visibility: hidden;
 }
 
 .md3-bento-card:hover {
     background-color: var(--md-sys-color-surface-container-high);
     border-color: var(--md-sys-color-primary);
     box-shadow: 0 16px 32px var(--md-sys-color-shadow);
-    transform: translateY(-4px) scale(1.01);
+    transform: translateY(-4px);
 }
 
 .md3-badge {
@@ -391,11 +390,10 @@
     flex-direction: column;
     position: relative;
     transition: all var(--md-transition-duration) var(--md-transition-bounce);
-    backface-visibility: hidden;
 }
 
 .md3-portfolio-card:hover {
-    transform: translateY(-8px) scale(1.015);
+    transform: translateY(-8px);
     border-color: var(--md-sys-color-primary);
     box-shadow: 0 20px 40px var(--md-sys-color-shadow);
 }
@@ -414,7 +412,6 @@
     display: block;
     border-radius: 0 0 var(--md-shape-corner-large) var(--md-shape-corner-large);
     transition: transform 0.8s var(--md-transition-easing), opacity 0.5s ease;
-    backface-visibility: hidden;
 }
 
 .md3-portfolio-card:hover .portfolio-card-thumbnail img {
