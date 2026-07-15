@@ -64,7 +64,6 @@ body.page-exit {
 .i18n-container > .lang-en {
     grid-area: 1 / 1;
     visibility: hidden;
-    text-align: center;
 }
 .i18n-container > .lang-ru.active,
 .i18n-container > .lang-en.active {
