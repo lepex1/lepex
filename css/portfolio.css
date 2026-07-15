@@ -585,6 +585,20 @@
     text-align: center;
 }
 
+/* i18n: inherits text-align from parent for block-level elements */
+.hero-title.i18n-container > .lang-ru,
+.hero-title.i18n-container > .lang-en,
+.hero-subtitle.i18n-container > .lang-ru,
+.hero-subtitle.i18n-container > .lang-en,
+.card-title.i18n-container > .lang-ru,
+.card-title.i18n-container > .lang-en,
+.card-text.i18n-container > .lang-ru,
+.card-text.i18n-container > .lang-en,
+.usdt-title.i18n-container > .lang-ru,
+.usdt-title.i18n-container > .lang-en {
+    text-align: inherit;
+}
+
 @media (max-width: 1024px) {
     .md3-bento-grid {
         grid-template-columns: repeat(2, 1fr);
