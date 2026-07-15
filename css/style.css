@@ -925,10 +925,7 @@ body.page-exit {
     grid-column: 1 / -1;
 }
 
-#discordCard {
-    min-height: 470px;
-    padding-bottom: 1rem;
-}
+
 
 .md3-layout-grid {
     grid-column: 1 / -1;
