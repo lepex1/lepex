@@ -388,7 +388,11 @@
 }
 
 @media (max-width: 768px) {
-    .md3-main-content {
+.md3-top-bar-left {
+    padding-left: 48px;
+}
+
+.md3-main-content {
         padding: 1rem;
     }
     .md3-bento-grid {
