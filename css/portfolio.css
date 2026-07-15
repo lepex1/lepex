@@ -25,6 +25,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    backface-visibility: hidden;
 }
 
 .md3-bento-card:hover {
@@ -390,6 +391,7 @@
     flex-direction: column;
     position: relative;
     transition: all var(--md-transition-duration) var(--md-transition-bounce);
+    backface-visibility: hidden;
 }
 
 .md3-portfolio-card:hover {
@@ -412,6 +414,7 @@
     display: block;
     border-radius: 0 0 var(--md-shape-corner-large) var(--md-shape-corner-large);
     transition: transform 0.8s var(--md-transition-easing), opacity 0.5s ease;
+    backface-visibility: hidden;
 }
 
 .md3-portfolio-card:hover .portfolio-card-thumbnail img {
