@@ -808,7 +808,7 @@ body.page-exit {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    min-height: 175px;
+    min-height: 100px;
 }
 
 .md3-discord__activity-skeleton {
