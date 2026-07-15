@@ -359,12 +359,18 @@ function renderDiscord(data) {
             headerText = `${headerText} ${escapeHtml(active.name)}`;
             titleText = active.details || active.name;
             subtitleText = active.details ? (active.state || '') : '';
-            stateText = '';
+            stateText = (active.assets && active.assets.large_text) ? active.assets.large_text : '';
         }
 
         const title = escapeHtml(titleText);
         const subtitle = subtitleText ? escapeHtml(subtitleText) : '';
         const state = stateText ? escapeHtml(stateText) : '';
+
+        const isPaused = isListening && (
+            stateText.includes('⏸') ||
+            stateText.toLowerCase().includes('paused') ||
+            stateText.toLowerCase().includes('пауза')
+        );
 
         const titleHtml = isListening
             ? `<span class="material-symbols-outlined md-icon--inline">music_note</span>${title}`
@@ -375,7 +381,7 @@ function renderDiscord(data) {
             : '';
 
         const stateHtml = state
-            ? `<span class="discord-activity__album">${isListening ? `<span class="material-symbols-outlined md-icon--inline">album</span>` : ''}${state}</span>`
+            ? `<span class="discord-activity__album">${isListening && !isPaused ? `<span class="material-symbols-outlined md-icon--inline">album</span>` : ''}${state}</span>`
             : '';
 
         block.innerHTML = `
@@ -386,7 +392,7 @@ function renderDiscord(data) {
                     <span class="discord-activity__title">${titleHtml}</span>
                     ${subtitleHtml}
                     ${stateHtml}
-                    ${hasTimestamps ? `<div class="discord-activity__progress" data-start="${active.timestamps.start || ''}" data-end="${active.timestamps.end || ''}"></div>` : ''}
+                    ${hasTimestamps ? `<div class="discord-activity__progress" data-start="${active.timestamps.start || ''}" data-end="${active.timestamps.end || ''}" data-paused="${isPaused}"></div>` : ''}
                 </div>
             </div>
         `;
@@ -416,6 +422,7 @@ function updateAllProgress() {
     document.querySelectorAll('.discord-activity__progress').forEach(el => {
         const start = parseInt(el.dataset.start);
         const end = parseInt(el.dataset.end);
+        const isPaused = el.dataset.paused === 'true';
 
         if (!start) return;
 

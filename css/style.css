@@ -808,6 +808,7 @@ body.page-exit {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    min-height: 175px;
 }
 
 .md3-discord__activity-skeleton {
@@ -922,6 +923,11 @@ body.page-exit {
 
 .md3-bento-card--full {
     grid-column: 1 / -1;
+}
+
+#discordCard {
+    min-height: 470px;
+    padding-bottom: 1rem;
 }
 
 .md3-layout-grid {
