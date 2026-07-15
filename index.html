@@ -11,7 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>lepex</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="loading">
     <header class="md3-top-app-bar">
@@ -19,7 +21,7 @@
             <div class="md3-brand">
                 <span class="material-symbols-outlined brand-icon">account_circle</span>
                 <span class="brand-name">lepex</span>
-                <img src="assets/previews/gif-themes/storm.gif" class="gif-switcher" id="clickable-gif">
+                <img src="/assets/previews/gif-themes/storm.gif" class="gif-switcher" id="clickable-gif">
             </div>
             <div class="md3-app-bar-actions">
                 <button class="md3-pill-button" id="lang-toggle" aria-label="Toggle language">
@@ -79,7 +81,20 @@
         <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/discord.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.body.classList.remove('loading');
+                document.body.classList.add('loaded');
+            }, 100);
+            initializeLanguage();
+            initializeGifTheme();
+            initializeDiscord();
+            initializeScrollAndLayout();
+        });
+    </script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     <script>
         // Smooth page-exit for browsers without cross-document View Transitions (Firefox/Safari)

@@ -8,3 +8,6 @@ tree.txt
 
 .vercel
 .env*
+
+tmp_*
+*.log

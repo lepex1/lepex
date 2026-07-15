@@ -1174,5 +1174,4 @@ body.page-exit {
 
 .discord-activity__item:not(:last-child) {
     border-bottom: 1px solid var(--md-sys-color-outline-variant);
-    padding-bottom: 1rem;
 }
