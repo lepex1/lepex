@@ -53,31 +53,25 @@
     backdrop-filter: blur(8px);
 }
 
+.md3-badge.i18n-container,
+.portfolio-section-header .i18n-container {
+    display: inline-block;
+    position: relative;
+}
+
 .md3-badge.i18n-container > .lang-ru,
-.md3-badge.i18n-container > .lang-en {
-    position: absolute;
-    left: 0;
-    top: 0;
-    white-space: nowrap;
-    text-align: inherit;
+.md3-badge.i18n-container > .lang-en,
+.portfolio-section-header .i18n-container > .lang-ru,
+.portfolio-section-header .i18n-container > .lang-en {
+    display: none;
 }
 
 .md3-badge.i18n-container > .lang-ru.active,
-.md3-badge.i18n-container > .lang-en.active {
-    position: static;
-}
-
-.portfolio-section-header .i18n-container > .lang-ru,
-.portfolio-section-header .i18n-container > .lang-en {
-    position: absolute;
-    left: 0;
-    top: 0;
-    white-space: nowrap;
-}
-
+.md3-badge.i18n-container > .lang-en.active,
 .portfolio-section-header .i18n-container > .lang-ru.active,
 .portfolio-section-header .i18n-container > .lang-en.active {
-    position: static;
+    display: inline;
+    text-align: inherit;
 }
 
 .hero-card {
