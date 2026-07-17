@@ -227,10 +227,10 @@ function openVideoModal(videoUrl) {
     if (!videoId) return;
 
     const modal = document.getElementById('videoModal');
-    const iframe = modal.querySelector('.video-modal-iframe');
+    const container = modal.querySelector('.video-modal-frame-container');
     const openBtn = modal.querySelector('.video-modal-open-btn');
 
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    container.innerHTML = `<iframe class="video-modal-iframe" src="https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
     openBtn.href = `https://www.youtube.com/watch?v=${videoId}`;
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -238,9 +238,9 @@ function openVideoModal(videoUrl) {
 
 function closeVideoModal() {
     const modal = document.getElementById('videoModal');
-    const iframe = modal.querySelector('.video-modal-iframe');
+    const container = modal.querySelector('.video-modal-frame-container');
     modal.classList.remove('active');
-    iframe.src = '';
+    container.innerHTML = '';
     document.body.style.overflow = '';
 }
 
