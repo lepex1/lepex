@@ -1,4 +1,5 @@
 .material-symbols-outlined {
+    display: inline-block;
     width: 1em;
     overflow: hidden;
 }
