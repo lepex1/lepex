@@ -104,6 +104,7 @@ function initializeLanguage() {
             currentLanguage = currentLanguage === 'ru' ? 'en' : 'ru';
             switchLanguage(currentLanguage);
             localStorage.setItem('lang', currentLanguage);
+            if (typeof updateDiscordLanguage === 'function') updateDiscordLanguage();
         });
     }
 }

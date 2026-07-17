@@ -117,7 +117,7 @@ async function fetchYoutubeData(url, index) {
         if (item) {
             const titleEl = item.querySelector('.item-title');
             if (titleEl && titleEl.dataset.auto === "true") {
-                titleEl.textContent = "YouTube Video";
+                titleEl.textContent = (typeof currentLanguage !== 'undefined' && currentLanguage === 'ru') ? 'YouTube Видео' : 'YouTube Video';
             }
         }
     }
@@ -192,7 +192,7 @@ async function loadPortfolio() {
                             </span>
                         </div>
                         <h3 class="portfolio-card-title item-title" data-auto="${isAutoTitle}">
-                            ${isAutoTitle ? '\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430...' : safeTitle}
+                            ${isAutoTitle ? (typeof currentLanguage !== 'undefined' && currentLanguage === 'ru' ? '\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430...' : 'Loading...') : safeTitle}
                         </h3>
                     </div>
                 </a>

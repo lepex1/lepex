@@ -297,3 +297,10 @@ function updateAllProgress() {
         }
     });
 }
+
+function updateDiscordLanguage() {
+    const cached = loadDiscordCache();
+    if (cached) {
+        renderDiscord(cached);
+    }
+}
