@@ -448,7 +448,7 @@
     width: 64px;
     height: 64px;
     border-radius: var(--md-shape-corner-full);
-    background-color: color-mix(in srgb, var(--md-sys-color-primary) 90%, transparent);
+    background-color: var(--md-sys-color-primary);
     color: #FFFFFF;
     display: flex;
     align-items: center;
