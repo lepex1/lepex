@@ -583,6 +583,8 @@
 }
 
 /* i18n: inherits text-align from parent for block-level elements */
+.md3-badge.i18n-container > .lang-ru,
+.md3-badge.i18n-container > .lang-en,
 .hero-title.i18n-container > .lang-ru,
 .hero-title.i18n-container > .lang-en,
 .hero-subtitle.i18n-container > .lang-ru,
