@@ -53,6 +53,20 @@
     backdrop-filter: blur(8px);
 }
 
+.md3-badge.i18n-container > .lang-ru,
+.md3-badge.i18n-container > .lang-en {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    text-align: inherit;
+}
+
+.md3-badge.i18n-container > .lang-ru.active,
+.md3-badge.i18n-container > .lang-en.active {
+    position: static;
+}
+
 .hero-card {
     grid-column: span 2;
     grid-row: span 1;
@@ -583,8 +597,6 @@
 }
 
 /* i18n: inherits text-align from parent for block-level elements */
-.md3-badge.i18n-container > .lang-ru,
-.md3-badge.i18n-container > .lang-en,
 .hero-title.i18n-container > .lang-ru,
 .hero-title.i18n-container > .lang-en,
 .hero-subtitle.i18n-container > .lang-ru,
