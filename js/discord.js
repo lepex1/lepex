@@ -59,6 +59,7 @@ function connectLanyardWS() {
     if (reconnectTimeout) clearTimeout(reconnectTimeout);
 
     if (lanyardSocket) {
+        lanyardSocket.onclose = null;
         try { lanyardSocket.close(); } catch (e) {}
     }
 

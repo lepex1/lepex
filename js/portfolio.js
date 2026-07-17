@@ -62,13 +62,6 @@ function showCopyFeedback(btn) {
     }
 }
 
-function htmlEncode(str) {
-    if (!str) return '';
-    const div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-}
-
 function sanitizeUrl(url) {
     if (!url) return '';
     const dangerous = /^(javascript|data|vbscript):/i;
@@ -152,8 +145,8 @@ async function loadPortfolio() {
         container.innerHTML = worksArray.map((work, index) => {
             const safeLink = sanitizeUrl(work.link);
             const safeImage = sanitizeUrl(work.image) || '/assets/previews/portfolio/placeholder.svg';
-            const safeTitle = htmlEncode(work.title);
-            const safeAuthor = htmlEncode(work.author);
+            const safeTitle = escapeHtml(work.title);
+            const safeAuthor = escapeHtml(work.author);
             const videoId = getYoutubeId(work.link);
             const isAutoTitle = !work.title || work.title.trim() === "";
             const isAutoAuthor = !work.author || work.author.trim() === "";
@@ -171,7 +164,7 @@ async function loadPortfolio() {
             }
 
             return `
-                <a href="${safeLink}" target="_blank" class="md3-portfolio-card reveal-card" data-index="${index}">
+                <div class="md3-portfolio-card reveal-card" data-index="${index}" data-video="${safeLink}" role="button" tabindex="0">
                     <div class="portfolio-card-thumbnail">
                         <img src="${imageSrc}"
                              class="item-img"
@@ -195,7 +188,7 @@ async function loadPortfolio() {
                             ${isAutoTitle ? (typeof currentLanguage !== 'undefined' && currentLanguage === 'ru' ? '\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430...' : 'Loading...') : safeTitle}
                         </h3>
                     </div>
-                </a>
+                </div>
             `;
         }).join('');
 
@@ -210,8 +203,74 @@ async function loadPortfolio() {
         newCards.forEach(c => cardObserver.observe(c));
 
         switchLanguage(currentLanguage);
+        initializePortfolioCards();
 
     } catch (error) {
         console.error('Ошибка загрузки портфолио:', error);
+        container.innerHTML = '';
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'portfolio-error';
+        errorDiv.innerHTML = `
+            <span class="material-symbols-outlined portfolio-error-icon">error_outline</span>
+            <p class="portfolio-error-text">${currentLanguage === 'ru' ? 'Не удалось загрузить работы. Проверьте подключение.' : 'Failed to load works. Check your connection.'}</p>
+            <button class="md3-filled-button portfolio-error-retry" onclick="loadPortfolio()">
+                <span class="material-symbols-outlined">refresh</span>
+                ${currentLanguage === 'ru' ? 'Повторить' : 'Retry'}
+            </button>
+        `;
+        container.appendChild(errorDiv);
     }
+}
+
+function openVideoModal(videoUrl) {
+    const videoId = getYoutubeId(videoUrl);
+    if (!videoId) return;
+
+    const modal = document.getElementById('videoModal');
+    const iframe = modal.querySelector('.video-modal-iframe');
+    const openBtn = modal.querySelector('.video-modal-open-btn');
+
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    openBtn.href = `https://www.youtube.com/watch?v=${videoId}`;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const iframe = modal.querySelector('.video-modal-iframe');
+    modal.classList.remove('active');
+    iframe.src = '';
+    document.body.style.overflow = '';
+}
+
+function initializeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    if (!modal) return;
+
+    const closeBtn = modal.querySelector('.video-modal-close');
+    const backdrop = modal.querySelector('.video-modal-backdrop');
+
+    closeBtn.addEventListener('click', closeVideoModal);
+    backdrop.addEventListener('click', closeVideoModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeVideoModal();
+        }
+    });
+}
+
+function initializePortfolioCards() {
+    const container = document.getElementById('portfolio-container');
+    if (!container) return;
+
+    container.addEventListener('click', (e) => {
+        const card = e.target.closest('.md3-portfolio-card');
+        if (!card) return;
+        const videoUrl = card.dataset.video;
+        if (videoUrl) {
+            openVideoModal(videoUrl);
+        }
+    });
 }

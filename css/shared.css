@@ -63,18 +63,13 @@ body.page-exit {
     to { opacity: 1; transform: scale(1); }
 }
 
-.i18n-container {
-    display: inline-grid;
-}
 .i18n-container > .lang-ru,
 .i18n-container > .lang-en {
-    grid-area: 1 / 1;
-    visibility: hidden;
-    text-align: center;
+    display: none;
 }
 .i18n-container > .lang-ru.active,
 .i18n-container > .lang-en.active {
-    visibility: visible;
+    display: inline;
 }
 
 .md3-top-app-bar {

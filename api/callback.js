@@ -29,7 +29,7 @@ export default async function handler(req, res) {
         }
       };
       window.addEventListener("message", receiveMessage, false);
-      window.opener.postMessage("authorizing:github", "https://lepex.vercel.app");
+      window.opener.postMessage("authorizing:github", "*");
     </script>
   `;
   res.send(content);

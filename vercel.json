@@ -1,10 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/portfolio/contact",
-      "destination": "/portfolio/index.html"
-    },
-    {
       "source": "/portfolio/config.yml",
       "destination": "/portfolio/admin/config.yml"
     }
