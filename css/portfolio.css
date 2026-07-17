@@ -67,6 +67,19 @@
     position: static;
 }
 
+.portfolio-section-header .i18n-container > .lang-ru,
+.portfolio-section-header .i18n-container > .lang-en {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+}
+
+.portfolio-section-header .i18n-container > .lang-ru.active,
+.portfolio-section-header .i18n-container > .lang-en.active {
+    position: static;
+}
+
 .hero-card {
     grid-column: span 2;
     grid-row: span 1;
