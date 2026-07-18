@@ -9,5 +9,6 @@ tree.txt
 .vercel
 .env*
 
+dist/
 tmp_*
 *.log
