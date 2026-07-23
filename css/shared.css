@@ -294,6 +294,30 @@ body.page-exit {
     transform: scale(1.08);
 }
 
+.md3-pill-button {
+    background: var(--md-sys-color-primary);
+    border: none;
+    color: var(--md-sys-color-on-primary);
+    padding: 0 1.25rem;
+    height: 48px;
+    border-radius: var(--md-shape-corner-full);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--md-transition-duration) var(--md-transition-bounce);
+}
+
+.md3-pill-button:hover {
+    background: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    transform: scale(1.04) translateY(-2px);
+    box-shadow: 0 4px 12px var(--md-sys-color-shadow);
+}
+
 .md3-filled-button {
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);

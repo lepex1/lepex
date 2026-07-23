@@ -5,12 +5,6 @@
     --md-shape-corner-extra-large: 32px;
     --md-shape-corner-full: 100px;
 
-    --md-sys-shape-corner-small: var(--md-shape-corner-small);
-    --md-sys-shape-corner-medium: var(--md-shape-corner-medium);
-    --md-sys-shape-corner-large: var(--md-shape-corner-large);
-    --md-sys-shape-corner-extra-large: var(--md-shape-corner-extra-large);
-    --md-sys-shape-corner-full: var(--md-shape-corner-full);
-
     --md-transition-duration: 0.4s;
     --md-transition-easing: cubic-bezier(0.2, 0.8, 0.2, 1);
     --md-transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);

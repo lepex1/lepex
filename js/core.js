@@ -100,9 +100,8 @@ function initializeLanguage() {
     switchLanguage(currentLanguage);
 
     if (langToggle) {
-        langToggle.selected = currentLanguage === 'ru';
         langToggle.addEventListener('click', () => {
-            currentLanguage = langToggle.selected ? 'ru' : 'en';
+            currentLanguage = currentLanguage === 'ru' ? 'en' : 'ru';
             switchLanguage(currentLanguage);
             localStorage.setItem('lang', currentLanguage);
             if (typeof updateDiscordLanguage === 'function') updateDiscordLanguage();
@@ -121,7 +120,12 @@ function switchLanguage(lang) {
 
     const langToggle = document.getElementById('lang-toggle');
     if (langToggle) {
-        langToggle.selected = lang === 'ru';
+        const textNode = langToggle.querySelector('.lang-text');
+        if (textNode) {
+            textNode.textContent = lang === 'ru' ? 'EN' : 'RU';
+        } else {
+            langToggle.textContent = lang === 'ru' ? 'EN' : 'RU';
+        }
     }
 }
 
