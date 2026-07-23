@@ -94,28 +94,10 @@
     border: 2px solid var(--md-sys-color-outline-variant);
 }
 
-.md3-discord__status {
-    position: absolute;
-    bottom: 4px;
-    right: 4px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
+m3e-badge {
     border: 3px solid var(--md-sys-color-surface-container);
-}
-
-.md3-discord__status.online {
-    background: #43b581;
-    animation: statusPulse 2s infinite;
-}
-.md3-discord__status.idle      { background: #faa61a; }
-.md3-discord__status.dnd       { background: #f04747; }
-.md3-discord__status.offline   { background: #747f8d; }
-
-@keyframes statusPulse {
-    0% { box-shadow: 0 0 0 0 rgba(67, 181, 129, 0.4); }
-    70% { box-shadow: 0 0 0 6px rgba(67, 181, 129, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(67, 181, 129, 0); }
+    border-radius: 50%;
+    border-radius: 50%;
 }
 
 .md3-discord__info {

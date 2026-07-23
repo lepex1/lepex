@@ -15,26 +15,25 @@
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/main.css">
+    <script type="module" src="/js/m3e-setup.js"></script>
 </head>
 <body class="loading">
-    <header class="md3-top-app-bar">
-        <div class="md3-top-bar-container">
-            <div class="md3-top-bar-left">
-                <div class="md3-back-link-placeholder"></div>
-                <div class="md3-brand">
-                    <span class="material-symbols-outlined brand-icon">account_circle</span>
-                    <span class="brand-name">lepex</span>
-                    <img src="/assets/previews/gif-themes/storm.gif" class="gif-switcher" id="clickable-gif">
-                </div>
-            </div>
-            <div class="md3-app-bar-actions">
-                <button class="md3-pill-button" id="lang-toggle" aria-label="Toggle language">
-                    <span class="material-symbols-outlined btn-icon-leading">translate</span>
-                    <span class="lang-text">EN</span>
-                </button>
-            </div>
+    <m3e-theme motion="expressive" strong-focus>
+    <m3e-app-bar size="small">
+        <div slot="leading" class="md3-brand">
+            <span class="material-symbols-outlined brand-icon">account_circle</span>
+            <span class="brand-name">lepex</span>
+            <img src="/assets/previews/gif-themes/storm.gif" class="gif-switcher" id="clickable-gif">
         </div>
-    </header>
+        <div slot="trailing">
+            <m3e-button variant="tonal" toggle id="lang-toggle" aria-label="Toggle language">
+                <span slot="icon" class="material-symbols-outlined">translate</span>
+                <span class="lang-text">EN</span>
+                <span slot="selected-icon" class="material-symbols-outlined">translate</span>
+                <span slot="selected" class="lang-text">RU</span>
+            </m3e-button>
+        </div>
+    </m3e-app-bar>
 
     <main class="md3-main-content">
         <div class="md3-bento-grid">
@@ -44,8 +43,10 @@
                 <div class="md3-discord">
                     <div class="md3-discord__header">
                         <div class="md3-discord__avatar">
-                            <img src="images/avatar-placeholder.svg" alt="discord avatar" id="discordAvatar" onerror="this.src='images/avatar-placeholder.svg'">
-                            <span class="md3-discord__status" id="discordStatus"></span>
+                            <m3e-avatar style="--m3e-avatar-size: 120px;">
+                                <img src="images/avatar-placeholder.svg" alt="discord avatar" id="discordAvatar" onerror="this.src='images/avatar-placeholder.svg'">
+                            </m3e-avatar>
+                            <m3e-badge id="discordStatus" for="discordAvatar" size="small" position="below-after"></m3e-badge>
                         </div>
                         <div class="md3-discord__info">
                             <span class="md3-discord__username" id="discordUsername">lepex</span>
@@ -84,6 +85,8 @@
         <p class="footer-text">lepex &copy; <span id="year"></span></p>
         <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
     </footer>
+
+    </m3e-theme>
 
     <script src="js/core.js"></script>
     <script src="js/discord.js"></script>

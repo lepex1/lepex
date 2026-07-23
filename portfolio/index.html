@@ -20,30 +20,31 @@
     <link rel="stylesheet" href="/css/themes.css">
     <link rel="stylesheet" href="/css/shared.css">
     <link rel="stylesheet" href="/css/portfolio.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@m3e/web@2.6.2/dist/all.min.js"></script>
 </head>
 <body class="loading">
 
-    <!-- MD3 TOP APP BAR -->
-    <header class="md3-top-app-bar">
-        <div class="md3-top-bar-container">
-            <div class="md3-top-bar-left">
-                <a href="/" class="md3-back-link" aria-label="Home" title="Home">
-                    <span class="material-symbols-outlined">arrow_back</span>
-                </a>
-                <div class="md3-brand">
-                    <span class="material-symbols-outlined brand-icon">subtitles</span>
-                    <span class="brand-name">lepex</span>
-                    <img src="/assets/previews/gif-themes/storm.gif" class="gif-switcher" id="clickable-gif">
-                </div>
-            </div>
-            <div class="md3-app-bar-actions">
-                <button class="md3-pill-button" id="lang-toggle" aria-label="Toggle language">
-                    <span class="material-symbols-outlined btn-icon-leading">translate</span>
-                    <span class="lang-text">EN</span>
-                </button>
+    <m3e-theme motion="expressive" strong-focus>
+    <m3e-app-bar size="small">
+        <div slot="leading">
+            <a href="/" class="md3-back-link" aria-label="Home" title="Home">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </a>
+            <div class="md3-brand" style="display:inline-flex;align-items:center;gap:0.5rem;">
+                <span class="material-symbols-outlined brand-icon">subtitles</span>
+                <span class="brand-name">lepex</span>
+                <img src="/assets/previews/gif-themes/storm.gif" class="gif-switcher" id="clickable-gif">
             </div>
         </div>
-    </header>
+        <div slot="trailing">
+            <m3e-button variant="tonal" toggle id="lang-toggle" aria-label="Toggle language">
+                <span slot="icon" class="material-symbols-outlined">translate</span>
+                <span class="lang-text">EN</span>
+                <span slot="selected-icon" class="material-symbols-outlined">translate</span>
+                <span slot="selected" class="lang-text">RU</span>
+            </m3e-button>
+        </div>
+    </m3e-app-bar>
 
     <!-- MAIN CONTAINER -->
     <main class="md3-main-content">
@@ -143,6 +144,8 @@
         </section>
 
     </main>
+
+    </m3e-theme>
 
     <!-- FOOTER -->
     <footer class="md3-footer">

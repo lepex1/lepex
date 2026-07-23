@@ -7,13 +7,13 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         { src: "css/*", dest: "." },
-        { src: "js/*", dest: "." },
+        { src: "js/*", dest: ".", ignore: ["js/m3e-setup.js"] },
         { src: "images/*", dest: "." },
         { src: "fonts/*", dest: "." },
         { src: "favicon/*", dest: "." },
         { src: "assets/**/*", dest: "." },
         { src: "sw.js", dest: "." },
-        { src: "portfolio/**/*", dest: "." },
+        { src: "portfolio/**/*", dest: ".", ignore: ["portfolio/index.html"] },
       ],
     }),
   ],
@@ -21,6 +21,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "index.html",
+        portfolio: "portfolio/index.html",
       },
     },
   },

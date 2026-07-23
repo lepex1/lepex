@@ -148,7 +148,10 @@ function renderDiscord(data) {
         cacheAvatarDataUrl(avatarUrl);
     }
 
-    status.className = 'md3-discord__status ' + (data.discord_status || 'offline');
+    const statusVal = data.discord_status || 'offline';
+    status.className = statusVal;
+    const colors = { online: '#43b581', idle: '#faa61a', dnd: '#f04747', offline: '#747f8d' };
+    status.style.setProperty('--m3e-badge-container-color', colors[statusVal] || colors.offline);
 
     const activityBlocks = [];
 
