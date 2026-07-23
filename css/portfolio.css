@@ -16,24 +16,6 @@
     align-items: stretch;
 }
 
-.md3-bento-card {
-    position: relative;
-    background-color: var(--md-sys-color-surface-container);
-    border: 1px solid var(--md-sys-color-outline-variant);
-    border-radius: var(--md-shape-corner-extra-large);
-    padding: 2.5rem;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.md3-bento-card:hover {
-    background-color: var(--md-sys-color-surface-container-high);
-    border-color: var(--md-sys-color-primary);
-    box-shadow: 0 16px 32px var(--md-sys-color-shadow);
-    transform: translateY(-4px);
-}
-
 .md3-badge {
     display: inline-flex;
     align-items: center;
@@ -74,11 +56,18 @@
     text-align: inherit;
 }
 
-.hero-card {
+.hero-bento-card {
     grid-column: span 2;
     grid-row: span 1;
     min-height: 380px;
     justify-content: center;
+    position: relative;
+    background-color: var(--md-sys-color-surface-container);
+    border-radius: var(--md-shape-corner-extra-large);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
     border: none;
 }
 
@@ -269,9 +258,32 @@
     100% { left: 85%; }
 }
 
-.info-card {
-    justify-content: flex-start;
+.info-card-content {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
+}
+
+.support-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+}
+
+.info-m3e-card {
+    --m3e-card-container-color: var(--md-sys-color-surface-container);
+}
+
+.free-m3e-card {
+    grid-column: span 2;
+    --m3e-card-container-color: var(--md-sys-color-surface-container);
+}
+
+.support-m3e-card {
+    grid-column: span 1;
+    --m3e-card-container-color: var(--md-sys-color-surface-container);
 }
 
 .card-icon-wrapper {
@@ -323,20 +335,7 @@
     line-height: 1.6;
 }
 
-.free-badge-card {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-.support-card {
-    grid-column: span 1;
-    grid-row: span 1;
-    align-items: center;
-    text-align: center;
-    gap: 0.75rem;
-}
-
-.support-card .usdt-address {
+.support-card-content .usdt-address {
     width: 100%;
     font-family: 'Space Mono', 'Courier New', monospace;
     font-size: 0.75rem;
@@ -350,13 +349,13 @@
     -webkit-user-select: all;
 }
 
-.support-card .usdt-title {
+.support-card-content .usdt-title {
     font-size: 0.75rem;
     font-weight: 700;
     color: var(--md-sys-color-on-surface-variant);
 }
 
-.support-card .md3-icon-button {
+.support-card-content .md3-icon-button {
     margin-top: 0.25rem;
 }
 
@@ -400,24 +399,12 @@
     gap: 2rem;
 }
 
-.md3-portfolio-card {
-    background-color: var(--md-sys-color-surface-container);
-    border: 1px solid var(--md-sys-color-outline-variant);
-    border-radius: var(--md-shape-corner-large);
-    overflow: hidden;
-    text-decoration: none;
-    color: var(--md-sys-color-on-surface);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    cursor: pointer;
-    transition: all var(--md-transition-duration) var(--md-transition-bounce);
+.portfolio-card {
+    --m3e-card-container-color: var(--md-sys-color-surface-container);
 }
 
-.md3-portfolio-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--md-sys-color-primary);
-    box-shadow: 0 20px 40px var(--md-sys-color-shadow);
+.portfolio-card:hover {
+    z-index: 2;
 }
 
 .portfolio-card-thumbnail {
@@ -436,7 +423,7 @@
     transition: transform 0.8s var(--md-transition-easing), opacity 0.5s ease;
 }
 
-.md3-portfolio-card:hover .portfolio-card-thumbnail img {
+.portfolio-card:hover .portfolio-card-thumbnail img {
     transform: scale(1.05);
 }
 
@@ -458,7 +445,7 @@
     z-index: 2;
 }
 
-.md3-portfolio-card:hover .card-play-overlay {
+.portfolio-card:hover .card-play-overlay {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
 }
@@ -503,74 +490,8 @@
     letter-spacing: -0.2px;
 }
 
-.skeleton-card {
-    background-color: var(--md-sys-color-surface-container);
-    border: 1px solid var(--md-sys-color-outline-variant);
-    border-radius: var(--md-shape-corner-large);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    overflow: hidden;
-    min-height: 400px;
-}
-
-.skeleton-thumbnail {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: linear-gradient(90deg,
-        var(--md-sys-color-surface-container-high) 25%,
-        var(--md-sys-color-surface-variant) 50%,
-        var(--md-sys-color-surface-container-high) 75%
-    );
-    background-size: 200% 100%;
-    animation: skeleton-shimmer 1.5s infinite linear;
-    border-radius: var(--md-shape-corner-medium);
-}
-
-.skeleton-chip {
-    width: 120px;
-    height: 1.5rem;
-    background: linear-gradient(90deg,
-        var(--md-sys-color-surface-container-high) 25%,
-        var(--md-sys-color-surface-variant) 50%,
-        var(--md-sys-color-surface-container-high) 75%
-    );
-    background-size: 200% 100%;
-    animation: skeleton-shimmer 1.5s infinite linear;
-    border-radius: var(--md-shape-corner-full);
-}
-
-.skeleton-title {
-    width: 85%;
-    height: 1.75rem;
-    background: linear-gradient(90deg,
-        var(--md-sys-color-surface-container-high) 25%,
-        var(--md-sys-color-surface-variant) 50%,
-        var(--md-sys-color-surface-container-high) 75%
-    );
-    background-size: 200% 100%;
-    animation: skeleton-shimmer 1.5s infinite linear;
-    border-radius: 4px;
-}
-
-.skeleton-action {
-    width: 80px;
-    height: 1.25rem;
-    background: linear-gradient(90deg,
-        var(--md-sys-color-surface-container-high) 25%,
-        var(--md-sys-color-surface-variant) 50%,
-        var(--md-sys-color-surface-container-high) 75%
-    );
-    background-size: 200% 100%;
-    animation: skeleton-shimmer 1.5s infinite linear;
-    border-radius: 4px;
-    margin-top: auto;
-}
-
-@keyframes skeleton-shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+.m3e-skeleton-card {
+    --m3e-card-container-color: var(--md-sys-color-surface-container);
 }
 
 .md3-filled-button {
@@ -622,13 +543,13 @@
     .md3-bento-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    .hero-card {
+    .hero-bento-card {
         grid-column: span 2;
     }
-    .free-badge-card {
+    .free-m3e-card {
         grid-column: span 2;
     }
-    .support-card {
+    .support-m3e-card {
         grid-column: span 1;
     }
     .hero-visual-container {
@@ -657,7 +578,7 @@
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-    .hero-card, .core-goal, .free-badge-card, .support-card, .contact-bento-card {
+    .hero-bento-card, .free-m3e-card, .support-m3e-card, .info-m3e-card {
         grid-column: span 1 !important;
         grid-row: span 1 !important;
         min-height: auto;
@@ -669,15 +590,24 @@
     .md3-badge {
         margin-bottom: 1rem;
     }
-    .md3-cards-grid {
+#portfolio-morphing-shape {
+    position: fixed;
+    top: -80px;
+    left: -80px;
+    width: 350px;
+    height: 350px;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+    color: var(--md-sys-color-tertiary);
+}
+
+.md3-cards-grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
     }
     .portfolio-card-title {
         font-size: 1.2rem;
-    }
-    .md3-portfolio-card {
-        border-radius: var(--md-shape-corner-medium);
     }
     .hero-content {
         max-width: 100%;
@@ -692,7 +622,7 @@
     .hero-title {
         font-size: 1.8rem;
     }
-    .md3-bento-card {
+    .hero-bento-card {
         padding: 1.25rem;
     }
     .card-title {
@@ -701,7 +631,7 @@
     .card-text {
         font-size: 0.85rem;
     }
-    .support-card .usdt-address {
+    .support-card-content .usdt-address {
         font-size: 0.7rem;
     }
 }

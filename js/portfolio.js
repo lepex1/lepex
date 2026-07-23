@@ -120,12 +120,14 @@ function renderSkeletons(count = 4) {
     const container = document.getElementById('portfolio-container');
     if (!container) return;
     container.innerHTML = Array.from({ length: count }, () => `
-        <div class="skeleton-card">
-            <div class="skeleton-thumbnail"></div>
-            <div class="skeleton-chip"></div>
-            <div class="skeleton-title"></div>
-            <div class="skeleton-action"></div>
-        </div>
+        <m3e-card variant="elevated" class="m3e-skeleton-card">
+            <div slot="content" style="display:flex;flex-direction:column;gap:1.25rem;">
+                <m3e-skeleton variant="rect" animation="wave" style="width:100%;aspect-ratio:16/9;border-radius:12px;"></m3e-skeleton>
+                <m3e-skeleton variant="chip" animation="wave" style="width:120px;height:24px;"></m3e-skeleton>
+                <m3e-skeleton variant="text" animation="wave" style="width:85%;height:28px;"></m3e-skeleton>
+                <m3e-skeleton variant="text" animation="wave" style="width:60px;height:20px;"></m3e-skeleton>
+            </div>
+        </m3e-card>
     `).join('');
 }
 
@@ -164,8 +166,8 @@ async function loadPortfolio() {
             }
 
             return `
-                <div class="md3-portfolio-card reveal-card" data-index="${index}" data-video="${safeLink}" role="button" tabindex="0">
-                    <div class="portfolio-card-thumbnail">
+                <m3e-card variant="elevated" actionable class="portfolio-card reveal-card" data-index="${index}" data-video="${safeLink}">
+                    <div slot="header" class="portfolio-card-thumbnail">
                         <img src="${imageSrc}"
                              class="item-img"
                              data-auto="${isAutoImg}"
@@ -177,7 +179,7 @@ async function loadPortfolio() {
                             <span class="material-symbols-outlined overlay-play-icon">play_arrow</span>
                         </div>
                     </div>
-                    <div class="portfolio-card-content">
+                    <div slot="content" class="portfolio-card-content">
                         <div class="portfolio-card-author-chip">
                             <span class="material-symbols-outlined chip-icon">person</span>
                             <span class="item-author" data-auto="${isAutoAuthor}">
@@ -188,7 +190,7 @@ async function loadPortfolio() {
                             ${isAutoTitle ? (typeof currentLanguage !== 'undefined' && currentLanguage === 'ru' ? '\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430...' : 'Loading...') : safeTitle}
                         </h3>
                     </div>
-                </div>
+                </m3e-card>
             `;
         }).join('');
 
@@ -266,7 +268,7 @@ function initializePortfolioCards() {
     if (!container) return;
 
     container.addEventListener('click', (e) => {
-        const card = e.target.closest('.md3-portfolio-card');
+        const card = e.target.closest('.portfolio-card');
         if (!card) return;
         const videoUrl = card.dataset.video;
         if (videoUrl) {

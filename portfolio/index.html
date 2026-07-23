@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&family=Space+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@m3e/web@2.5.14/dist/all.min.js"></script>
 
     <title>Субтитры на русском | Russian Subtitles</title>
     <link rel="stylesheet" href="/fonts/satoshi.css">
@@ -51,9 +52,12 @@
         <!-- MD3 BENTO DASHBOARD -->
         <section class="md3-dashboard">
             <div class="md3-bento-grid">
+
+                <!-- Decorative morphing shape -->
+                <m3e-shape id="portfolio-morphing-shape" class="decorative-shape" name="gem"></m3e-shape>
                 
                 <!-- UNIFIED HERO & GOAL CARD (2 Columns Wide) -->
-                <div class="md3-bento-card hero-card reveal-card">
+                <div class="hero-bento-card reveal-card">
                     <div class="hero-card-bg-gradient"></div>
                     
                     <!-- Subtitles translation visualization -->
@@ -91,42 +95,48 @@
                 </div>
 
                 <!-- CONTACT CARD (1 Column Wide) -->
-                <div class="md3-bento-card info-card contact-bento-card reveal-card">
-                    <div class="card-icon-wrapper accent-color">
-                        <span class="material-symbols-outlined card-main-icon">alternate_email</span>
+                <m3e-card variant="outlined" class="info-m3e-card reveal-card">
+                    <div slot="content" class="info-card-content">
+                        <div class="card-icon-wrapper accent-color">
+                            <span class="material-symbols-outlined card-main-icon">alternate_email</span>
+                        </div>
+                        <h2 class="card-title" data-lang-ru="Связь напрямую" data-lang-en="Get in Touch">Связь напрямую</h2>
+                        <p class="card-text" data-lang-ru="Готовы к сотрудничеству или хотите задать вопрос? Напишите мне на почту в любое время." data-lang-en="Ready to collaborate or have questions? Send me an email anytime.">
+                            Готовы к сотрудничеству или хотите задать вопрос? Напишите мне на почту в любое время.
+                        </p>
+                        <a href="mailto:lepexmail@gmail.com" class="md3-filled-button contact-cta">
+                            <span class="material-symbols-outlined">mail</span>
+                            <span>lepexmail@gmail.com</span>
+                        </a>
                     </div>
-                    <h2 class="card-title" data-lang-ru="Связь напрямую" data-lang-en="Get in Touch">Связь напрямую</h2>
-                    <p class="card-text" data-lang-ru="Готовы к сотрудничеству или хотите задать вопрос? Напишите мне на почту в любое время." data-lang-en="Ready to collaborate or have questions? Send me an email anytime.">
-                        Готовы к сотрудничеству или хотите задать вопрос? Напишите мне на почту в любое время.
-                    </p>
-                    <a href="mailto:lepexmail@gmail.com" class="md3-filled-button contact-cta">
-                        <span class="material-symbols-outlined">mail</span>
-                        <span>lepexmail@gmail.com</span>
-                    </a>
-                </div>
+                </m3e-card>
 
                 <!-- FREE BANNER (2 Columns Wide) -->
-                <div class="md3-bento-card info-card free-badge-card reveal-card">
-                    <div class="card-icon-wrapper secondary-color">
-                        <span class="material-symbols-outlined card-main-icon">volunteer_activism</span>
+                <m3e-card variant="filled" class="free-m3e-card reveal-card">
+                    <div slot="content" class="info-card-content">
+                        <div class="card-icon-wrapper secondary-color">
+                            <span class="material-symbols-outlined card-main-icon">volunteer_activism</span>
+                        </div>
+                        <h2 class="card-title highlight-text" data-lang-ru="Абсолютно бесплатно" data-lang-en="Absolutely Free">Абсолютно бесплатно</h2>
+                        <p class="card-text" data-lang-ru="В данный момент мои услуги бесплатны. Всё, что я прошу взамен, — указать авторство и ссылку на этот сайт в вашем видео." data-lang-en="Currently, my services are completely free. All I ask in return is that you credit me and include a link to this website in your video.">
+                            В данный момент мои услуги бесплатны. Всё, что я прошу взамен, — указать авторство и ссылку на этот сайт в вашем видео.
+                        </p>
                     </div>
-                    <h2 class="card-title highlight-text" data-lang-ru="Абсолютно бесплатно" data-lang-en="Absolutely Free">Абсолютно бесплатно</h2>
-                    <p class="card-text" data-lang-ru="В данный момент мои услуги бесплатны. Всё, что я прошу взамен, — указать авторство и ссылку на этот сайт в вашем видео." data-lang-en="Currently, my services are completely free. All I ask in return is that you credit me and include a link to this website in your video.">
-                        В данный момент мои услуги бесплатны. Всё, что я прошу взамен, — указать авторство и ссылку на этот сайт в вашем видео.
-                    </p>
-                </div>
+                </m3e-card>
 
                 <!-- SUPPORT CARD (1 Column Wide) -->
-                <div class="md3-bento-card info-card support-card reveal-card">
-                    <div class="card-icon-wrapper">
-                        <span class="material-symbols-outlined card-main-icon">paid</span>
+                <m3e-card variant="outlined" class="support-m3e-card reveal-card">
+                    <div slot="content" class="support-card-content">
+                        <div class="card-icon-wrapper">
+                            <span class="material-symbols-outlined card-main-icon">paid</span>
+                        </div>
+                        <span class="usdt-title" data-lang-ru="Поддержать (USDT TRC20):" data-lang-en="Support (USDT TRC20):">Поддержать (USDT TRC20):</span>
+                        <code class="usdt-address" id="usdt-address">TAZrs2kc58Em85Kuynu3wq5c3K7VDVy3Zd</code>
+                        <button class="md3-icon-button" id="copy-usdt-btn" aria-label="Copy address" title="Copy address">
+                            <span class="material-symbols-outlined">content_copy</span>
+                        </button>
                     </div>
-                    <span class="usdt-title" data-lang-ru="Поддержать (USDT TRC20):" data-lang-en="Support (USDT TRC20):">Поддержать (USDT TRC20):</span>
-                    <code class="usdt-address" id="usdt-address">TAZrs2kc58Em85Kuynu3wq5c3K7VDVy3Zd</code>
-                    <button class="md3-icon-button" id="copy-usdt-btn" aria-label="Copy address" title="Copy address">
-                        <span class="material-symbols-outlined">content_copy</span>
-                    </button>
-                </div>
+                </m3e-card>
 
             </div>
         </section>
@@ -151,6 +161,18 @@
     </footer>
 
     <script src="/js/core.js"></script>
+    <script>
+        function initializePortfolioMorphingShape() {
+            const shapeEl = document.getElementById('portfolio-morphing-shape');
+            if (!shapeEl) return;
+            const shapes = ['gem', 'diamond', 'hexagon', 'puffy-diamond', 'burst', 'flower', 'very-sunny'];
+            let idx = 0;
+            setInterval(() => {
+                shapeEl.setAttribute('name', shapes[idx % shapes.length]);
+                idx++;
+            }, 3500);
+        }
+    </script>
     <script src="/js/portfolio.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -161,6 +183,7 @@
             initializeLanguage();
             initializeGifTheme();
             initializeScrollAndLayout();
+            initializePortfolioMorphingShape();
             initializeUSDT();
             initializeVideoModal();
             loadPortfolio();

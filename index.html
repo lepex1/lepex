@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@m3e/web@2.5.14/dist/all.min.js"></script>
     <title>lepex</title>
     <link rel="stylesheet" href="/fonts/satoshi.css">
     <link rel="stylesheet" href="css/themes.css">
@@ -39,9 +40,12 @@
     <main class="md3-main-content">
         <div class="md3-bento-grid">
 
+            <!-- Decorative morphing shape background -->
+            <m3e-shape id="morphing-shape" class="decorative-shape" name="heart"></m3e-shape>
+
             <!-- Discord Profile -->
-            <div class="md3-bento-card md3-bento-card--full reveal-card" id="discordCard">
-                <div class="md3-discord">
+            <m3e-card variant="filled" class="discord-card reveal-card" id="discordCard">
+                <div slot="content" class="md3-discord">
                     <div class="md3-discord__header">
                         <div class="md3-discord__avatar">
                             <img src="images/avatar-placeholder.svg" alt="discord avatar" id="discordAvatar" onerror="this.src='images/avatar-placeholder.svg'">
@@ -59,25 +63,48 @@
                         <div class="md3-discord__activity-skeleton" data-lang-ru="Загрузка..." data-lang-en="Loading...">Loading...</div>
                     </div>
                 </div>
-            </div>
+            </m3e-card>
 
             <!-- Links -->
-            <div class="md3-layout-grid">
-                <a href="/portfolio" rel="noopener noreferrer" class="md3-grid-link">
+            <m3e-card variant="outlined" actionable href="/portfolio" class="grid-link-card reveal-card">
+                <div slot="content" class="grid-link-content">
                     <span class="material-symbols-outlined">subtitles</span>
                     <span data-lang-ru="Портфолио" data-lang-en="Portfolio">Portfolio</span>
-                </a>
-                <a href="http://steamcommunity.com/profiles/76561199493579774" target="_blank" rel="noopener noreferrer" class="md3-grid-link">
+                </div>
+            </m3e-card>
+            <m3e-card variant="outlined" actionable href="http://steamcommunity.com/profiles/76561199493579774" target="_blank" rel="noopener noreferrer" class="grid-link-card reveal-card">
+                <div slot="content" class="grid-link-content">
                     <span class="material-symbols-outlined">sports_esports</span>
                     <span>Steam</span>
-                </a>
-                <a href="https://github.com/lepex1" target="_blank" rel="noopener noreferrer" class="md3-grid-link">
+                </div>
+            </m3e-card>
+            <m3e-card variant="outlined" actionable href="https://github.com/lepex1" target="_blank" rel="noopener noreferrer" class="grid-link-card reveal-card">
+                <div slot="content" class="grid-link-content">
                     <span class="material-symbols-outlined">code</span>
                     <span>GitHub</span>
-                </a>
-            </div>
+                </div>
+            </m3e-card>
 
         </div>
+
+        <!-- Skills & Experience Timeline -->
+        <section class="stepper-section reveal-card">
+            <h2 class="stepper-title" data-lang-ru="Мой путь" data-lang-en="My Journey">Мой путь</h2>
+            <m3e-stepper orientation="vertical">
+                <m3e-step for="st1" selected icon="person">2024</m3e-step>
+                <m3e-step for="st2" icon="subtitles">2025</m3e-step>
+                <m3e-step for="st3" icon="rocket_launch">2026</m3e-step>
+                <m3e-step-panel id="st1">
+                    <p data-lang-ru="Начал изучать создание сайтов и вёрстку. Запустил первую версию своего профиля." data-lang-en="Started learning web development and design. Launched the first version of my profile.">Started learning web development and design. Launched the first version of my profile.</p>
+                </m3e-step-panel>
+                <m3e-step-panel id="st2">
+                    <p data-lang-ru="Занимался переводом и таймингом субтитров для зарубежного контента." data-lang-en="Worked on translating and timing subtitles for foreign content.">Worked on translating and timing subtitles for foreign content.</p>
+                </m3e-step-panel>
+                <m3e-step-panel id="st3">
+                    <p data-lang-ru="Продолжаю развиваться, изучаю новые технологии и работаю над интересными проектами." data-lang-en="Continuing to grow, learning new technologies, and working on exciting projects.">Continuing to grow, learning new technologies, and working on exciting projects.</p>
+                </m3e-step-panel>
+            </m3e-stepper>
+        </section>
     </main>
 
     <footer class="md3-footer">
@@ -86,6 +113,18 @@
     </footer>
 
     <script src="js/core.js"></script>
+    <script>
+        function initializeMorphingShape() {
+            const shapeEl = document.getElementById('morphing-shape');
+            if (!shapeEl) return;
+            const shapes = ['heart', 'flower', 'hexagon', 'gem', 'burst', 'sunny', 'ghost-ish', 'diamond', 'puffy', 'soft-boom'];
+            let idx = 0;
+            setInterval(() => {
+                shapeEl.setAttribute('name', shapes[idx % shapes.length]);
+                idx++;
+            }, 3000);
+        }
+    </script>
     <script src="js/discord.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -97,6 +136,7 @@
             initializeGifTheme();
             initializeDiscord();
             initializeScrollAndLayout();
+            initializeMorphingShape();
         });
     </script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
