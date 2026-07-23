@@ -12,6 +12,58 @@
     align-items: stretch;
 }
 
+.md3-bento-card {
+    position: relative;
+    background-color: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-extra-large);
+    padding: 2rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all var(--md-transition-duration) var(--md-transition-easing);
+}
+
+.md3-bento-card:hover {
+    background-color: var(--md-sys-color-surface-container-high);
+    border-color: var(--md-sys-color-primary);
+    box-shadow: 0 16px 32px var(--md-sys-color-shadow);
+    transform: translateY(-4px);
+}
+
+.md3-bento-card--full {
+    grid-column: 1 / -1;
+}
+
+.md3-bento-card--2col {
+    grid-column: span 2;
+}
+
+.md3-bento-card--link {
+    text-decoration: none;
+    color: inherit;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.md3-bento-card__icon {
+    font-size: 1.75rem;
+    color: var(--md-sys-color-primary);
+}
+
+.md3-bento-card__title {
+    flex: 1;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.md3-bento-card__chevron {
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 1.25rem;
+}
+
 .md3-discord {
     display: flex;
     flex-direction: column;
@@ -217,25 +269,39 @@
     transition: width 1s linear;
 }
 
-.grid-link-content {
+.md3-layout-grid {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.md3-grid-link {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
-    text-align: center;
-    padding: 0.5rem;
-}
-.grid-link-content .material-symbols-outlined {
-    font-size: 2rem;
-    color: var(--md-sys-color-primary);
-}
-.grid-link-content span:last-child {
-    font-size: 0.9rem;
+    padding: 1.5rem 1rem;
+    background: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-medium);
+    color: var(--md-sys-color-on-surface);
+    text-decoration: none;
+    font-size: 0.85rem;
     font-weight: 600;
+    transition: all var(--md-transition-duration) var(--md-transition-bounce);
 }
 
-.grid-link-card {
-    --m3e-card-container-color: var(--md-sys-color-surface-container);
+.md3-grid-link:hover {
+    background: var(--md-sys-color-surface-container-high);
+    border-color: var(--md-sys-color-primary);
+    transform: translateY(-2px);
+}
+
+.md3-grid-link .material-symbols-outlined {
+    font-size: 2rem;
+    color: var(--md-sys-color-primary);
 }
 
 .md3-gif-switcher {
@@ -312,51 +378,34 @@
     border-bottom: 1px solid var(--md-sys-color-outline-variant);
 }
 
-.decorative-shape {
-    position: fixed;
-    bottom: -100px;
-    right: -100px;
-    width: 450px;
-    height: 450px;
-    opacity: 0.06;
-    pointer-events: none;
-    z-index: 0;
-    color: var(--md-sys-color-primary);
-}
-
-.stepper-section {
-    margin-top: 4rem;
-    padding: 1rem 0;
-}
-
-.stepper-title {
-    font-size: 1.8rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    margin-bottom: 2rem;
-    color: var(--md-sys-color-on-background);
-}
-
-.discord-card {
-    grid-column: 1 / -1;
-}
-
 @media (max-width: 1024px) {
     .md3-bento-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .md3-bento-card--2col {
+        grid-column: span 2;
+    }
 }
 
 @media (max-width: 768px) {
-    .md3-main-content {
+.md3-main-content {
         padding: 1rem;
     }
     .md3-bento-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-    .discord-card {
-        grid-column: 1 / -1;
+    .md3-bento-card--2col {
+        grid-column: span 1;
+    }
+    .md3-bento-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .md3-layout-grid {
+        grid-template-columns: 1fr;
     }
 }
 
