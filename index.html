@@ -36,54 +36,56 @@
         </div>
     </header>
 
-    <main class="md3-main-content">
-        <div class="md3-bento-grid">
+    <div class="page-content">
+        <main class="md3-main-content">
+            <div class="md3-bento-grid">
 
-            <!-- Discord Profile -->
-            <div class="md3-bento-card md3-bento-card--full reveal-card" id="discordCard">
-                <div class="md3-discord">
-                    <div class="md3-discord__header">
-                        <div class="md3-discord__avatar">
-                            <img src="images/avatar-placeholder.svg" alt="discord avatar" id="discordAvatar" onerror="this.src='images/avatar-placeholder.svg'">
-                            <span class="md3-discord__status" id="discordStatus"></span>
-                        </div>
-                        <div class="md3-discord__info">
-                            <span class="md3-discord__username" id="discordUsername">lepex</span>
-                            <div class="md3-discord__location">
-                                <span class="material-symbols-outlined">location_on</span>
-                                <span data-lang-ru="Россия" data-lang-en="Russia">Russia</span>
+                <!-- Discord Profile -->
+                <div class="md3-bento-card md3-bento-card--full reveal-card" id="discordCard">
+                    <div class="md3-discord">
+                        <div class="md3-discord__header">
+                            <div class="md3-discord__avatar">
+                                <img src="images/avatar-placeholder.svg" alt="discord avatar" id="discordAvatar" onerror="this.src='images/avatar-placeholder.svg'">
+                                <span class="md3-discord__status" id="discordStatus"></span>
+                            </div>
+                            <div class="md3-discord__info">
+                                <span class="md3-discord__username" id="discordUsername">lepex</span>
+                                <div class="md3-discord__location">
+                                    <span class="material-symbols-outlined">location_on</span>
+                                    <span data-lang-ru="Россия" data-lang-en="Russia">Russia</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="md3-discord__activity" id="discordActivity">
-                        <div class="md3-discord__activity-skeleton" data-lang-ru="Загрузка..." data-lang-en="Loading...">Loading...</div>
+                        <div class="md3-discord__activity" id="discordActivity">
+                            <div class="md3-discord__activity-skeleton" data-lang-ru="Загрузка..." data-lang-en="Loading...">Loading...</div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Links -->
+                <div class="md3-layout-grid">
+                    <a href="/portfolio" rel="noopener noreferrer" class="md3-grid-link">
+                        <span class="material-symbols-outlined">subtitles</span>
+                        <span data-lang-ru="Портфолио" data-lang-en="Portfolio">Portfolio</span>
+                    </a>
+                    <a href="http://steamcommunity.com/profiles/76561199493579774" target="_blank" rel="noopener noreferrer" class="md3-grid-link">
+                        <span class="material-symbols-outlined">sports_esports</span>
+                        <span>Steam</span>
+                    </a>
+                    <a href="https://github.com/lepex1" target="_blank" rel="noopener noreferrer" class="md3-grid-link">
+                        <span class="material-symbols-outlined">code</span>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+
             </div>
+        </main>
 
-            <!-- Links -->
-            <div class="md3-layout-grid">
-                <a href="/portfolio" rel="noopener noreferrer" class="md3-grid-link">
-                    <span class="material-symbols-outlined">subtitles</span>
-                    <span data-lang-ru="Портфолио" data-lang-en="Portfolio">Portfolio</span>
-                </a>
-                <a href="http://steamcommunity.com/profiles/76561199493579774" target="_blank" rel="noopener noreferrer" class="md3-grid-link">
-                    <span class="material-symbols-outlined">sports_esports</span>
-                    <span>Steam</span>
-                </a>
-                <a href="https://github.com/lepex1" target="_blank" rel="noopener noreferrer" class="md3-grid-link">
-                    <span class="material-symbols-outlined">code</span>
-                    <span>GitHub</span>
-                </a>
-            </div>
-
-        </div>
-    </main>
-
-    <footer class="md3-footer">
-        <p class="footer-text">lepex &copy; <span id="year"></span></p>
-        <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
-    </footer>
+        <footer class="md3-footer">
+            <p class="footer-text">lepex &copy; <span id="year"></span></p>
+            <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
+        </footer>
+    </div>
 
     <script src="js/core.js"></script>
     <script src="js/discord.js"></script>
@@ -92,7 +94,7 @@
             setTimeout(() => {
                 document.body.classList.remove('loading');
                 document.body.classList.add('loaded');
-            }, 100);
+            }, 50);
             initializeLanguage();
             initializeGifTheme();
             initializeDiscord();
@@ -113,7 +115,7 @@
             if (url.pathname === location.pathname && url.search === location.search) return;
             e.preventDefault();
             document.body.classList.add('page-exit');
-            setTimeout(function() { location.href = a.href; }, 350);
+            setTimeout(function() { location.href = a.href; }, 150);
         });
     </script>
 </body>

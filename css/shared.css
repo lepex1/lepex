@@ -39,11 +39,11 @@ body {
     overflow-x: clip;
 }
 
-body.loading { opacity: 0; }
-body.loaded { animation: md3FadeIn 0.8s var(--md-transition-easing) forwards; }
+body.loading .page-content { opacity: 0; }
+body.loaded .page-content { animation: md3FadeIn 0.15s var(--md-transition-easing) forwards; }
 
-body.page-exit {
-    animation: md3FadeOut 0.35s var(--md-transition-easing) forwards;
+body.page-exit .page-content {
+    animation: md3FadeOut 0.15s var(--md-transition-easing) forwards;
     pointer-events: none;
 }
 
@@ -75,6 +75,7 @@ body.page-exit {
 }
 
 .md3-top-app-bar {
+    view-transition-name: header;
     position: sticky;
     top: 0;
     left: 0;
