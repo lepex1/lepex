@@ -101,22 +101,40 @@
     </script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     <script>
-        // Smooth page-exit for browsers without cross-document View Transitions (Firefox/Safari)
-        if (!('startViewTransition' in document)) {
-            document.addEventListener('click', (e) => {
-                if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-                const a = e.target.closest('a');
-                if (!a) return;
-                const href = a.getAttribute('href');
-                if (!href || href.startsWith('#') || href.startsWith('mailto:') || a.target === '_blank' || a.hasAttribute('download')) return;
-                const url = new URL(href, location.href);
-                if (url.origin !== location.origin) return;
-                if (url.pathname === location.pathname && url.search === location.search) return;
-                e.preventDefault();
+        // Smooth page transitions — works for clicks, back/forward, header arrow
+        (function() {
+            var DURATION = 350;
+
+            function exitPage() {
                 document.body.classList.add('page-exit');
-                setTimeout(() => { location.href = a.href; }, 350);
-            });
-        }
+                return new Promise(function(resolve) { setTimeout(resolve, DURATION); });
+            }
+
+            // Navigation API (Chrome) — intercepts push, traverse, replace
+            if (window.navigation) {
+                navigation.addEventListener('navigate', function(e) {
+                    if (!e.canIntercept || e.downloadRequested) return;
+                    var url = new URL(e.destination.url);
+                    if (url.origin !== location.origin) return;
+                    if (url.pathname === location.pathname && url.search === location.search) return;
+                    e.intercept({ handler: exitPage });
+                });
+            } else {
+                // Click handler (Firefox/Safari fallback) — covers link clicks & header arrow
+                document.addEventListener('click', function(e) {
+                    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+                    var a = e.target.closest('a');
+                    if (!a) return;
+                    var href = a.getAttribute('href');
+                    if (!href || href.startsWith('#') || href.startsWith('mailto:') || a.target === '_blank' || a.hasAttribute('download')) return;
+                    var url = new URL(href, location.href);
+                    if (url.origin !== location.origin) return;
+                    if (url.pathname === location.pathname && url.search === location.search) return;
+                    e.preventDefault();
+                    exitPage().then(function() { location.href = a.href; });
+                });
+            }
+        })();
     </script>
 </body>
 </html>
