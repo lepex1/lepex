@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="/css/shared.css">
     <link rel="stylesheet" href="/css/portfolio.css">
 </head>
-<body class="loading">
+<body>
 
     <!-- MD3 TOP APP BAR -->
     <header class="md3-top-app-bar">
@@ -46,8 +46,7 @@
     </header>
 
     <!-- MAIN CONTAINER -->
-    <div class="page-content">
-        <main class="md3-main-content">
+    <main class="md3-main-content">
             
             <!-- MD3 BENTO DASHBOARD -->
             <section class="md3-dashboard">
@@ -150,16 +149,11 @@
             <p class="footer-text">lepex &copy; <span id="year"></span></p>
             <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
         </footer>
-    </div>
 
     <script src="/js/core.js"></script>
     <script src="/js/portfolio.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                document.body.classList.remove('loading');
-                document.body.classList.add('loaded');
-            }, 50);
             initializeLanguage();
             initializeGifTheme();
             initializeScrollAndLayout();
@@ -174,8 +168,8 @@
             navigator.serviceWorker.register('/sw.js');
         }
     </script>
+    <!-- DISABLED: page transitions — see vault known-issues/navigation-transitions.md
     <script>
-        // Smooth page-exit on link clicks (all browsers)
         document.addEventListener('click', function(e) {
             if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
             var a = e.target.closest('a');
@@ -190,6 +184,7 @@
             setTimeout(function() { location.href = a.href; }, 150);
         });
     </script>
+    -->
 
     <!-- Video Lightbox Modal -->
     <div class="video-modal" id="videoModal" role="dialog" aria-modal="true">

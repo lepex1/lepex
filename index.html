@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body class="loading">
+<body>
     <header class="md3-top-app-bar">
         <div class="md3-top-bar-container">
             <div class="md3-top-bar-left">
@@ -36,8 +36,7 @@
         </div>
     </header>
 
-    <div class="page-content">
-        <main class="md3-main-content">
+    <main class="md3-main-content">
             <div class="md3-bento-grid">
 
                 <!-- Discord Profile -->
@@ -85,16 +84,11 @@
             <p class="footer-text">lepex &copy; <span id="year"></span></p>
             <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
         </footer>
-    </div>
 
     <script src="js/core.js"></script>
     <script src="js/discord.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                document.body.classList.remove('loading');
-                document.body.classList.add('loaded');
-            }, 50);
             initializeLanguage();
             initializeGifTheme();
             initializeDiscord();
@@ -102,8 +96,8 @@
         });
     </script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <!-- DISABLED: page transitions — see vault known-issues/navigation-transitions.md
     <script>
-        // Smooth page-exit on link clicks (all browsers)
         document.addEventListener('click', function(e) {
             if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
             var a = e.target.closest('a');
@@ -118,5 +112,6 @@
             setTimeout(function() { location.href = a.href; }, 150);
         });
     </script>
+    -->
 </body>
 </html>

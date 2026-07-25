@@ -39,31 +39,18 @@ body {
     overflow-x: clip;
 }
 
-body.loading .page-content { opacity: 0; }
-body.loaded .page-content { animation: md3FadeIn 0.15s var(--md-transition-easing) forwards; }
-
-body.page-exit .page-content {
-    animation: md3FadeOut 0.15s var(--md-transition-easing) forwards;
+/* DISABLED: page transitions — see vault known-issues/navigation-transitions.md
+body.loading { opacity: 0; }
+body.loaded { animation: md3FadeIn 0.8s var(--md-transition-easing) forwards; }
+body.page-exit {
+    animation: md3FadeOut 0.35s var(--md-transition-easing) forwards;
     pointer-events: none;
 }
-
-@keyframes md3FadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-@view-transition {
-    navigation: auto;
-}
-::view-transition-old(root),
-::view-transition-new(root) {
-    animation-duration: 0.4s;
-}
-
-@keyframes md3FadeIn {
-    from { opacity: 0; transform: scale(0.99); }
-    to { opacity: 1; transform: scale(1); }
-}
+@keyframes md3FadeOut { from { opacity: 1; } to { opacity: 0; } }
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.4s; }
+@keyframes md3FadeIn { from { opacity: 0; transform: scale(0.99); } to { opacity: 1; transform: scale(1); } }
+*/
 
 .i18n-container > .lang-ru,
 .i18n-container > .lang-en {
@@ -75,7 +62,6 @@ body.page-exit .page-content {
 }
 
 .md3-top-app-bar {
-    view-transition-name: header;
     position: sticky;
     top: 0;
     left: 0;
