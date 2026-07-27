@@ -136,7 +136,7 @@ async function loadPortfolio() {
     renderSkeletons(4);
 
     try {
-        const response = await fetch(`/portfolio/data/works.json?t=${Date.now()}`);
+        const response = await fetch(`/subtitles/data/works.json?t=${Date.now()}`);
         const data = await response.json();
         const worksArray = data.works || (Array.isArray(data) ? data : null);
 

@@ -3,8 +3,8 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/portfolio/config.yml",
-      "destination": "/portfolio/admin/config.yml"
+      "source": "/subtitles/config.yml",
+      "destination": "/subtitles/admin/config.yml"
     }
   ],
   "headers": [

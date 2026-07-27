@@ -1,29 +1,129 @@
 <!DOCTYPE html>
-<html lang="ru" data-gif-theme="storm">
+<html lang="en" data-gif-theme="storm">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Профессиональные субтитры на русском языке для видео. Качественный перевод и синхронизация.">
-    <meta name="keywords" content="субтитры, русский язык, перевод, видео, subtitles">
+    <meta name="description" content="lepex portfolio">
     <meta name="author" content="lepex">
     <base href="/portfolio/">
-
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
-
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-    <title>Субтитры на русском | Russian Subtitles</title>
+    <title>Portfolio — lepex</title>
     <link rel="stylesheet" href="/fonts/satoshi.css">
     <link rel="stylesheet" href="/css/themes.css">
     <link rel="stylesheet" href="/css/shared.css">
-    <link rel="stylesheet" href="/css/portfolio.css">
+    <style>
+        .md3-main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+        .hub-header {
+            margin-bottom: 2.5rem;
+        }
+        .hub-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: var(--md-sys-color-on-background);
+        }
+        .hub-header p {
+            color: var(--md-sys-color-on-surface-variant);
+            font-size: 1.05rem;
+            margin-top: 0.5rem;
+        }
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .hub-card {
+            background: var(--md-sys-color-surface-container);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            border-radius: var(--md-shape-corner-extra-large);
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all var(--md-transition-duration) var(--md-transition-bounce);
+            position: relative;
+            overflow: hidden;
+        }
+        .hub-card:hover {
+            background: var(--md-sys-color-surface-container-high);
+            border-color: var(--md-sys-color-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px var(--md-sys-color-shadow);
+        }
+        .hub-card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--md-shape-corner-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .hub-card-icon .material-symbols-outlined {
+            font-size: 1.75rem;
+            font-variation-settings: 'FILL' 1;
+            color: #fff;
+        }
+        .hub-card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+        .hub-card-desc {
+            font-size: 0.9rem;
+            color: var(--md-sys-color-on-surface-variant);
+            line-height: 1.5;
+        }
+        .hub-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+        .hub-card-tag {
+            background: var(--md-sys-color-surface-container-high);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--md-shape-corner-full);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+        .hub-card-arrow {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            color: var(--md-sys-color-on-surface-variant);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .hub-card:hover .hub-card-arrow {
+            opacity: 1;
+            transform: translate(-2px, -2px);
+        }
+        @media (max-width: 768px) {
+            .md3-main-content { padding: 1rem; }
+            .hub-header h1 { font-size: 1.8rem; }
+            .hub-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- MD3 TOP APP BAR -->
     <header class="md3-top-app-bar">
         <div class="md3-top-bar-container">
             <div class="md3-top-bar-left">
@@ -31,7 +131,7 @@
                     <span class="material-symbols-outlined">arrow_back</span>
                 </a>
                 <div class="md3-brand">
-                    <span class="material-symbols-outlined brand-icon">subtitles</span>
+                    <span class="material-symbols-outlined brand-icon">folder</span>
                     <span class="brand-name">lepex</span>
                     <img src="/assets/previews/gif-themes/storm.gif" class="gif-switcher" id="clickable-gif">
                 </div>
@@ -45,162 +145,55 @@
         </div>
     </header>
 
-    <!-- MAIN CONTAINER -->
     <main class="md3-main-content">
-            
-            <!-- MD3 BENTO DASHBOARD -->
-            <section class="md3-dashboard">
-                <div class="md3-bento-grid">
-                    
-                    <!-- UNIFIED HERO & GOAL CARD (2 Columns Wide) -->
-                    <div class="md3-bento-card hero-card reveal-card">
-                        <div class="hero-card-bg-gradient"></div>
-                        
-                        <!-- Subtitles translation visualization -->
-                        <div class="hero-visual-container" aria-hidden="true">
-                            <div class="video-player-mockup">
-                                <div class="mockup-window-header">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="mockup-cc-badge">CC</div>
-                                
-                                <div class="subtitle-text-track">
-                                    <div class="sub-bubble origin-bubble" data-lang-ru="Hello, friend!" data-lang-en="Привет, друг!">Hello, friend!</div>
-                                    <span class="sub-arrow">expand_more</span>
-                                    <div class="sub-bubble target-bubble" data-lang-ru="Привет, друг!" data-lang-en="Hello, friend!">Привет, друг!</div>
-                                </div>
-                                
-                                <div class="mockup-timeline">
-                                    <div class="timeline-played"></div>
-                                    <div class="timeline-handle"></div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="hub-header reveal-card">
+            <h1 data-lang-ru="Мои проекты" data-lang-en="My Projects">My Projects</h1>
+            <p data-lang-ru="Все мои работы в одном месте" data-lang-en="All my work in one place">All my work in one place</p>
+        </div>
+        <div class="hub-grid" id="hub-container"></div>
+    </main>
 
-                        <div class="hero-content">
-                            <span class="md3-badge" data-lang-ru="Любительский перевод" data-lang-en="Amateur Translation">Любительский перевод</span>
-                            <h1 class="hero-title" data-lang-ru="Субтитры<br>на русском." data-lang-en="Russian<br>Subtitles.">
-                                Субтитры<br>на русском.
-                            </h1>
-                            <p class="hero-subtitle" data-lang-ru="Я занимаюсь созданием любительских субтитров для видео. Моя главная цель — сделать качественный и интересный зарубежный контент полностью доступным для русскоязычной аудитории." data-lang-en="I create custom amateur subtitles for videos. My main goal is to make exciting and high-quality foreign content completely accessible to the Russian-speaking audience.">
-                                Я занимаюсь созданием любительских субтитров для видео. Моя главная цель — сделать качественный и интересный зарубежный контент полностью доступным для русскоязычной аудитории.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- CONTACT CARD (1 Column Wide) -->
-                    <div class="md3-bento-card info-card contact-bento-card reveal-card">
-                        <div class="card-icon-wrapper accent-color">
-                            <span class="material-symbols-outlined card-main-icon">alternate_email</span>
-                        </div>
-                        <h2 class="card-title" data-lang-ru="Связь напрямую" data-lang-en="Get in Touch">Связь напрямую</h2>
-                        <p class="card-text" data-lang-ru="Готовы к сотрудничеству или хотите задать вопрос? Напишите мне на почту в любое время." data-lang-en="Ready to collaborate or have questions? Send me an email anytime.">
-                            Готовы к сотрудничеству или хотите задать вопрос? Напишите мне на почту в любое время.
-                        </p>
-                        <a href="mailto:lepexmail@gmail.com" class="md3-filled-button contact-cta">
-                            <span class="material-symbols-outlined">mail</span>
-                            <span>lepexmail@gmail.com</span>
-                        </a>
-                    </div>
-
-                    <!-- FREE BANNER (2 Columns Wide) -->
-                    <div class="md3-bento-card info-card free-badge-card reveal-card">
-                        <div class="card-icon-wrapper secondary-color">
-                            <span class="material-symbols-outlined card-main-icon">volunteer_activism</span>
-                        </div>
-                        <h2 class="card-title highlight-text" data-lang-ru="Абсолютно бесплатно" data-lang-en="Absolutely Free">Абсолютно бесплатно</h2>
-                        <p class="card-text" data-lang-ru="В данный момент мои услуги бесплатны. Всё, что я прошу взамен, — указать авторство и ссылку на этот сайт в вашем видео." data-lang-en="Currently, my services are completely free. All I ask in return is that you credit me and include a link to this website in your video.">
-                            В данный момент мои услуги бесплатны. Всё, что я прошу взамен, — указать авторство и ссылку на этот сайт в вашем видео.
-                        </p>
-                    </div>
-
-                    <!-- SUPPORT CARD (1 Column Wide) -->
-                    <div class="md3-bento-card info-card support-card reveal-card">
-                        <div class="card-icon-wrapper">
-                            <span class="material-symbols-outlined card-main-icon">paid</span>
-                        </div>
-                        <span class="usdt-title" data-lang-ru="Поддержать (USDT TRC20):" data-lang-en="Support (USDT TRC20):">Поддержать (USDT TRC20):</span>
-                        <code class="usdt-address" id="usdt-address">TAZrs2kc58Em85Kuynu3wq5c3K7VDVy3Zd</code>
-                        <button class="md3-icon-button" id="copy-usdt-btn" aria-label="Copy address" title="Copy address">
-                            <span class="material-symbols-outlined">content_copy</span>
-                        </button>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- PORTFOLIO SECTION -->
-            <section class="md3-portfolio-section" id="portfolio">
-                <div class="portfolio-section-header reveal-card">
-                    <span class="material-symbols-outlined header-icon">grid_view</span>
-                    <h2 data-lang-ru="Мои работы" data-lang-en="My Works">Мои работы</h2>
-                </div>
-                
-                <!-- MD3 Dynamic Grid -->
-                <div class="md3-cards-grid" id="portfolio-container"></div>
-            </section>
-
-        </main>
-
-        <!-- FOOTER -->
-        <footer class="md3-footer">
-            <p class="footer-text">lepex &copy; <span id="year"></span></p>
-            <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
-        </footer>
+    <footer class="md3-footer">
+        <p class="footer-text">lepex &copy; <span id="year"></span></p>
+    </footer>
 
     <script src="/js/core.js"></script>
-    <script src="/js/portfolio.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             initializeLanguage();
             initializeGifTheme();
             initializeScrollAndLayout();
-            initializeUSDT();
-            initializeVideoModal();
-            loadPortfolio();
+            loadHub();
         });
-    </script>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js');
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        async function loadHub() {
+            const container = document.getElementById('hub-container');
+            try {
+                const res = await fetch('/portfolio/data/projects.json');
+                const projects = await res.json();
+                container.innerHTML = projects.map(p => {
+                    const title = currentLanguage === 'ru' ? p.titleRu : p.title;
+                    const desc = currentLanguage === 'ru' ? p.descRu : p.desc;
+                    const tags = (p.tags || []).map(t => `<span class="hub-card-tag">${t}</span>`).join('');
+                    return `
+                        <a href="${p.link}" class="hub-card reveal-card">
+                            <div class="hub-card-icon" style="background:${p.color}">
+                                <span class="material-symbols-outlined">${p.icon}</span>
+                            </div>
+                            <div class="hub-card-title">${title}</div>
+                            <div class="hub-card-desc">${desc}</div>
+                            ${tags ? `<div class="hub-card-tags">${tags}</div>` : ''}
+                            <span class="material-symbols-outlined hub-card-arrow">arrow_outward</span>
+                        </a>
+                    `;
+                }).join('');
+                const observer = new IntersectionObserver(e => e.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in-view'); } }), {threshold:0.05});
+                container.querySelectorAll('.reveal-card').forEach(c => observer.observe(c));
+            } catch(e) {
+                container.innerHTML = '<p style="color:var(--md-sys-color-error)">Failed to load projects</p>';
+            }
         }
     </script>
-    <!-- DISABLED: page transitions — see vault known-issues/navigation-transitions.md
-    <script>
-        document.addEventListener('click', function(e) {
-            if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-            var a = e.target.closest('a');
-            if (!a) return;
-            var href = a.getAttribute('href');
-            if (!href || href.startsWith('#') || href.startsWith('mailto:') || a.target === '_blank' || a.hasAttribute('download')) return;
-            var url = new URL(href, location.href);
-            if (url.origin !== location.origin) return;
-            if (url.pathname === location.pathname && url.search === location.search) return;
-            e.preventDefault();
-            document.body.classList.add('page-exit');
-            setTimeout(function() { location.href = a.href; }, 150);
-        });
-    </script>
-    -->
-
-    <!-- Video Lightbox Modal -->
-    <div class="video-modal" id="videoModal" role="dialog" aria-modal="true">
-        <div class="video-modal-backdrop"></div>
-        <div class="video-modal-content">
-            <div class="video-modal-header">
-                <button class="video-modal-close md3-icon-button" aria-label="Close">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-                <a class="video-modal-open-btn md3-pill-button" target="_blank" rel="noopener noreferrer">
-                    <span class="material-symbols-outlined">open_in_new</span>
-                    <span data-lang-ru="Открыть на YouTube" data-lang-en="Open on YouTube">Open on YouTube</span>
-                </a>
-            </div>
-            <div class="video-modal-frame-container"></div>
-        </div>
-    </div>
 </body>
 </html>

@@ -13,6 +13,7 @@ export default defineConfig({
         { src: "favicon/*", dest: "." },
         { src: "assets/**/*", dest: "." },
         { src: "sw.js", dest: "." },
+        { src: "subtitles/**/*", dest: "." },
         { src: "portfolio/**/*", dest: "." },
         { src: "cassie/**/*", dest: "." },
         { src: "gradient-text/**/*", dest: "." },

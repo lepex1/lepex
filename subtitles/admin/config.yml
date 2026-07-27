@@ -5,8 +5,8 @@ backend:
   base_url: https://lepex.vercel.app
   auth_endpoint: /api/auth
 
-media_folder: "portfolio/assets/previews/portfolio"
-public_folder: "assets/previews/portfolio"
+media_folder: "subtitles/assets/previews/subtitles"
+public_folder: "assets/previews/subtitles"
 
 collections:
   - name: "content"
@@ -17,7 +17,7 @@ collections:
     files:
       - label: "Мои работы"
         name: "works_list"
-        file: "portfolio/data/works.json"
+        file: "subtitles/data/works.json"
         fields:
           - label: "Список работ"
             name: "works"
