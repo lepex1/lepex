@@ -39,7 +39,6 @@ body {
     overflow-x: clip;
 }
 
-/* DISABLED: page transitions — see vault known-issues/navigation-transitions.md
 body.loading { opacity: 0; }
 body.loaded { animation: md3FadeIn 0.8s var(--md-transition-easing) forwards; }
 body.page-exit {
@@ -47,10 +46,10 @@ body.page-exit {
     pointer-events: none;
 }
 @keyframes md3FadeOut { from { opacity: 1; } to { opacity: 0; } }
-@view-transition { navigation: auto; }
-::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.4s; }
 @keyframes md3FadeIn { from { opacity: 0; transform: scale(0.99); } to { opacity: 1; transform: scale(1); } }
-*/
+
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.35s; }
 
 .i18n-container > .lang-ru,
 .i18n-container > .lang-en {
@@ -73,6 +72,7 @@ body.page-exit {
     -webkit-backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
+    view-transition-name: header;
     transition: background-color 0.3s var(--md-transition-easing),
                 border-color 0.3s var(--md-transition-easing);
     border-bottom: 1px solid var(--md-sys-color-outline-variant);

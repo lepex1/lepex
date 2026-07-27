@@ -193,5 +193,20 @@
             }
         }
     </script>
+     <script>
+        document.addEventListener('click', function(e) {
+            if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+            var a = e.target.closest('a');
+            if (!a) return;
+            var href = a.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('mailto:') || a.target === '_blank' || a.hasAttribute('download')) return;
+            var url = new URL(href, location.href);
+            if (url.origin !== location.origin) return;
+            if (url.pathname === location.pathname && url.search === location.search) return;
+            e.preventDefault();
+            document.body.classList.add('page-exit');
+            setTimeout(function() { location.href = a.href; }, 350);
+        });
+    </script>
 </body>
 </html>
