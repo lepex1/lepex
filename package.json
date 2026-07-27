@@ -9,6 +9,9 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "ioredis": "^5.4.1"
+  },
   "devDependencies": {
     "vite": "^6.3.0",
     "vite-plugin-static-copy": "^4.1.1"
