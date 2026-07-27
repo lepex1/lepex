@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru" data-gif-theme="storm">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CASSIE — База модулей">
+
+    <meta name="theme-color" id="theme-color-meta" content="#141218">
+
+    <base href="/cassie/">
+
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <title>CASSIE — База модулей</title>
+    <link rel="stylesheet" href="/fonts/satoshi.css">
+    <link rel="stylesheet" href="/css/themes.css">
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="css/cassie.css">
+</head>
+<body>
+
+    <header class="md3-top-app-bar">
+        <div class="md3-top-bar-container">
+            <div class="md3-top-bar-left">
+                <a href="/" class="md3-back-link" aria-label="Home" title="Home">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </a>
+                <div class="md3-brand">
+                    <span class="material-symbols-outlined brand-icon">smart_toy</span>
+                    <span class="brand-name">cassie</span>
+                    <img src="/assets/previews/gif-themes/storm.gif" class="gif-switcher" id="clickable-gif" alt="theme switcher">
+                </div>
+            </div>
+            <div class="md3-app-bar-actions">
+                <button class="md3-pill-button" id="lang-toggle" aria-label="Toggle language">
+                    <span class="material-symbols-outlined btn-icon-leading">translate</span>
+                    <span class="lang-text">EN</span>
+                </button>
+                <button class="md3-icon-button" id="viewToggle" title="Сменить компактность" aria-label="Сменить вид">
+                    <span class="material-symbols-outlined">grid_view</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="cassie-app" data-view="comfortable">
+
+        <section class="search-container">
+            <div class="search-bento-card">
+                <span class="material-symbols-outlined search-icon" aria-hidden="true">search</span>
+                <input type="text" id="searchInput" class="search-input" placeholder="Поиск по модулям, командам, тексту...">
+            </div>
+        </section>
+
+        <nav class="section-tabs" id="sectionTabs"></nav>
+
+        <main id="content-area">
+            <div class="loading-state">Загрузка данных...</div>
+        </main>
+
+    </div>
+
+    <footer class="md3-footer">
+        <p class="footer-text"><a href="https://lepex.vercel.app/" target="_blank" rel="noopener">lepex</a> &copy; <span id="year"></span></p>
+        <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
+        <p class="footer-stats">Информация о клиенте, IP, копируемых командах собирается для статистики</p>
+    </footer>
+
+    <script src="/js/core.js"></script>
+    <script src="js/cassie.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeLanguage();
+            initializeGifTheme();
+            initCassie();
+        });
+    </script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

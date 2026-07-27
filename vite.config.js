@@ -14,6 +14,7 @@ export default defineConfig({
         { src: "assets/**/*", dest: "." },
         { src: "sw.js", dest: "." },
         { src: "portfolio/**/*", dest: "." },
+        { src: "cassie/**/*", dest: "." },
       ],
     }),
   ],
