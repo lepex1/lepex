@@ -394,6 +394,20 @@ function setupCassieListeners() {
         });
     }
 
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.md3-btn--copy').forEach(btn => {
+                    const isCopied = btn.classList.contains('copied');
+                    btn.lastChild.textContent = currentLanguage === 'en'
+                        ? (isCopied ? 'Copied' : 'Copy')
+                        : (isCopied ? 'Скопировано' : 'Копировать');
+                });
+            }, 0);
+        });
+    }
+
     const origClick = initializeGifTheme;
     const gifElement = document.getElementById('clickable-gif');
     if (gifElement) {
