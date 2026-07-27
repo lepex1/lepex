@@ -1,0 +1,225 @@
+.md3-main-content {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+.gradient-editor-card {
+    background-color: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-extra-large);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: background-color var(--md-transition-duration) var(--md-transition-bounce),
+                border-color var(--md-transition-duration) var(--md-transition-bounce),
+                box-shadow var(--md-transition-duration) var(--md-transition-bounce),
+                transform var(--md-transition-duration) var(--md-transition-bounce);
+}
+
+.gradient-editor-card:hover {
+    background-color: var(--md-sys-color-surface-container-high);
+    border-color: var(--md-sys-color-primary);
+    box-shadow: 0 16px 32px var(--md-sys-color-shadow);
+    transform: translateY(-4px) scale(1.01);
+}
+
+.gradient-display-card {
+    background-color: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-extra-large);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-height: 400px;
+    justify-content: center;
+}
+
+.card-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--md-shape-corner-medium);
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform var(--md-transition-duration) var(--md-transition-bounce);
+}
+
+.gradient-editor-card:hover .card-icon-wrapper {
+    transform: rotate(8deg) scale(1.08);
+}
+
+.card-main-icon {
+    font-size: 1.75rem;
+    font-variation-settings: 'FILL' 1;
+}
+
+.card-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
+.gradient-field-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--md-sys-color-on-surface-variant);
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    font-family: 'Outfit', sans-serif;
+}
+
+.gradient-textarea {
+    width: 100%;
+    background: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-medium);
+    padding: 1rem;
+    resize: none;
+    font-size: 1rem;
+    font-family: 'Satoshi', 'Plus Jakarta Sans', 'Outfit', sans-serif;
+    outline: none;
+    transition: border-color var(--md-transition-duration) var(--md-transition-easing),
+                box-shadow var(--md-transition-duration) var(--md-transition-bounce);
+}
+
+.gradient-textarea:focus {
+    border-color: var(--md-sys-color-primary);
+    box-shadow: 0 0 0 3px rgba(208, 188, 255, 0.15);
+}
+
+.gradient-textarea::placeholder {
+    color: var(--md-sys-color-on-surface-variant);
+    opacity: 0.6;
+}
+
+.gradient-range {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--md-sys-color-surface-container-high);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-full);
+    outline: none;
+    cursor: pointer;
+}
+
+.gradient-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--md-sys-color-primary);
+    cursor: pointer;
+    border: 2px solid var(--md-sys-color-surface-container);
+    transition: transform 0.2s ease;
+}
+
+.gradient-range::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.gradient-range::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--md-sys-color-primary);
+    cursor: pointer;
+    border: 2px solid var(--md-sys-color-surface-container);
+}
+
+.gradient-presets {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.gradient-btn {
+    height: 44px;
+    border-radius: var(--md-shape-corner-medium);
+    cursor: pointer;
+    border: 2px solid var(--md-sys-color-outline-variant);
+    transition: transform var(--md-transition-duration) var(--md-transition-bounce),
+                border-color var(--md-transition-duration) var(--md-transition-bounce),
+                box-shadow var(--md-transition-duration) var(--md-transition-bounce);
+}
+
+.gradient-btn:hover {
+    transform: translateY(-2px) scale(1.04);
+    border-color: var(--md-sys-color-primary);
+    box-shadow: 0 4px 12px var(--md-sys-color-shadow);
+}
+
+.gradient-btn.active {
+    border-color: var(--md-sys-color-primary);
+    transform: scale(1.08);
+    box-shadow: 0 0 0 3px rgba(208, 188, 255, 0.2);
+}
+
+.gradient-name {
+    text-align: center;
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    text-transform: capitalize;
+}
+
+.gradient-output {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 200px;
+    padding: 2rem;
+}
+
+#outputText {
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 6s ease infinite;
+    text-shadow: 0 0 60px rgba(255,255,255,0.2);
+    word-break: break-word;
+    max-width: 100%;
+    line-height: 1.2;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .md3-main-content {
+        padding: 1rem;
+    }
+    .gradient-editor-card,
+    .gradient-display-card {
+        padding: 1.25rem;
+        border-radius: var(--md-shape-corner-medium);
+    }
+    .gradient-presets {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        gap: 8px;
+    }
+    .gradient-btn {
+        height: 36px;
+    }
+}
