@@ -198,6 +198,19 @@ function fallbackCopy(text, onSuccess) {
     document.body.removeChild(ta);
 }
 
+function tSection(name) {
+    const map = {
+        'Стандартные': 'Standard',
+        'Другие': 'Other',
+    };
+    if (currentLanguage === 'en') {
+        for (const [ru, en] of Object.entries(map)) {
+            if (name.includes(ru)) return name.replace(ru, en);
+        }
+    }
+    return name;
+}
+
 function buildSectionTabs() {
     const container = document.getElementById("sectionTabs");
     container.innerHTML = "";
@@ -215,7 +228,7 @@ function buildSectionTabs() {
             activeFound = true;
         }
         const label = section.replace(/^[^\s]+\s/, "");
-        btn.textContent = label;
+        btn.textContent = tSection(label);
         if (i > 0) {
             const badge = document.createElement("span");
             badge.className = "tab-badge";
@@ -275,14 +288,14 @@ function render() {
         const isNew = !section.startsWith("📟 Стандартные");
         if (isNew) {
             const span = document.createElement("span");
-            span.textContent = section;
+            span.textContent = tSection(section);
             sectionHeader.appendChild(span);
             const badge = document.createElement("span");
             badge.className = "tab-badge section-badge";
             badge.textContent = "NEW";
             sectionHeader.appendChild(badge);
         } else {
-            sectionHeader.textContent = section;
+            sectionHeader.textContent = tSection(section);
         }
         sectionEl.appendChild(sectionHeader);
 
@@ -398,6 +411,8 @@ function setupCassieListeners() {
     if (langToggle) {
         langToggle.addEventListener('click', () => {
             setTimeout(() => {
+                buildSectionTabs();
+                render();
                 document.querySelectorAll('.md3-btn--copy').forEach(btn => {
                     const isCopied = btn.classList.contains('copied');
                     btn.lastChild.textContent = currentLanguage === 'en'
