@@ -4,8 +4,9 @@ let client = null;
 
 async function getClient() {
   if (client) return client;
-  if (!process.env.REDIS_URL) return null;
-  client = new Redis(process.env.REDIS_URL, {
+  const url = process.env.REDIS_URL || process.env.STORAGE_REDIS_URL || process.env.KV_URL;
+  if (!url) return null;
+  client = new Redis(url, {
     maxRetriesPerRequest: 1,
     retryStrategy: () => null,
     enableReadyCheck: false,
