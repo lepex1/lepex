@@ -120,18 +120,6 @@
     display: inline;
 }
 
-.cassie-text-link {
-    color: var(--md-sys-color-primary);
-    text-decoration: none;
-    font-weight: 700;
-    border-bottom: 1px dashed var(--md-sys-color-primary);
-    transition: border-bottom-style 0.2s, opacity 0.2s, color 0.2s;
-}
-
-.cassie-text-link:hover {
-    border-bottom-style: solid;
-    opacity: 0.85;
-}
 
 .cassie-description-chips {
     display: flex;
