@@ -371,23 +371,73 @@
         padding: 16px 16px 64px;
     }
 .cassie-description {
-    text-align: center;
+    max-width: 600px;
+    margin: 2rem auto 1.5rem auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    background-color: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-extra-large);
+    transition: all var(--md-transition-duration) var(--md-transition-easing);
+}
+
+.cassie-description:hover {
+    background-color: var(--md-sys-color-surface-container-high);
+    border-color: var(--md-sys-color-primary);
+    box-shadow: 0 16px 32px var(--md-sys-color-shadow);
+    transform: translateY(-4px);
+}
+
+.cassie-description-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+}
+
+.cassie-description .card-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: var(--md-shape-corner-medium);
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform var(--md-transition-duration) var(--md-transition-bounce);
+}
+
+.cassie-description:hover .card-icon-wrapper {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.cassie-description .card-main-icon {
+    font-size: 1.5rem;
+    font-variation-settings: 'FILL' 1;
+}
+
+.cassie-description-text {
     font-size: 0.95rem;
     line-height: 1.6;
     color: var(--md-sys-color-on-surface-variant);
-    max-width: 600px;
-    margin: 2rem auto 2rem auto;
-    padding: 0 0.5rem;
+    padding-top: 0.1rem;
 }
 
-.cassie-description a {
+.cassie-description-text a {
     color: var(--md-sys-color-primary);
     text-decoration: none;
     font-weight: 600;
 }
 
-.cassie-description a:hover {
+.cassie-description-text a:hover {
     text-decoration: underline;
+}
+
+.cassie-description-text.i18n-container > .lang-ru,
+.cassie-description-text.i18n-container > .lang-en {
+    text-align: inherit;
 }
 
 .search-container {
