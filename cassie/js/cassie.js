@@ -339,7 +339,7 @@ function render() {
                 copyIconSpan.className = "material-symbols-outlined";
                 copyIconSpan.textContent = "content_copy";
 
-                const copyLabel = document.createTextNode("Копировать");
+                const copyLabel = document.createTextNode(currentLanguage === 'en' ? 'Copy' : 'Копировать');
                 copyBtn.appendChild(copyIconSpan);
                 copyBtn.appendChild(copyLabel);
 
@@ -347,7 +347,7 @@ function render() {
                     copyText(item.command, () => {
                         copyBtn.classList.add("copied");
                         copyIconSpan.textContent = "done";
-                        copyBtn.lastChild.textContent = "Скопировано";
+                        copyBtn.lastChild.textContent = currentLanguage === 'en' ? 'Copied' : 'Скопировано';
                         setTimeout(() => {
                             copyBtn.classList.remove("copied");
                             copyIconSpan.textContent = "content_copy";
