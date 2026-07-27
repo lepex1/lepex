@@ -97,6 +97,7 @@
         });
     </script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <!-- DISABLED: page transitions — see vault known-issues/navigation-transitions.md
     <script>
         document.addEventListener('click', function(e) {
             if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -109,8 +110,9 @@
             if (url.pathname === location.pathname && url.search === location.search) return;
             e.preventDefault();
             document.body.classList.add('page-exit');
-            setTimeout(function() { location.href = a.href; }, 350);
+            setTimeout(function() { location.href = a.href; }, 150);
         });
     </script>
+    -->
 </body>
 </html>
