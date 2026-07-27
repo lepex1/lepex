@@ -370,7 +370,27 @@
     .cassie-app {
         padding: 16px 16px 64px;
     }
-    .search-container {
+.cassie-description {
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--md-sys-color-on-surface-variant);
+    max-width: 600px;
+    margin: 2rem auto 2rem auto;
+    padding: 0 0.5rem;
+}
+
+.cassie-description a {
+    color: var(--md-sys-color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cassie-description a:hover {
+    text-decoration: underline;
+}
+
+.search-container {
         gap: 1rem;
         margin-top: 1.5rem;
     }
