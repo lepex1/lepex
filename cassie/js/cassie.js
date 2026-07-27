@@ -23,6 +23,9 @@ function updateThemeColorMeta(themeName) {
 function initCassie() {
     const contentArea = document.getElementById("content-area");
 
+    const savedSection = localStorage.getItem("sectionFilter");
+    if (savedSection) sectionFilter = savedSection;
+
     const savedView = localStorage.getItem("viewMode") || "comfortable";
     document.querySelector(".cassie-app").setAttribute("data-view", savedView);
     const viewToggle = document.getElementById("viewToggle");
@@ -201,11 +204,16 @@ function buildSectionTabs() {
 
     const sections = [...new Set(globalCassieData.map(i => i.section).filter(Boolean))];
 
+    let activeFound = false;
+
     sections.forEach((section, i) => {
         const btn = document.createElement("button");
         btn.className = "section-tab";
-        if (!sectionFilter) sectionFilter = section;
-        if (section === sectionFilter) btn.classList.add("active");
+        if (!sectionFilter && i === 0) sectionFilter = section;
+        if (section === sectionFilter) {
+            btn.classList.add("active");
+            activeFound = true;
+        }
         const label = section.replace(/^[^\s]+\s/, "");
         btn.textContent = label;
         if (i > 0) {
@@ -216,12 +224,19 @@ function buildSectionTabs() {
         }
         btn.addEventListener("click", () => {
             sectionFilter = section;
+            localStorage.setItem("sectionFilter", section);
             document.querySelectorAll(".section-tab").forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
             render();
         });
         container.appendChild(btn);
     });
+
+    if (!activeFound && sections.length > 0) {
+        sectionFilter = sections[0];
+        localStorage.setItem("sectionFilter", sections[0]);
+        container.firstChild.classList.add("active");
+    }
 }
 
 function render() {
