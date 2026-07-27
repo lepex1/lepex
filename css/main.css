@@ -106,7 +106,6 @@
 
 .md3-discord__status.online {
     background: #43b581;
-    animation: statusPulse 2s infinite;
 }
 .md3-discord__status.idle      { background: #faa61a; }
 .md3-discord__status.dnd       { background: #f04747; }
