@@ -74,7 +74,7 @@
         .hub-card-icon .material-symbols-outlined {
             font-size: 1.75rem;
             font-variation-settings: 'FILL' 1;
-            color: #fff;
+            color: rgba(0,0,0,0.7);
         }
         .hub-card-title {
             font-family: 'Outfit', sans-serif;
@@ -175,7 +175,6 @@
                 container.innerHTML = projects.map(p => {
                     const title = currentLanguage === 'ru' ? p.titleRu : p.title;
                     const desc = currentLanguage === 'ru' ? p.descRu : p.desc;
-                    const tags = (p.tags || []).map(t => `<span class="hub-card-tag">${t}</span>`).join('');
                     return `
                         <a href="${p.link}" class="hub-card reveal-card">
                             <div class="hub-card-icon" style="background:${p.color}">
@@ -183,7 +182,6 @@
                             </div>
                             <div class="hub-card-title">${title}</div>
                             <div class="hub-card-desc">${desc}</div>
-                            ${tags ? `<div class="hub-card-tags">${tags}</div>` : ''}
                             <span class="material-symbols-outlined hub-card-arrow">arrow_outward</span>
                         </a>
                     `;

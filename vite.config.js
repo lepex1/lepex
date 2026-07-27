@@ -13,10 +13,7 @@ export default defineConfig({
         { src: "favicon/*", dest: "." },
         { src: "assets/**/*", dest: "." },
         { src: "sw.js", dest: "." },
-        { src: "subtitles/**/*", dest: "." },
         { src: "portfolio/**/*", dest: "." },
-        { src: "cassie/**/*", dest: "." },
-        { src: "gradient-text/**/*", dest: "." },
       ],
     }),
   ],
@@ -24,7 +21,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "index.html",
-        gradient: "gradient-text/index.html",
+        gradient: "portfolio/gradient-text/index.html",
       },
     },
   },

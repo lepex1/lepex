@@ -136,7 +136,7 @@ async function loadPortfolio() {
     renderSkeletons(4);
 
     try {
-        const response = await fetch(`/subtitles/data/works.json?t=${Date.now()}`);
+        const response = await fetch(`/portfolio/subtitles/data/works.json?t=${Date.now()}`);
         const data = await response.json();
         const worksArray = data.works || (Array.isArray(data) ? data : null);
 
@@ -144,7 +144,7 @@ async function loadPortfolio() {
 
         container.innerHTML = worksArray.map((work, index) => {
             const safeLink = sanitizeUrl(work.link);
-            const safeImage = sanitizeUrl(work.image) || '/assets/previews/portfolio/placeholder.svg';
+            const safeImage = sanitizeUrl(work.image) || '/portfolio/subtitles/assets/previews/portfolio/placeholder.svg';
             const safeTitle = escapeHtml(work.title);
             const safeAuthor = escapeHtml(work.author);
             const videoId = getYoutubeId(work.link);

@@ -7,7 +7,7 @@
     "titleRu": "Браузер команд CASSIE",
     "desc": "Searchable command browser for C.A.S.S.I.E. on SCP:SL FoxGame",
     "descRu": "Поиск команд C.A.S.S.I.E. для SCP:SL FoxGame",
-    "link": "/cassie",
+    "link": "/portfolio/cassie",
     "tags": [
       "SCP:SL",
       "FoxGame"
@@ -21,7 +21,7 @@
     "titleRu": "Русские субтитры",
     "desc": "Amateur subtitling service for foreign videos",
     "descRu": "Создание любительских субтитров для видео",
-    "link": "/subtitles",
+    "link": "/portfolio/subtitles",
     "tags": [
       "Subtitles",
       "Translation"
@@ -35,7 +35,7 @@
     "titleRu": "Генератор градиентного текста",
     "desc": "Create animated gradient text with 8 color presets",
     "descRu": "Создание анимированного градиентного текста",
-    "link": "/gradient-text",
+    "link": "/portfolio/gradient-text",
     "tags": [
       "Tool",
       "CSS"
