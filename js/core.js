@@ -137,7 +137,8 @@ function escapeHtml(str) {
 }
 
 function initializeScrollAndLayout() {
-    const revealElements = document.querySelectorAll('.reveal-card');
+    const revealElements = document.querySelectorAll('.reveal-card:not(.in-view)');
+    if (revealElements.length === 0) return;
 
     const cardObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
