@@ -227,7 +227,7 @@
     </div>
   </header>
 
-  <div class="page-content loading">
+  <div class="page-content">
     <div class="stats-app" id="statsApp">
       <div id="statsContent" class="hidden">
         <div class="stats-grid" id="summaryCards"></div>
@@ -262,7 +262,6 @@
     </div>
   </div>
 
-  <script>var pc = document.querySelector('.page-content'); if (pc) { pc.classList.remove('loading'); pc.classList.add('loaded'); }</script>
   <script src="/js/core.js"></script>
   <script>
     document.addEventListener('click', function(e) {
@@ -276,7 +275,7 @@
       if (url.pathname === location.pathname && url.search === location.search) return;
       e.preventDefault();
       var pc = document.querySelector('.page-content'); if (pc) pc.classList.add('page-exit');
-      setTimeout(function() { location.href = a.href; }, 150);
+      setTimeout(function() { location.href = a.href; }, 120);
     });
   </script>
   <script>
