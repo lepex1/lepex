@@ -26,7 +26,6 @@
         });
         document.addEventListener('turbo:before-render', function(e) {
             e.preventDefault();
-            e.detail.newBody.querySelectorAll('.reveal-card').forEach(function(c) { c.classList.add('in-view'); });
             setTimeout(function() { e.detail.resume(); }, 60);
         });
     </script>
