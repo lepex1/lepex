@@ -24,6 +24,16 @@
     <link rel="stylesheet" href="/css/themes.css">
     <link rel="stylesheet" href="/css/shared.css">
     <link rel="stylesheet" href="/css/portfolio.css">
+    <script src="https://unpkg.com/@hotwired/turbo@8.0.12/dist/turbo.es2017-umd.js" crossorigin></script>
+    <script>
+        document.addEventListener('turbo:before-visit', function() {
+            var pc = document.querySelector('.page-content'); if (pc) pc.classList.add('page-exit');
+        });
+        document.addEventListener('turbo:before-render', function(e) {
+            e.preventDefault();
+            setTimeout(function() { e.detail.resume(); }, 60);
+        });
+    </script>
 </head>
 <body>
 
@@ -159,35 +169,18 @@
     <script src="/js/core.js"></script>
     <script src="/js/portfolio.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeLanguage();
-            initializeGifTheme();
-            initializeScrollAndLayout();
-            initializeUSDT();
-            initializeVideoModal();
-            loadPortfolio();
-        });
+        initializeLanguage();
+        initializeGifTheme();
+        initializeScrollAndLayout();
+        initializeUSDT();
+        initializeVideoModal();
+        loadPortfolio();
     </script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js');
         }
-    </script>
-    <script>
-        document.addEventListener('click', function(e) {
-            if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-            var a = e.target.closest('a');
-            if (!a) return;
-            var href = a.getAttribute('href');
-            if (!href || href.startsWith('#') || href.startsWith('mailto:') || a.target === '_blank' || a.hasAttribute('download')) return;
-            var url = new URL(href, location.href);
-            if (url.origin !== location.origin) return;
-            if (url.pathname === location.pathname && url.search === location.search) return;
-            e.preventDefault();
-            var pc = document.querySelector('.page-content'); if (pc) pc.classList.add('page-exit');
-            setTimeout(function() { location.href = a.href; }, 120);
-        });
     </script>
 
     <!-- Video Lightbox Modal -->

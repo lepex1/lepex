@@ -185,6 +185,16 @@
       .stats-app { padding: 16px 16px 64px; }
     }
   </style>
+  <script src="https://unpkg.com/@hotwired/turbo@8.0.12/dist/turbo.es2017-umd.js" crossorigin></script>
+  <script>
+    document.addEventListener('turbo:before-visit', function() {
+      var pc = document.querySelector('.page-content'); if (pc) pc.classList.add('page-exit');
+    });
+    document.addEventListener('turbo:before-render', function(e) {
+      e.preventDefault();
+      setTimeout(function() { e.detail.resume(); }, 60);
+    });
+  </script>
 </head>
 <body>
   <div id="loginOverlay" class="login-overlay">
@@ -263,21 +273,7 @@
   </div>
 
   <script src="/js/core.js"></script>
-  <script>
-    document.addEventListener('click', function(e) {
-      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      var a = e.target.closest('a');
-      if (!a) return;
-      var href = a.getAttribute('href');
-      if (!href || href.startsWith('#') || href.startsWith('mailto:') || a.target === '_blank' || a.hasAttribute('download')) return;
-      var url = new URL(href, location.href);
-      if (url.origin !== location.origin) return;
-      if (url.pathname === location.pathname && url.search === location.search) return;
-      e.preventDefault();
-      var pc = document.querySelector('.page-content'); if (pc) pc.classList.add('page-exit');
-      setTimeout(function() { location.href = a.href; }, 120);
-    });
-  </script>
+
   <script>
     function getCookie(name) {
       const m = document.cookie.match(new RegExp('(?:^|;\\s*)' + name + '=([^;]*)'));
@@ -401,7 +397,6 @@
       `).join('');
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
       initializeLanguage();
       initializeGifTheme();
 
@@ -428,7 +423,6 @@
           loadStats();
         }
       })();
-    });
   </script>
 </body>
 </html>
