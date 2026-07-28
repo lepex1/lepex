@@ -39,11 +39,6 @@ body {
     overflow-x: clip;
 }
 
-.page-content.page-exit {
-    animation: md3FadeOut 0.12s var(--md-transition-easing) forwards;
-    pointer-events: none;
-}
-@keyframes md3FadeOut { from { opacity: 1; } to { opacity: 0; } }
 
 .i18n-container > .lang-ru,
 .i18n-container > .lang-en {

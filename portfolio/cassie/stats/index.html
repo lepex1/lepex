@@ -264,21 +264,6 @@
 
   <script src="/js/core.js"></script>
   <script>
-    document.addEventListener('click', function(e) {
-      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      var a = e.target.closest('a');
-      if (!a) return;
-      var href = a.getAttribute('href');
-      if (!href || href.startsWith('#') || href.startsWith('mailto:') || a.target === '_blank' || a.hasAttribute('download')) return;
-      var url = new URL(href, location.href);
-      if (url.origin !== location.origin) return;
-      if (url.pathname === location.pathname && url.search === location.search) return;
-      e.preventDefault();
-      var pc = document.querySelector('.page-content'); if (pc) pc.classList.add('page-exit');
-      setTimeout(function() { location.href = a.href; }, 120);
-    });
-  </script>
-  <script>
     function getCookie(name) {
       const m = document.cookie.match(new RegExp('(?:^|;\\s*)' + name + '=([^;]*)'));
       return m ? m[1] : null;
