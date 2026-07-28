@@ -13,8 +13,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&family=Space+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" as="style">
+  <link rel="preload" href="/fonts/satoshi.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&family=Space+Mono&display=swap" as="style">
   <link rel="stylesheet" href="/css/themes.css">
   <link rel="stylesheet" href="/css/shared.css">
+  <link rel="stylesheet" href="/fonts/satoshi.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <style>
     .stats-grid {
@@ -185,12 +189,12 @@
   <div id="loginOverlay" class="login-overlay">
     <div class="login-card">
       <span class="material-symbols-outlined" style="font-size:3rem;color:var(--md-sys-color-primary);font-variation-settings:'FILL'1;">bar_chart</span>
-      <h1>Статистика CASSIE</h1>
-      <p>Войдите через GitHub для доступа</p>
+      <h1 data-lang-ru="Статистика CASSIE" data-lang-en="CASSIE Statistics">Статистика CASSIE</h1>
+      <p data-lang-ru="Войдите через GitHub для доступа" data-lang-en="Sign in with GitHub to access">Войдите через GitHub для доступа</p>
       <div id="loginError" class="login-error"></div>
       <a href="/api/stats/auth" class="github-btn">
         <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-        Войти через GitHub
+        <span data-lang-ru="Войти через GitHub" data-lang-en="Sign in with GitHub">Войти через GitHub</span>
       </a>
     </div>
   </div>
@@ -203,14 +207,20 @@
         </a>
         <div class="md3-brand">
           <span class="material-symbols-outlined brand-icon">bar_chart</span>
-          <span class="brand-name" style="font-size:1.25rem;">Статистика</span>
+          <span class="brand-name" style="font-size:1.25rem;" data-lang-ru="Статистика" data-lang-en="Statistics">Статистика</span>
         </div>
+      </div>
+      <div class="md3-app-bar-actions">
+        <button class="md3-pill-button" id="lang-toggle" aria-label="Toggle language">
+          <span class="material-symbols-outlined btn-icon-leading">translate</span>
+          <span class="lang-text">EN</span>
+        </button>
       </div>
       <div id="userArea" class="md3-top-bar-right hidden">
         <div class="user-chip">
           <img id="userAvatar" src="" alt="">
           <span id="userName" class="name"></span>
-          <a href="/api/stats/logout" class="logout">выйти</a>
+          <a href="/api/stats/logout" class="logout" data-lang-ru="выйти" data-lang-en="sign out">выйти</a>
         </div>
       </div>
     </div>
@@ -220,24 +230,24 @@
     <div id="statsContent" class="hidden">
       <div class="stats-grid" id="summaryCards"></div>
 
-      <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);">Топ команд</h2>
+      <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" data-lang-ru="Топ команд" data-lang-en="Top Commands">Топ команд</h2>
       <div class="charts-row">
-        <div class="chart-card"><h3>Команды</h3><canvas id="chartCommands"></canvas></div>
-        <div class="chart-card"><h3>Разделы / Категории</h3><canvas id="chartSections"></canvas></div>
+        <div class="chart-card"><h3 data-lang-ru="Команды" data-lang-en="Commands">Команды</h3><canvas id="chartCommands"></canvas></div>
+        <div class="chart-card"><h3 data-lang-ru="Разделы / Категории" data-lang-en="Sections / Categories">Разделы / Категории</h3><canvas id="chartSections"></canvas></div>
       </div>
 
-      <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);">Посетители</h2>
+      <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" data-lang-ru="Посетители" data-lang-en="Visitors">Посетители</h2>
       <div class="table-wrap" style="margin-bottom:2rem;">
         <table>
-          <thead><tr><th>IP</th><th>Страна</th><th>Устройство</th><th>ОС</th><th>Браузер</th><th>Копирований</th></tr></thead>
+          <thead><tr><th data-lang-ru="IP" data-lang-en="IP">IP</th><th data-lang-ru="Страна" data-lang-en="Country">Страна</th><th data-lang-ru="Устройство" data-lang-en="Device">Устройство</th><th data-lang-ru="ОС" data-lang-en="OS">ОС</th><th data-lang-ru="Браузер" data-lang-en="Browser">Браузер</th><th data-lang-ru="Копирований" data-lang-en="Copies">Копирований</th></tr></thead>
           <tbody id="ipsBody"></tbody>
         </table>
       </div>
 
-      <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);">Последние события</h2>
+      <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" data-lang-ru="Последние события" data-lang-en="Recent Events">Последние события</h2>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Время</th><th>IP</th><th>Раздел</th><th>Категория</th><th>Команда (срез)</th></tr></thead>
+          <thead><tr><th data-lang-ru="Время" data-lang-en="Time">Время</th><th data-lang-ru="IP" data-lang-en="IP">IP</th><th data-lang-ru="Раздел" data-lang-en="Section">Раздел</th><th data-lang-ru="Категория" data-lang-en="Category">Категория</th><th data-lang-ru="Команда (срез)" data-lang-en="Command (snippet)">Команда (срез)</th></tr></thead>
           <tbody id="eventsBody"></tbody>
         </table>
       </div>
@@ -245,10 +255,26 @@
 
     <div id="statsLoading" style="text-align:center;padding:80px 0;color:var(--md-sys-color-on-surface-variant);">
       <span class="material-symbols-outlined" style="font-size:2.5rem;">hourglass_top</span>
-      <p style="margin-top:0.5rem;">Загрузка статистики...</p>
+      <p style="margin-top:0.5rem;" data-lang-ru="Загрузка статистики..." data-lang-en="Loading statistics...">Загрузка статистики...</p>
     </div>
   </div>
 
+  <script src="/js/core.js"></script>
+  <script>
+    document.addEventListener('click', function(e) {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      var a = e.target.closest('a');
+      if (!a) return;
+      var href = a.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || a.target === '_blank' || a.hasAttribute('download')) return;
+      var url = new URL(href, location.href);
+      if (url.origin !== location.origin) return;
+      if (url.pathname === location.pathname && url.search === location.search) return;
+      e.preventDefault();
+      document.body.classList.add('page-exit');
+      setTimeout(function() { location.href = a.href; }, 150);
+    });
+  </script>
   <script>
     function getCookie(name) {
       const m = document.cookie.match(new RegExp('(?:^|;\\s*)' + name + '=([^;]*)'));
@@ -264,11 +290,18 @@
     function ago(ts) {
       const diff = Date.now() - ts;
       const m = Math.floor(diff / 60000);
-      if (m < 1) return 'только что';
-      if (m < 60) return m + 'м назад';
+      if (currentLanguage === 'ru') {
+        if (m < 1) return 'только что';
+        if (m < 60) return m + 'м назад';
+        const h = Math.floor(m / 60);
+        if (h < 24) return h + 'ч назад';
+        return Math.floor(h / 24) + 'д назад';
+      }
+      if (m < 1) return 'just now';
+      if (m < 60) return m + 'm ago';
       const h = Math.floor(m / 60);
-      if (h < 24) return h + 'ч назад';
-      return Math.floor(h / 24) + 'д назад';
+      if (h < 24) return h + 'h ago';
+      return Math.floor(h / 24) + 'd ago';
     }
 
     async function checkAuth() {
@@ -293,7 +326,7 @@
         document.getElementById('statsLoading').classList.add('hidden');
         document.getElementById('statsContent').classList.remove('hidden');
       } catch {
-        document.getElementById('statsLoading').innerHTML = '<p style="color:var(--md-sys-color-error);">Ошибка загрузки. <a href="/api/stats/auth" style="color:var(--md-sys-color-primary);">Войти снова</a></p><p style="font-size:0.8rem;color:var(--md-sys-color-on-surface-variant);margin-top:0.5rem;">Статистика пуста, если Redis ещё не подключён</p>';
+        document.getElementById('statsLoading').innerHTML = '<p style="color:var(--md-sys-color-error);">' + (currentLanguage === 'ru' ? 'Ошибка загрузки. <a href="/api/stats/auth" style="color:var(--md-sys-color-primary);">Войти снова</a>' : 'Failed to load. <a href="/api/stats/auth" style="color:var(--md-sys-color-primary);">Sign in again</a>') + '</p><p style="font-size:0.8rem;color:var(--md-sys-color-on-surface-variant);margin-top:0.5rem;">' + (currentLanguage === 'ru' ? 'Статистика пуста, если Redis ещё не подключён' : 'Stats are empty if Redis is not connected yet') + '</p>';
       }
     }
 
@@ -301,10 +334,10 @@
 
     function renderStats(data) {
       document.getElementById('summaryCards').innerHTML = `
-        <div class="stat-card"><div class="stat-card__value">${data.totalEvents}</div><div class="stat-card__label">Копирований</div></div>
-        <div class="stat-card"><div class="stat-card__value">${data.uniqueIps}</div><div class="stat-card__label">Уникальных IP</div></div>
-        <div class="stat-card"><div class="stat-card__value">${data.topCommands[0]?.count || 0}</div><div class="stat-card__label">Топ команда</div></div>
-        <div class="stat-card"><div class="stat-card__value">${data.topSections[0]?.name?.replace(/^[^\s]+\s/,'') || '—'}</div><div class="stat-card__label">Популярный раздел</div></div>
+        <div class="stat-card"><div class="stat-card__value">${data.totalEvents}</div><div class="stat-card__label">${currentLanguage === 'ru' ? 'Копирований' : 'Copies'}</div></div>
+        <div class="stat-card"><div class="stat-card__value">${data.uniqueIps}</div><div class="stat-card__label">${currentLanguage === 'ru' ? 'Уникальных IP' : 'Unique IPs'}</div></div>
+        <div class="stat-card"><div class="stat-card__value">${data.topCommands[0]?.count || 0}</div><div class="stat-card__label">${currentLanguage === 'ru' ? 'Топ команда' : 'Top Command'}</div></div>
+        <div class="stat-card"><div class="stat-card__value">${data.topSections[0]?.name?.replace(/^[^\s]+\s/,'') || '—'}</div><div class="stat-card__label">${currentLanguage === 'ru' ? 'Популярный раздел' : 'Popular Section'}</div></div>
       `;
 
       charts.forEach(c => c.destroy());
@@ -315,7 +348,7 @@
         type: 'bar',
         data: {
           labels: data.topCommands.slice(0, 10).map(c => c.name.length > 30 ? c.name.slice(0, 30) + '\u2026' : c.name),
-          datasets: [{ label: 'Копирования', data: data.topCommands.slice(0, 10).map(c => c.count), backgroundColor: '#d0bcff', borderRadius: 6 }],
+          datasets: [{ label: currentLanguage === 'ru' ? 'Копирования' : 'Copies', data: data.topCommands.slice(0, 10).map(c => c.count), backgroundColor: '#d0bcff', borderRadius: 6 }],
         },
         options: {
           responsive: true, maintainAspectRatio: false,
@@ -365,29 +398,34 @@
       `).join('');
     }
 
-    (async () => {
-      const params = new URLSearchParams(location.search);
-      const err = params.get('error');
-      if (err) {
-        const msgs = {
-          token_failed: 'Ошибка авторизации GitHub. Попробуйте снова.',
-          user_fetch_failed: 'Не удалось получить профиль GitHub.',
-          not_owner: 'Доступ только для владельца репозитория.',
-          no_code: 'Ошибка: код авторизации отсутствует.',
-        };
-        document.getElementById('loginError').textContent = msgs[err] || 'Неизвестная ошибка.';
-        document.getElementById('loginError').style.display = 'block';
-      }
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeLanguage();
+      initializeGifTheme();
 
-      const user = await checkAuth();
-      if (user) {
-        document.getElementById('loginOverlay').classList.add('hidden');
-        document.getElementById('userArea').classList.remove('hidden');
-        document.getElementById('userAvatar').src = user.avatar_url + '&s=56';
-        document.getElementById('userName').textContent = user.login;
-        loadStats();
-      }
-    })();
+      (async () => {
+        const params = new URLSearchParams(location.search);
+        const err = params.get('error');
+        if (err) {
+          const msgs = {
+            token_failed: { ru: 'Ошибка авторизации GitHub. Попробуйте снова.', en: 'GitHub auth failed. Try again.' },
+            user_fetch_failed: { ru: 'Не удалось получить профиль GitHub.', en: 'Failed to fetch GitHub profile.' },
+            not_owner: { ru: 'Доступ только для владельца репозитория.', en: 'Access restricted to repository owner.' },
+            no_code: { ru: 'Ошибка: код авторизации отсутствует.', en: 'Error: authorization code missing.' },
+          };
+          document.getElementById('loginError').textContent = (msgs[err] || { ru: 'Неизвестная ошибка.', en: 'Unknown error.' })[currentLanguage];
+          document.getElementById('loginError').style.display = 'block';
+        }
+
+        const user = await checkAuth();
+        if (user) {
+          document.getElementById('loginOverlay').classList.add('hidden');
+          document.getElementById('userArea').classList.remove('hidden');
+          document.getElementById('userAvatar').src = user.avatar_url + '&s=56';
+          document.getElementById('userName').textContent = user.login;
+          loadStats();
+        }
+      })();
+    });
   </script>
 </body>
 </html>

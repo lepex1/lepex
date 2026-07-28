@@ -39,7 +39,6 @@ body {
     overflow-x: clip;
 }
 
-/* DISABLED: page transitions — see vault known-issues/navigation-transitions.md
 body.loading { opacity: 0; }
 body.loaded { animation: md3FadeIn 0.8s var(--md-transition-easing) forwards; }
 body.page-exit {
@@ -50,7 +49,6 @@ body.page-exit {
 @view-transition { navigation: auto; }
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.4s; }
 @keyframes md3FadeIn { from { opacity: 0; transform: scale(0.99); } to { opacity: 1; transform: scale(1); } }
-*/
 
 .i18n-container > .lang-ru,
 .i18n-container > .lang-en {
@@ -76,6 +74,7 @@ body.page-exit {
     transition: background-color 0.3s var(--md-transition-easing),
                 border-color 0.3s var(--md-transition-easing);
     border-bottom: 1px solid var(--md-sys-color-outline-variant);
+    view-transition-name: header;
 }
 
 .md3-top-bar-container {

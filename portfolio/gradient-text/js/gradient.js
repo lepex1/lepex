@@ -20,8 +20,36 @@ function initGradient() {
     const editor = document.getElementById('editor');
     const display = document.getElementById('display');
     const outputText = document.getElementById('outputText');
+    const fontSizeLabel = document.getElementById('fontSizeLabel');
 
     let selectedGradient = 'rainbow';
+
+    function applyGradientPlaceholder() {
+        const ru = textInput.getAttribute('data-placeholder-ru');
+        const en = textInput.getAttribute('data-placeholder-en');
+        textInput.placeholder = currentLanguage === 'ru' ? ru : en;
+    }
+
+    function applyGradientLabels() {
+        if (fontSizeLabel) {
+            const labelRu = 'Размер шрифта:';
+            const labelEn = 'Font Size:';
+            const val = fontSizeValue.textContent;
+            fontSizeLabel.innerHTML = (currentLanguage === 'ru' ? labelRu : labelEn) + ' <span id="fontSizeValue">' + val + '</span>px';
+        }
+    }
+
+    applyGradientPlaceholder();
+    applyGradientLabels();
+
+    const origSwitch = window.switchLanguage;
+    if (origSwitch) {
+        window.switchLanguage = function(lang) {
+            origSwitch(lang);
+            applyGradientPlaceholder();
+            applyGradientLabels();
+        };
+    }
 
     Object.keys(gradients).forEach((key) => {
         const btn = document.createElement('div');
@@ -43,7 +71,7 @@ function initGradient() {
 
     showButton.addEventListener('click', () => {
         const size = fontSize.value + 'px';
-        outputText.textContent = textInput.value || 'Type something!';
+        outputText.textContent = textInput.value || (currentLanguage === 'ru' ? 'Введите текст!' : 'Type something!');
         outputText.style.fontSize = size;
         outputText.style.background = gradients[selectedGradient];
         outputText.style.backgroundSize = '200% 200%';

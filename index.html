@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" as="style">
+    <link rel="preload" href="/fonts/satoshi.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&display=swap" as="style">
     <title>lepex</title>
     <link rel="stylesheet" href="/fonts/satoshi.css">
     <link rel="stylesheet" href="css/themes.css">
@@ -97,7 +100,6 @@
         });
     </script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-    <!-- DISABLED: page transitions — see vault known-issues/navigation-transitions.md
     <script>
         document.addEventListener('click', function(e) {
             if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -113,6 +115,5 @@
             setTimeout(function() { location.href = a.href; }, 150);
         });
     </script>
-    -->
 </body>
 </html>
