@@ -148,18 +148,21 @@
         </div>
     </header>
 
-    <main class="md3-main-content">
-        <div class="hub-header reveal-card">
-            <h1 data-lang-ru="Мои проекты" data-lang-en="My Projects">My Projects</h1>
-            <p data-lang-ru="Все мои работы в одном месте" data-lang-en="All my work in one place">All my work in one place</p>
-        </div>
-        <div class="hub-grid" id="hub-container"></div>
-    </main>
+    <div class="page-content loading">
+        <main class="md3-main-content">
+            <div class="hub-header reveal-card">
+                <h1 data-lang-ru="Мои проекты" data-lang-en="My Projects">My Projects</h1>
+                <p data-lang-ru="Все мои работы в одном месте" data-lang-en="All my work in one place">All my work in one place</p>
+            </div>
+            <div class="hub-grid" id="hub-container"></div>
+        </main>
 
-    <footer class="md3-footer">
-        <p class="footer-text">lepex &copy; <span id="year"></span></p>
-    </footer>
+        <footer class="md3-footer">
+            <p class="footer-text">lepex &copy; <span id="year"></span></p>
+        </footer>
+    </div>
 
+    <script>var pc = document.querySelector('.page-content'); if (pc) { pc.classList.remove('loading'); pc.classList.add('loaded'); }</script>
     <script src="/js/core.js"></script>
     <script>
         document.addEventListener('click', function(e) {
@@ -172,7 +175,7 @@
             if (url.origin !== location.origin) return;
             if (url.pathname === location.pathname && url.search === location.search) return;
             e.preventDefault();
-            document.body.classList.add('page-exit');
+            var pc = document.querySelector('.page-content'); if (pc) pc.classList.add('page-exit');
             setTimeout(function() { location.href = a.href; }, 150);
         });
     </script>

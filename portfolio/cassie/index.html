@@ -51,60 +51,63 @@
         </div>
     </header>
 
-    <div class="cassie-app" data-view="comfortable">
+    <div class="page-content loading">
+        <div class="cassie-app" data-view="comfortable">
 
-        <!-- Hero / Description Banner -->
-        <div class="cassie-description reveal-card">
-            <div class="cassie-description-inner">
-                <div class="card-icon-wrapper">
-                    <span class="material-symbols-outlined card-main-icon">info</span>
-                </div>
-                <div class="cassie-description-content">
-                    <div class="cassie-badge-row">
-                        <span class="cassie-badge" data-lang-ru="Информация" data-lang-en="Information">Информация</span>
+            <!-- Hero / Description Banner -->
+            <div class="cassie-description reveal-card">
+                <div class="cassie-description-inner">
+                    <div class="card-icon-wrapper">
+                        <span class="material-symbols-outlined card-main-icon">info</span>
                     </div>
-                    <p class="cassie-description-text"
-                       data-lang-ru="Это набор созданных мной команд C.A.S.S.I.E. для проекта FoxGame в игре SCP: Secret Laboratory."
-                       data-lang-en="This is a set of C.A.S.S.I.E. commands I created for the FoxGame project in SCP: Secret Laboratory.">
-                        Это набор созданных мной команд C.A.S.S.I.E. для проекта FoxGame в игре SCP: Secret Laboratory.
-                    </p>
-                    <div class="cassie-description-chips">
-                        <a href="https://discord.com/invite/WZRTfNCJK3" target="_blank" rel="noopener" class="cassie-chip">
-                            <span class="material-symbols-outlined chip-icon">groups</span>
-                            <span>FoxGame Discord</span>
-                            <span class="material-symbols-outlined chip-arrow">open_in_new</span>
-                        </a>
-                        <a href="https://store.steampowered.com/app/700330/SCP_Secret_Laboratory/" target="_blank" rel="noopener" class="cassie-chip">
-                            <span class="material-symbols-outlined chip-icon">sports_esports</span>
-                            <span>SCP: Secret Laboratory</span>
-                            <span class="material-symbols-outlined chip-arrow">open_in_new</span>
-                        </a>
+                    <div class="cassie-description-content">
+                        <div class="cassie-badge-row">
+                            <span class="cassie-badge" data-lang-ru="Информация" data-lang-en="Information">Информация</span>
+                        </div>
+                        <p class="cassie-description-text"
+                           data-lang-ru="Это набор созданных мной команд C.A.S.S.I.E. для проекта FoxGame в игре SCP: Secret Laboratory."
+                           data-lang-en="This is a set of C.A.S.S.I.E. commands I created for the FoxGame project in SCP: Secret Laboratory.">
+                            Это набор созданных мной команд C.A.S.S.I.E. для проекта FoxGame в игре SCP: Secret Laboratory.
+                        </p>
+                        <div class="cassie-description-chips">
+                            <a href="https://discord.com/invite/WZRTfNCJK3" target="_blank" rel="noopener" class="cassie-chip">
+                                <span class="material-symbols-outlined chip-icon">groups</span>
+                                <span>FoxGame Discord</span>
+                                <span class="material-symbols-outlined chip-arrow">open_in_new</span>
+                            </a>
+                            <a href="https://store.steampowered.com/app/700330/SCP_Secret_Laboratory/" target="_blank" rel="noopener" class="cassie-chip">
+                                <span class="material-symbols-outlined chip-icon">sports_esports</span>
+                                <span>SCP: Secret Laboratory</span>
+                                <span class="material-symbols-outlined chip-arrow">open_in_new</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <section class="search-container">
+                <div class="search-bento-card">
+                    <span class="material-symbols-outlined search-icon" aria-hidden="true">search</span>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Поиск по модулям, командам, тексту...">
+                </div>
+            </section>
+
+            <nav class="section-tabs" id="sectionTabs"></nav>
+
+            <main id="content-area">
+                <div class="loading-state">Загрузка данных...</div>
+            </main>
+
         </div>
 
-        <section class="search-container">
-            <div class="search-bento-card">
-                <span class="material-symbols-outlined search-icon" aria-hidden="true">search</span>
-                <input type="text" id="searchInput" class="search-input" placeholder="Поиск по модулям, командам, тексту...">
-            </div>
-        </section>
-
-        <nav class="section-tabs" id="sectionTabs"></nav>
-
-        <main id="content-area">
-            <div class="loading-state">Загрузка данных...</div>
-        </main>
-
+        <footer class="md3-footer">
+            <p class="footer-text">lepex &copy; <span id="year"></span></p>
+            <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
+            <p class="footer-stats" data-lang-ru="Информация о клиенте, IP, копируемых командах собирается для статистики" data-lang-en="Client info, IP, and copied commands are collected for analytics">Информация о клиенте, IP, копируемых командах собирается для статистики</p>
+        </footer>
     </div>
 
-    <footer class="md3-footer">
-        <p class="footer-text">lepex &copy; <span id="year"></span></p>
-        <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
-        <p class="footer-stats" data-lang-ru="Информация о клиенте, IP, копируемых командах собирается для статистики" data-lang-en="Client info, IP, and copied commands are collected for analytics">Информация о клиенте, IP, копируемых командах собирается для статистики</p>
-    </footer>
-
+    <script>var pc = document.querySelector('.page-content'); if (pc) { pc.classList.remove('loading'); pc.classList.add('loaded'); }</script>
     <script src="/js/core.js"></script>
     <script>
         document.addEventListener('click', function(e) {
@@ -117,7 +120,7 @@
             if (url.origin !== location.origin) return;
             if (url.pathname === location.pathname && url.search === location.search) return;
             e.preventDefault();
-            document.body.classList.add('page-exit');
+            var pc = document.querySelector('.page-content'); if (pc) pc.classList.add('page-exit');
             setTimeout(function() { location.href = a.href; }, 150);
         });
     </script>

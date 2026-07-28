@@ -45,45 +45,48 @@
         </div>
     </header>
 
-    <main class="md3-main-content">
-        <div class="gradient-editor-card reveal-card" id="editor">
-            <div class="card-icon-wrapper">
-                <span class="material-symbols-outlined card-main-icon">auto_awesome</span>
+    <div class="page-content loading">
+        <main class="md3-main-content">
+            <div class="gradient-editor-card reveal-card" id="editor">
+                <div class="card-icon-wrapper">
+                    <span class="material-symbols-outlined card-main-icon">auto_awesome</span>
+                </div>
+                <h2 class="card-title" data-lang-ru="Редактор" data-lang-en="Editor">Editor</h2>
+
+                <label class="gradient-field-label" data-lang-ru="Текст" data-lang-en="Text">Text</label>
+                <textarea id="textInput" class="gradient-textarea" rows="3" data-placeholder-ru="Введите текст..." data-placeholder-en="Type something..." placeholder="Type something...">Hello World!</textarea>
+
+                <label class="gradient-field-label" id="fontSizeLabel">Font Size: <span id="fontSizeValue">80</span>px</label>
+                <input id="fontSize" type="range" class="gradient-range" min="20" max="200" value="80" />
+
+                <label class="gradient-field-label" data-lang-ru="Градиент" data-lang-en="Gradient">Gradient</label>
+                <div class="gradient-presets" id="gradientList"></div>
+                <p class="gradient-name" id="gradientName">rainbow</p>
+
+                <button id="showButton" class="md3-filled-button" style="width:100%;justify-content:center;">
+                    <span class="material-symbols-outlined">visibility</span>
+                    <span data-lang-ru="Показать градиент" data-lang-en="Show Gradient Text">Show Gradient Text</span>
+                </button>
             </div>
-            <h2 class="card-title" data-lang-ru="Редактор" data-lang-en="Editor">Editor</h2>
 
-            <label class="gradient-field-label" data-lang-ru="Текст" data-lang-en="Text">Text</label>
-            <textarea id="textInput" class="gradient-textarea" rows="3" data-placeholder-ru="Введите текст..." data-placeholder-en="Type something..." placeholder="Type something...">Hello World!</textarea>
-
-            <label class="gradient-field-label" id="fontSizeLabel">Font Size: <span id="fontSizeValue">80</span>px</label>
-            <input id="fontSize" type="range" class="gradient-range" min="20" max="200" value="80" />
-
-            <label class="gradient-field-label" data-lang-ru="Градиент" data-lang-en="Gradient">Gradient</label>
-            <div class="gradient-presets" id="gradientList"></div>
-            <p class="gradient-name" id="gradientName">rainbow</p>
-
-            <button id="showButton" class="md3-filled-button" style="width:100%;justify-content:center;">
-                <span class="material-symbols-outlined">visibility</span>
-                <span data-lang-ru="Показать градиент" data-lang-en="Show Gradient Text">Show Gradient Text</span>
-            </button>
-        </div>
-
-        <div class="gradient-display-card hidden" id="display">
-            <button id="backButton" class="md3-pill-button" style="align-self:flex-start;">
-                <span class="material-symbols-outlined">arrow_back</span>
-                <span data-lang-ru="Назад в редактор" data-lang-en="Back to Editor">Back to Editor</span>
-            </button>
-            <div class="gradient-output">
-                <h1 id="outputText"></h1>
+            <div class="gradient-display-card hidden" id="display">
+                <button id="backButton" class="md3-pill-button" style="align-self:flex-start;">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    <span data-lang-ru="Назад в редактор" data-lang-en="Back to Editor">Back to Editor</span>
+                </button>
+                <div class="gradient-output">
+                    <h1 id="outputText"></h1>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
 
-    <footer class="md3-footer">
-        <p class="footer-text">lepex &copy; <span id="year"></span></p>
-        <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
-    </footer>
+        <footer class="md3-footer">
+            <p class="footer-text">lepex &copy; <span id="year"></span></p>
+            <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
+        </footer>
+    </div>
 
+    <script>var pc = document.querySelector('.page-content'); if (pc) { pc.classList.remove('loading'); pc.classList.add('loaded'); }</script>
     <script src="/js/core.js"></script>
     <script>
         document.addEventListener('click', function(e) {
@@ -96,7 +99,7 @@
             if (url.origin !== location.origin) return;
             if (url.pathname === location.pathname && url.search === location.search) return;
             e.preventDefault();
-            document.body.classList.add('page-exit');
+            var pc = document.querySelector('.page-content'); if (pc) pc.classList.add('page-exit');
             setTimeout(function() { location.href = a.href; }, 150);
         });
     </script>

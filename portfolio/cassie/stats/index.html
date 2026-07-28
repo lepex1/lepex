@@ -226,39 +226,42 @@
     </div>
   </header>
 
-  <div class="stats-app" id="statsApp">
-    <div id="statsContent" class="hidden">
-      <div class="stats-grid" id="summaryCards"></div>
+  <div class="page-content loading">
+    <div class="stats-app" id="statsApp">
+      <div id="statsContent" class="hidden">
+        <div class="stats-grid" id="summaryCards"></div>
 
-      <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" data-lang-ru="Топ команд" data-lang-en="Top Commands">Топ команд</h2>
-      <div class="charts-row">
-        <div class="chart-card"><h3 data-lang-ru="Команды" data-lang-en="Commands">Команды</h3><canvas id="chartCommands"></canvas></div>
-        <div class="chart-card"><h3 data-lang-ru="Разделы / Категории" data-lang-en="Sections / Categories">Разделы / Категории</h3><canvas id="chartSections"></canvas></div>
+        <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" data-lang-ru="Топ команд" data-lang-en="Top Commands">Топ команд</h2>
+        <div class="charts-row">
+          <div class="chart-card"><h3 data-lang-ru="Команды" data-lang-en="Commands">Команды</h3><canvas id="chartCommands"></canvas></div>
+          <div class="chart-card"><h3 data-lang-ru="Разделы / Категории" data-lang-en="Sections / Categories">Разделы / Категории</h3><canvas id="chartSections"></canvas></div>
+        </div>
+
+        <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" data-lang-ru="Посетители" data-lang-en="Visitors">Посетители</h2>
+        <div class="table-wrap" style="margin-bottom:2rem;">
+          <table>
+            <thead><tr><th data-lang-ru="IP" data-lang-en="IP">IP</th><th data-lang-ru="Страна" data-lang-en="Country">Страна</th><th data-lang-ru="Устройство" data-lang-en="Device">Устройство</th><th data-lang-ru="ОС" data-lang-en="OS">ОС</th><th data-lang-ru="Браузер" data-lang-en="Browser">Браузер</th><th data-lang-ru="Копирований" data-lang-en="Copies">Копирований</th></tr></thead>
+            <tbody id="ipsBody"></tbody>
+          </table>
+        </div>
+
+        <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" data-lang-ru="Последние события" data-lang-en="Recent Events">Последние события</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th data-lang-ru="Время" data-lang-en="Time">Время</th><th data-lang-ru="IP" data-lang-en="IP">IP</th><th data-lang-ru="Раздел" data-lang-en="Section">Section</th><th data-lang-ru="Категория" data-lang-en="Category">Категория</th><th data-lang-ru="Команда (срез)" data-lang-en="Command (snippet)">Команда (срез)</th></tr></thead>
+            <tbody id="eventsBody"></tbody>
+          </table>
+        </div>
       </div>
 
-      <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" data-lang-ru="Посетители" data-lang-en="Visitors">Посетители</h2>
-      <div class="table-wrap" style="margin-bottom:2rem;">
-        <table>
-          <thead><tr><th data-lang-ru="IP" data-lang-en="IP">IP</th><th data-lang-ru="Страна" data-lang-en="Country">Страна</th><th data-lang-ru="Устройство" data-lang-en="Device">Устройство</th><th data-lang-ru="ОС" data-lang-en="OS">ОС</th><th data-lang-ru="Браузер" data-lang-en="Browser">Браузер</th><th data-lang-ru="Копирований" data-lang-en="Copies">Копирований</th></tr></thead>
-          <tbody id="ipsBody"></tbody>
-        </table>
+      <div id="statsLoading" style="text-align:center;padding:80px 0;color:var(--md-sys-color-on-surface-variant);">
+        <span class="material-symbols-outlined" style="font-size:2.5rem;">hourglass_top</span>
+        <p style="margin-top:0.5rem;" data-lang-ru="Загрузка статистики..." data-lang-en="Loading statistics...">Загрузка статистики...</p>
       </div>
-
-      <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" data-lang-ru="Последние события" data-lang-en="Recent Events">Последние события</h2>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th data-lang-ru="Время" data-lang-en="Time">Время</th><th data-lang-ru="IP" data-lang-en="IP">IP</th><th data-lang-ru="Раздел" data-lang-en="Section">Раздел</th><th data-lang-ru="Категория" data-lang-en="Category">Категория</th><th data-lang-ru="Команда (срез)" data-lang-en="Command (snippet)">Команда (срез)</th></tr></thead>
-          <tbody id="eventsBody"></tbody>
-        </table>
-      </div>
-    </div>
-
-    <div id="statsLoading" style="text-align:center;padding:80px 0;color:var(--md-sys-color-on-surface-variant);">
-      <span class="material-symbols-outlined" style="font-size:2.5rem;">hourglass_top</span>
-      <p style="margin-top:0.5rem;" data-lang-ru="Загрузка статистики..." data-lang-en="Loading statistics...">Загрузка статистики...</p>
     </div>
   </div>
 
+  <script>var pc = document.querySelector('.page-content'); if (pc) { pc.classList.remove('loading'); pc.classList.add('loaded'); }</script>
   <script src="/js/core.js"></script>
   <script>
     document.addEventListener('click', function(e) {
@@ -271,7 +274,7 @@
       if (url.origin !== location.origin) return;
       if (url.pathname === location.pathname && url.search === location.search) return;
       e.preventDefault();
-      document.body.classList.add('page-exit');
+      var pc = document.querySelector('.page-content'); if (pc) pc.classList.add('page-exit');
       setTimeout(function() { location.href = a.href; }, 150);
     });
   </script>
