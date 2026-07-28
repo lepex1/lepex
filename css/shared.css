@@ -40,12 +40,10 @@ body {
 }
 
 .page-content.page-exit {
-    animation: md3FadeOut 0.1s var(--md-transition-easing) forwards;
+    animation: md3FadeOut 0.12s var(--md-transition-easing) forwards;
     pointer-events: none;
 }
 @keyframes md3FadeOut { from { opacity: 1; } to { opacity: 0; } }
-
-.turbo-progress-bar { height: 2px; background: var(--md-sys-color-primary); }
 
 .i18n-container > .lang-ru,
 .i18n-container > .lang-en {
