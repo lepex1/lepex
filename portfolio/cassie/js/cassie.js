@@ -52,7 +52,7 @@ function fetchAndRender() {
 
     const sources = ['data/cassie_standard.md', 'data/cassie_reglament.md'];
     Promise.all(sources.map(url => fetch(url).then(r => {
-        if (!r.ok) throw new Error('Ошибка загрузки ' + url + ' (Статус: ' + r.status + ')');
+        if (!r.ok) throw new Error((currentLanguage === 'en' ? 'Failed to load ' : 'Ошибка загрузки ') + url + ' (' + (currentLanguage === 'en' ? 'Status' : 'Статус') + ': ' + r.status + ')');
         return r.text();
     })))
     .then(results => {
@@ -236,7 +236,7 @@ function buildSectionTabs() {
         if (i > 0) {
             const badge = document.createElement("span");
             badge.className = "tab-badge";
-            badge.textContent = "NEW";
+            badge.textContent = currentLanguage === 'ru' ? 'НОВОЕ' : 'NEW';
             btn.appendChild(badge);
         }
         btn.addEventListener("click", () => {
@@ -289,14 +289,14 @@ function render() {
 
         const sectionHeader = document.createElement("h2");
         sectionHeader.className = "md3-section-header";
-        const isNew = !section.startsWith("📟 Стандартные");
+        const isNew = !section.startsWith("📟");
         if (isNew) {
             const span = document.createElement("span");
             span.textContent = tSection(section);
             sectionHeader.appendChild(span);
             const badge = document.createElement("span");
             badge.className = "tab-badge section-badge";
-            badge.textContent = "NEW";
+            badge.textContent = currentLanguage === 'ru' ? 'НОВОЕ' : 'NEW';
             sectionHeader.appendChild(badge);
         } else {
             sectionHeader.textContent = tSection(section);
@@ -368,7 +368,7 @@ function render() {
                         setTimeout(() => {
                             copyBtn.classList.remove("copied");
                             copyIconSpan.textContent = "content_copy";
-                            copyBtn.lastChild.textContent = "Копировать";
+                            copyBtn.lastChild.textContent = currentLanguage === 'en' ? 'Copy' : 'Копировать';
                         }, 2000);
                         fetch('/api/track', {
                             method: 'POST',
@@ -394,6 +394,8 @@ function updateCassieLanguage() {
         if (textNode) {
             textNode.textContent = tSection(textNode.textContent.trim());
         }
+        const badge = btn.querySelector('.tab-badge');
+        if (badge) badge.textContent = currentLanguage === 'ru' ? 'НОВОЕ' : 'NEW';
     });
     document.querySelectorAll('.md3-section-header').forEach(header => {
         const span = header.querySelector('span');
@@ -402,6 +404,8 @@ function updateCassieLanguage() {
         } else {
             header.textContent = tSection(header.textContent);
         }
+        const badge = header.querySelector('.section-badge');
+        if (badge) badge.textContent = currentLanguage === 'ru' ? 'НОВОЕ' : 'NEW';
     });
     document.querySelectorAll('.md3-btn--copy').forEach(btn => {
         const isCopied = btn.classList.contains('copied');

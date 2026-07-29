@@ -206,7 +206,7 @@ async function loadPortfolio() {
         initializePortfolioCards();
 
     } catch (error) {
-        console.error('Ошибка загрузки портфолио:', error);
+        console.error('Portfolio load error:', error);
         container.innerHTML = '';
         const errorDiv = document.createElement('div');
         errorDiv.className = 'portfolio-error';

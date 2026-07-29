@@ -119,6 +119,31 @@ function switchLanguage(lang) {
         });
     });
 
+    document.querySelectorAll('[data-placeholder-ru][data-placeholder-en]').forEach(el => {
+        el.placeholder = el.getAttribute('data-placeholder-' + lang);
+    });
+
+    document.querySelectorAll('[data-label-ru][data-label-en]').forEach(el => {
+        const label = el.getAttribute('data-label-' + lang);
+        if (label) el.setAttribute('aria-label', label);
+    });
+
+    document.querySelectorAll('[data-title-ru][data-title-en]').forEach(el => {
+        const title = el.getAttribute('data-title-' + lang);
+        if (title) el.setAttribute('title', title);
+    });
+
+    document.querySelectorAll('title[data-lang-ru][data-lang-en]').forEach(el => {
+        document.title = el.getAttribute('data-lang-' + lang);
+    });
+
+    document.querySelectorAll('meta[name="description"][data-lang-ru][data-lang-en]').forEach(el => {
+        el.content = el.getAttribute('data-lang-' + lang);
+    });
+    document.querySelectorAll('meta[name="keywords"][data-lang-ru][data-lang-en]').forEach(el => {
+        el.content = el.getAttribute('data-lang-' + lang);
+    });
+
     const langToggle = document.getElementById('lang-toggle');
     if (langToggle) {
         const textNode = langToggle.querySelector('.lang-text');
