@@ -94,7 +94,12 @@
 
 .cassie-badge.i18n-container > .lang-ru,
 .cassie-badge.i18n-container > .lang-en {
-    text-align: inherit;
+    display: none;
+}
+
+.cassie-badge.i18n-container > .lang-ru.active,
+.cassie-badge.i18n-container > .lang-en.active {
+    display: inline;
 }
 
 .cassie-description-text {
@@ -107,6 +112,12 @@
 .cassie-description-text.i18n-container > .lang-ru,
 .cassie-description-text.i18n-container > .lang-en {
     text-align: inherit;
+    display: none;
+}
+
+.cassie-description-text.i18n-container > .lang-ru.active,
+.cassie-description-text.i18n-container > .lang-en.active {
+    display: inline;
 }
 
 

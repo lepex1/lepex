@@ -173,30 +173,7 @@
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js');
         }
-        function updatePortfolioLanguage() {
-            var titles = document.querySelectorAll('.item-title[data-auto="true"]');
-            for (var i = 0; i < titles.length; i++) {
-                var el = titles[i];
-                var text = el.textContent;
-                if (text === 'Loading...' || text === 'Загрузка...') {
-                    el.textContent = currentLanguage === 'ru' ? 'Загрузка...' : 'Loading...';
-                } else if (text === 'YouTube Video' || text === 'YouTube Видео') {
-                    el.textContent = currentLanguage === 'ru' ? 'YouTube Видео' : 'YouTube Video';
-                }
-            }
-            var errorText = document.querySelector('.portfolio-error-text');
-            if (errorText) {
-                errorText.textContent = currentLanguage === 'ru'
-                    ? 'Не удалось загрузить работы. Проверьте подключение.'
-                    : 'Failed to load works. Check your connection.';
-            }
-            var retryBtn = document.querySelector('.portfolio-error-retry');
-            if (retryBtn) {
-                retryBtn.innerHTML = '<span class="material-symbols-outlined">refresh</span> '
-                    + (currentLanguage === 'ru' ? 'Повторить' : 'Retry');
-            }
-        }
-        document.addEventListener('languagechange', function() { updatePortfolioLanguage(); });
+        document.addEventListener('languagechange', function() { loadPortfolio(); });
     </script>
 
     <!-- Video Lightbox Modal -->
