@@ -324,8 +324,10 @@
     }
 
     let charts = [];
+    let lastStatsData = null;
 
     function renderStats(data) {
+      lastStatsData = data;
       document.getElementById('summaryCards').innerHTML = `
         <div class="stat-card"><div class="stat-card__value">${data.totalEvents}</div><div class="stat-card__label">${currentLanguage === 'ru' ? 'Копирований' : 'Copies'}</div></div>
         <div class="stat-card"><div class="stat-card__value">${data.uniqueIps}</div><div class="stat-card__label">${currentLanguage === 'ru' ? 'Уникальных IP' : 'Unique IPs'}</div></div>
@@ -391,8 +393,29 @@
       `).join('');
     }
 
+    function updateStatsLanguage() {
+      if (!lastStatsData) return;
+      var labels = document.querySelectorAll('.stat-card__label');
+      var ruLabels = ['Копирований', 'Уникальных IP', 'Топ команда', 'Популярный раздел'];
+      var enLabels = ['Copies', 'Unique IPs', 'Top Command', 'Popular Section'];
+      var newLabels = currentLanguage === 'ru' ? ruLabels : enLabels;
+      for (var i = 0; i < labels.length && i < newLabels.length; i++) {
+        labels[i].textContent = newLabels[i];
+      }
+      charts.forEach(function(ch) {
+        if (ch.data && ch.data.datasets && ch.data.datasets[0]) {
+          ch.data.datasets[0].label = currentLanguage === 'ru' ? 'Копирования' : 'Copies';
+          ch.update();
+        }
+      });
+      var loadingP = document.querySelector('#statsLoading p');
+      if (loadingP && document.getElementById('statsContent').classList.contains('hidden')) {
+        loadingP.textContent = currentLanguage === 'ru' ? 'Загрузка статистики...' : 'Loading statistics...';
+      }
+    }
+
     document.addEventListener('languagechange', function() {
-      if (document.getElementById('statsContent')) loadStats();
+      if (lastStatsData) updateStatsLanguage();
     });
 
     document.addEventListener('DOMContentLoaded', () => {

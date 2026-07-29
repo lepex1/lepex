@@ -116,7 +116,7 @@
             initializeScrollAndLayout();
             initCassie();
         });
-        document.addEventListener('languagechange', function() { initCassie(); });
+        document.addEventListener('languagechange', function() { if (typeof updateCassieLanguage === 'function') updateCassieLanguage(); });
     </script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>

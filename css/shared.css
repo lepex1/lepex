@@ -42,11 +42,15 @@ body {
 
 .i18n-container > .lang-ru,
 .i18n-container > .lang-en {
-    display: none;
+    display: inline;
+}
+.i18n-container > .lang-ru:not(.active),
+.i18n-container > .lang-en:not(.active) {
+    visibility: hidden;
 }
 .i18n-container > .lang-ru.active,
 .i18n-container > .lang-en.active {
-    display: inline;
+    visibility: visible;
 }
 
 .md3-top-app-bar {

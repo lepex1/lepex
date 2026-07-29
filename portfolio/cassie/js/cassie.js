@@ -207,6 +207,10 @@ function tSection(name) {
         for (const [ru, en] of Object.entries(map)) {
             if (name.includes(ru)) return name.replace(ru, en);
         }
+    } else {
+        for (const [ru, en] of Object.entries(map)) {
+            if (name.includes(en)) return name.replace(en, ru);
+        }
     }
     return name;
 }
@@ -275,7 +279,7 @@ function render() {
     });
 
     if (Object.keys(grouped).length === 0) {
-        contentArea.innerHTML = '<div class="not-found">Ничего не найдено</div>';
+        contentArea.innerHTML = '<div class="not-found">' + (currentLanguage === 'en' ? 'Nothing found' : 'Ничего не найдено') + '</div>';
         return;
     }
 
@@ -384,6 +388,38 @@ function render() {
     }
 }
 
+function updateCassieLanguage() {
+    document.querySelectorAll('.section-tab').forEach(function(el) {
+        for (var i = 0; i < el.childNodes.length; i++) {
+            if (el.childNodes[i].nodeType === 3) {
+                el.childNodes[i].textContent = tSection(el.childNodes[i].textContent);
+                break;
+            }
+        }
+    });
+    document.querySelectorAll('.md3-section-header').forEach(function(el) {
+        var firstSpan = el.querySelector('span:first-child');
+        if (firstSpan && !firstSpan.classList.contains('tab-badge')) {
+            firstSpan.textContent = tSection(firstSpan.textContent);
+        } else {
+            for (var i = 0; i < el.childNodes.length; i++) {
+                if (el.childNodes[i].nodeType === 3) {
+                    el.childNodes[i].textContent = tSection(el.childNodes[i].textContent);
+                    break;
+                }
+            }
+        }
+    });
+    document.querySelectorAll('.md3-btn--copy').forEach(function(btn) {
+        var isCopied = btn.classList.contains('copied');
+        btn.lastChild.textContent = currentLanguage === 'en'
+            ? (isCopied ? 'Copied' : 'Copy')
+            : (isCopied ? 'Скопировано' : 'Копировать');
+    });
+    var nf = document.querySelector('.not-found');
+    if (nf) nf.textContent = currentLanguage === 'en' ? 'Nothing found' : 'Ничего не найдено';
+}
+
 function setupCassieListeners() {
     document.getElementById("searchInput").addEventListener("input", (e) => {
         searchFilter = e.target.value;
@@ -404,22 +440,6 @@ function setupCassieListeners() {
             if (icon) {
                 icon.textContent = next === "compact" ? "view_agenda" : "grid_view";
             }
-        });
-    }
-
-    const langToggle = document.getElementById('lang-toggle');
-    if (langToggle) {
-        langToggle.addEventListener('click', () => {
-            setTimeout(() => {
-                buildSectionTabs();
-                render();
-                document.querySelectorAll('.md3-btn--copy').forEach(btn => {
-                    const isCopied = btn.classList.contains('copied');
-                    btn.lastChild.textContent = currentLanguage === 'en'
-                        ? (isCopied ? 'Copied' : 'Copy')
-                        : (isCopied ? 'Скопировано' : 'Копировать');
-                });
-            }, 0);
         });
     }
 

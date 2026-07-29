@@ -63,14 +63,6 @@
 .md3-badge.i18n-container > .lang-en,
 .portfolio-section-header .i18n-container > .lang-ru,
 .portfolio-section-header .i18n-container > .lang-en {
-    display: none;
-}
-
-.md3-badge.i18n-container > .lang-ru.active,
-.md3-badge.i18n-container > .lang-en.active,
-.portfolio-section-header .i18n-container > .lang-ru.active,
-.portfolio-section-header .i18n-container > .lang-en.active {
-    display: inline;
     text-align: inherit;
 }
 
