@@ -173,7 +173,27 @@
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js');
         }
-        document.addEventListener('languagechange', function() { loadPortfolio(); });
+        function updatePortfolioLanguage() {
+            document.querySelectorAll('.item-title[data-auto="true"]').forEach(el => {
+                const t = el.textContent;
+                if (t === 'YouTube Видео' || t === 'Loading...' || t === 'Загрузка...' || t === 'YouTube Video') {
+                    el.textContent = currentLanguage === 'ru' ? 'YouTube Видео' : 'YouTube Video';
+                }
+            });
+            const errorEl = document.querySelector('.portfolio-error-text');
+            if (errorEl) {
+                errorEl.textContent = currentLanguage === 'ru' ? 'Не удалось загрузить работы. Проверьте подключение.' : 'Failed to load works. Check your connection.';
+            }
+            const retryEl = document.querySelector('.portfolio-error-retry');
+            if (retryEl) {
+                retryEl.innerHTML = '<span class="material-symbols-outlined">refresh</span> ' + (currentLanguage === 'ru' ? 'Повторить' : 'Retry');
+            }
+            const modalLabel = document.querySelector('.video-modal-open-btn span:not(.material-symbols-outlined)');
+            if (modalLabel) {
+                modalLabel.textContent = currentLanguage === 'ru' ? 'Открыть на YouTube' : 'Open on YouTube';
+            }
+        }
+        document.addEventListener('languagechange', function() { updatePortfolioLanguage(); });
     </script>
 
     <!-- Video Lightbox Modal -->

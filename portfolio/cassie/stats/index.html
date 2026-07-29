@@ -324,8 +324,10 @@
     }
 
     let charts = [];
+    let lastStatsData = null;
 
     function renderStats(data) {
+      lastStatsData = data;
       document.getElementById('summaryCards').innerHTML = `
         <div class="stat-card"><div class="stat-card__value">${data.totalEvents}</div><div class="stat-card__label">${currentLanguage === 'ru' ? 'Копирований' : 'Copies'}</div></div>
         <div class="stat-card"><div class="stat-card__value">${data.uniqueIps}</div><div class="stat-card__label">${currentLanguage === 'ru' ? 'Уникальных IP' : 'Unique IPs'}</div></div>
@@ -391,8 +393,29 @@
       `).join('');
     }
 
+    function updateStatsLanguage() {
+      const labels = document.querySelectorAll('.stat-card__label');
+      const labelMap = [
+        ['Копирований', 'Copies'],
+        ['Уникальных IP', 'Unique IPs'],
+        ['Топ команда', 'Top Command'],
+        ['Популярный раздел', 'Popular Section'],
+      ];
+      labels.forEach((el, i) => {
+        if (labelMap[i]) el.textContent = currentLanguage === 'ru' ? labelMap[i][0] : labelMap[i][1];
+      });
+      if (charts[0]) {
+        charts[0].data.datasets[0].label = currentLanguage === 'ru' ? 'Копирования' : 'Copies';
+        charts[0].update();
+      }
+      const loadingEl = document.getElementById('statsLoading');
+      if (loadingEl && !loadingEl.classList.contains('hidden') && loadingEl.querySelector('a')) {
+        loadingEl.innerHTML = '<p style="color:var(--md-sys-color-error);">' + (currentLanguage === 'ru' ? 'Ошибка загрузки. <a href="/api/stats/auth" style="color:var(--md-sys-color-primary);">Войти снова</a>' : 'Failed to load. <a href="/api/stats/auth" style="color:var(--md-sys-color-primary);">Sign in again</a>') + '</p><p style="font-size:0.8rem;color:var(--md-sys-color-on-surface-variant);margin-top:0.5rem;">' + (currentLanguage === 'ru' ? 'Статистика пуста, если Redis ещё не подключён' : 'Stats are empty if Redis is not connected yet') + '</p>';
+      }
+    }
+
     document.addEventListener('languagechange', function() {
-      if (document.getElementById('statsContent')) loadStats();
+      if (lastStatsData) updateStatsLanguage();
     });
 
     document.addEventListener('DOMContentLoaded', () => {
