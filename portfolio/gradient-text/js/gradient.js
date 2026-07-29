@@ -34,8 +34,10 @@ function initGradient() {
         if (fontSizeLabel) {
             const labelRu = 'Размер шрифта:';
             const labelEn = 'Font Size:';
-            const val = fontSizeValue.textContent;
-            fontSizeLabel.innerHTML = (currentLanguage === 'ru' ? labelRu : labelEn) + ' <span id="fontSizeValue">' + val + '</span>px';
+            const text = (currentLanguage === 'ru' ? labelRu : labelEn) + ' ';
+            if (fontSizeLabel.firstChild && fontSizeLabel.firstChild.nodeType === 3) {
+                fontSizeLabel.firstChild.textContent = text;
+            }
         }
     }
 
