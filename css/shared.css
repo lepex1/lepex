@@ -339,6 +339,11 @@ body {
     text-align: center;
     font-size: 0.85rem;
     color: var(--md-sys-color-on-surface-variant);
+    opacity: 0;
+    animation: footerFadeIn 0.4s 0.85s var(--md-transition-easing) forwards;
+}
+@keyframes footerFadeIn {
+    to { opacity: 1; }
 }
 
 .footer-text {
