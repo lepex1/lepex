@@ -173,6 +173,7 @@
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js');
         }
+        document.addEventListener('languagechange', function() { loadPortfolio(); });
     </script>
 
     <!-- Video Lightbox Modal -->

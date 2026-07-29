@@ -391,6 +391,10 @@
       `).join('');
     }
 
+    document.addEventListener('languagechange', function() {
+      if (document.getElementById('statsContent')) loadStats();
+    });
+
     document.addEventListener('DOMContentLoaded', () => {
       initializeLanguage();
       initializeGifTheme();

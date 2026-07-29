@@ -199,6 +199,7 @@
                 container.innerHTML = '<p style="color:var(--md-sys-color-error)">Failed to load projects</p>';
             }
         }
+        document.addEventListener('languagechange', function() { loadHub(); });
     </script>
 </body>
 </html>

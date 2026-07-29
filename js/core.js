@@ -105,6 +105,7 @@ function initializeLanguage() {
             switchLanguage(currentLanguage);
             localStorage.setItem('lang', currentLanguage);
             if (typeof updateDiscordLanguage === 'function') updateDiscordLanguage();
+            document.dispatchEvent(new CustomEvent('languagechange'));
         });
     }
 }
