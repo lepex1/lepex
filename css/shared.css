@@ -318,9 +318,18 @@ body {
 }
 
 .reveal-card {
-    transition: background-color var(--md-transition-duration) var(--md-transition-easing),
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+    transition: opacity 0.8s var(--md-transition-easing),
+                transform 0.8s var(--md-transition-easing),
+                background-color var(--md-transition-duration) var(--md-transition-easing),
                 border-color var(--md-transition-duration) var(--md-transition-easing),
                 box-shadow var(--md-transition-duration) var(--md-transition-easing);
+}
+
+.reveal-card.in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .md3-footer {
