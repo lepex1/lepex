@@ -47,7 +47,7 @@
     "color": "#c9d8ff",
     "title": "Img2TgGif",
     "titleRu": "Img2TgGif",
-    "desc": "Convert image to a Telegram-optimized looping MP4 in-browser",
+    "desc": "Image to Telegram GIF converter",
     "descRu": "Конвертер картинок в гиф для телеграма",
     "link": "/portfolio/img2tggif",
     "tags": [
