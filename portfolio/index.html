@@ -43,7 +43,7 @@
         }
         .hub-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(var(--hub-cols, 4), 1fr);
             gap: 1.5rem;
         }
         .hub-card {
@@ -59,6 +59,7 @@
             transition: all var(--md-transition-duration) var(--md-transition-bounce);
             position: relative;
             overflow: hidden;
+            min-height: 230px;
         }
         .hub-card:hover {
             background: var(--md-sys-color-surface-container-high);
@@ -90,6 +91,10 @@
             font-size: 0.9rem;
             color: var(--md-sys-color-on-surface-variant);
             line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         .hub-card-tags {
             display: flex;
@@ -123,7 +128,7 @@
         @media (max-width: 768px) {
             .md3-main-content { padding: 1rem; }
             .hub-header h1 { font-size: 1.8rem; }
-            .hub-grid { grid-template-columns: 1fr; }
+            .hub-grid { --hub-cols: 1; }
         }
     </style>
 </head>
@@ -176,6 +181,24 @@
 
         let hubProjects = [];
 
+        function layoutHubGrid() {
+            const container = document.getElementById('hub-container');
+            if (!container) return;
+            const n = hubProjects.length;
+            const w = window.innerWidth;
+            let cols;
+            if (w >= 1200) cols = Math.min(4, n);
+            else if (w >= 768) cols = Math.min(2, n);
+            else cols = 1;
+            container.style.setProperty('--hub-cols', cols);
+        }
+
+        let layoutTimer = null;
+        window.addEventListener('resize', () => {
+            clearTimeout(layoutTimer);
+            layoutTimer = setTimeout(layoutHubGrid, 150);
+        });
+
         function renderHubCards() {
             const container = document.getElementById('hub-container');
             container.innerHTML = hubProjects.map(p => {
@@ -192,6 +215,7 @@
                     </a>
                 `;
             }).join('');
+            layoutHubGrid();
             const observer = new IntersectionObserver(e => e.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in-view'); } }), {threshold:0.05});
             container.querySelectorAll('.reveal-card').forEach(c => observer.observe(c));
         }
