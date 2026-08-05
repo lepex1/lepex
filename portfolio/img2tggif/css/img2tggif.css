@@ -67,12 +67,22 @@
     cursor: pointer;
     text-align: center;
     transition: all var(--md-transition-duration) var(--md-transition-bounce);
+    outline: none;
 }
 
 .tg-drop-zone:hover,
 .tg-drop-zone.dragover {
     border-color: var(--md-sys-color-primary);
     background-color: var(--md-sys-color-primary-container);
+}
+
+.tg-drop-zone:focus {
+    outline: none;
+}
+
+.tg-drop-zone:focus-visible {
+    outline: 2px solid var(--md-sys-color-primary);
+    outline-offset: 2px;
 }
 
 .tg-drop-icon-wrap {
