@@ -1,0 +1,253 @@
+.md3-main-content {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+.tg-editor-card {
+    background-color: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-extra-large);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: background-color var(--md-transition-duration) var(--md-transition-bounce),
+                border-color var(--md-transition-duration) var(--md-transition-bounce),
+                box-shadow var(--md-transition-duration) var(--md-transition-bounce),
+                transform var(--md-transition-duration) var(--md-transition-bounce);
+}
+
+.tg-editor-card:hover {
+    background-color: var(--md-sys-color-surface-container-high);
+    border-color: var(--md-sys-color-primary);
+    box-shadow: 0 16px 32px var(--md-sys-color-shadow);
+    transform: translateY(-4px) scale(1.01);
+}
+
+.card-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--md-shape-corner-medium);
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform var(--md-transition-duration) var(--md-transition-bounce);
+}
+
+.tg-editor-card:hover .card-icon-wrapper {
+    transform: rotate(8deg) scale(1.08);
+}
+
+.card-main-icon {
+    font-size: 1.75rem;
+    font-variation-settings: 'FILL' 1;
+}
+
+.card-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
+/* Drop Zone */
+.tg-drop-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 2.5rem 1.5rem;
+    border: 2px dashed var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-large);
+    cursor: pointer;
+    text-align: center;
+    transition: all var(--md-transition-duration) var(--md-transition-bounce);
+}
+
+.tg-drop-zone:hover,
+.tg-drop-zone.dragover {
+    border-color: var(--md-sys-color-primary);
+    background-color: var(--md-sys-color-primary-container);
+}
+
+.tg-drop-icon-wrap {
+    width: 72px;
+    height: 72px;
+    border-radius: var(--md-shape-corner-large);
+    background-color: var(--md-sys-color-surface-container-high);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.tg-drop-icon-wrap .material-symbols-outlined {
+    font-size: 2.25rem;
+    color: var(--md-sys-color-primary);
+}
+
+.tg-drop-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--md-sys-color-on-surface);
+}
+
+.tg-drop-sub {
+    font-size: 0.75rem;
+    color: var(--md-sys-color-on-surface-variant);
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+.tg-drop-zone .md3-filled-button {
+    margin-top: 0.75rem;
+}
+
+/* File Card */
+.tg-file-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--md-sys-color-surface-container-high);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-large);
+}
+
+.tg-file-preview-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--md-shape-corner-medium);
+    background-color: var(--md-sys-color-surface-container-highest);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.tg-file-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tg-file-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.tg-file-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--md-sys-color-on-surface);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tg-file-meta {
+    font-size: 0.75rem;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.tg-output-chip {
+    align-self: flex-start;
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    border-radius: var(--md-shape-corner-small);
+    padding: 0.2rem 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* Convert */
+.tg-convert-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+}
+
+.tg-status {
+    font-size: 0.8rem;
+    color: var(--md-sys-color-on-surface-variant);
+    text-align: center;
+}
+
+/* Result */
+.tg-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: var(--md-sys-color-surface-container-high);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-large);
+}
+
+.tg-result-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--md-sys-color-primary);
+}
+
+.tg-result-video-wrap {
+    width: 100%;
+    max-width: 400px;
+    border-radius: var(--md-shape-corner-large);
+    overflow: hidden;
+    background-color: var(--md-sys-color-surface-container-highest);
+}
+
+.tg-result-video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.tg-result-hint {
+    font-size: 0.8rem;
+    color: var(--md-sys-color-on-surface-variant);
+    text-align: center;
+    max-width: 420px;
+}
+
+.tg-result-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tg-error {
+    font-size: 0.85rem;
+    color: var(--md-sys-color-error);
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .md3-main-content {
+        padding: 1rem;
+    }
+    .tg-editor-card {
+        padding: 1.25rem;
+        border-radius: var(--md-shape-corner-medium);
+    }
+    .tg-drop-zone {
+        padding: 1.75rem 1rem;
+    }
+}

@@ -40,5 +40,19 @@
       "Tool",
       "CSS"
     ]
+  },
+  {
+    "id": "img2tggif",
+    "icon": "gif_box",
+    "color": "#c9d8ff",
+    "title": "ImgToTgGif",
+    "titleRu": "ImgToTgGif",
+    "desc": "Convert image to a Telegram-optimized looping MP4 in-browser",
+    "descRu": "Конвертация картинки в зацикленный MP4 для Telegram прямо в браузере",
+    "link": "/portfolio/img2tggif",
+    "tags": [
+      "Tool",
+      "ffmpeg.wasm"
+    ]
   }
 ]
