@@ -18,7 +18,7 @@ const ENGINE_MISSING = 'ENGINE_MISSING';
 if (!window.FFmpegUtil) {
     window.FFmpegUtil = {
         toBlobURL: function (url, mimeType, crossOrigin, progress) {
-            const attempt = async () => {
+            const fetchStream = async () => {
                 const res = await fetch(url);
                 if (!res.ok) {
                     throw new Error('HTTP ' + res.status + ' ' + res.statusText);
@@ -39,10 +39,19 @@ if (!window.FFmpegUtil) {
                         if (progress) progress({ received, total });
                     }
                 }
+                if (received < total) {
+                    throw new Error('short read ' + received + '/' + total);
+                }
                 return URL.createObjectURL(new Blob(chunks, { type: mimeType }));
             };
-            const tryFetch = () => attempt().catch(() => new Promise(r => setTimeout(r, 800)).then(() => attempt()));
-            return tryFetch().catch(err => {
+            const fetchBlob = async () => {
+                const res = await fetch(url);
+                if (!res.ok) {
+                    throw new Error('HTTP ' + res.status + ' ' + res.statusText);
+                }
+                return URL.createObjectURL(await res.blob());
+            };
+            return fetchStream().catch(() => new Promise(r => setTimeout(r, 400))).then(fetchBlob).catch(err => {
                 throw new Error('Failed to fetch ' + url + ': ' + (err && err.message ? err.message : err));
             });
         },
@@ -140,7 +149,7 @@ async function drawScaledToCanvas(blob, w, h) {
 }
 
 function getVendorUrl(name) {
-    return '/portfolio/img2tggif/vendor/' + name;
+    return '/portfolio/img2tggif/vendor/' + name + '?v=2';
 }
 
 async function getFfmpeg() {
