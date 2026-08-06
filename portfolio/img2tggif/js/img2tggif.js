@@ -193,10 +193,9 @@ async function convert() {
         const args = [
             '-y', '-loop', '1', '-i', 'input.png',
             '-c:v', 'libx264', '-t', String(DURATION), '-pix_fmt', 'yuv420p',
-            '-profile:v', 'baseline', '-level', '3.0',
-            '-vf', `scale=${outputW}:${outputH}:flags=lanczos`,
+            '-profile:v', 'main',
+            '-crf', '19', '-preset', 'slow',
             '-r', String(FPS),
-            '-b:v', '200k', '-maxrate', '300k', '-bufsize', '400k',
             '-an', '-movflags', '+faststart',
             'output.mp4'
         ];
