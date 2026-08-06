@@ -18,9 +18,10 @@ const ENGINE_MISSING = 'ENGINE_MISSING';
 if (!window.FFmpegUtil) {
     window.FFmpegUtil = {
         toBlobURL: function (url, mimeType, crossOrigin, progress) {
-            return fetch(url).then(async (res) => {
+            const attempt = async () => {
+                const res = await fetch(url);
                 if (!res.ok) {
-                    throw new Error('Failed to fetch ' + url + ': ' + res.status + ' ' + res.statusText);
+                    throw new Error('HTTP ' + res.status + ' ' + res.statusText);
                 }
                 const total = +(res.headers.get('Content-Length') || 0);
                 if (!total || !res.body) {
@@ -39,6 +40,10 @@ if (!window.FFmpegUtil) {
                     }
                 }
                 return URL.createObjectURL(new Blob(chunks, { type: mimeType }));
+            };
+            const tryFetch = () => attempt().catch(() => new Promise(r => setTimeout(r, 800)).then(() => attempt()));
+            return tryFetch().catch(err => {
+                throw new Error('Failed to fetch ' + url + ': ' + (err && err.message ? err.message : err));
             });
         },
     };
