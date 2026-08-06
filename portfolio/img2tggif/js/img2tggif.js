@@ -7,6 +7,7 @@ const I18N = {
     fileLoaded: { ru: 'Файл загружен: {name}', en: 'File loaded: {name}' },
     preparing: { ru: 'Подготовка...', en: 'Preparing...' },
     converting: { ru: 'Конвертация...', en: 'Converting...' },
+    loadingEngine: { ru: 'Загрузка движка… {pct}%', en: 'Loading engine… {pct}%' },
     badFormat: { ru: 'Неподдерживаемый формат. Используй PNG, JPG, BMP, WEBP, TIFF, GIF', en: 'Unsupported format. Use PNG, JPG, BMP, WEBP, TIFF, GIF' },
     err: { ru: 'Ошибка: {msg}', en: 'Error: {msg}' },
     engineMissing: { ru: 'Движок конвертации не загрузился (vendor/ffmpeg.js). Проверь вкладку Network — файлы vendor/* должны отвечать 200 — и открой страницу через http://', en: 'Conversion engine failed to load (vendor/ffmpeg.js). Check the Network tab — vendor/* files must return 200 — and open the page via http://' },
@@ -108,6 +109,51 @@ function renderStatus() {
 function show(el) { el.classList.remove('hidden'); }
 function hide(el) { el.classList.add('hidden'); }
 
+let progressTimer = null;
+
+function progressNow() {
+    return parseFloat(document.getElementById('progressFill').style.width) || 0;
+}
+
+function setPgPct(p, labelText) {
+    clearInterval(progressTimer);
+    const fill = document.getElementById('progressFill');
+    fill.classList.remove('indeterminate');
+    fill.style.width = Math.min(100, Math.max(0, p)) + '%';
+    const label = document.getElementById('progressLabel');
+    if (labelText) {
+        label.textContent = labelText;
+        show(label);
+    } else {
+        hide(label);
+    }
+}
+
+function animatePgTo(p, ms) {
+    clearInterval(progressTimer);
+    const fill = document.getElementById('progressFill');
+    fill.classList.remove('indeterminate');
+    const from = progressNow();
+    const steps = Math.max(1, Math.round(ms / 100));
+    let i = 0;
+    progressTimer = setInterval(() => {
+        i++;
+        const t = Math.min(1, i / steps);
+        fill.style.width = (from + (p - from) * (t * t * (3 - 2 * t))) + '%';
+        if (i >= steps) clearInterval(progressTimer);
+    }, 100);
+}
+
+function showProgress(labelKey) {
+    setPgPct(0, labelKey ? tr(labelKey) : null);
+    show(document.getElementById('progressWrap'));
+}
+
+function hideProgress() {
+    clearInterval(progressTimer);
+    hide(document.getElementById('progressWrap'));
+}
+
 function formatSize(bytes) {
     if (bytes < 1024) return bytes + ' B';
     if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
@@ -165,7 +211,7 @@ function getVendorUrl(name) {
     return '/portfolio/img2tggif/vendor/' + name + '?v=2';
 }
 
-async function getFfmpeg() {
+async function getFfmpeg(onProgress) {
     if (!ffmpegPromise) {
         ffmpegPromise = (async () => {
             if (typeof FFmpegWASM === 'undefined') {
@@ -174,8 +220,11 @@ async function getFfmpeg() {
             }
             setStatus('converting');
             const ffmpeg = new FFmpegWASM.FFmpeg();
-            const coreURL = await FFmpegUtil.toBlobURL(getVendorUrl('ffmpeg-core.js'), 'text/javascript', true);
-            const wasmURL = await FFmpegUtil.toBlobURL(getVendorUrl('ffmpeg-core.wasm'), 'application/wasm');
+            const report = (r) => {
+                if (onProgress && r.total) onProgress(r.received / r.total);
+            };
+            const coreURL = await FFmpegUtil.toBlobURL(getVendorUrl('ffmpeg-core.js'), 'text/javascript', true, report);
+            const wasmURL = await FFmpegUtil.toBlobURL(getVendorUrl('ffmpeg-core.wasm'), 'application/wasm', undefined, report);
             await ffmpeg.load({ coreURL, wasmURL });
             return ffmpeg;
         })().catch(err => {
@@ -208,12 +257,22 @@ async function convert() {
     setStatus('preparing');
 
     try {
+        showProgress('preparing');
+        setStatus('preparing');
+
         const canvas = await drawScaledToCanvas(file, outputW, outputH);
+        setPgPct(12);
         const pngBlob = await new Promise((resolve, reject) => {
             canvas.toBlob(b => b ? resolve(b) : reject(new Error('canvas')), 'image/png');
         });
+        setPgPct(18);
 
-        const ffmpeg = await getFfmpeg();
+        const ffmpeg = await getFfmpeg((frac) => {
+            setPgPct(20 + Math.round(74 * frac), tr('loadingEngine').replace('{pct}', Math.round(20 + 74 * frac)));
+        });
+
+        setPgPct(95, tr('converting'));
+        animatePgTo(98, 30000);
 
         await ffmpeg.writeFile('input.png', new Uint8Array(await pngBlob.arrayBuffer()));
 
@@ -237,8 +296,11 @@ async function convert() {
         await ffmpeg.deleteFile('output.mp4');
 
         const blob = new Blob([data.buffer], { type: 'video/mp4' });
+        setPgPct(100);
         showResult(blob);
+        hideProgress();
     } catch (e) {
+        hideProgress();
         console.error(e);
         let msg = e.message || 'conversion failed';
         if (e.message === ENGINE_MISSING) msg = tr('engineMissing');
@@ -267,6 +329,7 @@ function showResult(blob) {
 
 function clearFile() {
     file = null;
+    hideProgress();
     hide(document.getElementById('fileCard'));
     hide(document.getElementById('convertBtn'));
     hide(document.getElementById('resultWrap'));
