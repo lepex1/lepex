@@ -18,69 +18,52 @@ const ENGINE_MISSING = 'ENGINE_MISSING';
 if (!window.FFmpegUtil) {
     window.FFmpegUtil = {
         toBlobURL: function (url, mimeType, crossOrigin, progress) {
-            const fetchStream = async () => {
-                const res = await fetch(url);
-                if (!res.ok) {
-                    throw new Error('HTTP ' + res.status + ' ' + res.statusText);
-                }
-                const total = +(res.headers.get('Content-Length') || 0);
-                if (!total || !res.body) {
-                    return URL.createObjectURL(await res.blob());
-                }
-                const reader = res.body.getReader();
-                const chunks = [];
-                let received = 0;
-                for (;;) {
-                    const { done, value } = await reader.read();
-                    if (done) break;
-                    if (value) {
-                        chunks.push(value);
-                        received += value.length;
-                        if (progress) progress({ received, total });
-                    }
-                }
-                if (received < total) {
-                    throw new Error('short read ' + received + '/' + total);
-                }
-                return URL.createObjectURL(new Blob(chunks, { type: mimeType }));
-            };
-            const fetchBlob = async () => {
+            const CHUNK_SIZES = [4 * 1024 * 1024, 1024 * 1024, 256 * 1024];
+            const fetchPlain = async () => {
                 const res = await fetch(url);
                 if (!res.ok) {
                     throw new Error('HTTP ' + res.status + ' ' + res.statusText);
                 }
                 return URL.createObjectURL(await res.blob());
             };
-            const fetchXhr = () => new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.open('GET', url, true);
-                xhr.responseType = 'blob';
-                xhr.onload = () => {
-                    const status = xhr.status === 0 && location.protocol !== 'file:' ? 200 : xhr.status;
-                    if (status !== 200) {
-                        reject(new Error('HTTP ' + status));
-                        return;
+            const fetchChunked = async (chunkSize) => {
+                const parts = [];
+                let offset = 0;
+                let total = 0;
+                for (;;) {
+                    const end = offset + chunkSize - 1;
+                    const res = await fetch(url, { headers: { Range: 'bytes=' + offset + '-' + end } });
+                    if (!res.ok) {
+                        throw new Error('HTTP ' + res.status + ' ' + res.statusText);
                     }
-                    const blob = xhr.response;
-                    if (!blob) {
-                        reject(new Error('empty xhr response'));
-                        return;
+                    if (res.status !== 206) {
+                        throw new Error('range not supported');
                     }
-                    const total = +xhr.getResponseHeader('Content-Length');
-                    if (total && blob.size !== total) {
-                        reject(new Error('short read ' + blob.size + '/' + total));
-                        return;
-                    }
-                    resolve(URL.createObjectURL(blob));
-                };
-                xhr.onerror = () => reject(new Error('xhr failed'));
-                xhr.onabort = () => reject(new Error('xhr aborted'));
-                xhr.send();
-            });
+                    const cr = res.headers.get('Content-Range') || '';
+                    const m = /\/\s*(\d+)\s*$/.exec(cr);
+                    if (m) total = Number(m[1]);
+                    const bytes = new Uint8Array(await res.arrayBuffer());
+                    parts.push(bytes);
+                    offset += bytes.length;
+                    if (progress) progress({ received: offset, total: total || offset + 1 });
+                    if (total && offset >= total) break;
+                    if (!total && bytes.length < chunkSize) break;
+                }
+                return URL.createObjectURL(new Blob(parts, { type: mimeType }));
+            };
             const delay = (ms) => new Promise(r => setTimeout(r, ms));
-            return fetchStream()
-                .catch(() => delay(300).then(fetchBlob))
-                .catch(() => delay(300).then(fetchXhr))
+            const tryChunked = async (sizes) => {
+                for (let i = 0; i < sizes.length; i++) {
+                    try {
+                        return await fetchChunked(sizes[i]);
+                    } catch (err) {
+                        if (i === sizes.length - 1) throw err;
+                        await delay(200);
+                    }
+                }
+            };
+            return tryChunked(CHUNK_SIZES)
+                .catch(() => delay(200).then(fetchPlain))
                 .catch(err => {
                     throw new Error('Failed to fetch ' + url + ': ' + (err && err.message ? err.message : err));
                 });
