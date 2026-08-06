@@ -1,5 +1,5 @@
 const SUPPORTED_EXTS = ['.png', '.jpg', '.jpeg', '.bmp', '.webp', '.tiff', '.tif', '.gif', '.jfif'];
-const MAX_DIM = 512;
+const MAX_DIM = 1280;
 const DURATION = 3;
 const FPS = 15;
 
@@ -220,8 +220,8 @@ async function convert() {
         const args = [
             '-y', '-loop', '1', '-i', 'input.png',
             '-c:v', 'libx264', '-t', String(DURATION), '-pix_fmt', 'yuv420p',
-            '-profile:v', 'main',
-            '-crf', '19', '-preset', 'slow',
+            '-profile:v', 'high',
+            '-crf', '17', '-preset', 'veryslow', '-tune', 'stillimage',
             '-r', String(FPS),
             '-an', '-movflags', '+faststart',
             'output.mp4'
