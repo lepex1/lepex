@@ -305,7 +305,9 @@ async function handleFile(f) {
 
     hide(document.getElementById('dropZone'));
     show(document.getElementById('fileCard'));
-    show(document.getElementById('convertBtn'));
+    const convertBtn = document.getElementById('convertBtn');
+    convertBtn.disabled = false;
+    show(convertBtn);
     hide(document.getElementById('resultWrap'));
 
     setStatus('fileLoaded', { name: f.name });
