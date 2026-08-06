@@ -144,6 +144,20 @@ function animatePgTo(p, ms) {
     }, 100);
 }
 
+function startEncodeTicker() {
+    clearInterval(progressTimer);
+    const fill = document.getElementById('progressFill');
+    fill.classList.add('indeterminate');
+    const label = document.getElementById('progressLabel');
+    label.textContent = tr('converting');
+    show(label);
+    let p = 94;
+    progressTimer = setInterval(() => {
+        p = Math.min(99, p + 1);
+        label.textContent = tr('converting') + ' ' + p + '%';
+    }, 1000);
+}
+
 function showProgress(labelKey) {
     setPgPct(0, labelKey ? tr(labelKey) : null);
     show(document.getElementById('progressWrap'));
@@ -271,8 +285,8 @@ async function convert() {
             setPgPct(20 + Math.round(74 * frac), tr('loadingEngine').replace('{pct}', Math.round(20 + 74 * frac)));
         });
 
-        setPgPct(95, tr('converting'));
-        animatePgTo(98, 30000);
+        setPgPct(95);
+        startEncodeTicker();
 
         await ffmpeg.writeFile('input.png', new Uint8Array(await pngBlob.arrayBuffer()));
 
