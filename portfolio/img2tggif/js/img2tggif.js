@@ -51,9 +51,39 @@ if (!window.FFmpegUtil) {
                 }
                 return URL.createObjectURL(await res.blob());
             };
-            return fetchStream().catch(() => new Promise(r => setTimeout(r, 400))).then(fetchBlob).catch(err => {
-                throw new Error('Failed to fetch ' + url + ': ' + (err && err.message ? err.message : err));
+            const fetchXhr = () => new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', url, true);
+                xhr.responseType = 'blob';
+                xhr.onload = () => {
+                    const status = xhr.status === 0 && location.protocol !== 'file:' ? 200 : xhr.status;
+                    if (status !== 200) {
+                        reject(new Error('HTTP ' + status));
+                        return;
+                    }
+                    const blob = xhr.response;
+                    if (!blob) {
+                        reject(new Error('empty xhr response'));
+                        return;
+                    }
+                    const total = +xhr.getResponseHeader('Content-Length');
+                    if (total && blob.size !== total) {
+                        reject(new Error('short read ' + blob.size + '/' + total));
+                        return;
+                    }
+                    resolve(URL.createObjectURL(blob));
+                };
+                xhr.onerror = () => reject(new Error('xhr failed'));
+                xhr.onabort = () => reject(new Error('xhr aborted'));
+                xhr.send();
             });
+            const delay = (ms) => new Promise(r => setTimeout(r, ms));
+            return fetchStream()
+                .catch(() => delay(300).then(fetchBlob))
+                .catch(() => delay(300).then(fetchXhr))
+                .catch(err => {
+                    throw new Error('Failed to fetch ' + url + ': ' + (err && err.message ? err.message : err));
+                });
         },
     };
 }
