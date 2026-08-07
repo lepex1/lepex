@@ -113,16 +113,32 @@ function show(el) { el.classList.remove('hidden'); }
 function hide(el) { el.classList.add('hidden'); }
 
 let progressTimer = null;
+let converting = false;
+let encodeProgressCb = null;
+
+function stopProgressTimer() {
+    if (progressTimer) {
+        clearInterval(progressTimer);
+        cancelAnimationFrame(progressTimer);
+        progressTimer = null;
+    }
+}
 
 function progressNow() {
     return parseFloat(document.getElementById('progressFill').style.width) || 0;
 }
 
 function setPgPct(p, labelText) {
-    clearInterval(progressTimer);
+    stopProgressTimer();
+    const wrap = document.getElementById('progressWrap');
     const fill = document.getElementById('progressFill');
     fill.classList.remove('indeterminate');
-    fill.style.width = Math.min(100, Math.max(0, p)) + '%';
+    fill.classList.remove('done');
+    const pct = Math.min(100, Math.max(0, p));
+    fill.style.width = pct + '%';
+    wrap.setAttribute('aria-valuenow', String(Math.round(pct)));
+    wrap.setAttribute('aria-valuemin', '0');
+    wrap.setAttribute('aria-valuemax', '100');
     const label = document.getElementById('progressLabel');
     if (labelText) {
         label.textContent = labelText;
@@ -133,32 +149,41 @@ function setPgPct(p, labelText) {
 }
 
 function animatePgTo(p, ms) {
-    clearInterval(progressTimer);
+    stopProgressTimer();
     const fill = document.getElementById('progressFill');
     fill.classList.remove('indeterminate');
     const from = progressNow();
-    const steps = Math.max(1, Math.round(ms / 100));
-    let i = 0;
-    progressTimer = setInterval(() => {
-        i++;
-        const t = Math.min(1, i / steps);
-        fill.style.width = (from + (p - from) * (t * t * (3 - 2 * t))) + '%';
-        if (i >= steps) clearInterval(progressTimer);
-    }, 100);
+    const startTime = performance.now();
+    const step = (now) => {
+        const t = Math.min((now - startTime) / ms, 1);
+        const eased = t * (2 - t);
+        fill.style.width = (from + (p - from) * eased) + '%';
+        if (t < 1) progressTimer = requestAnimationFrame(step);
+    };
+    progressTimer = requestAnimationFrame(step);
 }
 
 function startEncodeTicker() {
-    clearInterval(progressTimer);
+    stopProgressTimer();
     const fill = document.getElementById('progressFill');
     fill.classList.add('indeterminate');
     const label = document.getElementById('progressLabel');
     label.textContent = tr('converting');
     show(label);
+    const wrap = document.getElementById('progressWrap');
+    wrap.setAttribute('aria-valuenow', '94');
     let p = 94;
-    progressTimer = setInterval(() => {
-        p = Math.min(99, p + 1);
-        label.textContent = tr('converting') + ' ' + p + '%';
-    }, 1000);
+    let last = performance.now();
+    const step = (now) => {
+        if (now - last >= 1000) {
+            last = now;
+            p = Math.min(99, p + 1);
+            label.textContent = tr('converting') + ' ' + p + '%';
+            wrap.setAttribute('aria-valuenow', String(p));
+        }
+        progressTimer = requestAnimationFrame(step);
+    };
+    progressTimer = requestAnimationFrame(step);
 }
 
 function showProgress(labelKey) {
@@ -167,7 +192,7 @@ function showProgress(labelKey) {
 }
 
 function hideProgress() {
-    clearInterval(progressTimer);
+    stopProgressTimer();
     hide(document.getElementById('progressWrap'));
 }
 
@@ -247,7 +272,7 @@ function getVendorUrl(name) {
     return '/portfolio/img2tggif/vendor/' + name + '?v=2';
 }
 
-async function getFfmpeg(onProgress) {
+async function getFfmpeg() {
     if (!ffmpegPromise) {
         ffmpegPromise = (async () => {
             if (typeof FFmpegWASM === 'undefined') {
@@ -256,12 +281,21 @@ async function getFfmpeg(onProgress) {
             }
             setStatus('converting');
             const ffmpeg = new FFmpegWASM.FFmpeg();
-            const report = (r) => {
-                if (onProgress && r.total) onProgress(r.received / r.total);
+            const reportRange = (lo, hi) => (r) => {
+                if (r.total) {
+                    const pct = Math.min(100, lo + Math.round((hi - lo) * (r.received / r.total)));
+                    setPgPct(pct, tr('loadingEngine').replace('{pct}', pct));
+                }
             };
-            const coreURL = await FFmpegUtil.toBlobURL(getVendorUrl('ffmpeg-core.js'), 'text/javascript', true, report);
-            const wasmURL = await FFmpegUtil.toBlobURL(getVendorUrl('ffmpeg-core.wasm'), 'application/wasm', undefined, report);
+            const coreURL = await FFmpegUtil.toBlobURL(getVendorUrl('ffmpeg-core.js'), 'text/javascript', true, reportRange(20, 45));
+            const wasmURL = await FFmpegUtil.toBlobURL(getVendorUrl('ffmpeg-core.wasm'), 'application/wasm', undefined, reportRange(45, 94));
             await ffmpeg.load({ coreURL, wasmURL });
+            if (typeof ffmpeg.on === 'function') {
+                ffmpeg.on('progress', (ev) => {
+                    const frac = ev && typeof ev.progress === 'number' ? ev.progress : -1;
+                    if (frac >= 0 && frac <= 1 && encodeProgressCb) encodeProgressCb(frac);
+                });
+            }
             return ffmpeg;
         })().catch(err => {
             ffmpegPromise = null;
@@ -285,11 +319,14 @@ function resetError() {
 }
 
 async function convert() {
-    if (!file) return;
+    if (!file || converting) return;
     resetError();
     const convertBtn = document.getElementById('convertBtn');
     convertBtn.disabled = true;
     hide(convertBtn);
+    const clearBtn = document.getElementById('clearBtn');
+    hide(clearBtn);
+    converting = true;
     setStatus('preparing');
 
     try {
@@ -307,12 +344,14 @@ async function convert() {
             setPgPct(18);
         }
 
-        const ffmpeg = await getFfmpeg((frac) => {
-            setPgPct(20 + Math.round(74 * frac), tr('loadingEngine').replace('{pct}', Math.round(20 + 74 * frac)));
-        });
+        const ffmpeg = await getFfmpeg();
 
         setPgPct(95);
         startEncodeTicker();
+        encodeProgressCb = (frac) => {
+            const p = Math.min(99, 95 + Math.round(4 * frac));
+            setPgPct(p, tr('converting') + ' ' + p + '%');
+        };
 
         const warnEl = document.getElementById('warnText');
         if (isV && file.size > VIDEO_WARN_BYTES) {
@@ -364,15 +403,22 @@ async function convert() {
         await ffmpeg.deleteFile('output.mp4');
 
         const blob = new Blob([data.buffer], { type: 'video/mp4' });
+        encodeProgressCb = null;
         setPgPct(100);
-        showResult(blob);
+        document.getElementById('progressFill').classList.add('done');
+        await new Promise(r => setTimeout(r, 450));
         hideProgress();
+        showResult(blob);
     } catch (e) {
         hideProgress();
         console.error(e);
         let msg = e.message || 'conversion failed';
         if (e.message === ENGINE_MISSING) msg = tr('engineMissing');
         handleError(msg);
+    } finally {
+        converting = false;
+        encodeProgressCb = null;
+        show(clearBtn);
     }
 }
 
@@ -396,6 +442,7 @@ function showResult(blob) {
 }
 
 function clearFile() {
+    if (converting) return;
     file = null;
     hideProgress();
     hide(document.getElementById('fileCard'));

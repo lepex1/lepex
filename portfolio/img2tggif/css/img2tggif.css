@@ -204,7 +204,6 @@
     border-radius: 7px;
     background-color: var(--md-sys-color-surface-container-high);
     border: 1px solid var(--md-sys-color-outline-variant);
-    overflow: hidden;
 }
 
 .tg-progress-fill {
@@ -224,6 +223,12 @@
         var(--md-sys-color-primary) 75%);
     background-size: 200% 100%;
     animation: tg-progress-stripes 0.9s linear infinite;
+}
+
+.tg-progress-fill.done {
+    background: var(--md-sys-color-tertiary);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--md-sys-color-tertiary) 70%, transparent);
+    transition: width 250ms ease-out, background-color 200ms ease-out, box-shadow 200ms ease-out;
 }
 
 @keyframes tg-progress-stripes {
