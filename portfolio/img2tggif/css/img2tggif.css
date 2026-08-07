@@ -181,6 +181,15 @@
     text-align: center;
 }
 
+.tg-warning {
+    font-size: 0.8rem;
+    color: var(--md-sys-color-on-tertiary-container);
+    background-color: var(--md-sys-color-tertiary-container);
+    border-radius: var(--md-shape-corner-small);
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+}
+
 .tg-progress {
     display: flex;
     flex-direction: column;

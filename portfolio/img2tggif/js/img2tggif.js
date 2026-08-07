@@ -1,4 +1,6 @@
 const SUPPORTED_EXTS = ['.png', '.jpg', '.jpeg', '.bmp', '.webp', '.tiff', '.tif', '.gif', '.jfif'];
+const SUPPORTED_VIDEO_EXTS = ['.mp4', '.m4v', '.mov', '.webm', '.mkv', '.avi'];
+const VIDEO_WARN_BYTES = 100 * 1024 * 1024;
 const MAX_DIM = 1280;
 const DURATION = 3;
 const FPS = 15;
@@ -8,7 +10,8 @@ const I18N = {
     preparing: { ru: 'Подготовка...', en: 'Preparing...' },
     converting: { ru: 'Конвертация...', en: 'Converting...' },
     loadingEngine: { ru: 'Загрузка движка… {pct}%', en: 'Loading engine… {pct}%' },
-    badFormat: { ru: 'Неподдерживаемый формат. Используй PNG, JPG, BMP, WEBP, TIFF, GIF', en: 'Unsupported format. Use PNG, JPG, BMP, WEBP, TIFF, GIF' },
+    badFormat: { ru: 'Неподдерживаемый формат. Используй PNG, JPG, BMP, WEBP, TIFF, GIF, MP4, MOV, WEBM, MKV, AVI', en: 'Unsupported format. Use PNG, JPG, BMP, WEBP, TIFF, GIF, MP4, MOV, WEBM, MKV, AVI' },
+    videoTooLarge: { ru: 'Файл больше 100 МБ — конвертация может занять много времени и памяти', en: 'File is over 100 MB — conversion may take a while and use lots of memory' },
     err: { ru: 'Ошибка: {msg}', en: 'Error: {msg}' },
     engineMissing: { ru: 'Движок конвертации не загрузился (vendor/ffmpeg.js). Проверь вкладку Network — файлы vendor/* должны отвечать 200 — и открой страницу через http://', en: 'Conversion engine failed to load (vendor/ffmpeg.js). Check the Network tab — vendor/* files must return 200 — and open the page via http://' },
     fileProtocol: { ru: 'Страница открыта как file:// — конвертация не работает. Запусти локальный сервер (npx serve) и открой через http://', en: 'Page opened as file:// — conversion will not work. Run a local server (npx serve) and open via http://' },
@@ -202,6 +205,25 @@ function loadImageDims(blob) {
     });
 }
 
+function isVideo(f) {
+    return SUPPORTED_VIDEO_EXTS.includes('.' + f.name.split('.').pop().toLowerCase());
+}
+
+function loadVideoDims(file) {
+    return new Promise((resolve, reject) => {
+        const url = URL.createObjectURL(file);
+        const video = document.createElement('video');
+        video.preload = 'metadata';
+        video.muted = true;
+        video.onloadedmetadata = () => {
+            URL.revokeObjectURL(url);
+            resolve({ w: video.videoWidth, h: video.videoHeight, duration: video.duration || 0 });
+        };
+        video.onerror = () => { URL.revokeObjectURL(url); reject(new Error('decode')); };
+        video.src = url;
+    });
+}
+
 async function drawScaledToCanvas(blob, w, h) {
     const url = URL.createObjectURL(blob);
     const img = new Image();
@@ -274,12 +296,16 @@ async function convert() {
         showProgress('preparing');
         setStatus('preparing');
 
-        const canvas = await drawScaledToCanvas(file, outputW, outputH);
-        setPgPct(12);
-        const pngBlob = await new Promise((resolve, reject) => {
-            canvas.toBlob(b => b ? resolve(b) : reject(new Error('canvas')), 'image/png');
-        });
-        setPgPct(18);
+        const isV = isVideo(file);
+        let pngBlob = null;
+        if (!isV) {
+            const canvas = await drawScaledToCanvas(file, outputW, outputH);
+            setPgPct(12);
+            pngBlob = await new Promise((resolve, reject) => {
+                canvas.toBlob(b => b ? resolve(b) : reject(new Error('canvas')), 'image/png');
+            });
+            setPgPct(18);
+        }
 
         const ffmpeg = await getFfmpeg((frac) => {
             setPgPct(20 + Math.round(74 * frac), tr('loadingEngine').replace('{pct}', Math.round(20 + 74 * frac)));
@@ -288,17 +314,45 @@ async function convert() {
         setPgPct(95);
         startEncodeTicker();
 
-        await ffmpeg.writeFile('input.png', new Uint8Array(await pngBlob.arrayBuffer()));
+        const warnEl = document.getElementById('warnText');
+        if (isV && file.size > VIDEO_WARN_BYTES) {
+            warnEl.textContent = tr('videoTooLarge');
+            show(warnEl);
+        } else {
+            hide(warnEl);
+        }
 
-        const args = [
-            '-y', '-loop', '1', '-i', 'input.png',
-            '-c:v', 'libx264', '-t', String(DURATION), '-pix_fmt', 'yuv420p',
-            '-profile:v', 'high',
-            '-crf', '17', '-preset', 'veryslow', '-tune', 'stillimage',
-            '-r', String(FPS),
-            '-an', '-movflags', '+faststart',
-            'output.mp4'
-        ];
+        let inputName;
+        let args;
+        if (!isV) {
+            inputName = 'input.png';
+            await ffmpeg.writeFile(inputName, new Uint8Array(await pngBlob.arrayBuffer()));
+            args = [
+                '-y', '-loop', '1', '-i', inputName,
+                '-c:v', 'libx264', '-t', String(DURATION), '-pix_fmt', 'yuv420p',
+                '-profile:v', 'high',
+                '-crf', '17', '-preset', 'veryslow', '-tune', 'stillimage',
+                '-r', String(FPS),
+                '-an', '-movflags', '+faststart',
+                'output.mp4'
+            ];
+        } else {
+            inputName = 'input' + '.' + file.name.split('.').pop().toLowerCase();
+            await ffmpeg.writeFile(inputName, new Uint8Array(await file.arrayBuffer()));
+            const scale = outputW && outputH
+                ? 'scale=' + outputW + ':' + outputH + ':flags=lanczos'
+                : 'scale=min(1280,iw):min(1280,ih):force_original_aspect_ratio=decrease:flags=lanczos,crop=trunc(iw/2)*2:trunc(ih/2)*2';
+            args = [
+                '-y', '-i', inputName,
+                '-vf', scale,
+                '-c:v', 'libx264', '-pix_fmt', 'yuv420p',
+                '-profile:v', 'high',
+                '-crf', '17', '-preset', 'veryslow',
+                '-r', String(FPS),
+                '-an', '-movflags', '+faststart',
+                'output.mp4'
+            ];
+        }
 
         const ret = await ffmpeg.exec(args);
         if (ret !== 0) {
@@ -306,7 +360,7 @@ async function convert() {
         }
 
         const data = await ffmpeg.readFile('output.mp4');
-        await ffmpeg.deleteFile('input.png');
+        await ffmpeg.deleteFile(inputName);
         await ffmpeg.deleteFile('output.mp4');
 
         const blob = new Blob([data.buffer], { type: 'video/mp4' });
@@ -348,8 +402,21 @@ function clearFile() {
     hide(document.getElementById('convertBtn'));
     hide(document.getElementById('resultWrap'));
     hide(document.getElementById('errorText'));
+    hide(document.getElementById('warnText'));
     show(document.getElementById('dropZone'));
     setStatus(null);
+    const imgPreview = document.getElementById('filePreview');
+    const vidPreview = document.getElementById('fileVideoPreview');
+    if (imgPreview.dataset.url) {
+        URL.revokeObjectURL(imgPreview.dataset.url);
+        imgPreview.removeAttribute('src');
+    }
+    if (vidPreview.dataset.url) {
+        URL.revokeObjectURL(vidPreview.dataset.url);
+        vidPreview.removeAttribute('src');
+    }
+    hide(vidPreview);
+    show(imgPreview);
     if (resultUrl) {
         URL.revokeObjectURL(resultUrl);
         resultUrl = null;
@@ -358,8 +425,8 @@ function clearFile() {
 
 async function handleFile(f) {
     if (!f) return;
-    const ext = '.' + f.name.split('.').pop().toLowerCase();
-    if (!SUPPORTED_EXTS.includes(ext)) {
+    const isV = isVideo(f);
+    if (!SUPPORTED_EXTS.includes('.' + f.name.split('.').pop().toLowerCase()) && !isV) {
         setStatus('badFormat');
         return;
     }
@@ -368,17 +435,45 @@ async function handleFile(f) {
     file = f;
 
     const previewUrl = URL.createObjectURL(f);
-    document.getElementById('filePreview').src = previewUrl;
-    const oldPreview = document.getElementById('filePreview').dataset.url;
-    if (oldPreview) URL.revokeObjectURL(oldPreview);
-    document.getElementById('filePreview').dataset.url = previewUrl;
+    const imgPreview = document.getElementById('filePreview');
+    const vidPreview = document.getElementById('fileVideoPreview');
+    if (isV) {
+        if (imgPreview.dataset.url) URL.revokeObjectURL(imgPreview.dataset.url);
+        imgPreview.removeAttribute('src');
+        hide(imgPreview);
+        vidPreview.src = previewUrl;
+        vidPreview.dataset.url = previewUrl;
+        show(vidPreview);
+        vidPreview.load();
+        vidPreview.play().catch(() => {});
+    } else {
+        if (vidPreview.dataset.url) URL.revokeObjectURL(vidPreview.dataset.url);
+        vidPreview.removeAttribute('src');
+        hide(vidPreview);
+        imgPreview.src = previewUrl;
+        imgPreview.dataset.url = previewUrl;
+        show(imgPreview);
+    }
     document.getElementById('fileName').textContent = f.name;
     document.getElementById('fileInfo').textContent = formatSize(f.size);
 
-    const { w, h } = await loadImageDims(f);
-    [outputW, outputH] = computeOutputDims(w, h);
-    document.getElementById('fileInfo').textContent = `${w}×${h} · ${formatSize(f.size)}`;
-    document.getElementById('outputInfo').textContent = `→ ${outputW}×${outputH} · ${DURATION}s · ${FPS}fps · MP4`;
+    try {
+        if (isV) {
+            const { w, h } = await loadVideoDims(f);
+            [outputW, outputH] = computeOutputDims(w, h);
+            document.getElementById('fileInfo').textContent = `${w}×${h} · ${formatSize(f.size)}`;
+            document.getElementById('outputInfo').textContent = `→ ${outputW}×${outputH} · ${FPS}fps · MP4`;
+        } else {
+            const { w, h } = await loadImageDims(f);
+            [outputW, outputH] = computeOutputDims(w, h);
+            document.getElementById('fileInfo').textContent = `${w}×${h} · ${formatSize(f.size)}`;
+            document.getElementById('outputInfo').textContent = `→ ${outputW}×${outputH} · ${DURATION}s · ${FPS}fps · MP4`;
+        }
+    } catch (e) {
+        console.error(e);
+        handleError(tr('err').replace('{msg}', 'decode failed'));
+        return;
+    }
 
     hide(document.getElementById('dropZone'));
     show(document.getElementById('fileCard'));

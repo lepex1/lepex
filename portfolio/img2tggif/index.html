@@ -60,18 +60,19 @@
                         <span class="material-symbols-outlined">add_photo_alternate</span>
                     </div>
                     <p class="tg-drop-title" data-lang-ru="Drag-and-drop" data-lang-en="Drag-and-drop">Drag-and-drop</p>
-                    <p class="tg-drop-sub">PNG · JPG · WEBP · BMP · TIFF · GIF</p>
+                    <p class="tg-drop-sub">PNG · JPG · WEBP · BMP · TIFF · GIF · MP4 · MOV · WEBM · MKV</p>
                     <button type="button" class="md3-filled-button" id="browseBtn">
                         <span class="material-symbols-outlined">folder_open</span>
                         <span data-lang-ru="Выбрать файл" data-lang-en="Choose File">Choose File</span>
                     </button>
-                    <input type="file" id="fileInput" accept=".png,.jpg,.jpeg,.bmp,.webp,.tiff,.tif,.gif,.jfif" hidden>
+                    <input type="file" id="fileInput" accept=".png,.jpg,.jpeg,.bmp,.webp,.tiff,.tif,.gif,.jfif,.mp4,.m4v,.mov,.webm,.mkv,.avi" hidden>
                 </div>
 
                 <!-- File Card -->
                 <div class="tg-file-card hidden" id="fileCard">
                     <div class="tg-file-preview-wrap">
                         <img id="filePreview" alt="" class="tg-file-preview">
+                        <video id="fileVideoPreview" class="tg-file-preview" muted loop playsinline></video>
                     </div>
                     <div class="tg-file-info">
                         <p class="tg-file-name" id="fileName"></p>
@@ -90,6 +91,8 @@
                 </button>
 
                 <p class="tg-status hidden" id="statusText"></p>
+
+                <p class="tg-warning hidden" id="warnText"></p>
 
                 <!-- Progress -->
                 <div class="tg-progress hidden" id="progressWrap" role="progressbar" aria-label="Conversion progress">
