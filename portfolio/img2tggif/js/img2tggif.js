@@ -9,6 +9,8 @@ const I18N = {
     fileLoaded: { ru: 'Файл загружен: {name}', en: 'File loaded: {name}' },
     preparing: { ru: 'Подготовка...', en: 'Preparing...' },
     converting: { ru: 'Конвертация...', en: 'Converting...' },
+    convertingElapsed: { ru: 'Конвертация… {elapsed}', en: 'Converting… {elapsed}' },
+    convertingEta: { ru: 'Конвертация… {elapsed} / {total} · осталось ~{remaining}', en: 'Converting… {elapsed} / {total} · ~{remaining} left' },
     loadingEngine: { ru: 'Загрузка движка… {pct}%', en: 'Loading engine… {pct}%' },
     badFormat: { ru: 'Неподдерживаемый формат. Используй PNG, JPG, BMP, WEBP, TIFF, GIF, MP4, MOV, WEBM, MKV, AVI', en: 'Unsupported format. Use PNG, JPG, BMP, WEBP, TIFF, GIF, MP4, MOV, WEBM, MKV, AVI' },
     videoTooLarge: { ru: 'Файл больше 100 МБ — конвертация может занять много времени и памяти', en: 'File is over 100 MB — conversion may take a while and use lots of memory' },
@@ -81,6 +83,7 @@ let outputH = 0;
 let currentStatus = null;
 let ffmpegPromise = null;
 let resultUrl = null;
+let videoDurationSec = 0;
 
 function tr(key) {
     return I18N[key] ? I18N[key][currentLanguage] : key;
@@ -115,6 +118,11 @@ function hide(el) { el.classList.add('hidden'); }
 let progressTimer = null;
 let converting = false;
 let encodeProgressCb = null;
+let encodeStartMs = 0;
+let encodeOutSec = 0;
+let encodeTotalSec = 0;
+let encodeHasData = false;
+let encodeClockTimer = null;
 
 function stopProgressTimer() {
     if (progressTimer) {
@@ -122,6 +130,23 @@ function stopProgressTimer() {
         cancelAnimationFrame(progressTimer);
         progressTimer = null;
     }
+}
+
+function stopEncodeClock() {
+    if (encodeClockTimer) {
+        clearInterval(encodeClockTimer);
+        encodeClockTimer = null;
+    }
+}
+
+function formatClock(sec) {
+    sec = Math.max(0, Math.round(sec));
+    const h = Math.floor(sec / 3600);
+    const m = Math.floor((sec % 3600) / 60);
+    const s = sec % 60;
+    const mm = String(m).padStart(2, '0');
+    const ss = String(s).padStart(2, '0');
+    return h > 0 ? h + ':' + mm + ':' + ss : mm + ':' + ss;
 }
 
 function progressNow() {
@@ -163,36 +188,55 @@ function animatePgTo(p, ms) {
     progressTimer = requestAnimationFrame(step);
 }
 
-function startEncodeTicker() {
+function startEncodeClock() {
     stopProgressTimer();
+    stopEncodeClock();
+    encodeStartMs = performance.now();
+    encodeOutSec = 0;
+    encodeHasData = false;
     const fill = document.getElementById('progressFill');
     fill.classList.add('indeterminate');
+    renderEncodeLabel();
     const label = document.getElementById('progressLabel');
-    label.textContent = tr('converting');
+    show(label);
+    encodeClockTimer = setInterval(renderEncodeLabel, 1000);
+}
+
+function renderEncodeLabel() {
+    const label = document.getElementById('progressLabel');
+    const elapsed = (performance.now() - encodeStartMs) / 1000;
+    let text;
+    if (encodeHasData && encodeTotalSec > 0 && encodeOutSec > 0) {
+        const frac = Math.min(1, encodeOutSec / encodeTotalSec);
+        const eta = frac >= 0.01 ? Math.round(elapsed * (1 - frac) / frac) : 0;
+        text = tr('convertingEta')
+            .replace('{elapsed}', formatClock(elapsed))
+            .replace('{total}', formatClock(encodeTotalSec))
+            .replace('{remaining}', formatClock(eta));
+    } else {
+        text = tr('convertingElapsed').replace('{elapsed}', formatClock(elapsed));
+    }
+    label.textContent = text;
     show(label);
     const wrap = document.getElementById('progressWrap');
-    wrap.setAttribute('aria-valuenow', '94');
-    let p = 94;
-    let last = performance.now();
-    const step = (now) => {
-        if (now - last >= 1000) {
-            last = now;
-            p = Math.min(99, p + 1);
-            label.textContent = tr('converting') + ' ' + p + '%';
-            wrap.setAttribute('aria-valuenow', String(p));
-        }
-        progressTimer = requestAnimationFrame(step);
-    };
-    progressTimer = requestAnimationFrame(step);
+    if (!encodeHasData) {
+        wrap.removeAttribute('aria-valuenow');
+        wrap.setAttribute('aria-valuetext', text);
+    } else {
+        wrap.removeAttribute('aria-valuetext');
+    }
 }
 
 function showProgress(labelKey) {
+    stopProgressTimer();
+    stopEncodeClock();
     setPgPct(0, labelKey ? tr(labelKey) : null);
     show(document.getElementById('progressWrap'));
 }
 
 function hideProgress() {
     stopProgressTimer();
+    stopEncodeClock();
     hide(document.getElementById('progressWrap'));
 }
 
@@ -287,13 +331,34 @@ async function getFfmpeg() {
                     setPgPct(pct, tr('loadingEngine').replace('{pct}', pct));
                 }
             };
-            const coreURL = await FFmpegUtil.toBlobURL(getVendorUrl('ffmpeg-core.js'), 'text/javascript', true, reportRange(20, 45));
-            const wasmURL = await FFmpegUtil.toBlobURL(getVendorUrl('ffmpeg-core.wasm'), 'application/wasm', undefined, reportRange(45, 94));
+            const coreURL = await FFmpegUtil.toBlobURL(getVendorUrl('ffmpeg-core.js'), 'text/javascript', true, reportRange(15, 35));
+            const wasmURL = await FFmpegUtil.toBlobURL(getVendorUrl('ffmpeg-core.wasm'), 'application/wasm', undefined, reportRange(35, 60));
             await ffmpeg.load({ coreURL, wasmURL });
             if (typeof ffmpeg.on === 'function') {
-                ffmpeg.on('progress', (ev) => {
-                    const frac = ev && typeof ev.progress === 'number' ? ev.progress : -1;
-                    if (frac >= 0 && frac <= 1 && encodeProgressCb) encodeProgressCb(frac);
+                let logBuf = '';
+                ffmpeg.on('log', ({ message }) => {
+                    if (!encodeProgressCb) return;
+                    logBuf += message;
+                    const lines = logBuf.split('\n');
+                    logBuf = lines.pop();
+                    for (const line of lines) {
+                        const l = line.trim();
+                        let m;
+                        if ((m = /^Duration:\s*(\d+):(\d+):(\d+(?:\.\d+)?)/.exec(l))) {
+                            if (!encodeTotalSec) {
+                                encodeTotalSec = Number(m[1]) * 3600 + Number(m[2]) * 60 + Number(m[3]);
+                            }
+                        } else if ((m = /^out_time_us=(\d+)/.exec(l))) {
+                            const us = Number(m[1]);
+                            encodeProgressCb(Math.min(1, us / 1000000 / (encodeTotalSec || 1)), us / 1000000);
+                        } else if ((m = /^out_time_ms=(\d+)/.exec(l))) {
+                            const ms = Number(m[1]);
+                            encodeProgressCb(Math.min(1, ms / 1000 / (encodeTotalSec || 1)), ms / 1000);
+                        } else if ((m = /^out_time=(\d+):(\d+):(\d+(?:\.\d+)?)/.exec(l))) {
+                            const sec = Number(m[1]) * 3600 + Number(m[2]) * 60 + Number(m[3]);
+                            encodeProgressCb(Math.min(1, sec / (encodeTotalSec || 1)), sec);
+                        }
+                    }
                 });
             }
             return ffmpeg;
@@ -346,12 +411,21 @@ async function convert() {
 
         const ffmpeg = await getFfmpeg();
 
-        setPgPct(95);
-        startEncodeTicker();
-        encodeProgressCb = (frac) => {
-            const p = Math.min(99, 95 + Math.round(4 * frac));
-            setPgPct(p, tr('converting') + ' ' + p + '%');
+        encodeTotalSec = isV ? (videoDurationSec || 0) : DURATION;
+        setPgPct(60);
+        encodeProgressCb = (frac, outSec) => {
+            if (typeof outSec === 'number' && outSec > 0) {
+                encodeOutSec = outSec;
+                if (encodeTotalSec > 0) encodeHasData = true;
+            }
+            if (encodeHasData && encodeTotalSec > 0) {
+                const pf = Math.min(1, frac);
+                const p = Math.min(98, 60 + Math.round(38 * pf));
+                setPgPct(p, null);
+            }
+            renderEncodeLabel();
         };
+        startEncodeClock();
 
         const warnEl = document.getElementById('warnText');
         if (isV && file.size > VIDEO_WARN_BYTES) {
@@ -371,8 +445,8 @@ async function convert() {
                 '-c:v', 'libx264', '-t', String(DURATION), '-pix_fmt', 'yuv420p',
                 '-profile:v', 'high',
                 '-crf', '17', '-preset', 'veryslow', '-tune', 'stillimage',
-                '-r', String(FPS),
-                '-an', '-movflags', '+faststart',
+                '-r', String(FPS), '-an', '-movflags', '+faststart',
+                '-nostats', '-progress', 'pipe:1',
                 'output.mp4'
             ];
         } else {
@@ -387,8 +461,8 @@ async function convert() {
                 '-c:v', 'libx264', '-pix_fmt', 'yuv420p',
                 '-profile:v', 'high',
                 '-crf', '17', '-preset', 'veryslow',
-                '-r', String(FPS),
-                '-an', '-movflags', '+faststart',
+                '-r', String(FPS), '-an', '-movflags', '+faststart',
+                '-nostats', '-progress', 'pipe:1',
                 'output.mp4'
             ];
         }
@@ -506,7 +580,8 @@ async function handleFile(f) {
 
     try {
         if (isV) {
-            const { w, h } = await loadVideoDims(f);
+            const { w, h, duration } = await loadVideoDims(f);
+            videoDurationSec = duration || 0;
             [outputW, outputH] = computeOutputDims(w, h);
             document.getElementById('fileInfo').textContent = `${w}×${h} · ${formatSize(f.size)}`;
             document.getElementById('outputInfo').textContent = `→ ${outputW}×${outputH} · ${FPS}fps · MP4`;
