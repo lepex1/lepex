@@ -2,6 +2,7 @@
 <html lang="en" data-gif-theme="storm">
 <head>
     <meta charset="UTF-8">
+    <script>var h=document.documentElement;var l=localStorage.getItem('lang');var u=(navigator.language||'').split('-')[0];var L=(l==='ru'||l==='en')?l:(['ru','kk','be','uk'].indexOf(u)>-1?'ru':'en');h.setAttribute('data-lang',L);h.setAttribute('lang',L);</script>
     <script>var gi=localStorage.getItem('gifIndex');if(gi!==null){var ti=parseInt(gi,10);if(!isNaN(ti)&&ti>=0&&ti<=7){document.documentElement.setAttribute('data-gif-theme',['ursa','brew','fura','storm','invoker','meepo','bh','axe'][ti]);document.getElementById('theme-color-meta')&&document.getElementById('theme-color-meta').setAttribute('content',['#141218','#14110f','#121511','#13171a','#0e0e0e','#191113','#15130f','#1a1110'][ti]);}}</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="lepex portfolio">
@@ -149,7 +150,7 @@
                 </a>
                 <div class="md3-brand">
                     <span class="material-symbols-outlined brand-icon">folder</span>
-                    <span class="brand-name" data-lang-ru="портфолио" data-lang-en="portfolio">портфолио</span>
+                    <span class="brand-name i18n-container"><span class="lang-ru">портфолио</span><span class="lang-en">portfolio</span></span>
                     <img src="/assets/previews/gif-themes/storm.gif" class="gif-switcher" id="clickable-gif" alt="theme switcher" data-label-ru="Переключить тему" data-label-en="Switch color theme">
                 </div>
             </div>
@@ -165,15 +166,15 @@
     <div class="page-content">
         <main class="md3-main-content">
             <div class="hub-header reveal-card">
-                <h1 data-lang-ru="Мои проекты" data-lang-en="My Projects">Мои проекты</h1>
-                <p data-lang-ru="Все мои работы в одном месте" data-lang-en="All my work in one place">Все мои работы в одном месте</p>
+                <h1 class="i18n-container"><span class="lang-ru">Мои проекты</span><span class="lang-en">My Projects</span></h1>
+                <p class="i18n-container"><span class="lang-ru">Все мои работы в одном месте</span><span class="lang-en">All my work in one place</span></p>
             </div>
             <div class="hub-grid" id="hub-container"></div>
         </main>
 
         <footer class="md3-footer">
             <p class="footer-text">lepex &copy; <span id="year"></span></p>
-            <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
+            <p class="footer-credit i18n-container"><span class="lang-ru">Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</span><span class="lang-en">Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.</span></p>
         </footer>
     </div>
 

@@ -2,6 +2,7 @@
 <html lang="ru" data-gif-theme="storm">
 <head>
   <meta charset="UTF-8">
+  <script>var h=document.documentElement;var l=localStorage.getItem('lang');var u=(navigator.language||'').split('-')[0];var L=(l==='ru'||l==='en')?l:(['ru','kk','be','uk'].indexOf(u)>-1?'ru':'en');h.setAttribute('data-lang',L);h.setAttribute('lang',L);</script>
   <script>var gi=localStorage.getItem('gifIndex');if(gi!==null){var ti=parseInt(gi,10);if(!isNaN(ti)&&ti>=0&&ti<=7)document.documentElement.setAttribute('data-gif-theme',['ursa','brew','fura','storm','invoker','meepo','bh','axe'][ti]);}</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:type" content="website">
@@ -199,12 +200,12 @@
   <div id="loginOverlay" class="login-overlay">
     <div class="login-card">
       <span class="material-symbols-outlined" style="font-size:3rem;color:var(--md-sys-color-primary);font-variation-settings:'FILL'1;">bar_chart</span>
-      <h1 data-lang-ru="Статистика CASSIE" data-lang-en="CASSIE Statistics">Статистика CASSIE</h1>
-      <p data-lang-ru="Войдите через GitHub для доступа" data-lang-en="Sign in with GitHub to access">Войдите через GitHub для доступа</p>
+      <h1 class="i18n-container"><span class="lang-ru">Статистика CASSIE</span><span class="lang-en">CASSIE Statistics</span></h1>
+      <p class="i18n-container"><span class="lang-ru">Войдите через GitHub для доступа</span><span class="lang-en">Sign in with GitHub to access</span></p>
       <div id="loginError" class="login-error"></div>
       <a href="/api/stats/auth" class="github-btn">
         <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-        <span data-lang-ru="Войти через GitHub" data-lang-en="Sign in with GitHub">Войти через GitHub</span>
+        <span class="i18n-container"><span class="lang-ru">Войти через GitHub</span><span class="lang-en">Sign in with GitHub</span></span>
       </a>
     </div>
   </div>
@@ -217,7 +218,7 @@
         </a>
         <div class="md3-brand">
           <span class="material-symbols-outlined brand-icon">bar_chart</span>
-          <span class="brand-name" style="font-size:1.25rem;" data-lang-ru="Статистика" data-lang-en="Statistics">Статистика</span>
+          <span class="brand-name i18n-container" style="font-size:1.25rem;"><span class="lang-ru">Статистика</span><span class="lang-en">Statistics</span></span>
         </div>
       </div>
       <div class="md3-app-bar-actions">
@@ -230,7 +231,7 @@
         <div class="user-chip">
           <img id="userAvatar" src="" alt="">
           <span id="userName" class="name"></span>
-          <a href="/api/stats/logout" class="logout" data-lang-ru="выйти" data-lang-en="sign out">выйти</a>
+          <a href="/api/stats/logout" class="logout i18n-container"><span class="lang-ru">выйти</span><span class="lang-en">sign out</span></a>
         </div>
       </div>
     </div>
@@ -241,24 +242,24 @@
       <div id="statsContent" class="hidden">
         <div class="stats-grid" id="summaryCards"></div>
 
-        <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" data-lang-ru="Топ команд" data-lang-en="Top Commands">Топ команд</h2>
+        <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" class="i18n-container"><span class="lang-ru">Топ команд</span><span class="lang-en">Top Commands</span></h2>
         <div class="charts-row">
-          <div class="chart-card"><h3 data-lang-ru="Команды" data-lang-en="Commands">Команды</h3><canvas id="chartCommands"></canvas></div>
-          <div class="chart-card"><h3 data-lang-ru="Разделы / Категории" data-lang-en="Sections / Categories">Разделы / Категории</h3><canvas id="chartSections"></canvas></div>
+          <div class="chart-card"><h3 class="i18n-container"><span class="lang-ru">Команды</span><span class="lang-en">Commands</span></h3><canvas id="chartCommands"></canvas></div>
+          <div class="chart-card"><h3 class="i18n-container"><span class="lang-ru">Разделы / Категории</span><span class="lang-en">Sections / Categories</span></h3><canvas id="chartSections"></canvas></div>
         </div>
 
-        <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" data-lang-ru="Посетители" data-lang-en="Visitors">Посетители</h2>
+        <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" class="i18n-container"><span class="lang-ru">Посетители</span><span class="lang-en">Visitors</span></h2>
         <div class="table-wrap" style="margin-bottom:2rem;">
           <table>
-            <thead><tr><th data-lang-ru="IP" data-lang-en="IP">IP</th><th data-lang-ru="Страна" data-lang-en="Country">Страна</th><th data-lang-ru="Устройство" data-lang-en="Device">Устройство</th><th data-lang-ru="ОС" data-lang-en="OS">ОС</th><th data-lang-ru="Браузер" data-lang-en="Browser">Браузер</th><th data-lang-ru="Копирований" data-lang-en="Copies">Копирований</th></tr></thead>
+            <thead><tr><th class="i18n-container"><span class="lang-ru">IP</span><span class="lang-en">IP</span></th><th class="i18n-container"><span class="lang-ru">Страна</span><span class="lang-en">Country</span></th><th class="i18n-container"><span class="lang-ru">Устройство</span><span class="lang-en">Device</span></th><th class="i18n-container"><span class="lang-ru">ОС</span><span class="lang-en">OS</span></th><th class="i18n-container"><span class="lang-ru">Браузер</span><span class="lang-en">Browser</span></th><th class="i18n-container"><span class="lang-ru">Копирований</span><span class="lang-en">Copies</span></th></tr></thead>
             <tbody id="ipsBody"></tbody>
           </table>
         </div>
 
-        <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" data-lang-ru="Последние события" data-lang-en="Recent Events">Последние события</h2>
+        <h2 style="font-family:'Outfit',sans-serif;margin-bottom:1rem;color:var(--md-sys-color-on-surface);" class="i18n-container"><span class="lang-ru">Последние события</span><span class="lang-en">Recent Events</span></h2>
         <div class="table-wrap">
           <table>
-            <thead><tr><th data-lang-ru="Время" data-lang-en="Time">Время</th><th data-lang-ru="IP" data-lang-en="IP">IP</th><th data-lang-ru="Раздел" data-lang-en="Section">Раздел</th><th data-lang-ru="Категория" data-lang-en="Category">Категория</th><th data-lang-ru="Команда (срез)" data-lang-en="Command (snippet)">Команда (срез)</th></tr></thead>
+            <thead><tr><th class="i18n-container"><span class="lang-ru">Время</span><span class="lang-en">Time</span></th><th class="i18n-container"><span class="lang-ru">IP</span><span class="lang-en">IP</span></th><th class="i18n-container"><span class="lang-ru">Раздел</span><span class="lang-en">Section</span></th><th class="i18n-container"><span class="lang-ru">Категория</span><span class="lang-en">Category</span></th><th class="i18n-container"><span class="lang-ru">Команда (срез)</span><span class="lang-en">Command (snippet)</span></th></tr></thead>
             <tbody id="eventsBody"></tbody>
           </table>
         </div>
@@ -266,14 +267,14 @@
 
       <div id="statsLoading" style="text-align:center;padding:80px 0;color:var(--md-sys-color-on-surface-variant);">
         <span class="material-symbols-outlined" style="font-size:2.5rem;">hourglass_top</span>
-        <p style="margin-top:0.5rem;" data-lang-ru="Загрузка статистики..." data-lang-en="Loading statistics...">Загрузка статистики...</p>
+        <p style="margin-top:0.5rem;" class="i18n-container"><span class="lang-ru">Загрузка статистики...</span><span class="lang-en">Loading statistics...</span></p>
       </div>
     </div>
   </div>
 
   <footer class="md3-footer">
     <p class="footer-text">lepex &copy; <span id="year"></span></p>
-    <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
+    <p class="footer-credit i18n-container"><span class="lang-ru">Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</span><span class="lang-en">Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.</span></p>
   </footer>
 
   <script>

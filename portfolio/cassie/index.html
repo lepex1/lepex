@@ -2,6 +2,7 @@
 <html lang="ru" data-gif-theme="storm">
 <head>
     <meta charset="UTF-8">
+    <script>var h=document.documentElement;var l=localStorage.getItem('lang');var u=(navigator.language||'').split('-')[0];var L=(l==='ru'||l==='en')?l:(['ru','kk','be','uk'].indexOf(u)>-1?'ru':'en');h.setAttribute('data-lang',L);h.setAttribute('lang',L);</script>
     <script>var gi=localStorage.getItem('gifIndex');if(gi!==null){var ti=parseInt(gi,10);if(!isNaN(ti)&&ti>=0&&ti<=7)document.documentElement.setAttribute('data-gif-theme',['ursa','brew','fura','storm','invoker','meepo','bh','axe'][ti]);}</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CASSIE by lepex">
@@ -70,13 +71,9 @@
                     </div>
                     <div class="cassie-description-content">
                         <div class="cassie-badge-row">
-                            <span class="cassie-badge" data-lang-ru="Информация" data-lang-en="Information">Информация</span>
+                            <span class="cassie-badge i18n-container"><span class="lang-ru">Информация</span><span class="lang-en">Information</span></span>
                         </div>
-                        <p class="cassie-description-text"
-                           data-lang-ru="Это набор созданных мной команд C.A.S.S.I.E. для проекта FoxGame в игре SCP: Secret Laboratory."
-                           data-lang-en="This is a set of C.A.S.S.I.E. commands I created for the FoxGame project in SCP: Secret Laboratory.">
-                            Это набор созданных мной команд C.A.S.S.I.E. для проекта FoxGame в игре SCP: Secret Laboratory.
-                        </p>
+                        <p class="cassie-description-text i18n-container"><span class="lang-ru">Это набор созданных мной команд C.A.S.S.I.E. для проекта FoxGame в игре SCP: Secret Laboratory.</span><span class="lang-en">This is a set of C.A.S.S.I.E. commands I created for the FoxGame project in SCP: Secret Laboratory.</span></p>
                         <div class="cassie-description-chips">
                             <a href="https://discord.com/invite/WZRTfNCJK3" target="_blank" rel="noopener" class="cassie-chip">
                                 <span class="material-symbols-outlined chip-icon">groups</span>
@@ -103,14 +100,14 @@
             <nav class="section-tabs" id="sectionTabs"></nav>
 
             <main id="content-area">
-                <div class="loading-state" data-lang-ru="Загрузка данных..." data-lang-en="Loading data...">Загрузка данных...</div>
+                <div class="loading-state i18n-container"><span class="lang-ru">Загрузка данных...</span><span class="lang-en">Loading data...</span></div>
             </main>
 
         </div>
 
         <footer class="md3-footer">
             <p class="footer-text">lepex &copy; <span id="year"></span></p>
-            <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
+            <p class="footer-credit i18n-container"><span class="lang-ru">Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</span><span class="lang-en">Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.</span></p>
         </footer>
     </div>
 

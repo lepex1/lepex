@@ -84,35 +84,8 @@ function initializeGifTheme() {
 }
 
 function initializeLanguage() {
-    const russianLangs = ['ru', 'kk', 'be', 'uk'];
-    const userLang = navigator.language.split('-')[0];
-    const savedLang = localStorage.getItem('lang');
-    currentLanguage = (savedLang === 'ru' || savedLang === 'en')
-        ? savedLang
-        : (russianLangs.includes(userLang) ? 'ru' : 'en');
-
-    document.querySelectorAll('[data-lang-ru][data-lang-en]').forEach(element => {
-        if (element.tagName === 'TITLE' || element.tagName === 'META') return;
-
-        const ruContent = element.getAttribute('data-lang-ru');
-        const enContent = element.getAttribute('data-lang-en');
-
-        element.innerHTML = '';
-        element.removeAttribute('data-lang-ru');
-        element.removeAttribute('data-lang-en');
-        element.classList.add('i18n-container');
-
-        const ruSpan = document.createElement('span');
-        ruSpan.className = 'lang-ru';
-        ruSpan.innerHTML = ruContent;
-
-        const enSpan = document.createElement('span');
-        enSpan.className = 'lang-en';
-        enSpan.innerHTML = enContent;
-
-        element.appendChild(ruSpan);
-        element.appendChild(enSpan);
-    });
+    const savedLang = document.documentElement.getAttribute('data-lang');
+    currentLanguage = (savedLang === 'ru' || savedLang === 'en') ? savedLang : 'ru';
 
     const langToggle = document.getElementById('lang-toggle');
     switchLanguage(currentLanguage);
@@ -131,11 +104,8 @@ function initializeLanguage() {
 function switchLanguage(lang) {
     currentLanguage = lang;
 
-    document.querySelectorAll('.i18n-container').forEach(container => {
-        container.querySelectorAll('.lang-ru, .lang-en').forEach(el => {
-            el.classList.toggle('active', el.classList.contains('lang-' + lang));
-        });
-    });
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
 
     document.querySelectorAll('[data-placeholder-ru][data-placeholder-en]').forEach(el => {
         el.placeholder = el.getAttribute('data-placeholder-' + lang);

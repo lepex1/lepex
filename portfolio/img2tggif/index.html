@@ -2,6 +2,7 @@
 <html lang="en" data-gif-theme="storm">
 <head>
     <meta charset="UTF-8">
+    <script>var h=document.documentElement;var l=localStorage.getItem('lang');var u=(navigator.language||'').split('-')[0];var L=(l==='ru'||l==='en')?l:(['ru','kk','be','uk'].indexOf(u)>-1?'ru':'en');h.setAttribute('data-lang',L);h.setAttribute('lang',L);</script>
     <script>var gi=localStorage.getItem('gifIndex');if(gi!==null){var ti=parseInt(gi,10);if(!isNaN(ti)&&ti>=0&&ti<=7){document.documentElement.setAttribute('data-gif-theme',['ursa','brew','fura','storm','invoker','meepo','bh','axe'][ti]);document.getElementById('theme-color-meta')&&document.getElementById('theme-color-meta').setAttribute('content',['#141218','#14110f','#121511','#13171a','#0e0e0e','#191113','#15130f','#1a1110'][ti]);}}</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Img2TgGif — convert an image to a Telegram-optimized looping MP4 right in the browser">
@@ -60,18 +61,18 @@
                 <div class="card-icon-wrapper">
                     <span class="material-symbols-outlined card-main-icon">gif_box</span>
                 </div>
-                <h2 class="card-title" data-lang-ru="Конвертер картинки в телеграм гиф" data-lang-en="Image to Telegram GIF Converter">Конвертер картинки в телеграм гиф</h2>
+                <h2 class="card-title i18n-container"><span class="lang-ru">Конвертер картинки в телеграм гиф</span><span class="lang-en">Image to Telegram GIF Converter</span></h2>
 
                 <!-- Drop Zone -->
                 <div class="tg-drop-zone" id="dropZone" role="button" tabindex="0">
                     <div class="tg-drop-icon-wrap">
                         <span class="material-symbols-outlined">add_photo_alternate</span>
                     </div>
-                    <p class="tg-drop-title" data-lang-ru="Drag-and-drop" data-lang-en="Drag-and-drop">Drag-and-drop</p>
+                    <p class="tg-drop-title i18n-container"><span class="lang-ru">Drag-and-drop</span><span class="lang-en">Drag-and-drop</span></p>
                     <p class="tg-drop-sub">PNG · JPG · WEBP · BMP · TIFF · GIF · MP4 · MOV · WEBM · MKV</p>
                     <button type="button" class="md3-filled-button" id="browseBtn">
                         <span class="material-symbols-outlined">folder_open</span>
-                        <span data-lang-ru="Выбрать файл" data-lang-en="Choose File">Выбрать файл</span>
+                        <span class="i18n-container"><span class="lang-ru">Выбрать файл</span><span class="lang-en">Choose File</span></span>
                     </button>
                     <input type="file" id="fileInput" accept=".png,.jpg,.jpeg,.bmp,.webp,.tiff,.tif,.gif,.jfif,.mp4,.m4v,.mov,.webm,.mkv,.avi" hidden>
                 </div>
@@ -95,7 +96,7 @@
                 <!-- Convert -->
                 <button type="button" class="md3-filled-button tg-convert-btn hidden" id="convertBtn">
                     <span class="material-symbols-outlined">movie_creation</span>
-                    <span data-lang-ru="Конвертировать" data-lang-en="Convert">Конвертировать</span>
+                    <span class="i18n-container"><span class="lang-ru">Конвертировать</span><span class="lang-en">Convert</span></span>
                 </button>
 
                 <p class="tg-status hidden" id="statusText"></p>
@@ -112,19 +113,19 @@
 
                 <!-- Result -->
                 <div class="tg-result hidden" id="resultWrap">
-                    <h3 class="tg-result-title" data-lang-ru="Готово!" data-lang-en="Done!">Готово!</h3>
+                    <h3 class="tg-result-title i18n-container"><span class="lang-ru">Готово!</span><span class="lang-en">Done!</span></h3>
                     <div class="tg-result-video-wrap">
                         <video id="resultVideo" class="tg-result-video" muted loop autoplay playsinline></video>
                     </div>
-                    <p class="tg-result-hint" data-lang-ru="Отправь MP4 в телеграм - он отобразится как гиф" data-lang-en="Send the MP4 to Telegram - it will display as a GIF">Отправь MP4 в телеграм - он отобразится как гиф</p>
+                    <p class="tg-result-hint i18n-container"><span class="lang-ru">Отправь MP4 в телеграм - он отобразится как гиф</span><span class="lang-en">Send the MP4 to Telegram - it will display as a GIF</span></p>
                     <div class="tg-result-actions">
                         <a class="md3-filled-button" id="downloadBtn" download>
                             <span class="material-symbols-outlined">download</span>
-                            <span data-lang-ru="Скачать MP4" data-lang-en="Download MP4">Скачать MP4</span>
+                            <span class="i18n-container"><span class="lang-ru">Скачать MP4</span><span class="lang-en">Download MP4</span></span>
                         </a>
                         <button type="button" class="md3-pill-button tg-new-btn" id="newBtn">
                             <span class="material-symbols-outlined">add</span>
-                            <span data-lang-ru="Новый файл" data-lang-en="New File">Новый файл</span>
+                            <span class="i18n-container"><span class="lang-ru">Новый файл</span><span class="lang-en">New File</span></span>
                         </button>
                     </div>
                 </div>
@@ -135,7 +136,7 @@
 
         <footer class="md3-footer">
             <p class="footer-text">lepex &copy; <span id="year"></span></p>
-            <p class="footer-credit" data-lang-ru="Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же." data-lang-en="Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.">Дизайн вдохновлён <a href="https://github.com/h6rd/Dota2PornFxWeb" target="_blank" rel="noopener">Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</p>
+            <p class="footer-credit i18n-container"><span class="lang-ru">Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</span><span class="lang-en">Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.</span></p>
         </footer>
     </div>
 

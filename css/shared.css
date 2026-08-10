@@ -44,8 +44,9 @@ body {
 .i18n-container > .lang-en {
     display: inline;
 }
-.i18n-container > .lang-ru:not(.active),
-.i18n-container > .lang-en:not(.active) {
+html[data-lang="ru"] .i18n-container > .lang-en,
+html[data-lang="en"] .i18n-container > .lang-ru,
+html:not([data-lang]) .i18n-container > .lang-en {
     position: absolute;
     visibility: hidden;
     pointer-events: none;

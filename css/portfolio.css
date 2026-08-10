@@ -59,10 +59,10 @@
     position: relative;
 }
 
-.md3-badge.i18n-container > .lang-ru.active,
-.md3-badge.i18n-container > .lang-en.active,
-.portfolio-section-header .i18n-container > .lang-ru.active,
-.portfolio-section-header .i18n-container > .lang-en.active {
+html[data-lang="ru"] .md3-badge.i18n-container > .lang-ru,
+html[data-lang="en"] .md3-badge.i18n-container > .lang-en,
+html[data-lang="ru"] .portfolio-section-header .i18n-container > .lang-ru,
+html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
     text-align: inherit;
 }
 
