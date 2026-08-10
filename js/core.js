@@ -23,6 +23,17 @@ function preloadGifs() {
     });
 }
 
+const GIF_THEME_COLORS = {
+    ursa: "#141218",
+    brew: "#14110f",
+    fura: "#121511",
+    storm: "#13171a",
+    invoker: "#0e0e0e",
+    meepo: "#191113",
+    bh: "#15130f",
+    axe: "#1a1110"
+};
+
 function initializeGifTheme() {
     preloadGifs();
 
@@ -54,6 +65,11 @@ function initializeGifTheme() {
                 gifElement.src = GIF_CONFIG.gifs[currentIndex];
                 html.setAttribute('data-gif-theme', newTheme);
                 localStorage.setItem('gifIndex', currentIndex.toString());
+
+                const themeColorMeta = document.getElementById('theme-color-meta');
+                if (themeColorMeta && GIF_THEME_COLORS[newTheme]) {
+                    themeColorMeta.setAttribute('content', GIF_THEME_COLORS[newTheme]);
+                }
 
                 switcher.classList.add('appear');
                 setTimeout(() => {

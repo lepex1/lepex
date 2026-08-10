@@ -154,7 +154,7 @@ async function loadPortfolio() {
 
             let imageSrc = safeImage;
             if (isAutoImg && videoId) {
-                imageSrc = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+                imageSrc = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
             } else if (isAutoImg) {
                 imageSrc = '/assets/previews/portfolio/placeholder.svg';
             }

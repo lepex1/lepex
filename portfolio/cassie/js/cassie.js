@@ -215,6 +215,30 @@ function tSection(name) {
     return name;
 }
 
+function tCategory(name) {
+    const map = {
+        '📥 Обработка и статус запросов': '📥 Request processing & status',
+        '👥 Управление персоналом': '👥 Personnel management',
+        '🛡️ Запросы поддержки (Отказы)': '🛡️ Support requests (Denials)',
+        '🚨 Критические ситуации': '🚨 Critical situations',
+        '🕓 Распорядок Комплекса': '🕓 Facility schedule',
+        '🔬 Научная деятельность': '🔬 Scientific activity',
+        '👮 Прибытие': '👮 Arrivals',
+        '⚙️ Комитет Дельта': '⚙️ Delta Committee',
+        'Общее': 'General',
+    };
+    if (currentLanguage === 'en') {
+        for (const [ru, en] of Object.entries(map)) {
+            if (name.includes(ru)) return name.replace(ru, en);
+        }
+    } else {
+        for (const [ru, en] of Object.entries(map)) {
+            if (name.includes(en)) return name.replace(en, ru);
+        }
+    }
+    return name;
+}
+
 function buildSectionTabs() {
     const container = document.getElementById("sectionTabs");
     container.innerHTML = "";
@@ -318,7 +342,7 @@ function render() {
 
             const catText = document.createElement("span");
             catText.className = "category-text";
-            catText.textContent = category;
+            catText.textContent = tCategory(category);
             catHeader.appendChild(catText);
 
             sectionEl.appendChild(catHeader);
@@ -407,6 +431,9 @@ function updateCassieLanguage() {
         const badge = header.querySelector('.section-badge');
         if (badge) badge.textContent = currentLanguage === 'ru' ? 'НОВОЕ' : 'NEW';
     });
+    document.querySelectorAll('.category-text').forEach(el => {
+        el.textContent = tCategory(el.textContent);
+    });
     document.querySelectorAll('.md3-btn--copy').forEach(btn => {
         const isCopied = btn.classList.contains('copied');
         btn.lastChild.textContent = currentLanguage === 'en'
@@ -442,7 +469,6 @@ function setupCassieListeners() {
         });
     }
 
-    const origClick = initializeGifTheme;
     const gifElement = document.getElementById('clickable-gif');
     if (gifElement) {
         gifElement.addEventListener('click', () => {

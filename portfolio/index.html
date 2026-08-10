@@ -2,10 +2,18 @@
 <html lang="en" data-gif-theme="storm">
 <head>
     <meta charset="UTF-8">
-    <script>var gi=localStorage.getItem('gifIndex');if(gi!==null){var ti=parseInt(gi,10);if(!isNaN(ti)&&ti>=0&&ti<=7)document.documentElement.setAttribute('data-gif-theme',['ursa','brew','fura','storm','invoker','meepo','bh','axe'][ti]);}</script>
+    <script>var gi=localStorage.getItem('gifIndex');if(gi!==null){var ti=parseInt(gi,10);if(!isNaN(ti)&&ti>=0&&ti<=7){document.documentElement.setAttribute('data-gif-theme',['ursa','brew','fura','storm','invoker','meepo','bh','axe'][ti]);document.getElementById('theme-color-meta')&&document.getElementById('theme-color-meta').setAttribute('content',['#141218','#14110f','#121511','#13171a','#0e0e0e','#191113','#15130f','#1a1110'][ti]);}}</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="lepex portfolio">
     <meta name="author" content="lepex">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="lepex">
+    <meta property="og:url" content="https://lepex.vercel.app/portfolio/">
+    <meta property="og:title" content="portfolio — lepex">
+    <meta property="og:description" content="My projects: CASSIE command database, subtitles catalogue, gradient text, Img2TgGif converter.">
+    <meta property="og:image" content="https://lepex.vercel.app/assets/previews/gif-themes/sniper.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" id="theme-color-meta" content="#13171a">
     <base href="/portfolio/">
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,7 +150,7 @@
                 <div class="md3-brand">
                     <span class="material-symbols-outlined brand-icon">folder</span>
                     <span class="brand-name" data-lang-ru="портфолио" data-lang-en="portfolio">portfolio</span>
-                    <img src="/assets/previews/gif-themes/storm.gif" class="gif-switcher" id="clickable-gif">
+                    <img src="/assets/previews/gif-themes/storm.gif" class="gif-switcher" id="clickable-gif" alt="theme switcher" data-label-ru="Переключить тему" data-label-en="Switch color theme">
                 </div>
             </div>
             <div class="md3-app-bar-actions">

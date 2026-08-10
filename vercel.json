@@ -5,6 +5,11 @@
     {
       "source": "/portfolio/subtitles/config.yml",
       "destination": "/portfolio/subtitles/admin/config.yml"
+    },
+    {
+      "handle": "error",
+      "source": "/(.*)",
+      "destination": "/404.html"
     }
   ],
   "headers": [
