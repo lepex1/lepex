@@ -60,28 +60,28 @@
                 <div class="card-icon-wrapper">
                     <span class="material-symbols-outlined card-main-icon">auto_awesome</span>
                 </div>
-                <h2 class="card-title" data-lang-ru="Редактор" data-lang-en="Editor">Editor</h2>
+                <h2 class="card-title" data-lang-ru="Редактор" data-lang-en="Editor">Редактор</h2>
 
-                <label class="gradient-field-label" data-lang-ru="Текст" data-lang-en="Text">Text</label>
-                <textarea id="textInput" class="gradient-textarea" rows="3" data-placeholder-ru="Введите текст..." data-placeholder-en="Type something..." placeholder="Type something...">Hello World!</textarea>
+                <label class="gradient-field-label" data-lang-ru="Текст" data-lang-en="Text">Текст</label>
+                <textarea id="textInput" class="gradient-textarea" rows="3" data-placeholder-ru="Введите текст..." data-placeholder-en="Type something..." placeholder="Введите текст...">Hello World!</textarea>
 
                 <label class="gradient-field-label" id="fontSizeLabel">Font Size: <span id="fontSizeValue">80</span>px</label>
                 <input id="fontSize" type="range" class="gradient-range" min="20" max="200" value="80" />
 
-                <label class="gradient-field-label" data-lang-ru="Градиент" data-lang-en="Gradient">Gradient</label>
+                <label class="gradient-field-label" data-lang-ru="Градиент" data-lang-en="Gradient">Градиент</label>
                 <div class="gradient-presets" id="gradientList"></div>
                 <p class="gradient-name" id="gradientName">rainbow</p>
 
                 <button id="showButton" class="md3-filled-button" style="width:100%;justify-content:center;">
                     <span class="material-symbols-outlined">visibility</span>
-                    <span data-lang-ru="Показать градиент" data-lang-en="Show Gradient Text">Show Gradient Text</span>
+                    <span data-lang-ru="Показать градиент" data-lang-en="Show Gradient Text">Показать градиент</span>
                 </button>
             </div>
 
             <div class="gradient-display-card hidden" id="display">
                 <button id="backButton" class="md3-pill-button" style="align-self:flex-start;">
                     <span class="material-symbols-outlined">arrow_back</span>
-                    <span data-lang-ru="Назад в редактор" data-lang-en="Back to Editor">Back to Editor</span>
+                    <span data-lang-ru="Назад в редактор" data-lang-en="Back to Editor">Назад в редактор</span>
                 </button>
                 <div class="gradient-output">
                     <h1 id="outputText"></h1>
@@ -96,10 +96,10 @@
     </div>
 
     <script src="/js/core.js"></script>
+    <script>initializeLanguage();</script>
     <script src="js/gradient.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            initializeLanguage();
             initializeGifTheme();
             initializeScrollAndLayout();
             initGradient();

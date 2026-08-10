@@ -60,7 +60,7 @@
                 <div class="card-icon-wrapper">
                     <span class="material-symbols-outlined card-main-icon">gif_box</span>
                 </div>
-                <h2 class="card-title" data-lang-ru="Конвертер картинки в телеграм гиф" data-lang-en="Image to Telegram GIF Converter">Image to Telegram GIF Converter</h2>
+                <h2 class="card-title" data-lang-ru="Конвертер картинки в телеграм гиф" data-lang-en="Image to Telegram GIF Converter">Конвертер картинки в телеграм гиф</h2>
 
                 <!-- Drop Zone -->
                 <div class="tg-drop-zone" id="dropZone" role="button" tabindex="0">
@@ -71,7 +71,7 @@
                     <p class="tg-drop-sub">PNG · JPG · WEBP · BMP · TIFF · GIF · MP4 · MOV · WEBM · MKV</p>
                     <button type="button" class="md3-filled-button" id="browseBtn">
                         <span class="material-symbols-outlined">folder_open</span>
-                        <span data-lang-ru="Выбрать файл" data-lang-en="Choose File">Choose File</span>
+                        <span data-lang-ru="Выбрать файл" data-lang-en="Choose File">Выбрать файл</span>
                     </button>
                     <input type="file" id="fileInput" accept=".png,.jpg,.jpeg,.bmp,.webp,.tiff,.tif,.gif,.jfif,.mp4,.m4v,.mov,.webm,.mkv,.avi" hidden>
                 </div>
@@ -95,7 +95,7 @@
                 <!-- Convert -->
                 <button type="button" class="md3-filled-button tg-convert-btn hidden" id="convertBtn">
                     <span class="material-symbols-outlined">movie_creation</span>
-                    <span data-lang-ru="Конвертировать" data-lang-en="Convert">Convert</span>
+                    <span data-lang-ru="Конвертировать" data-lang-en="Convert">Конвертировать</span>
                 </button>
 
                 <p class="tg-status hidden" id="statusText"></p>
@@ -112,19 +112,19 @@
 
                 <!-- Result -->
                 <div class="tg-result hidden" id="resultWrap">
-                    <h3 class="tg-result-title" data-lang-ru="Готово!" data-lang-en="Done!">Done!</h3>
+                    <h3 class="tg-result-title" data-lang-ru="Готово!" data-lang-en="Done!">Готово!</h3>
                     <div class="tg-result-video-wrap">
                         <video id="resultVideo" class="tg-result-video" muted loop autoplay playsinline></video>
                     </div>
-                    <p class="tg-result-hint" data-lang-ru="Отправь MP4 в телеграм - он отобразится как гиф" data-lang-en="Send the MP4 to Telegram - it will display as a GIF">Send the MP4 to Telegram - it will display as a GIF</p>
+                    <p class="tg-result-hint" data-lang-ru="Отправь MP4 в телеграм - он отобразится как гиф" data-lang-en="Send the MP4 to Telegram - it will display as a GIF">Отправь MP4 в телеграм - он отобразится как гиф</p>
                     <div class="tg-result-actions">
                         <a class="md3-filled-button" id="downloadBtn" download>
                             <span class="material-symbols-outlined">download</span>
-                            <span data-lang-ru="Скачать MP4" data-lang-en="Download MP4">Download MP4</span>
+                            <span data-lang-ru="Скачать MP4" data-lang-en="Download MP4">Скачать MP4</span>
                         </a>
                         <button type="button" class="md3-pill-button tg-new-btn" id="newBtn">
                             <span class="material-symbols-outlined">add</span>
-                            <span data-lang-ru="Новый файл" data-lang-en="New File">New File</span>
+                            <span data-lang-ru="Новый файл" data-lang-en="New File">Новый файл</span>
                         </button>
                     </div>
                 </div>
@@ -140,11 +140,11 @@
     </div>
 
     <script src="/js/core.js"></script>
+    <script>initializeLanguage();</script>
     <script src="vendor/ffmpeg.js" onerror="window.__vendorErrors=window.__vendorErrors||[];window.__vendorErrors.push('vendor/ffmpeg.js');console.error('VENDOR FAIL:', 'vendor/ffmpeg.js', this.src)"></script>
     <script src="js/img2tggif.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            initializeLanguage();
             initializeGifTheme();
             initializeScrollAndLayout();
             initImg2TgGif();

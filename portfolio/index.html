@@ -149,7 +149,7 @@
                 </a>
                 <div class="md3-brand">
                     <span class="material-symbols-outlined brand-icon">folder</span>
-                    <span class="brand-name" data-lang-ru="портфолио" data-lang-en="portfolio">portfolio</span>
+                    <span class="brand-name" data-lang-ru="портфолио" data-lang-en="portfolio">портфолио</span>
                     <img src="/assets/previews/gif-themes/storm.gif" class="gif-switcher" id="clickable-gif" alt="theme switcher" data-label-ru="Переключить тему" data-label-en="Switch color theme">
                 </div>
             </div>
@@ -165,8 +165,8 @@
     <div class="page-content">
         <main class="md3-main-content">
             <div class="hub-header reveal-card">
-                <h1 data-lang-ru="Мои проекты" data-lang-en="My Projects">My Projects</h1>
-                <p data-lang-ru="Все мои работы в одном месте" data-lang-en="All my work in one place">All my work in one place</p>
+                <h1 data-lang-ru="Мои проекты" data-lang-en="My Projects">Мои проекты</h1>
+                <p data-lang-ru="Все мои работы в одном месте" data-lang-en="All my work in one place">Все мои работы в одном месте</p>
             </div>
             <div class="hub-grid" id="hub-container"></div>
         </main>
@@ -178,9 +178,9 @@
     </div>
 
     <script src="/js/core.js"></script>
+    <script>initializeLanguage();</script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            initializeLanguage();
             initializeGifTheme();
             initializeScrollAndLayout();
             loadHub();
