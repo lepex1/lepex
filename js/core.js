@@ -92,6 +92,8 @@ function initializeLanguage() {
         : (russianLangs.includes(userLang) ? 'ru' : 'en');
 
     document.querySelectorAll('[data-lang-ru][data-lang-en]').forEach(element => {
+        if (element.tagName === 'TITLE' || element.tagName === 'META') return;
+
         const ruContent = element.getAttribute('data-lang-ru');
         const enContent = element.getAttribute('data-lang-en');
 
