@@ -179,23 +179,13 @@ function normalize(text) {
     return text.toLowerCase().replace(/ё/g, 'е');
 }
 
-function copyText(text, onSuccess) {
-    if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text).then(onSuccess).catch(() => fallbackCopy(text, onSuccess));
-    } else {
-        fallbackCopy(text, onSuccess);
+async function copyText(text, onSuccess) {
+    try {
+        await navigator.clipboard.writeText(text);
+        onSuccess();
+    } catch (err) {
+        console.error('Copy failed:', err);
     }
-}
-
-function fallbackCopy(text, onSuccess) {
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand('copy'); onSuccess(); } catch (e) {}
-    document.body.removeChild(ta);
 }
 
 function tSection(name) {
@@ -446,10 +436,20 @@ function updateCassieLanguage() {
     }
 }
 
+function debounce(fn, delay) {
+    let timer;
+    return function(...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn.apply(this, args), delay);
+    };
+}
+
 function setupCassieListeners() {
+    const debouncedRender = debounce(() => render(), 300);
+
     document.getElementById("searchInput").addEventListener("input", (e) => {
         searchFilter = e.target.value;
-        render();
+        debouncedRender();
     });
 
     const viewToggle = document.getElementById("viewToggle");

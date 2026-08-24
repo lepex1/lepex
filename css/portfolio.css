@@ -53,14 +53,11 @@
     backdrop-filter: blur(8px);
 }
 
-.md3-badge.i18n-container,
 .portfolio-section-header .i18n-container {
     display: inline-block;
     position: relative;
 }
 
-html[data-lang="ru"] .md3-badge.i18n-container > .lang-ru,
-html[data-lang="en"] .md3-badge.i18n-container > .lang-en,
 html[data-lang="ru"] .portfolio-section-header .i18n-container > .lang-ru,
 html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
     text-align: inherit;
@@ -356,12 +353,6 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
     display: inline;
 }
 
-.contact-cta {
-    margin-top: auto;
-    width: 100%;
-    justify-content: center;
-}
-
 .md3-portfolio-section {
     padding-top: 2rem;
 }
@@ -649,7 +640,7 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-    .hero-card, .core-goal, .free-badge-card, .support-card, .contact-bento-card {
+    .hero-card, .core-goal, .free-badge-card, .support-card {
         grid-column: span 1 !important;
         grid-row: span 1 !important;
         min-height: auto;

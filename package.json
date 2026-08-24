@@ -9,12 +9,7 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "@ffmpeg/core": "^0.12.10",
-    "@ffmpeg/ffmpeg": "^0.12.15",
-    "@ffmpeg/util": "^0.12.2",
-    "ioredis": "^5.4.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "vite": "^6.3.0",
     "vite-plugin-static-copy": "^4.1.1"

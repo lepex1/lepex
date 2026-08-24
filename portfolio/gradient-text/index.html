@@ -2,8 +2,7 @@
 <html lang="en" data-gif-theme="storm">
 <head>
     <meta charset="UTF-8">
-    <script>var h=document.documentElement;var l=localStorage.getItem('lang');var u=(navigator.language||'').split('-')[0];var L=(l==='ru'||l==='en')?l:(['ru','kk','be','uk'].indexOf(u)>-1?'ru':'en');h.setAttribute('data-lang',L);h.setAttribute('lang',L);</script>
-    <script>var gi=localStorage.getItem('gifIndex');if(gi!==null){var ti=parseInt(gi,10);if(!isNaN(ti)&&ti>=0&&ti<=7){document.documentElement.setAttribute('data-gif-theme',['ursa','brew','fura','storm','invoker','meepo','bh','axe'][ti]);document.getElementById('theme-color-meta')&&document.getElementById('theme-color-meta').setAttribute('content',['#141218','#14110f','#121511','#13171a','#0e0e0e','#191113','#15130f','#1a1110'][ti]);}}</script>
+    <script src="/js/preload.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Gradient Text — create beautiful animated gradient text">
     <meta name="author" content="lepex">
@@ -17,18 +16,18 @@
     <meta name="theme-color" id="theme-color-meta" content="#13171a">
     <base href="/portfolio/gradient-text/">
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="manifest" href="/manifest.json">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" as="style">
     <link rel="preload" href="/fonts/satoshi.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&display=swap" as="style">
 
     <title data-lang-ru="gradient text - lepex" data-lang-en="gradient text by lepex">gradient text - lepex</title>
     <link rel="stylesheet" href="/fonts/satoshi.css">
     <link rel="stylesheet" href="/css/themes.css">
+    <link rel="stylesheet" href="/css/themes-light.css">
     <link rel="stylesheet" href="/css/shared.css">
     <link rel="stylesheet" href="css/gradient.css">
 </head>
@@ -97,7 +96,10 @@
     </div>
 
     <script src="/js/core.js"></script>
-    <script>initializeLanguage();</script>
+    <script>
+        initializeLanguage();
+        initializeThemeToggle();
+    </script>
     <script src="js/gradient.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {

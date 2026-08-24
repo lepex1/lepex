@@ -35,35 +35,6 @@
     grid-column: 1 / -1;
 }
 
-.md3-bento-card--2col {
-    grid-column: span 2;
-}
-
-.md3-bento-card--link {
-    text-decoration: none;
-    color: inherit;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-    cursor: pointer;
-}
-
-.md3-bento-card__icon {
-    font-size: 1.75rem;
-    color: var(--md-sys-color-primary);
-}
-
-.md3-bento-card__title {
-    flex: 1;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.md3-bento-card__chevron {
-    color: var(--md-sys-color-on-surface-variant);
-    font-size: 1.25rem;
-}
-
 .md3-discord {
     display: flex;
     flex-direction: column;

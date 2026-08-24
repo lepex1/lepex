@@ -54,7 +54,10 @@ function initializeGifTheme() {
 
     const switcher = document.getElementById('clickable-gif');
     if (switcher) {
-        switcher.addEventListener('click', () => {
+        switcher.setAttribute('role', 'button');
+        switcher.setAttribute('tabindex', '0');
+
+        const switchTheme = () => {
             switcher.classList.add('clicked', 'no-hover');
 
             setTimeout(() => {
@@ -79,6 +82,14 @@ function initializeGifTheme() {
             }, 160);
 
             if (navigator.vibrate) navigator.vibrate(10);
+        };
+
+        switcher.addEventListener('click', switchTheme);
+        switcher.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                switchTheme();
+            }
         });
     }
 }
@@ -148,6 +159,29 @@ function escapeHtml(str) {
     const div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
+}
+
+function initializeThemeToggle() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const themeToggle = document.createElement('button');
+    themeToggle.className = 'md3-icon-button theme-toggle';
+    themeToggle.setAttribute('aria-label', 'Toggle theme');
+    themeToggle.innerHTML = '<span class="material-symbols-outlined">' +
+        (currentTheme === 'light' ? 'dark_mode' : 'light_mode') + '</span>';
+
+    const appBarActions = document.querySelector('.md3-app-bar-actions');
+    if (appBarActions) {
+        appBarActions.insertBefore(themeToggle, appBarActions.firstChild);
+
+        themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme') || 'dark';
+            const newTheme = current === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.querySelector('.material-symbols-outlined').textContent =
+                newTheme === 'light' ? 'dark_mode' : 'light_mode';
+        });
+    }
 }
 
 function initializeScrollAndLayout() {

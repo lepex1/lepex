@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-gif-theme="storm">
+<head>
+    <meta charset="UTF-8">
+    <script src="/js/preload.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Offline - lepex</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+    <link rel="stylesheet" href="/fonts/satoshi.css">
+    <link rel="stylesheet" href="/css/themes.css">
+    <link rel="stylesheet" href="/css/themes-light.css">
+    <link rel="stylesheet" href="/css/shared.css">
+    <style>
+        .offline-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+        .offline-icon {
+            font-size: 6rem;
+            color: var(--md-sys-color-primary);
+        }
+        .offline-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--md-sys-color-on-surface);
+        }
+        .offline-text {
+            font-size: 1rem;
+            margin: 0;
+            color: var(--md-sys-color-on-surface-variant);
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <span class="material-symbols-outlined offline-icon">cloud_off</span>
+        <h1 class="offline-title i18n-container">
+            <span class="lang-ru">Нет подключения</span>
+            <span class="lang-en">You're offline</span>
+        </h1>
+        <p class="offline-text i18n-container">
+            <span class="lang-ru">Проверьте подключение к интернету и попробуйте снова.</span>
+            <span class="lang-en">Check your internet connection and try again.</span>
+        </p>
+    </div>
+</body>
+</html>

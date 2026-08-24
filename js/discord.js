@@ -56,7 +56,10 @@ async function initializeDiscord() {
 }
 
 function connectLanyardWS() {
-    if (reconnectTimeout) clearTimeout(reconnectTimeout);
+    if (reconnectTimeout) {
+        clearTimeout(reconnectTimeout);
+        reconnectTimeout = null;
+    }
 
     if (lanyardSocket) {
         lanyardSocket.onclose = null;
@@ -102,6 +105,7 @@ function connectLanyardWS() {
 
     lanyardSocket.onclose = () => {
         if (heartbeatInterval) clearInterval(heartbeatInterval);
+        if (reconnectTimeout) clearTimeout(reconnectTimeout);
         reconnectTimeout = setTimeout(connectLanyardWS, 5000);
     };
 
