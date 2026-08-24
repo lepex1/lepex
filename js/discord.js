@@ -21,6 +21,28 @@ function saveDiscordCache(data) {
     } catch {}
 }
 
+function saveLastSeen() {
+    localStorage.setItem('lepex:discord-lastseen', Date.now().toString());
+}
+
+function getLastSeen() {
+    const timestamp = localStorage.getItem('lepex:discord-lastseen');
+    return timestamp ? parseInt(timestamp, 10) : null;
+}
+
+function formatLastSeen(timestamp) {
+    if (!timestamp) return '';
+    const seconds = Math.floor((Date.now() - timestamp) / 1000);
+    const ru = currentLanguage === 'ru';
+    if (seconds < 60) return ru ? 'Был(а) только что' : 'Last seen just now';
+    const minutes = Math.floor(seconds / 60);
+    if (minutes < 60) return `${ru ? 'Был(а)' : 'Last seen'} ${minutes} ${ru ? 'мин назад' : 'min ago'}`;
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return `${ru ? 'Был(а)' : 'Last seen'} ${hours} ${ru ? 'ч назад' : 'hour' + (hours > 1 ? 's' : '') + ' ago'}`;
+    const days = Math.floor(hours / 24);
+    return `${ru ? 'Был(а)' : 'Last seen'} ${days} ${ru ? 'д назад' : 'day' + (days > 1 ? 's' : '') + ' ago'}`;
+}
+
 function cacheAvatarDataUrl(url) {
     if (!url) return;
     fetch(url)
@@ -47,6 +69,9 @@ async function initializeDiscord() {
         if (body.success) {
             renderDiscord(body.data);
             saveDiscordCache(body.data);
+            if (body.data.discord_status && body.data.discord_status !== 'offline') {
+                saveLastSeen();
+            }
         }
     } catch {
         console.warn('Initial Lanyard REST fetch failed, relying on WebSocket');
@@ -96,6 +121,9 @@ function connectLanyardWS() {
             if (msg.t === 'INIT_STATE' || msg.t === 'PRESENCE_UPDATE') {
                 renderDiscord(msg.d);
                 saveDiscordCache(msg.d);
+                if (msg.d.discord_status && msg.d.discord_status !== 'offline') {
+                    saveLastSeen();
+                }
             }
             }
         } catch (err) {
@@ -256,7 +284,18 @@ function renderDiscord(data) {
     if (activityBlocks.length > 0) {
         activityBlocks.forEach(block => activity.appendChild(block));
     } else {
-        activity.innerHTML = '<div class="md3-discord__activity-skeleton">' + (currentLanguage === 'ru' ? 'Нет активности' : 'No activity') + '</div>';
+        const emptyMessage = currentLanguage === 'ru' ? 'Нет активности' : 'No activity';
+        activity.innerHTML = '<div class="md3-discord__activity-skeleton">' + emptyMessage + '</div>';
+
+        if (data.discord_status === 'offline') {
+            const lastSeen = getLastSeen();
+            if (lastSeen) {
+                const lastSeenDiv = document.createElement('div');
+                lastSeenDiv.className = 'discord-lastseen';
+                lastSeenDiv.textContent = formatLastSeen(lastSeen);
+                activity.appendChild(lastSeenDiv);
+            }
+        }
     }
 
     const card = document.getElementById('discordCard');

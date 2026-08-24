@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lepex — Projects &amp; Subtitles</title>
+    <link>https://lepex.vercel.app</link>
+    <description>Latest projects and subtitle works by lepex</description>
+    <language>en</language>
+    <atom:link href="https://lepex.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Sun, 24 Aug 2026 20:23:00 +0000</lastBuildDate>
+
+    <!-- Projects -->
+    <item>
+      <title>CASSIE Command Browser</title>
+      <link>https://lepex.vercel.app/portfolio/cassie</link>
+      <description>Searchable command browser for C.A.S.S.I.E. on SCP:SL FoxGame</description>
+      <category>Project</category>
+      <guid isPermaLink="true">https://lepex.vercel.app/portfolio/cassie</guid>
+    </item>
+
+    <item>
+      <title>Russian Subtitles</title>
+      <link>https://lepex.vercel.app/portfolio/subtitles</link>
+      <description>Amateur subtitling service for foreign videos</description>
+      <category>Project</category>
+      <guid isPermaLink="true">https://lepex.vercel.app/portfolio/subtitles</guid>
+    </item>
+
+    <item>
+      <title>Gradient Text Generator</title>
+      <link>https://lepex.vercel.app/portfolio/gradient-text</link>
+      <description>Create animated gradient text with 8 color presets</description>
+      <category>Project</category>
+      <guid isPermaLink="true">https://lepex.vercel.app/portfolio/gradient-text</guid>
+    </item>
+
+    <item>
+      <title>Img2TgGif</title>
+      <link>https://lepex.vercel.app/portfolio/img2tggif</link>
+      <description>Image to Telegram GIF converter</description>
+      <category>Project</category>
+      <guid isPermaLink="true">https://lepex.vercel.app/portfolio/img2tggif</guid>
+    </item>
+
+    <!-- Subtitle Works -->
+    <item>
+      <title>PxAY OFF! - ANIMATED FILM (subtitles)</title>
+      <link>https://www.youtube.com/watch?v=IE0kvIbVmwk</link>
+      <description>Russian subtitles for animated film by Marco Cárdenas</description>
+      <category>Subtitles</category>
+      <guid isPermaLink="false">subtitle-pxay-off</guid>
+    </item>
+
+    <item>
+      <title>Clover meeting asgore in no mercy run (subtitles)</title>
+      <link>https://www.youtube.com/watch?v=iznGnD1dr-4</link>
+      <description>Russian subtitles for animation by Nesrine 201</description>
+      <category>Subtitles</category>
+      <guid isPermaLink="false">subtitle-undertale-yellow</guid>
+    </item>
+
+    <item>
+      <title>When OneDrive Ruins Your Day (subtitles)</title>
+      <link>https://www.youtube.com/watch?v=xzbPJ9_CoZ8</link>
+      <description>Russian subtitles for video by James Lee</description>
+      <category>Subtitles</category>
+      <guid isPermaLink="false">subtitle-onedrive</guid>
+    </item>
+
+    <item>
+      <title>Mamma Told Me - Deltarune Animatic (subtitles)</title>
+      <link>https://youtu.be/J5ImwOlPebM</link>
+      <description>Russian subtitles for Deltarune animatic by Ace_Of_Spades</description>
+      <category>Subtitles</category>
+      <guid isPermaLink="false">subtitle-mamma-told-me</guid>
+    </item>
+  </channel>
+</rss>

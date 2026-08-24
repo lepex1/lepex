@@ -512,6 +512,7 @@ function showResult(blob) {
     downloadBtn.href = resultUrl;
     downloadBtn.download = base + '.mp4';
 
+    saveToHistory(base + '.mp4', resultUrl, blob.size);
     show(document.getElementById('resultWrap'));
 }
 
@@ -607,6 +608,81 @@ async function handleFile(f) {
     setStatus('fileLoaded', { name: f.name });
 }
 
+function saveToHistory(filename, blobUrl, size) {
+    const history = JSON.parse(localStorage.getItem('img2tggif:history') || '[]');
+
+    const canvas = document.createElement('canvas');
+    canvas.width = 120;
+    canvas.height = 120;
+    const ctx = canvas.getContext('2d');
+    const video = document.createElement('video');
+    video.src = blobUrl;
+    video.muted = true;
+    video.currentTime = 0.1;
+
+    video.onloadeddata = () => {
+        ctx.drawImage(video, 0, 0, 120, 120);
+        const thumbnail = canvas.toDataURL('image/jpeg', 0.7);
+
+        history.unshift({
+            filename,
+            timestamp: Date.now(),
+            thumbnail,
+            size
+        });
+        if (history.length > 10) history.pop();
+
+        try {
+            localStorage.setItem('img2tggif:history', JSON.stringify(history));
+        } catch (e) {
+            console.warn('Failed to save history:', e);
+        }
+        renderHistory();
+    };
+}
+
+function renderHistory() {
+    const history = JSON.parse(localStorage.getItem('img2tggif:history') || '[]');
+    const container = document.getElementById('historyContainer');
+    if (!container) return;
+
+    if (history.length === 0) {
+        container.innerHTML = '<p class="history-empty i18n-container"><span class="lang-ru">История конвертаций пуста</span><span class="lang-en">No conversion history yet</span></p>';
+        return;
+    }
+
+    container.innerHTML = history.map(item => `
+        <div class="history-item">
+            <img src="${item.thumbnail}" alt="${item.filename}" class="history-thumbnail">
+            <div class="history-info">
+                <div class="history-filename">${item.filename}</div>
+                <div class="history-meta">${formatSize(item.size)} · ${formatTimeAgo(item.timestamp)}</div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function formatTimeAgo(timestamp) {
+    const seconds = Math.floor((Date.now() - timestamp) / 1000);
+    const ru = currentLanguage === 'ru';
+
+    if (seconds < 60) return ru ? 'только что' : 'just now';
+    const minutes = Math.floor(seconds / 60);
+    if (minutes < 60) return minutes + (ru ? ' мин назад' : ' min ago');
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return hours + (ru ? ' ч назад' : ' hour' + (hours > 1 ? 's' : '') + ' ago');
+    const days = Math.floor(hours / 24);
+    return days + (ru ? ' д назад' : ' day' + (days > 1 ? 's' : '') + ' ago');
+}
+
+function clearHistory() {
+    const ru = currentLanguage === 'ru';
+    if (confirm(ru ? 'Очистить всю историю конвертаций?' : 'Clear all conversion history?')) {
+        localStorage.removeItem('img2tggif:history');
+        renderHistory();
+    }
+}
+
 function initImg2TgGif() {
     const dropZone = document.getElementById('dropZone');
     const fileInput = document.getElementById('fileInput');
@@ -641,11 +717,14 @@ function initImg2TgGif() {
     document.getElementById('clearBtn').addEventListener('click', clearFile);
     document.getElementById('newBtn').addEventListener('click', clearFile);
 
+    renderHistory();
+
     const origSwitch = window.switchLanguage;
     if (origSwitch) {
         window.switchLanguage = function (lang) {
             origSwitch(lang);
             renderStatus();
+            renderHistory();
         };
     }
 

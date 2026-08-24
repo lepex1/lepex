@@ -17,6 +17,7 @@
     <base href="/portfolio/img2tggif/">
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
     <link rel="manifest" href="/manifest.json">
+    <link rel="alternate" type="application/rss+xml" title="lepex RSS Feed" href="/rss.xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +29,8 @@
     <link rel="stylesheet" href="/fonts/satoshi.css">
     <link rel="stylesheet" href="/css/themes.css">
     <link rel="stylesheet" href="/css/themes-light.css">
+    <link rel="stylesheet" href="/css/search.css">
+    <link rel="stylesheet" href="/css/features.css">
     <link rel="stylesheet" href="/css/shared.css">
     <link rel="stylesheet" href="css/img2tggif.css">
 </head>
@@ -131,6 +134,22 @@
 
                 <p class="tg-error hidden" id="errorText"></p>
             </div>
+
+            <div class="history-section" style="margin-top: 2rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 class="i18n-container">
+                        <span class="lang-ru">История конвертаций</span>
+                        <span class="lang-en">Conversion History</span>
+                    </h3>
+                    <button onclick="clearHistory()" class="md3-text-button">
+                        <span class="i18n-container">
+                            <span class="lang-ru">Очистить</span>
+                            <span class="lang-en">Clear</span>
+                        </span>
+                    </button>
+                </div>
+                <div id="historyContainer"></div>
+            </div>
         </main>
 
         <footer class="md3-footer">
@@ -155,5 +174,11 @@
     </script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
+    <script src="/js/search.js"></script>
+    <script>
+        if (typeof initializeSearch === 'function') {
+            document.addEventListener('DOMContentLoaded', initializeSearch);
+        }
+    </script>
 </body>
 </html>

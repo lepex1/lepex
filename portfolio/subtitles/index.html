@@ -19,6 +19,7 @@
 
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
     <link rel="manifest" href="/manifest.json">
+    <link rel="alternate" type="application/rss+xml" title="lepex RSS Feed" href="/rss.xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +31,8 @@
     <link rel="stylesheet" href="/fonts/satoshi.css">
     <link rel="stylesheet" href="/css/themes.css">
     <link rel="stylesheet" href="/css/themes-light.css">
+    <link rel="stylesheet" href="/css/search.css">
+    <link rel="stylesheet" href="/css/features.css">
     <link rel="stylesheet" href="/css/shared.css">
     <link rel="stylesheet" href="/css/portfolio.css">
 </head>
@@ -215,5 +218,11 @@
             <div class="video-modal-frame-container"></div>
         </div>
     </div>
+    <script src="/js/search.js"></script>
+    <script>
+        if (typeof initializeSearch === 'function') {
+            document.addEventListener('DOMContentLoaded', initializeSearch);
+        }
+    </script>
 </body>
 </html>

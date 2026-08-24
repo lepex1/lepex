@@ -1,54 +1,242 @@
-/* Light theme color scheme */
-:root[data-theme="light"] {
-    /* Primary */
-    --md-sys-color-primary: #0061a4;
-    --md-sys-color-on-primary: #ffffff;
-    --md-sys-color-primary-container: #d1e4ff;
-    --md-sys-color-on-primary-container: #001d36;
+/* Light theme color schemes from Dota2PornFxWeb */
+/* https://github.com/h6rd/Dota2PornFxWeb */
 
-    /* Secondary */
-    --md-sys-color-secondary: #535f70;
-    --md-sys-color-on-secondary: #ffffff;
-    --md-sys-color-secondary-container: #d7e3f7;
-    --md-sys-color-on-secondary-container: #101c2b;
+[data-theme="light"][data-gif-theme="ursa"] {
+  --md-sys-color-primary: #6750a4;
+  --md-sys-color-shit: #7c4dff;
+  --md-sys-color-shit-light: #9575ff;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #eaddff;
+  --md-sys-color-on-primary-container: #21005d;
+  --md-sys-color-secondary: #625b71;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #e8def8;
+  --md-sys-color-on-secondary-container: #1d192b;
+  --md-sys-color-surface: #fef7ff;
+  --md-sys-color-on-surface: #1d1b20;
+  --md-sys-color-on-surface-light: #1c1b1f;
+  --md-sys-color-surface-variant: #e7e0ec;
+  --md-sys-color-on-surface-variant: #49454f;
+  --md-sys-color-outline: #79747e;
+  --md-sys-color-surface-container-low: #f7f2fa;
+  --md-sys-color-surface-container: #f3edf7;
+  --md-sys-color-surface-container-high: #ece6f0;
+  --md-sys-color-surface-container-highest: #e6e0e9;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-background: #fef7ff;
+  --md-sys-color-on-background: #1d1b20;
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.15);
+  --md-header-blur: rgba(254, 247, 255, 0);
+  --md-card-hover: rgba(103, 80, 164, 0.08);
+}
 
-    /* Tertiary */
-    --md-sys-color-tertiary: #6b5778;
-    --md-sys-color-on-tertiary: #ffffff;
-    --md-sys-color-tertiary-container: #f2daff;
-    --md-sys-color-on-tertiary-container: #251431;
+[data-theme="light"][data-gif-theme="brew"] {
+  --md-sys-color-primary: #855100;
+  --md-sys-color-shit: #a66400;
+  --md-sys-color-shit-light: #c47b00;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #ffddb7;
+  --md-sys-color-on-primary-container: #2a1700;
+  --md-sys-color-secondary: #745a3f;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #ffddb7;
+  --md-sys-color-on-secondary-container: #291805;
+  --md-sys-color-surface: #fff8f4;
+  --md-sys-color-on-surface: #221a12;
+  --md-sys-color-on-surface-light: #1f1b16;
+  --md-sys-color-surface-variant: #f0dfd0;
+  --md-sys-color-on-surface-variant: #51443a;
+  --md-sys-color-outline: #837468;
+  --md-sys-color-surface-container-low: #fef1e9;
+  --md-sys-color-surface-container: #f9ebe1;
+  --md-sys-color-surface-container-high: #f3e5db;
+  --md-sys-color-surface-container-highest: #ede0d6;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-background: #fff8f4;
+  --md-sys-color-on-background: #221a12;
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.15);
+  --md-header-blur: rgba(255, 248, 244, 0);
+  --md-card-hover: rgba(133, 81, 0, 0.08);
+}
 
-    /* Error */
-    --md-sys-color-error: #ba1a1a;
-    --md-sys-color-on-error: #ffffff;
-    --md-sys-color-error-container: #ffdad6;
-    --md-sys-color-on-error-container: #410002;
+[data-theme="light"][data-gif-theme="fura"] {
+  --md-sys-color-primary: #1a7c2e;
+  --md-sys-color-shit: #0d9b29;
+  --md-sys-color-shit-light: #2aaf44;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #a8f59a;
+  --md-sys-color-on-primary-container: #002204;
+  --md-sys-color-secondary: #0e7c41;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #9df7bd;
+  --md-sys-color-on-secondary-container: #002110;
+  --md-sys-color-surface: #f6faf3;
+  --md-sys-color-on-surface: #191d18;
+  --md-sys-color-on-surface-light: #1a1d19;
+  --md-sys-color-surface-variant: #dde5db;
+  --md-sys-color-on-surface-variant: #414941;
+  --md-sys-color-outline: #717970;
+  --md-sys-color-surface-container-low: #eff3ec;
+  --md-sys-color-surface-container: #eaede6;
+  --md-sys-color-surface-container-high: #e4e8e0;
+  --md-sys-color-surface-container-highest: #dee2db;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-background: #f6faf3;
+  --md-sys-color-on-background: #191d18;
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.15);
+  --md-header-blur: rgba(246, 250, 243, 0);
+  --md-card-hover: rgba(26, 124, 46, 0.08);
+}
 
-    /* Background */
-    --md-sys-color-background: #fdfcff;
-    --md-sys-color-on-background: #1a1c1e;
+[data-theme="light"][data-gif-theme="storm"] {
+  --md-sys-color-primary: #4d6481;
+  --md-sys-color-shit: #3a5573;
+  --md-sys-color-shit-light: #607a9a;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #d6e3f8;
+  --md-sys-color-on-primary-container: #081c30;
+  --md-sys-color-secondary: #546679;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #d8e3f1;
+  --md-sys-color-on-secondary-container: #111c28;
+  --md-sys-color-surface: #f8fafe;
+  --md-sys-color-on-surface: #191c1f;
+  --md-sys-color-on-surface-light: #1a1d20;
+  --md-sys-color-surface-variant: #dfe3e8;
+  --md-sys-color-on-surface-variant: #43484d;
+  --md-sys-color-outline: #73787e;
+  --md-sys-color-surface-container-low: #f2f5f9;
+  --md-sys-color-surface-container: #eceff4;
+  --md-sys-color-surface-container-high: #e6e9ee;
+  --md-sys-color-surface-container-highest: #e0e4e8;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-background: #f8fafe;
+  --md-sys-color-on-background: #191c1f;
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.15);
+  --md-header-blur: rgba(248, 250, 254, 0);
+  --md-card-hover: rgba(77, 100, 129, 0.08);
+}
 
-    /* Surface */
-    --md-sys-color-surface: #fdfcff;
-    --md-sys-color-on-surface: #1a1c1e;
-    --md-sys-color-surface-variant: #dfe2eb;
-    --md-sys-color-on-surface-variant: #43474e;
-    --md-sys-color-surface-container-lowest: #ffffff;
-    --md-sys-color-surface-container-low: #f7f9ff;
-    --md-sys-color-surface-container: #ebf0f7;
-    --md-sys-color-surface-container-high: #e6eaf1;
-    --md-sys-color-surface-container-highest: #e0e4ec;
+[data-theme="light"][data-gif-theme="invoker"] {
+  --md-sys-color-primary: #5f5f5f;
+  --md-sys-color-shit: #757575;
+  --md-sys-color-shit-light: #8a8a8a;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #e3e3e3;
+  --md-sys-color-on-primary-container: #1c1c1c;
+  --md-sys-color-secondary: #5f5f5f;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #e5e5e5;
+  --md-sys-color-on-secondary-container: #1c1c1c;
+  --md-sys-color-surface: #fefefe;
+  --md-sys-color-on-surface: #1c1c1c;
+  --md-sys-color-on-surface-light: #1f1f1f;
+  --md-sys-color-surface-variant: #e4e4e4;
+  --md-sys-color-on-surface-variant: #474747;
+  --md-sys-color-outline: #777777;
+  --md-sys-color-surface-container-low: #f5f5f5;
+  --md-sys-color-surface-container: #f0f0f0;
+  --md-sys-color-surface-container-high: #ebebeb;
+  --md-sys-color-surface-container-highest: #e5e5e5;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-background: #fefefe;
+  --md-sys-color-on-background: #1c1c1c;
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.15);
+  --md-header-blur: rgba(254, 254, 254, 0);
+  --md-card-hover: rgba(95, 95, 95, 0.08);
+}
 
-    /* Outline */
-    --md-sys-color-outline: #73777f;
-    --md-sys-color-outline-variant: #c3c7cf;
+[data-theme="light"][data-gif-theme="meepo"] {
+  --md-sys-color-primary: #b8004f;
+  --md-sys-color-shit: #d81b60;
+  --md-sys-color-shit-light: #e91e63;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #ffd9e3;
+  --md-sys-color-on-primary-container: #3f0016;
+  --md-sys-color-secondary: #75565f;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #ffd9e3;
+  --md-sys-color-on-secondary-container: #2b151c;
+  --md-sys-color-surface: #fff8f9;
+  --md-sys-color-on-surface: #22191c;
+  --md-sys-color-on-surface-light: #201a1c;
+  --md-sys-color-surface-variant: #f3dde3;
+  --md-sys-color-on-surface-variant: #514347;
+  --md-sys-color-outline: #847377;
+  --md-sys-color-surface-container-low: #fef0f3;
+  --md-sys-color-surface-container: #faeaed;
+  --md-sys-color-surface-container-high: #f4e4e8;
+  --md-sys-color-surface-container-highest: #efdfe2;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-background: #fff8f9;
+  --md-sys-color-on-background: #22191c;
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.15);
+  --md-header-blur: rgba(255, 248, 249, 0);
+  --md-card-hover: rgba(184, 0, 79, 0.08);
+}
 
-    /* Shadow */
-    --md-sys-color-shadow: rgba(0, 0, 0, 0.15);
-    --md-sys-color-scrim: rgba(0, 0, 0, 0.5);
+[data-theme="light"][data-gif-theme="bh"] {
+  --md-sys-color-primary: #8a7100;
+  --md-sys-color-shit: #a08700;
+  --md-sys-color-shit-light: #b89b00;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #f5e8b8;
+  --md-sys-color-on-primary-container: #2a2000;
+  --md-sys-color-secondary: #6d5e3c;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #f5e8b8;
+  --md-sys-color-on-secondary-container: #261b00;
+  --md-sys-color-surface: #fffaf2;
+  --md-sys-color-on-surface: #1f1c14;
+  --md-sys-color-on-surface-light: #1d1b13;
+  --md-sys-color-surface-variant: #ebe3d0;
+  --md-sys-color-on-surface-variant: #4c473b;
+  --md-sys-color-outline: #7e7768;
+  --md-sys-color-surface-container-low: #fdf3e6;
+  --md-sys-color-surface-container: #f7eddf;
+  --md-sys-color-surface-container-high: #f1e7d9;
+  --md-sys-color-surface-container-highest: #ebe2d4;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-background: #fffaf2;
+  --md-sys-color-on-background: #1f1c14;
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.15);
+  --md-header-blur: rgba(255, 250, 242, 0);
+  --md-card-hover: rgba(138, 113, 0, 0.08);
+}
 
-    /* Inverse */
-    --md-sys-color-inverse-surface: #2f3033;
-    --md-sys-color-inverse-on-surface: #f1f0f4;
-    --md-sys-color-inverse-primary: #a0cafd;
+[data-theme="light"][data-gif-theme="axe"] {
+  --md-sys-color-primary: #ba1a1a;
+  --md-sys-color-shit: #d32f2f;
+  --md-sys-color-shit-light: #e53935;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #ffdad6;
+  --md-sys-color-on-primary-container: #410002;
+  --md-sys-color-secondary: #775652;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #ffdad6;
+  --md-sys-color-on-secondary-container: #2c1512;
+  --md-sys-color-surface: #fffbff;
+  --md-sys-color-on-surface: #201a19;
+  --md-sys-color-on-surface-light: #1c1b1a;
+  --md-sys-color-surface-variant: #f5ddda;
+  --md-sys-color-on-surface-variant: #534341;
+  --md-sys-color-outline: #857370;
+  --md-sys-color-surface-container-low: #fef1ee;
+  --md-sys-color-surface-container: #fcebe7;
+  --md-sys-color-surface-container-high: #f6e5e1;
+  --md-sys-color-surface-container-highest: #f1dfdc;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-background: #fffbff;
+  --md-sys-color-on-background: #201a19;
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.15);
+  --md-header-blur: rgba(255, 251, 255, 0);
+  --md-card-hover: rgba(186, 26, 26, 0.08);
 }
