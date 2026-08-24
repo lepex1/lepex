@@ -246,4 +246,13 @@ function initializePortfolioCards() {
             openVideoModal(videoUrl);
         }
     });
+
+    // Cards have role=button + tabindex=0; Enter/Space must activate them
+    container.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        const card = e.target.closest('.md3-portfolio-card');
+        if (!card || !card.dataset.video) return;
+        e.preventDefault();
+        openVideoModal(card.dataset.video);
+    });
 }

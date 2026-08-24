@@ -79,24 +79,6 @@
                     <span class="material-symbols-outlined">visibility</span>
                     <span class="i18n-container"><span class="lang-ru">Показать градиент</span><span class="lang-en">Show Gradient Text</span></span>
                 </button>
-
-                <div style="margin-top: 2rem;">
-                    <h3 class="i18n-container" style="font-size: 1.1rem; margin-bottom: 0.75rem;">
-                        <span class="lang-ru">Сохранённые пресеты</span>
-                        <span class="lang-en">Saved Presets</span>
-                    </h3>
-                    <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
-                        <button id="savePresetBtn" class="md3-pill-button" style="flex: 1;">
-                            <span class="material-symbols-outlined">bookmark_add</span>
-                            <span class="i18n-container"><span class="lang-ru">Сохранить</span><span class="lang-en">Save</span></span>
-                        </button>
-                        <button id="exportCssBtn" class="md3-pill-button" style="flex: 1;">
-                            <span class="material-symbols-outlined">code</span>
-                            <span class="i18n-container"><span class="lang-ru">Экспорт CSS</span><span class="lang-en">Export CSS</span></span>
-                        </button>
-                    </div>
-                    <div id="presetsContainer"></div>
-                </div>
             </div>
 
             <div class="gradient-display-card hidden" id="display">
@@ -122,13 +104,11 @@
         initializeThemeToggle();
     </script>
     <script src="js/gradient.js"></script>
-    <script src="js/gradient-custom.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             initializeGifTheme();
             initializeScrollAndLayout();
             initGradient();
-            initializeCustomizer();
         });
     </script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
