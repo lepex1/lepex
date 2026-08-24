@@ -298,6 +298,73 @@
     display: none !important;
 }
 
+/* History Section */
+.history-section h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--md-sys-color-on-surface);
+}
+
+#historyContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background-color: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-medium);
+    transition: all var(--md-transition-duration) var(--md-transition-bounce);
+}
+
+.history-item:hover {
+    background-color: var(--md-sys-color-surface-container-high);
+    border-color: var(--md-sys-color-primary);
+}
+
+.history-thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--md-shape-corner-small);
+    object-fit: cover;
+    background-color: var(--md-sys-color-surface-container-highest);
+}
+
+.history-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.history-filename {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--md-sys-color-on-surface);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.history-meta {
+    font-size: 0.75rem;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.history-empty {
+    text-align: center;
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 0.9rem;
+    padding: 2rem;
+}
+
 @media (max-width: 600px) {
     .md3-main-content {
         padding: 1rem;

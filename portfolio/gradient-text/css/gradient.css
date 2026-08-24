@@ -223,3 +223,71 @@
         height: 36px;
     }
 }
+
+/* Presets Section */
+#presetsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.preset-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background-color: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-medium);
+    cursor: pointer;
+    transition: all var(--md-transition-duration) var(--md-transition-bounce);
+}
+
+.preset-item:hover {
+    background-color: var(--md-sys-color-surface-container-high);
+    border-color: var(--md-sys-color-primary);
+    transform: translateY(-1px);
+}
+
+.preset-preview {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--md-shape-corner-small);
+    border: 2px solid var(--md-sys-color-outline-variant);
+}
+
+.preset-name {
+    flex: 1;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--md-sys-color-on-surface);
+}
+
+.preset-delete {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--md-sys-color-error-container);
+    color: var(--md-sys-color-on-error-container);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.preset-delete:hover {
+    background-color: var(--md-sys-color-error);
+    color: var(--md-sys-color-on-error);
+    transform: scale(1.1);
+}
+
+.presets-empty {
+    text-align: center;
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 0.85rem;
+    padding: 1.5rem;
+}
+

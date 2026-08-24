@@ -16,6 +16,7 @@
     <meta name="theme-color" id="theme-color-meta" content="#13171a">
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
     <link rel="manifest" href="/manifest.json">
+    <link rel="alternate" type="application/rss+xml" title="lepex RSS Feed" href="/rss.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -25,6 +26,7 @@
     <link rel="stylesheet" href="/fonts/satoshi.css">
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="/css/themes-light.css">
+    <link rel="stylesheet" href="/css/search.css">
     <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="/css/search.css">
@@ -121,5 +123,12 @@
         });
     </script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+    <script src="/js/search.js"></script>
+    <script>
+        if (typeof initializeSearch === 'function') {
+            document.addEventListener('DOMContentLoaded', initializeSearch);
+        }
+    </script>
 </body>
 </html>
