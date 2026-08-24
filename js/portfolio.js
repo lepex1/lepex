@@ -1,3 +1,30 @@
+// USDT copy button on the subtitles page; called from DOMContentLoaded there.
+// Removed in the 61a2867 refactor as "dead code", which threw a ReferenceError
+// before loadPortfolio() and left the works grid empty.
+async function initializeUSDT() {
+    const copyBtn = document.getElementById('copy-usdt-btn');
+    const addressEl = document.getElementById('usdt-address');
+    if (!copyBtn || !addressEl) return;
+
+    copyBtn.addEventListener('click', async () => {
+        const address = addressEl.textContent.trim();
+        try {
+            await navigator.clipboard.writeText(address);
+            const icon = copyBtn.querySelector('.material-symbols-outlined');
+            if (icon) {
+                icon.textContent = 'done';
+                icon.style.color = '#26A17B';
+                setTimeout(() => {
+                    icon.textContent = 'content_copy';
+                    icon.style.color = '';
+                }, 2000);
+            }
+        } catch (err) {
+            console.error('Copy failed:', err);
+        }
+    });
+}
+
 function sanitizeUrl(url) {
     if (!url) return '';
     const dangerous = /^(javascript|data|vbscript):/i;
@@ -123,6 +150,10 @@ async function loadPortfolio() {
                         <h3 class="portfolio-card-title item-title" data-auto="${isAutoTitle}">
                             ${isAutoTitle ? (typeof currentLanguage !== 'undefined' && currentLanguage === 'ru' ? '\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430...' : 'Loading...') : safeTitle}
                         </h3>
+                        <button class="portfolio-card-preview-btn" data-video="${safeLink}" aria-label="Preview">
+                            <span class="material-symbols-outlined">play_circle</span>
+                            <span class="i18n-container"><span class="lang-ru">\u041f\u0440\u0435\u0434\u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440</span><span class="lang-en">Preview</span></span>
+                        </button>
                     </div>
                 </div>
             `;
@@ -202,6 +233,12 @@ function initializePortfolioCards() {
     if (!container) return;
 
     container.addEventListener('click', (e) => {
+        const previewBtn = e.target.closest('.portfolio-card-preview-btn');
+        if (previewBtn) {
+            e.stopPropagation();
+            showPreview(previewBtn.dataset.video);
+            return;
+        }
         const card = e.target.closest('.md3-portfolio-card');
         if (!card) return;
         const videoUrl = card.dataset.video;
