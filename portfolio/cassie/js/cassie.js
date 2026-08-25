@@ -247,12 +247,6 @@ function buildSectionTabs() {
         }
         const label = section.replace(/^[^\s]+\s/, "");
         btn.textContent = tSection(label);
-        if (i > 0) {
-            const badge = document.createElement("span");
-            badge.className = "tab-badge";
-            badge.textContent = currentLanguage === 'ru' ? 'НОВОЕ' : 'NEW';
-            btn.appendChild(badge);
-        }
         btn.addEventListener("click", () => {
             sectionFilter = section;
             localStorage.setItem("sectionFilter", section);
@@ -303,18 +297,7 @@ function render() {
 
         const sectionHeader = document.createElement("h2");
         sectionHeader.className = "md3-section-header";
-        const isNew = !section.startsWith("📟");
-        if (isNew) {
-            const span = document.createElement("span");
-            span.textContent = tSection(section);
-            sectionHeader.appendChild(span);
-            const badge = document.createElement("span");
-            badge.className = "tab-badge section-badge";
-            badge.textContent = currentLanguage === 'ru' ? 'НОВОЕ' : 'NEW';
-            sectionHeader.appendChild(badge);
-        } else {
-            sectionHeader.textContent = tSection(section);
-        }
+        sectionHeader.textContent = tSection(section);
         sectionEl.appendChild(sectionHeader);
 
         const innerGroup = {};
@@ -403,8 +386,6 @@ function updateCassieLanguage() {
         if (textNode) {
             textNode.textContent = tSection(textNode.textContent.trim());
         }
-        const badge = btn.querySelector('.tab-badge');
-        if (badge) badge.textContent = currentLanguage === 'ru' ? 'НОВОЕ' : 'NEW';
     });
     document.querySelectorAll('.md3-section-header').forEach(header => {
         const span = header.querySelector('span');
@@ -413,8 +394,6 @@ function updateCassieLanguage() {
         } else {
             header.textContent = tSection(header.textContent);
         }
-        const badge = header.querySelector('.section-badge');
-        if (badge) badge.textContent = currentLanguage === 'ru' ? 'НОВОЕ' : 'NEW';
     });
     document.querySelectorAll('.category-text').forEach(el => {
         el.textContent = tCategory(el.textContent);

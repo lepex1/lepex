@@ -69,13 +69,8 @@ function initializeGifTheme() {
                 currentIndex = (currentIndex + 1) % GIF_CONFIG.gifs.length;
                 const newTheme = GIF_CONFIG.themes[currentIndex];
 
-                const apply = () => {
-                    gifElement.src = GIF_CONFIG.gifs[currentIndex];
-                    html.setAttribute('data-gif-theme', newTheme);
-                };
-                if (document.startViewTransition) document.startViewTransition(apply);
-                else apply();
-
+                gifElement.src = GIF_CONFIG.gifs[currentIndex];
+                html.setAttribute('data-gif-theme', newTheme);
                 localStorage.setItem('gifIndex', currentIndex.toString());
 
                 const themeColorMeta = document.getElementById('theme-color-meta');
@@ -186,14 +181,9 @@ function initializeThemeToggle() {
             const current = document.documentElement.getAttribute('data-theme') || 'dark';
             const newTheme = current === 'light' ? 'dark' : 'light';
 
-            const apply = () => {
-                document.documentElement.setAttribute('data-theme', newTheme);
-                themeToggle.querySelector('.material-symbols-outlined').textContent =
-                    newTheme === 'light' ? 'dark_mode' : 'light_mode';
-            };
-            if (document.startViewTransition) document.startViewTransition(apply);
-            else apply();
-
+            document.documentElement.setAttribute('data-theme', newTheme);
+            themeToggle.querySelector('.material-symbols-outlined').textContent =
+                newTheme === 'light' ? 'dark_mode' : 'light_mode';
             localStorage.setItem('theme', newTheme);
         });
     }
