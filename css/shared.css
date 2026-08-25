@@ -6,12 +6,10 @@
     -webkit-user-select: none;
 }
 
-/* Cross-document view transitions (Chromium MPA navigation) */
-@media (prefers-reduced-motion: no-preference) {
-    @view-transition {
-        navigation: auto;
-    }
-}
+/* Cross-document view transitions REMOVED (2026-08-25, after 3d2a8f9):
+   main content is rendered client-side from fetches (hub.js, portfolio.js, Lanyard),
+   so the captured first frame showed skeletons/invisible .reveal-card elements.
+   Do not re-add unless pages ship their content in server HTML. */
 
 *, *::before, *::after {
     box-sizing: border-box;
