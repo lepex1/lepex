@@ -38,8 +38,9 @@ function createSearchModal() {
 }
 
 function setupKeyboardShortcut() {
+    // e.code = physical key, works on any layout (Cyrillic 'л' still maps to KeyK)
     document.addEventListener('keydown', (e) => {
-        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        if ((e.metaKey || e.ctrlKey) && e.code === 'KeyK') {
             e.preventDefault();
             openSearch();
         }
