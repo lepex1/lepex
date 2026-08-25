@@ -6,33 +6,6 @@
     -webkit-user-select: none;
 }
 
-/* Scoped cross-document view transitions: morph ONLY the header.
-   Root animation is disabled on purpose — main content is rendered
-   client-side from fetches (hub.js/portfolio.js/Lanyard), so a full-page
-   capture would flash skeletons (tried and reverted 2026-08-25).
-   Header markup is static server HTML with identical positions on every
-   page, so brand/actions cross-fade safely while content swaps instantly.
-   Requires view-transition-name targets to be UNIQUE per document. */
-@media (prefers-reduced-motion: no-preference) {
-    @view-transition {
-        navigation: auto;
-    }
-}
-/* Root hard-swap applies ONLY to cross-document navigations (tagged
-   'header-morph' in preload.js); same-document theme/gif toggles keep
-   their default crossfade */
-html:active-view-transition-type(header-morph)::view-transition-old(root),
-html:active-view-transition-type(header-morph)::view-transition-new(root) {
-    animation: none;
-    mix-blend-mode: normal;
-}
-.md3-brand {
-    view-transition-name: site-brand;
-}
-.md3-app-bar-actions {
-    view-transition-name: header-actions;
-}
-
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;

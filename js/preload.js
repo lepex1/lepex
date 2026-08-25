@@ -35,14 +35,4 @@
             navigator.serviceWorker.register('/sw.js').catch(() => {});
         });
     }
-
-    // Tag cross-document navigations so shared.css can disable the root
-    // crossfade (hard content swap) while header elements still morph.
-    // Same-document startViewTransition calls are NOT tagged on purpose.
-    window.addEventListener('pageswap', (e) => {
-        if (e.viewTransition) e.viewTransition.types.add('header-morph');
-    });
-    window.addEventListener('pagereveal', (e) => {
-        if (e.viewTransition) e.viewTransition.types.add('header-morph');
-    });
 })();
