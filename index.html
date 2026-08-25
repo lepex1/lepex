@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="/css/themes-light.css">
     <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="/css/search.css">
     <link rel="stylesheet" href="/css/features.css">
     <link rel="alternate" type="application/rss+xml" title="lepex RSS Feed" href="/rss.xml">
 </head>
@@ -110,15 +109,11 @@
         initializeThemeToggle();
     </script>
     <script src="js/discord.js"></script>
-    <script src="/js/search.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             initializeGifTheme();
             initializeDiscord();
             initializeScrollAndLayout();
-            if (typeof initializeSearch === 'function') {
-                initializeSearch();
-            }
         });
     </script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>

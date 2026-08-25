@@ -31,7 +31,6 @@
     <link rel="stylesheet" href="/fonts/satoshi.css">
     <link rel="stylesheet" href="/css/themes.css">
     <link rel="stylesheet" href="/css/themes-light.css">
-    <link rel="stylesheet" href="/css/search.css">
     <link rel="stylesheet" href="/css/features.css">
     <link rel="stylesheet" href="/css/shared.css">
     <link rel="stylesheet" href="css/cassie.css">
@@ -128,11 +127,5 @@
         document.addEventListener('languagechange', function() { updateCassieLanguage(); });
     </script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-    <script src="/js/search.js"></script>
-    <script>
-        if (typeof initializeSearch === 'function') {
-            document.addEventListener('DOMContentLoaded', initializeSearch);
-        }
-    </script>
 </body>
 </html>
