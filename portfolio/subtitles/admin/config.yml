@@ -45,3 +45,11 @@ collections:
                 }
               - { label: "Ссылка на YouTube", name: "link", widget: "string" }
               - { label: "Обложка (пусто для авто)", name: "image", widget: "image", required: false }
+              - {
+                  label: "Дата публикации для RSS",
+                  name: "date",
+                  widget: "string",
+                  required: false,
+                  hint: "Формат YYYY-MM-DD",
+                  pattern: ["[0-9]{4}-[0-9]{2}-[0-9]{2}", "YYYY-MM-DD"]
+                }

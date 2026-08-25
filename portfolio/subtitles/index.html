@@ -193,9 +193,6 @@
     </script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();    </script>
     <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js');
-        }
         function updatePortfolioLanguage() {
             document.querySelectorAll('.item-title[data-auto="true"]').forEach(el => {
                 const t = el.textContent;

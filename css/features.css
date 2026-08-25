@@ -108,3 +108,25 @@
         aspect-ratio: 16/9;
     }
 }
+
+/* Connection status toast */
+.connection-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 1.5rem;
+    transform: translate(-50%, 200%);
+    background: var(--md-sys-color-inverse-surface, #2b2930);
+    color: var(--md-sys-color-inverse-on-surface, #f1edf7);
+    padding: 0.7rem 1.25rem;
+    border-radius: var(--md-shape-corner-full, 999px);
+    font-size: 0.9rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.connection-toast.visible {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}

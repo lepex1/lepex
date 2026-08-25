@@ -17,6 +17,7 @@
     h.setAttribute('lang', lang);
 
     // GIF theme initialization
+    // Mirrors GIF_CONFIG / GIF_THEME_COLORS in core.js — keep in sync
     const gifIndex = localStorage.getItem('gifIndex');
     if (gifIndex !== null) {
         const ti = parseInt(gifIndex, 10);
@@ -27,5 +28,11 @@
             const meta = document.getElementById('theme-color-meta');
             if (meta) meta.setAttribute('content', colors[ti]);
         }
+    }
+
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
     }
 })();

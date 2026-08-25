@@ -384,11 +384,6 @@ function render() {
                             copyIconSpan.textContent = "content_copy";
                             copyBtn.lastChild.textContent = currentLanguage === 'en' ? 'Copy' : 'Копировать';
                         }, 2000);
-                        fetch('/api/track', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ command: item.command, section: item.section, category: item.category }),
-                        }).catch(() => {});
                     });
                 });
 

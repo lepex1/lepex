@@ -68,10 +68,6 @@ function connectLanyardWS() {
 
     lanyardSocket = new WebSocket('wss://api.lanyard.rest/socket');
 
-    lanyardSocket.onopen = () => {
-        console.log('Lanyard WebSocket connected');
-    };
-
     lanyardSocket.onmessage = (event) => {
         try {
             const msg = JSON.parse(event.data);
@@ -171,7 +167,7 @@ function renderDiscord(data) {
         block.innerHTML = `
             <div class="discord-activity__header">${currentLanguage === 'ru' ? 'Слушает Spotify' : 'Listening to Spotify'}</div>
             <div class="discord-activity__body">
-                <img src="${spotify.album_art_url}" alt="album" class="discord-activity__art" loading="lazy">
+                <img src="${spotify.album_art_url}" alt="${escapeHtml(spotify.album)} — ${currentLanguage === 'ru' ? 'обложка альбома' : 'album art'}" class="discord-activity__art" loading="lazy">
                 <div class="discord-activity__details">
                     <span class="discord-activity__title"><span class="material-symbols-outlined md-icon--inline">music_note</span>${escapeHtml(spotify.song)}</span>
                     <span class="discord-activity__artist"><span class="material-symbols-outlined md-icon--inline">mic</span>${escapeHtml(spotify.artist)}</span>

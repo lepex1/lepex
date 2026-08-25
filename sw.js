@@ -1,4 +1,4 @@
-const CACHE_VERSION = 2;
+const CACHE_VERSION = 3;
 const CACHE_NAME = `lepex-cache-v${CACHE_VERSION}`;
 const PREVIEW_CACHE = `lepex-previews-v${CACHE_VERSION}`;
 
@@ -6,13 +6,18 @@ const STATIC_ASSETS = [
     '/',
     '/index.html',
     '/offline.html',
+    '/manifest.json',
+    '/rss.xml',
     '/css/themes.css',
     '/css/themes-light.css',
     '/css/shared.css',
     '/css/main.css',
+    '/css/features.css',
+    '/css/portfolio.css',
     '/js/core.js',
     '/js/preload.js',
-    '/js/utils.js',
+    '/js/discord.js',
+    '/js/portfolio.js',
     '/fonts/satoshi.woff2',
     '/favicon/favicon.svg'
 ];
@@ -64,10 +69,18 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // Cache first for static assets
+    // Cache first for static assets; store same-origin responses for offline use
     event.respondWith(
         caches.match(event.request).then((response) => {
-            return response || fetch(event.request);
+            if (response) return response;
+            return fetch(event.request).then((networkResponse) => {
+                if (networkResponse && networkResponse.status === 200 &&
+                    url.origin === self.location.origin) {
+                    const clone = networkResponse.clone();
+                    caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+                }
+                return networkResponse;
+            });
         })
     );
 });

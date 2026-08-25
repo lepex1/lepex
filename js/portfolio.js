@@ -119,7 +119,7 @@ async function loadPortfolio() {
             if (isAutoImg && videoId) {
                 imageSrc = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
             } else if (isAutoImg) {
-                imageSrc = '/assets/previews/portfolio/placeholder.svg';
+                imageSrc = '/portfolio/subtitles/assets/previews/portfolio/placeholder.svg';
             }
 
             if (isAutoTitle || isAutoAuthor) {
@@ -133,9 +133,9 @@ async function loadPortfolio() {
                              class="item-img"
                              data-auto="${isAutoImg}"
                              onload="this.classList.add('loaded')"
-                             onerror="this.src='/assets/previews/portfolio/placeholder.svg'; this.classList.add('loaded')"
+                             onerror="this.src='/portfolio/subtitles/assets/previews/portfolio/placeholder.svg'; this.classList.add('loaded')"
                              loading="lazy"
-                             alt="thumbnail">
+                             alt="${safeTitle}">
                         <div class="card-play-overlay">
                             <span class="material-symbols-outlined overlay-play-icon">play_arrow</span>
                         </div>

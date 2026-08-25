@@ -6,14 +6,59 @@
     <description>Latest projects and subtitle works by lepex</description>
     <language>en</language>
     <atom:link href="https://lepex.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 24 Aug 2026 20:23:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 17:02:00 GMT</lastBuildDate>
 
-    <!-- Projects -->
+    <item>
+      <title>Mamma Told Me - Deltarune Animatic (subtitles)</title>
+      <link>https://youtu.be/J5ImwOlPebM</link>
+      <description>Russian subtitles for Mamma Told Me - Deltarune Animatic by Ace_Of_Spades</description>
+      <category>Subtitles</category>
+      <pubDate>Mon, 24 Aug 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="false">subtitle-mamma-told-me---deltarune-animatic</guid>
+    </item>
+
+    <item>
+      <title>When OneDrive Ruins Your Day (subtitles)</title>
+      <link>https://www.youtube.com/watch?v=xzbPJ9_CoZ8</link>
+      <description>Russian subtitles for When OneDrive Ruins Your Day by James Lee</description>
+      <category>Subtitles</category>
+      <pubDate>Thu, 30 Jul 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="false">subtitle-when-onedrive-ruins-your-day</guid>
+    </item>
+
+    <item>
+      <title>Clover meeting asgore in no mercy run (subtitles)</title>
+      <link>https://www.youtube.com/watch?v=iznGnD1dr-4</link>
+      <description>Russian subtitles for Clover meeting asgore in no mercy run by Nesrine 201</description>
+      <category>Subtitles</category>
+      <pubDate>Sun, 12 Jul 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="false">subtitle-clover-meeting-asgore-in-no-mercy-run</guid>
+    </item>
+
+    <item>
+      <title>PxAY OFF! - ANIMATED FILM (subtitles)</title>
+      <link>https://www.youtube.com/watch?v=IE0kvIbVmwk</link>
+      <description>Russian subtitles for PxAY OFF! - ANIMATED FILM by Marco Cárdenas</description>
+      <category>Subtitles</category>
+      <pubDate>Sun, 28 Jun 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="false">subtitle-pxay-off!---animated-film</guid>
+    </item>
+
+    <item>
+      <title>Img2TgGif</title>
+      <link>https://lepex.vercel.app/portfolio/img2tggif</link>
+      <description>Image to Telegram GIF converter</description>
+      <category>Project</category>
+      <pubDate>Mon, 15 Jun 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://lepex.vercel.app/portfolio/img2tggif</guid>
+    </item>
+
     <item>
       <title>CASSIE Command Browser</title>
       <link>https://lepex.vercel.app/portfolio/cassie</link>
       <description>Searchable command browser for C.A.S.S.I.E. on SCP:SL FoxGame</description>
       <category>Project</category>
+      <pubDate>Sun, 10 May 2026 12:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://lepex.vercel.app/portfolio/cassie</guid>
     </item>
 
@@ -22,6 +67,7 @@
       <link>https://lepex.vercel.app/portfolio/subtitles</link>
       <description>Amateur subtitling service for foreign videos</description>
       <category>Project</category>
+      <pubDate>Sat, 18 Apr 2026 12:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://lepex.vercel.app/portfolio/subtitles</guid>
     </item>
 
@@ -30,48 +76,8 @@
       <link>https://lepex.vercel.app/portfolio/gradient-text</link>
       <description>Create animated gradient text with 8 color presets</description>
       <category>Project</category>
+      <pubDate>Sun, 22 Mar 2026 12:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://lepex.vercel.app/portfolio/gradient-text</guid>
-    </item>
-
-    <item>
-      <title>Img2TgGif</title>
-      <link>https://lepex.vercel.app/portfolio/img2tggif</link>
-      <description>Image to Telegram GIF converter</description>
-      <category>Project</category>
-      <guid isPermaLink="true">https://lepex.vercel.app/portfolio/img2tggif</guid>
-    </item>
-
-    <!-- Subtitle Works -->
-    <item>
-      <title>PxAY OFF! - ANIMATED FILM (subtitles)</title>
-      <link>https://www.youtube.com/watch?v=IE0kvIbVmwk</link>
-      <description>Russian subtitles for animated film by Marco Cárdenas</description>
-      <category>Subtitles</category>
-      <guid isPermaLink="false">subtitle-pxay-off</guid>
-    </item>
-
-    <item>
-      <title>Clover meeting asgore in no mercy run (subtitles)</title>
-      <link>https://www.youtube.com/watch?v=iznGnD1dr-4</link>
-      <description>Russian subtitles for animation by Nesrine 201</description>
-      <category>Subtitles</category>
-      <guid isPermaLink="false">subtitle-undertale-yellow</guid>
-    </item>
-
-    <item>
-      <title>When OneDrive Ruins Your Day (subtitles)</title>
-      <link>https://www.youtube.com/watch?v=xzbPJ9_CoZ8</link>
-      <description>Russian subtitles for video by James Lee</description>
-      <category>Subtitles</category>
-      <guid isPermaLink="false">subtitle-onedrive</guid>
-    </item>
-
-    <item>
-      <title>Mamma Told Me - Deltarune Animatic (subtitles)</title>
-      <link>https://youtu.be/J5ImwOlPebM</link>
-      <description>Russian subtitles for Deltarune animatic by Ace_Of_Spades</description>
-      <category>Subtitles</category>
-      <guid isPermaLink="false">subtitle-mamma-told-me</guid>
     </item>
   </channel>
 </rss>
