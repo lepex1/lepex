@@ -1,39 +1,3 @@
-/* Subtitle Preview */
-.subtitle-preview {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: var(--md-sys-color-surface-container);
-    border-radius: 1rem;
-}
-
-.subtitle-preview h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 0.5rem;
-    background: #000;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.subtitle-controls {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: flex-end;
-}
-
 /* Connection status toast */
 .connection-toast {
     position: fixed;

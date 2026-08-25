@@ -491,33 +491,6 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
     letter-spacing: -0.2px;
 }
 
-.portfolio-card-preview-btn {
-    align-self: flex-start;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    padding: 0.4rem 0.9rem;
-    border-radius: var(--md-shape-corner-full);
-    background-color: var(--md-sys-color-surface-container-high);
-    color: var(--md-sys-color-on-surface);
-    border: 1px solid var(--md-sys-color-outline-variant);
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s var(--md-transition-bounce);
-}
-
-.portfolio-card-preview-btn:hover {
-    background-color: var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-on-primary-container);
-    border-color: var(--md-sys-color-primary);
-}
-
-.portfolio-card-preview-btn .material-symbols-outlined {
-    font-size: 1.1rem;
-}
-
-
 .skeleton-card {
     background-color: var(--md-sys-color-surface-container);
     border: 1px solid var(--md-sys-color-outline-variant);
