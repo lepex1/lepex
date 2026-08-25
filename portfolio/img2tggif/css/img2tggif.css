@@ -66,7 +66,12 @@
     border-radius: var(--md-shape-corner-large);
     cursor: pointer;
     text-align: center;
-    transition: all var(--md-transition-duration) var(--md-transition-bounce);
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s var(--md-transition-bounce),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tg-drop-zone:hover,
@@ -320,7 +325,12 @@
     background-color: var(--md-sys-color-surface-container);
     border: 1px solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-shape-corner-medium);
-    transition: all var(--md-transition-duration) var(--md-transition-bounce);
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s var(--md-transition-bounce),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .history-item:hover {

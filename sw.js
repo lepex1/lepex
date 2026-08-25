@@ -1,4 +1,4 @@
-const CACHE_VERSION = 7;
+const CACHE_VERSION = 8;
 const CACHE_NAME = `lepex-cache-v${CACHE_VERSION}`;
 const PREVIEW_CACHE = `lepex-previews-v${CACHE_VERSION}`;
 

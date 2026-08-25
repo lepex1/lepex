@@ -96,7 +96,14 @@ html:not([data-lang]) .i18n-container > .lang-en {
     border-radius: var(--md-shape-corner-full);
     color: var(--md-sys-color-on-surface-variant);
     text-decoration: none;
-    transition: all var(--md-transition-duration) var(--md-transition-bounce);
+    /* Colors mirror the universal theme fade (shared.css * rule) so theme
+       switches animate in sync; spring easing stays only on transform */
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s var(--md-transition-bounce),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     flex-shrink: 0;
 }
 
@@ -262,7 +269,14 @@ html:not([data-lang]) .i18n-container > .lang-en {
     justify-content: center;
     cursor: pointer;
     flex-shrink: 0;
-    transition: all var(--md-transition-duration) var(--md-transition-bounce);
+    /* Colors mirror the universal theme fade (shared.css * rule) so theme
+       switches animate in sync; spring easing stays only on transform */
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s var(--md-transition-bounce),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .md3-icon-button:hover {
@@ -286,7 +300,14 @@ html:not([data-lang]) .i18n-container > .lang-en {
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all var(--md-transition-duration) var(--md-transition-bounce);
+    /* Colors mirror the universal theme fade (shared.css * rule) so theme
+       switches animate in sync; spring easing stays only on transform */
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s var(--md-transition-bounce),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .md3-pill-button:hover {
@@ -310,7 +331,14 @@ html:not([data-lang]) .i18n-container > .lang-en {
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all var(--md-transition-duration) var(--md-transition-bounce);
+    /* Colors mirror the universal theme fade (shared.css * rule) so theme
+       switches animate in sync; spring easing stays only on transform */
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s var(--md-transition-bounce),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .md3-filled-button:hover {

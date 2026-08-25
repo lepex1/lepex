@@ -21,7 +21,12 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: all var(--md-transition-duration) var(--md-transition-easing);
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s var(--md-transition-easing),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .md3-bento-card:hover {
@@ -260,7 +265,12 @@
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
-    transition: all var(--md-transition-duration) var(--md-transition-bounce);
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s var(--md-transition-bounce),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .md3-grid-link:hover {
@@ -285,7 +295,12 @@
     justify-content: center;
     cursor: pointer;
     overflow: hidden;
-    transition: all var(--md-transition-duration) var(--md-transition-bounce);
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s var(--md-transition-bounce),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 0;
 }
 
