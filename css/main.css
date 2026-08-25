@@ -279,32 +279,19 @@
     transform: translateY(-2px);
 }
 
-/* Featured portfolio tile: full-width row above Steam/GitHub */
+/* Featured portfolio tile: full-width row above Steam/GitHub.
+   Colors stay identical to regular tiles (user request). */
 .md3-grid-link--featured {
     grid-column: 1 / -1;
     flex-direction: row;
     justify-content: center;
     gap: 0.75rem;
     padding: 1.7rem 1rem;
-    background: var(--md-sys-color-primary-container);
-    border-color: transparent;
-    color: var(--md-sys-color-on-primary-container);
     font-size: 1rem;
 }
 
 .md3-grid-link--featured .material-symbols-outlined {
     font-size: 2rem;
-    color: var(--md-sys-color-on-primary-container);
-}
-
-.md3-grid-link--featured:hover {
-    background: var(--md-sys-color-primary);
-    border-color: transparent;
-    color: var(--md-sys-color-on-primary);
-}
-
-.md3-grid-link--featured:hover .material-symbols-outlined {
-    color: var(--md-sys-color-on-primary);
 }
 
 .md3-grid-link .material-symbols-outlined {
