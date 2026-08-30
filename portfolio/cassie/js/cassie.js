@@ -442,18 +442,4 @@ function setupCassieListeners() {
             }
         });
     }
-
-    const gifElement = document.getElementById('clickable-gif');
-    if (gifElement) {
-        gifElement.addEventListener('click', () => {
-            setTimeout(() => {
-                const idx = parseInt(localStorage.getItem('gifIndex') || '3', 10);
-                const themeName = GIF_CONFIG.themes[idx] || "storm";
-                updateThemeColorMeta(themeName);
-
-                const event = new CustomEvent('gifThemeChanged', { detail: { theme: themeName } });
-                document.dispatchEvent(event);
-            }, 200);
-        });
-    }
 }
