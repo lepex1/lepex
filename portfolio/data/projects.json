@@ -67,7 +67,7 @@
     "title": "Free VPN Checker",
     "titleRu": "Free VPN Checker",
     "desc": "Validator and subscription builder for VPN-proxy configs",
-    "descRu": "Проверка и сбор подписок VPN-конфигов",
+    "descRu": "Проверка и сбор публичных подписок VPN-конфигов",
     "link": "/portfolio/free-vpn-checker",
     "tags": [
       "Tool",
