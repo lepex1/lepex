@@ -34,18 +34,8 @@ const GIF_THEME_COLORS = {
     axe: "#1a1110"
 };
 
-// Вспомогательная функция: мгновенная смена темы без фризов CSS-переходов
-function withDisabledTransitions(fn) {
-    const html = document.documentElement;
-    html.classList.add('no-theme-transition');
-    fn();
-    window.getComputedStyle(html).opacity;
-    requestAnimationFrame(() => {
-        html.classList.remove('no-theme-transition');
-    });
-}
-
 function initializeGifTheme() {
+    // ~200 KB of GIFs; defer until idle so they never compete with first paint
     const idle = window.requestIdleCallback
         ? (cb) => window.requestIdleCallback(cb, { timeout: 4000 })
         : (cb) => setTimeout(cb, 2500);
@@ -72,10 +62,13 @@ function initializeGifTheme() {
         switcher.setAttribute('tabindex', '0');
 
         const switchTheme = () => {
-            currentIndex = (currentIndex + 1) % GIF_CONFIG.gifs.length;
-            const newTheme = GIF_CONFIG.themes[currentIndex];
+            switcher.classList.add('clicked', 'no-hover');
 
-            withDisabledTransitions(() => {
+            setTimeout(() => {
+                switcher.classList.remove('clicked');
+                currentIndex = (currentIndex + 1) % GIF_CONFIG.gifs.length;
+                const newTheme = GIF_CONFIG.themes[currentIndex];
+
                 gifElement.src = GIF_CONFIG.gifs[currentIndex];
                 html.setAttribute('data-gif-theme', newTheme);
                 localStorage.setItem('gifIndex', currentIndex.toString());
@@ -84,10 +77,13 @@ function initializeGifTheme() {
                 if (themeColorMeta && GIF_THEME_COLORS[newTheme]) {
                     themeColorMeta.setAttribute('content', GIF_THEME_COLORS[newTheme]);
                 }
-            });
 
-            switcher.classList.add('clicked');
-            setTimeout(() => switcher.classList.remove('clicked'), 200);
+                switcher.classList.add('appear');
+                setTimeout(() => {
+                    switcher.classList.remove('appear');
+                    setTimeout(() => switcher.classList.remove('no-hover'), 160);
+                }, 160);
+            }, 160);
 
             if (navigator.vibrate) navigator.vibrate(10);
         };
@@ -185,12 +181,10 @@ function initializeThemeToggle() {
             const current = document.documentElement.getAttribute('data-theme') || 'dark';
             const newTheme = current === 'light' ? 'dark' : 'light';
 
-            withDisabledTransitions(() => {
-                document.documentElement.setAttribute('data-theme', newTheme);
-                themeToggle.querySelector('.material-symbols-outlined').textContent =
-                    newTheme === 'light' ? 'dark_mode' : 'light_mode';
-                localStorage.setItem('theme', newTheme);
-            });
+            document.documentElement.setAttribute('data-theme', newTheme);
+            themeToggle.querySelector('.material-symbols-outlined').textContent =
+                newTheme === 'light' ? 'dark_mode' : 'light_mode';
+            localStorage.setItem('theme', newTheme);
         });
     }
 }
