@@ -8,39 +8,37 @@
 .tg-editor-card {
     background-color: var(--md-sys-color-surface-container);
     border: 1px solid var(--md-sys-color-outline-variant);
-    border-radius: var(--md-shape-corner-extra-large);
+    border-radius: var(--md-shape-corner-large);
     padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    transition: background-color var(--md-transition-duration) var(--md-transition-bounce),
-                border-color var(--md-transition-duration) var(--md-transition-bounce),
-                box-shadow var(--md-transition-duration) var(--md-transition-bounce),
-                transform var(--md-transition-duration) var(--md-transition-bounce);
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s var(--md-transition-bounce),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tg-editor-card:hover {
     background-color: var(--md-sys-color-surface-container-high);
     border-color: var(--md-sys-color-primary);
-    box-shadow: 0 16px 32px var(--md-sys-color-shadow);
-    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 24px var(--md-sys-color-shadow);
+    transform: translateY(-4px);
 }
 
 .card-icon-wrapper {
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
     border-radius: var(--md-shape-corner-medium);
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 0.5rem;
     flex-shrink: 0;
-    transition: transform var(--md-transition-duration) var(--md-transition-bounce);
-}
-
-.tg-editor-card:hover .card-icon-wrapper {
-    transform: rotate(8deg) scale(1.08);
 }
 
 .card-main-icon {

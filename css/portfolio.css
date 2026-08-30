@@ -20,17 +20,24 @@
     position: relative;
     background-color: var(--md-sys-color-surface-container);
     border: 1px solid var(--md-sys-color-outline-variant);
-    border-radius: var(--md-shape-corner-extra-large);
-    padding: 2.5rem;
+    border-radius: var(--md-shape-corner-large);
+    padding: 2rem;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    gap: 0.75rem;
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s var(--md-transition-bounce),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .md3-bento-card:hover {
     background-color: var(--md-sys-color-surface-container-high);
     border-color: var(--md-sys-color-primary);
-    box-shadow: 0 16px 32px var(--md-sys-color-shadow);
+    box-shadow: 0 12px 24px var(--md-sys-color-shadow);
     transform: translateY(-4px);
 }
 
@@ -264,21 +271,16 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
 }
 
 .card-icon-wrapper {
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
     border-radius: var(--md-shape-corner-medium);
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     flex-shrink: 0;
-    transition: transform var(--md-transition-duration) var(--md-transition-bounce);
-}
-
-.info-card:hover .card-icon-wrapper {
-    transform: rotate(10deg) scale(1.1);
 }
 
 .card-icon-wrapper.secondary-color {
@@ -297,7 +299,7 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
 }
 
 .card-title {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 700;
     letter-spacing: -0.2px;
 }
@@ -309,7 +311,7 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
 .card-text {
     font-size: 0.95rem;
     color: var(--md-sys-color-on-surface-variant);
-    line-height: 1.6;
+    line-height: 1.55;
 }
 
 .free-badge-card {

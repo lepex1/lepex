@@ -12,23 +12,24 @@
     width: 100%;
     max-width: 1000px;
     margin: 1rem auto 2rem auto;
-    padding: 1.75rem 2rem;
+    padding: 2rem;
     background-color: var(--md-sys-color-surface-container);
     border: 1px solid var(--md-sys-color-outline-variant);
-    border-radius: var(--md-shape-corner-extra-large);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: var(--md-shape-corner-large);
     position: relative;
     overflow: hidden;
-    transition: background-color var(--md-transition-duration) var(--md-transition-easing),
-                border-color var(--md-transition-duration) var(--md-transition-easing),
-                box-shadow var(--md-transition-duration) var(--md-transition-bounce),
-                transform var(--md-transition-duration) var(--md-transition-bounce);
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s var(--md-transition-bounce),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cassie-description:hover {
     background-color: var(--md-sys-color-surface-container-high);
     border-color: var(--md-sys-color-primary);
-    box-shadow: 0 16px 36px var(--md-sys-color-shadow);
+    box-shadow: 0 12px 24px var(--md-sys-color-shadow);
     transform: translateY(-4px);
 }
 
@@ -40,9 +41,9 @@
 }
 
 .cassie-description .card-icon-wrapper {
-    width: 56px;
-    height: 56px;
-    min-width: 56px;
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
     border-radius: var(--md-shape-corner-medium);
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
@@ -50,12 +51,6 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition: transform var(--md-transition-duration) var(--md-transition-bounce),
-                background-color var(--md-transition-duration) var(--md-transition-easing);
-}
-
-.cassie-description:hover .card-icon-wrapper {
-    transform: rotate(8deg) scale(1.08);
 }
 
 .cassie-description .card-main-icon {
@@ -319,24 +314,26 @@
     position: relative;
     background-color: var(--md-sys-color-surface-container);
     border: 1px solid var(--md-sys-color-outline-variant);
-    border-radius: var(--md-shape-corner-extra-large);
-    padding: 2rem;
+    border-radius: var(--md-shape-corner-large);
+    padding: 1.75rem;
     margin-bottom: 1.5rem;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    transition: background-color var(--md-transition-duration) var(--md-transition-bounce),
-                border-color var(--md-transition-duration) var(--md-transition-bounce),
-                box-shadow var(--md-transition-duration) var(--md-transition-bounce),
-                transform var(--md-transition-duration) var(--md-transition-bounce);
+    gap: 1rem;
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s var(--md-transition-bounce),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .md3-card:hover {
     background-color: var(--md-sys-color-surface-container-high);
     border-color: var(--md-sys-color-primary);
-    box-shadow: 0 16px 32px var(--md-sys-color-shadow);
-    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 24px var(--md-sys-color-shadow);
+    transform: translateY(-4px);
 }
 
 .md3-card__title {
