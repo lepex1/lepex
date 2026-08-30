@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" data-gif-theme="storm">
+<head>
+    <meta charset="UTF-8">
+    <script src="/js/preload.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free VPN Checker — automated proxy testing and subscription generator" data-lang-ru="Free VPN Checker — автоматическая проверка и генерация подписок VPN на базе Xray-core." data-lang-en="Free VPN Checker — automated proxy testing and subscription generator powered by Xray-core.">
+    <meta name="author" content="lepex">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="lepex">
+    <meta property="og:url" content="https://lepex.vercel.app/portfolio/free-vpn-checker/">
+    <meta property="og:title" content="Free VPN Checker - lepex">
+    <meta property="og:description" content="Automated public VPN config testing via Xray-core, GeoIP country resolution, and subscription generator.">
+    <meta property="og:image" content="https://lepex.vercel.app/assets/og/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" id="theme-color-meta" content="#13171a">
+    <base href="/portfolio/free-vpn-checker/">
+
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="alternate" type="application/rss+xml" title="lepex RSS Feed" href="/rss.xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preload" href="/fonts/satoshi.woff2" as="font" type="font/woff2" crossorigin>
+
+    <title data-lang-ru="Free VPN Checker - lepex" data-lang-en="Free VPN Checker by lepex">Free VPN Checker - lepex</title>
+    <link rel="stylesheet" href="/fonts/satoshi.css">
+    <link rel="stylesheet" href="/css/themes.css">
+    <link rel="stylesheet" href="/css/themes-light.css">
+    <link rel="stylesheet" href="/css/features.css">
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="css/free-vpn-checker.css">
+</head>
+<body>
+
+    <header class="md3-top-app-bar">
+        <div class="md3-top-bar-container">
+            <div class="md3-top-bar-left">
+                <a href="/portfolio/" class="md3-back-link" aria-label="Home" title="Home">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </a>
+                <div class="md3-brand">
+                    <span class="material-symbols-outlined brand-icon">vpn_key</span>
+                    <span class="brand-name">Free VPN Checker</span>
+                    <img src="/assets/previews/gif-themes/storm.gif" class="gif-switcher" id="clickable-gif" alt="theme switcher" data-label-ru="Переключить тему" data-label-en="Switch color theme">
+                </div>
+            </div>
+            <div class="md3-app-bar-actions">
+                <button class="md3-pill-button" id="lang-toggle" aria-label="Toggle language">
+                    <span class="material-symbols-outlined btn-icon-leading">translate</span>
+                    <span class="lang-text">EN</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-content">
+        <main class="md3-main-content">
+
+            <!-- Hero Section -->
+            <section class="vpn-hero-card reveal-card">
+                <div class="vpn-hero-badge-row">
+                    <span class="vpn-badge">
+                        <span class="material-symbols-outlined vpn-badge-icon">terminal</span>
+                        <span>CLI Tool</span>
+                    </span>
+                    <span class="vpn-badge">
+                        <span class="material-symbols-outlined vpn-badge-icon">code</span>
+                        <span>Python 3.12</span>
+                    </span>
+                    <span class="vpn-badge">
+                        <span class="material-symbols-outlined vpn-badge-icon">verified_user</span>
+                        <span>Xray-core 1.8.24</span>
+                    </span>
+                </div>
+
+                <h1 class="vpn-hero-title i18n-container">
+                    <span class="lang-ru">Автоматический чекер и генератор VPN-подписок</span>
+                    <span class="lang-en">Automated Proxy Validator & Subscription Builder</span>
+                </h1>
+
+                <p class="vpn-hero-desc i18n-container">
+                    <span class="lang-ru">Утилита скачивает более 12 000 публичных VPN-конфигураций (VLESS, Trojan, VMess, Shadowsocks), проверяет их реальную работоспособность через локальный экземпляр Xray-core с SOCKS5-хендшейком, определяет страны по базе MaxMind GeoIP и формирует готовую подписку.</span>
+                    <span class="lang-en">CLI tool that downloads 12,000+ public VPN configs (VLESS, Trojan, VMess, Shadowsocks), validates real connectivity through an isolated Xray-core instance with SOCKS5 handshakes, determines server countries via MaxMind GeoIP, and outputs ready-to-use subscriptions.</span>
+                </p>
+
+                <div class="vpn-action-buttons">
+                    <a href="https://github.com/lepex1/free-vpn-checker/releases/latest" target="_blank" rel="noopener noreferrer" class="md3-filled-button vpn-btn-primary">
+                        <span class="material-symbols-outlined">download</span>
+                        <span class="i18n-container"><span class="lang-ru">Скачать .exe (v1.1)</span><span class="lang-en">Download .exe (v1.1)</span></span>
+                    </a>
+                    <a href="https://github.com/lepex1/free-vpn-checker" target="_blank" rel="noopener noreferrer" class="md3-pill-button vpn-btn-secondary">
+                        <span class="material-symbols-outlined">code</span>
+                        <span class="i18n-container"><span class="lang-ru">Исходный код на GitHub</span><span class="lang-en">GitHub Repository</span></span>
+                        <span class="material-symbols-outlined chip-arrow">open_in_new</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Visual Terminal Preview Mockup -->
+            <section class="vpn-terminal-section reveal-card">
+                <div class="vpn-terminal-header">
+                    <div class="vpn-terminal-dots">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                    </div>
+                    <span class="vpn-terminal-title">Free VPN Checker v1.0 [Rich Mode]</span>
+                    <span class="vpn-terminal-tag">cmd.exe / PowerShell</span>
+                </div>
+                <div class="vpn-terminal-body">
+                    <div class="term-line term-banner-border">╭──────────────────────────────────────────────────────────────────╮</div>
+                    <div class="term-line term-banner-title">│  <span class="term-accent">⚡ FREE VPN CHECKER v1.0</span>                                        │</div>
+                    <div class="term-line term-banner-sub">│  <span class="term-muted">Автор: lepex1 — https://lepex.vercel.app/</span>                       │</div>
+                    <div class="term-line term-banner-border">╰──────────────────────────────────────────────────────────────────╯</div>
+                    <br>
+                    <div class="term-line"><span class="term-step">[1/6]</span> <span class="term-bold">Подготовка Xray-core...</span></div>
+                    <div class="term-line term-indent"><span class="term-ok">✔</span> Xray-core уже установлен: data/xray/xray.exe</div>
+                    <br>
+                    <div class="term-line"><span class="term-step">[2/6]</span> <span class="term-bold">Подготовка базы GeoIP...</span></div>
+                    <div class="term-line term-indent"><span class="term-ok">✔</span> База GeoIP уже установлена</div>
+                    <br>
+                    <div class="term-line"><span class="term-step">[3/6]</span> <span class="term-bold">Скачивание публичных конфигураций...</span></div>
+                    <div class="term-line term-indent"><span class="term-info">◈</span> <span class="term-muted">Источник: igareck (7 файлов)</span></div>
+                    <div class="term-line term-indent"><span class="term-info">◈</span> <span class="term-muted">Источник: kort0881 (1 файл)</span></div>
+                    <div class="term-line term-indent"><span class="term-ok">✔</span> Всего: 12 450 уникальных (из 14 200 raw)</div>
+                    <br>
+                    <div class="term-line"><span class="term-step">[4/6]</span> <span class="term-bold">Проверка VPN-клиентов...</span></div>
+                    <div class="term-line term-indent"><span class="term-ok">✔</span> Конфликтующие VPN-клиенты не обнаружены</div>
+                    <br>
+                    <div class="term-line"><span class="term-step">[5/6]</span> <span class="term-bold">Тестирование доступности серверов через Xray...</span></div>
+                    <div class="term-line term-indent">
+                        <span class="term-bar-fill">■■■■■■■■■■■■■■■■</span> <span class="term-bold">100%</span>  <span class="term-muted">12450/12450</span>  <span class="term-ok">● 342 доступно</span>
+                    </div>
+                    <br>
+                    <div class="term-line"><span class="term-step">[6/6]</span> <span class="term-bold">Определение локаций и сортировка...</span></div>
+                    <div class="term-line term-indent"><span class="term-ok">✔</span> Успешно обработано: 342 сервера</div>
+                    <br>
+                    <div class="term-card">
+                        <div class="term-card-title">┌── <span class="term-bold">ИТОГИ ПРОВЕРКИ</span> ─────────────────────────────────────────┐</div>
+                        <div class="term-card-line">│  <span class="term-muted">Время выполнения:</span>  <span class="term-bold">245.8 сек</span>                           │</div>
+                        <div class="term-card-line">│  <span class="term-muted">Доступно серверов:</span> <span class="term-ok">342</span> из 12450                          │</div>
+                        <div class="term-card-line">│  <span class="term-muted">Локации (Топ-6):</span>                                         │</div>
+                        <div class="term-card-line">│    🇩🇪 Германия      <span class="term-accent">■■■■■■■■■■</span><span class="term-muted">■■</span> <span class="term-bold"> 118</span>                    │</div>
+                        <div class="term-card-line">│    🇳🇱 Нидерланды    <span class="term-accent">■■■■■■■■</span><span class="term-muted">■■■■</span> <span class="term-bold">  92</span>                    │</div>
+                        <div class="term-card-line">│    🇫🇮 Финляндия     <span class="term-accent">■■■■■</span><span class="term-muted">■■■■■■■</span> <span class="term-bold">  54</span>                    │</div>
+                        <div class="term-card-line">│    🇺🇸 США           <span class="term-accent">■■■■</span><span class="term-muted">■■■■■■■■</span> <span class="term-bold">  38</span>                    │</div>
+                        <div class="term-card-line">│    🇸🇪 Швеция        <span class="term-accent">■■</span><span class="term-muted">■■■■■■■■■■</span> <span class="term-bold">  24</span>                    │</div>
+                        <div class="term-card-line">│    🇹🇷 Турция        <span class="term-accent">■</span><span class="term-muted">■■■■■■■■■■■</span> <span class="term-bold">  16</span>                    │</div>
+                        <div class="term-card-title">└─────────────────────────────────────────────────────────┘</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Bento Grid -->
+            <section class="vpn-features-grid">
+
+                <div class="vpn-feature-card reveal-card">
+                    <div class="card-icon-wrapper">
+                        <span class="material-symbols-outlined card-main-icon">network_check</span>
+                    </div>
+                    <h3 class="card-title i18n-container">
+                        <span class="lang-ru">Честный SOCKS5-тест</span>
+                        <span class="lang-en">Real SOCKS5 HTTP Validation</span>
+                    </h3>
+                    <p class="card-text i18n-container">
+                        <span class="lang-ru">В отличие от чекеров с простым TCP-пингом, программа запускает ядро Xray, изолированно маршрутизирует каждый порт и отправляет реальный HTTP-запрос (HTTP 204 к gstatic.com) через туннель.</span>
+                        <span class="lang-en">Unlike tools that only measure simple TCP ping, this utility spawns a real Xray instance with isolated per-proxy routing and performs real HTTP 204 requests through each tunnel.</span>
+                    </p>
+                </div>
+
+                <div class="vpn-feature-card reveal-card">
+                    <div class="card-icon-wrapper">
+                        <span class="material-symbols-outlined card-main-icon">public</span>
+                    </div>
+                    <h3 class="card-title i18n-container">
+                        <span class="lang-ru">GeoIP и флаги стран</span>
+                        <span class="lang-en">GeoIP Country Flag Renaming</span>
+                    </h3>
+                    <p class="card-text i18n-container">
+                        <span class="lang-ru">IP-адрес каждого рабочего сервера проверяется по базе MaxMind GeoLite2. Конфигурации получают понятные названия с эмодзи-флагами и сортируются по популярности стран.</span>
+                        <span class="lang-en">Server IPs are looked up in the MaxMind GeoLite2 database. Working proxies are clearly labeled with country flags and sorted by server location frequency.</span>
+                    </p>
+                </div>
+
+                <div class="vpn-feature-card reveal-card">
+                    <div class="card-icon-wrapper">
+                        <span class="material-symbols-outlined card-main-icon">sync</span>
+                    </div>
+                    <h3 class="card-title i18n-container">
+                        <span class="lang-ru">GitHub Подписка в 1 клик</span>
+                        <span class="lang-en">1-Click GitHub Subscription</span>
+                    </h3>
+                    <p class="card-text i18n-container">
+                        <span class="lang-ru">Возможность автоматически опубликовать результаты в ваш личный репозиторий на GitHub. Позволяет обновлять рабочие серверы в клиенте одной кнопкой по URL.</span>
+                        <span class="lang-en">Optionally push verified configurations to your personal GitHub repository, creating a permanent raw subscription URL for your VPN clients.</span>
+                    </p>
+                </div>
+
+                <div class="vpn-feature-card reveal-card">
+                    <div class="card-icon-wrapper">
+                        <span class="material-symbols-outlined card-main-icon">devices</span>
+                    </div>
+                    <h3 class="card-title i18n-container">
+                        <span class="lang-ru">Поддержка клиентов</span>
+                        <span class="lang-en">Supported VPN Clients</span>
+                    </h3>
+                    <p class="card-text i18n-container">
+                        <span class="lang-ru">На выходе создаются файлы TXT и Base64, полностью совместимые с Happ, v2rayN, NekoBox, V2RayTun, Throne и любыми клиентами на базе Xray/Sing-box.</span>
+                        <span class="lang-en">Outputs plain text and Base64 subscription files fully compatible with Happ, v2rayN, NekoBox, V2RayTun, Throne, and all Xray/Sing-box clients.</span>
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- Quick Start Guide -->
+            <section class="vpn-guide-card reveal-card">
+                <h2 class="card-title i18n-container">
+                    <span class="lang-ru">Как пользоваться программой</span>
+                    <span class="lang-en">How to Use</span>
+                </h2>
+                <div class="vpn-steps-list">
+                    <div class="vpn-step-item">
+                        <span class="vpn-step-num">1</span>
+                        <div class="vpn-step-content">
+                            <h4 class="i18n-container"><span class="lang-ru">Скачайте .exe</span><span class="lang-en">Download .exe</span></h4>
+                            <p class="i18n-container">
+                                <span class="lang-ru">Скачайте готовый <code>free-vpn-checker.exe</code> со страницы релизов на GitHub. Установка не требуется.</span>
+                                <span class="lang-en">Grab the compiled <code>free-vpn-checker.exe</code> from GitHub Releases. No setup required.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="vpn-step-item">
+                        <span class="vpn-step-num">2</span>
+                        <div class="vpn-step-content">
+                            <h4 class="i18n-container"><span class="lang-ru">Запустите проверку</span><span class="lang-en">Run the Scan</span></h4>
+                            <p class="i18n-container">
+                                <span class="lang-ru">Программа автоматически загрузит Xray-core, базу GeoIP, скачает свежие ссылки и протестирует их за 3–5 минут.</span>
+                                <span class="lang-en">The app will automatically download Xray-core, GeoIP database, fetch live links, and test them in 3–5 minutes.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="vpn-step-item">
+                        <span class="vpn-step-num">3</span>
+                        <div class="vpn-step-content">
+                            <h4 class="i18n-container"><span class="lang-ru">Заберите результат</span><span class="lang-en">Get the Output</span></h4>
+                            <p class="i18n-container">
+                                <span class="lang-ru">Готовые конфигурации сохранятся в папку <code>output/</code> (обычный и Base64 форматы), либо отправятся по ссылке подписки в GitHub.</span>
+                                <span class="lang-en">Working configs are saved to the <code>output/</code> directory (plain text and Base64) or published to your GitHub subscription URL.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="md3-footer">
+            <p class="footer-text">lepex &copy; <span id="year"></span></p>
+            <p class="footer-credit i18n-container">
+                <span class="lang-ru">Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</span>
+                <span class="lang-en">Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.</span>
+            </p>
+        </footer>
+    </div>
+
+    <script src="/js/core.js"></script>
+    <script>
+        initializeLanguage();
+        initializeThemeToggle();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeGifTheme();
+            initializeScrollAndLayout();
+        });
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
