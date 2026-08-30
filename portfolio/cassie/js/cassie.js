@@ -26,16 +26,6 @@ function initCassie() {
     const savedSection = localStorage.getItem("sectionFilter");
     if (savedSection) sectionFilter = savedSection;
 
-    const savedView = localStorage.getItem("viewMode") || "comfortable";
-    document.querySelector(".cassie-app").setAttribute("data-view", savedView);
-    const viewToggle = document.getElementById("viewToggle");
-    if (viewToggle) {
-        const icon = viewToggle.querySelector(".material-symbols-outlined");
-        if (icon) {
-            icon.textContent = savedView === "compact" ? "view_agenda" : "grid_view";
-        }
-    }
-
     const savedIndex = parseInt(localStorage.getItem('gifIndex') || '3', 10);
     const themeName = GIF_CONFIG.themes[savedIndex] || "storm";
     updateThemeColorMeta(themeName);
@@ -425,21 +415,7 @@ function setupCassieListeners() {
         searchFilter = e.target.value;
         debouncedRender();
     });
-
-    const viewToggle = document.getElementById("viewToggle");
-    if (viewToggle) {
-        viewToggle.addEventListener("click", () => {
-            const app = document.querySelector(".cassie-app");
-            const icon = viewToggle.querySelector(".material-symbols-outlined");
-            const current = app.getAttribute("data-view");
-            const next = current === "compact" ? "comfortable" : "compact";
-
-            app.setAttribute("data-view", next);
-            localStorage.setItem("viewMode", next);
-
-            if (icon) {
-                icon.textContent = next === "compact" ? "view_agenda" : "grid_view";
-            }
+}
         });
     }
 
