@@ -66,8 +66,8 @@
     "date": "2026-08-27",
     "title": "Free VPN Checker",
     "titleRu": "Free VPN Checker",
-    "desc": "Automated Xray-core based proxy validator and subscription builder",
-    "descRu": "Автоматическая проверка и фильтрация бесплатных VPN-конфигов через Xray-core",
+    "desc": "Validator and subscription builder for VPN-proxy configs",
+    "descRu": "Проверка и сбор подписок VPN-конфигов",
     "link": "/portfolio/free-vpn-checker",
     "tags": [
       "Tool",
