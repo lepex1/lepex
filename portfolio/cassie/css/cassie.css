@@ -124,19 +124,19 @@
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
-    transition: background-color var(--md-transition-duration) var(--md-transition-bounce),
-                border-color var(--md-transition-duration) var(--md-transition-bounce),
-                color var(--md-transition-duration) var(--md-transition-bounce),
-                transform var(--md-transition-duration) var(--md-transition-bounce),
-                box-shadow var(--md-transition-duration) var(--md-transition-bounce);
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.4s var(--md-transition-bounce),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cassie-chip:hover {
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
     border-color: var(--md-sys-color-primary);
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 6px 16px var(--md-sys-color-shadow);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px var(--md-sys-color-shadow);
 }
 
 .cassie-chip .chip-icon {
@@ -457,7 +457,7 @@
 .md3-btn--copy:hover {
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
-    transform: translateY(-2px) scale(1.05);
+    transform: translateY(-4px);
     box-shadow: 0 4px 12px var(--md-sys-color-shadow);
 }
 

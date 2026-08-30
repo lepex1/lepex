@@ -283,7 +283,7 @@ html:not([data-lang]) .i18n-container > .lang-en {
     background: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
     border-color: var(--md-sys-color-primary);
-    transform: scale(1.08);
+    transform: translateY(-4px);
 }
 
 .md3-pill-button {
@@ -313,7 +313,7 @@ html:not([data-lang]) .i18n-container > .lang-en {
 .md3-pill-button:hover {
     background: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
-    transform: scale(1.04) translateY(-2px);
+    transform: translateY(-4px);
     box-shadow: 0 4px 12px var(--md-sys-color-shadow);
 }
 
@@ -344,7 +344,7 @@ html:not([data-lang]) .i18n-container > .lang-en {
 .md3-filled-button:hover {
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-4px);
     box-shadow: 0 8px 16px var(--md-sys-color-shadow);
 }
 

@@ -588,7 +588,7 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
 .md3-filled-button:hover {
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
-    transform: translateY(-4px) scale(1.03);
+    transform: translateY(-4px);
     box-shadow: 0 8px 16px var(--md-sys-color-shadow);
 }
 
