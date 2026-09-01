@@ -109,7 +109,10 @@
     transform: translate(-2px, -2px);
 }
 @media (max-width: 768px) {
-    .md3-main-content { padding: 1rem; }
-    .hub-header h1 { font-size: 1.8rem; }
+    .md3-main-content { padding: 1rem 0.75rem; }
+    .hub-header { margin-bottom: 1.5rem; }
+    .hub-header h1 { font-size: 1.6rem; }
+    .hub-header p { font-size: 0.9rem; }
+    .hub-card { padding: 1.25rem; min-height: auto; }
     .hub-grid { --hub-cols: 1; }
 }

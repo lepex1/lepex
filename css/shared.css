@@ -1,9 +1,18 @@
 .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
     display: inline-block;
-    width: 1em;
-    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
     user-select: none;
     -webkit-user-select: none;
+    vertical-align: middle;
 }
 
 *, *::before, *::after {
@@ -414,17 +423,86 @@ html:not([data-lang]) .i18n-container > .lang-en {
 
 @media (max-width: 768px) {
     .md3-top-app-bar {
-        height: 64px;
+        height: 60px;
     }
     .md3-top-bar-container {
-        padding: 0 1rem;
+        padding: 0 0.85rem;
+    }
+    .brand-icon {
+        font-size: 1.6rem;
     }
     .brand-name {
-        font-size: 1.3rem;
+        font-size: 1.15rem;
+    }
+    .gif-switcher {
+        width: 28px;
+        height: 28px;
+        margin-left: 4px;
+    }
+    .md3-icon-button {
+        width: 40px;
+        height: 40px;
+    }
+    .md3-pill-button {
+        height: 40px;
+        padding: 0 0.95rem;
+        font-size: 0.85rem;
+    }
+    .md3-back-link,
+    .md3-back-link-placeholder {
+        width: 36px;
+        height: 36px;
     }
 }
 
 @media (max-width: 480px) {
+    .md3-top-app-bar {
+        height: 56px;
+    }
+    .md3-top-bar-container {
+        padding: 0 0.5rem;
+    }
+    .md3-top-bar-left {
+        gap: 0.25rem;
+    }
+    .md3-brand {
+        gap: 0.35rem;
+    }
+    .brand-icon {
+        font-size: 1.35rem;
+    }
+    .brand-name {
+        font-size: 1.05rem;
+    }
+    .gif-switcher {
+        width: 26px;
+        height: 26px;
+        margin-left: 2px;
+    }
+    .md3-app-bar-actions {
+        gap: 0.35rem;
+    }
+    .md3-icon-button {
+        width: 36px;
+        height: 36px;
+    }
+    .md3-pill-button {
+        height: 36px;
+        padding: 0 0.75rem;
+        font-size: 0.8rem;
+        gap: 0.3rem;
+    }
+    .btn-icon-leading {
+        font-size: 1.1rem;
+    }
+    .md3-back-link,
+    .md3-back-link-placeholder {
+        width: 32px;
+        height: 32px;
+    }
+    .md3-back-link .material-symbols-outlined {
+        font-size: 1.25rem;
+    }
     .md3-bento-card {
         padding: 1.25rem;
     }
