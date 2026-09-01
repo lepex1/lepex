@@ -415,9 +415,6 @@ function setupCassieListeners() {
         searchFilter = e.target.value;
         debouncedRender();
     });
-}
-        });
-    }
 
     const gifElement = document.getElementById('clickable-gif');
     if (gifElement) {
