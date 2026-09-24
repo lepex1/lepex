@@ -1,0 +1,3430 @@
+1
+00:00:15,320 --> 00:00:18,720
+HELİX TEKNOLOJİLERİ SUNAR
+
+2
+00:00:18,800 --> 00:00:21,520
+CANLANDIRMA MAKİNESİ
+
+3
+00:00:21,720 --> 00:00:23,480
+Deney #001
+
+4
+00:00:23,520 --> 00:00:24,880
+--CANLANMA--
+
+5
+00:00:26,560 --> 00:00:28,480
+Orada zaman geçmek bilmiyor!
+
+6
+00:00:28,960 --> 00:00:30,480
+Deney #002
+
+7
+00:00:30,560 --> 00:00:31,880
+--CANLANMA--
+
+8
+00:00:33,440 --> 00:00:35,360
+"Gözlerim yanıyor."
+
+9
+00:00:36,680 --> 00:00:37,760
+Deney #003
+
+10
+00:00:37,800 --> 00:00:38,920
+--CANLANMA--
+
+11
+00:00:48,920 --> 00:00:50,920
+Deney #004
+
+12
+00:01:02,640 --> 00:01:04,480
+Perşembe
+
+13
+00:01:04,520 --> 00:01:06,880
+Perşembe
+31 Ekim, 1968
+
+14
+00:01:06,920 --> 00:01:09,240
+Perşembe
+31 Ekim, 1968
+19.57
+
+15
+00:01:23,880 --> 00:01:27,240
+--MUAYENE--
+
+16
+00:02:42,720 --> 00:02:45,400
+Şey... Doktor...?
+
+17
+00:03:00,280 --> 00:03:02,240
+Geç olduğunu biliyorum...
+
+18
+00:03:02,480 --> 00:03:04,720
+...ama bir şey
+sorabilir miyim?
+
+19
+00:03:07,120 --> 00:03:09,560
+Hiç kötü rüyalar gördüğün oldu mu?
+
+20
+00:03:11,440 --> 00:03:14,960
+--JULES ARCHIBALD KAÇIRILDI--
+
+21
+00:03:15,040 --> 00:03:16,800
+Anlat bakalım.
+
+22
+00:03:17,320 --> 00:03:19,000
+Bir gün tuvaletteydim...
+
+23
+00:03:19,040 --> 00:03:20,800
+...ve dişlerimi fırçalıyordum...
+
+24
+00:03:20,880 --> 00:03:23,480
+...sonra bir anda tüm
+dişlerim dökülmeye başladı.
+
+25
+00:03:23,520 --> 00:03:25,400
+Lavabo kan içindeydi...
+
+26
+00:03:25,800 --> 00:03:27,160
+...korkunç bir şeydi.
+
+27
+00:03:27,400 --> 00:03:28,960
+Endişelerin mi var?
+
+28
+00:03:29,240 --> 00:03:30,560
+Aslında evet, var.
+
+29
+00:03:31,400 --> 00:03:34,120
+Hiç izleniyormuşsun hissine
+kapıldığın oluyor mu?
+
+30
+00:03:34,840 --> 00:03:36,280
+Ne demek istiyorsun?
+
+31
+00:03:36,320 --> 00:03:38,360
+Dün gece yataktaydım işte...
+
+32
+00:03:38,400 --> 00:03:41,760
+...ve penceremin dışında
+birinin durduğunu gördüm.
+
+33
+00:03:41,800 --> 00:03:44,920
+Saçmalama, birisi geçip gitmiştir.
+
+34
+00:03:45,160 --> 00:03:47,520
+Doktor, benim odam ikinci katta.
+
+35
+00:03:48,400 --> 00:03:50,560
+Annene bundan bahsettin mi?
+
+36
+00:03:50,600 --> 00:03:52,680
+Bunları kafamda kurduğumu söylüyor.
+
+37
+00:03:53,720 --> 00:03:55,800
+Dişlerin gayet iyi durumda.
+
+38
+00:03:55,880 --> 00:03:59,520
+İşte, gece bir tane al.
+Yardımcı olur.
+
+39
+00:03:59,600 --> 00:04:01,760
+Hadi ama Doktor,
+buna ihtiyacım yok.
+
+40
+00:04:01,800 --> 00:04:03,280
+Bence var, Scout.
+
+41
+00:04:03,400 --> 00:04:04,960
+Durumun hiç normal değil.
+
+42
+00:04:05,000 --> 00:04:06,720
+Tıpkı annem gibi konuştun.
+
+43
+00:04:07,800 --> 00:04:08,800
+Bir el atsan...
+
+44
+00:04:08,880 --> 00:04:11,400
+Tekrar onunla yaşayacağın
+için annen çok sevinmiş olmalı.
+
+45
+00:04:11,480 --> 00:04:13,880
+İşten atılmama rağmen mi?
+Ciddi misin?
+
+46
+00:04:13,920 --> 00:04:16,800
+Bana yaptıkları için
+BLU'yu dava edeceğim.
+
+47
+00:04:16,840 --> 00:04:18,600
+İlk kurbanları sen değilsin.
+
+48
+00:04:18,680 --> 00:04:21,600
+Doktor, birisi sana
+vurdu diyelim...
+
+49
+00:04:21,640 --> 00:04:24,080
+...ona iki misliyle geri vur,
+duydun mu beni?
+
+50
+00:04:24,120 --> 00:04:25,240
+Çok geç oldu.
+
+51
+00:04:25,320 --> 00:04:26,840
+Gel, evine bırakayım.
+
+52
+00:04:29,400 --> 00:04:31,960
+Şuna bir bak, kaset dükkanı
+falan mı soydun?
+
+53
+00:04:34,640 --> 00:04:36,680
+Bu neden düştü ki şimdi?
+
+54
+00:04:43,160 --> 00:04:44,400
+Neyse ne.
+
+55
+00:04:44,480 --> 00:04:46,320
+Gel hadi, yoksa hava kararacak.
+
+56
+00:04:48,320 --> 00:04:49,360
+Scout?
+
+57
+00:05:11,440 --> 00:05:13,080
+--BİRİNCİ BÖLÜM--
+
+58
+00:05:13,160 --> 00:05:16,120
+--MEZARLIK MESAİSİ--
+
+59
+00:05:26,400 --> 00:05:29,960
+"New Mexico için tekrardan
+JULES ARCHIBALD'a oy verin"
+
+60
+00:06:03,240 --> 00:06:05,000
+Sonunda geldi, bana silahı...
+
+61
+00:06:05,040 --> 00:06:06,720
+...ne yaptığını sanıyorsun?
+
+62
+00:06:08,400 --> 00:06:10,160
+Kendini vurmadan önce ver şunu.
+
+63
+00:06:10,480 --> 00:06:12,560
+Burayı gözetlememi söylemiştin.
+
+64
+00:06:12,680 --> 00:06:14,480
+Sana arabada beklemeni söyledim.
+
+65
+00:06:14,520 --> 00:06:16,560
+Dinle, ya bu bir tuzaksa?
+
+66
+00:06:16,600 --> 00:06:18,880
+Yanında kimse yok.
+Fazla uzun sürmez.
+
+67
+00:06:18,920 --> 00:06:21,160
+O Rus senin iki katın.
+
+68
+00:06:21,200 --> 00:06:23,200
+Konuşmasını sağlayayım yeter.
+
+69
+00:06:23,240 --> 00:06:24,800
+Peki ya konuşmazsa?
+
+70
+00:06:24,840 --> 00:06:27,280
+Polisler için gözünü dört aç yeter.
+
+71
+00:06:49,400 --> 00:06:51,280
+Builders League.
+
+72
+00:06:51,320 --> 00:06:52,800
+Kaybolmuş gibisin, yoldaş...
+
+73
+00:06:52,840 --> 00:06:54,680
+...ve o takım elbise
+sana uymamış.
+
+74
+00:06:54,720 --> 00:06:57,080
+Sana fikrini soran olmadı.
+
+75
+00:06:57,160 --> 00:06:59,320
+Anlat bakalım.
+Bunun arkasında kim var?
+
+76
+00:06:59,400 --> 00:07:00,720
+Yeni işverenin kim?
+
+77
+00:07:00,800 --> 00:07:02,880
+Neden bahsettiğini bilmiyorum.
+
+78
+00:07:02,920 --> 00:07:05,320
+Archibald'ı kim kaçırdı?
+Yoksa sen miydin?
+
+79
+00:07:05,360 --> 00:07:07,720
+İhanetin bedelini bilirsin, dostum.
+
+80
+00:07:07,760 --> 00:07:10,240
+Bunun için seni kurşuna dizecekler!
+
+81
+00:07:11,000 --> 00:07:12,440
+Çantada ne var?
+
+82
+00:07:12,480 --> 00:07:14,480
+Seni ilgilendirmez.
+
+83
+00:07:15,840 --> 00:07:17,400
+Ver şunu bana.
+
+84
+00:07:17,480 --> 00:07:19,640
+Çantamı mı istiyorsun?
+
+85
+00:07:30,040 --> 00:07:33,440
+--Ben 189, yerel mezarlıktan
+bir 503 bildiriyorum.--
+
+86
+00:07:33,480 --> 00:07:36,000
+--Çalıntı araç, siyah
+bir cenaze arabası.--
+
+87
+00:07:36,080 --> 00:07:39,440
+--10-9, tekrar et...
+siyah bir cenaze arabası mı?--
+
+88
+00:07:39,480 --> 00:07:41,480
+--10-4, aynen öyle.-
+
+89
+00:07:41,520 --> 00:07:43,560
+--189, dalga mı geçiyorsun?--
+
+90
+00:07:43,640 --> 00:07:46,200
+--Gecenin bu saati kim
+cenaze aracı çalar ki?--
+
+91
+00:07:46,680 --> 00:07:48,800
+--Çok mu komik geldi, 189?--
+
+92
+00:07:48,880 --> 00:07:50,240
+--O ben değildim.--
+Hay aksi!
+
+93
+00:07:50,280 --> 00:07:51,480
+--O da kim?--
+
+94
+00:08:27,120 --> 00:08:28,840
+Hey, Stalingrad.
+
+95
+00:08:29,880 --> 00:08:30,960
+Al bakalım!
+
+96
+00:08:36,760 --> 00:08:37,840
+Rica ederim.
+
+97
+00:08:37,880 --> 00:08:38,960
+Seni aptal...
+
+98
+00:08:39,560 --> 00:08:42,240
+..tek ipucumuz
+olan adamı öldürdün!
+
+99
+00:08:42,400 --> 00:08:45,120
+Ah...yani yalnızca sohbet
+ediyordunuz, öyle mi?
+
+100
+00:08:46,880 --> 00:08:48,640
+Buradan tüymemiz lazım.
+
+101
+00:08:48,840 --> 00:08:50,280
+Peki ya ceset?
+
+102
+00:08:50,320 --> 00:08:52,440
+Kamerayı arabada bıraktım.
+
+103
+00:08:52,480 --> 00:08:53,560
+Al da gel.
+
+104
+00:08:53,600 --> 00:08:55,040
+Hemen.
+
+105
+00:09:01,280 --> 00:09:04,280
+Hıyarın neden kıçını
+kurtardıysam sanki.
+
+106
+00:09:34,040 --> 00:09:35,480
+Ne oldu burada?
+
+107
+00:09:35,520 --> 00:09:37,040
+Çantayı aldı!
+
+108
+00:09:41,880 --> 00:09:44,800
+--İKİNCİ BÖLÜM--
+
+109
+00:09:44,880 --> 00:09:48,280
+--YEMEK HAZIR!--
+
+110
+00:09:52,080 --> 00:09:53,400
+Şey... Doktor.
+
+111
+00:09:53,960 --> 00:09:54,960
+Evet?
+
+112
+00:09:55,160 --> 00:09:58,440
+İlk kurbanları ben değilim
+derken ne demek istedin?
+
+113
+00:09:58,560 --> 00:10:00,320
+O kazadan mı bahsediyorsun?
+
+114
+00:10:02,320 --> 00:10:03,720
+Başkaları da vardı.
+
+115
+00:10:04,560 --> 00:10:07,480
+Başıma gelen şey daha
+önce de mi yaşandı diyorsun?
+
+116
+00:10:08,080 --> 00:10:09,160
+Doktor...
+
+117
+00:10:09,640 --> 00:10:11,640
+...Canlandırma Makinesinin
+neyi var?
+
+118
+00:10:12,520 --> 00:10:14,760
+Her zaman gerektiği
+şekilde çalışmıyor...
+
+119
+00:10:15,160 --> 00:10:17,640
+...bazıları içerisinde
+sıkışıp kalıyor.
+
+120
+00:10:18,160 --> 00:10:20,080
+Sen ne diyorsun, Doktor?
+
+121
+00:10:20,400 --> 00:10:23,640
+Cephedeyken bir keresinde
+şahit olmuştum.
+
+122
+00:10:23,680 --> 00:10:26,160
+Çıktığında korkunç
+çığlıklar atıyordu.
+
+123
+00:10:26,280 --> 00:10:29,240
+Ne olduğuna bakmaya
+gittiğimde... ben...
+
+124
+00:10:29,840 --> 00:10:31,440
+Ne gördün, Doktor?
+
+125
+00:10:31,880 --> 00:10:33,600
+Bilmek istemezsin.
+
+126
+00:10:42,480 --> 00:10:44,080
+Bıraktığın için sağol, Doktor.
+
+127
+00:10:44,120 --> 00:10:47,120
+Gelmek istemediğine emin misin?
+Anneme bir selam verseydin.
+
+128
+00:10:47,160 --> 00:10:50,080
+Sen iletirsin, Scout.
+Benim ofise dönmem lazım.
+
+129
+00:10:50,120 --> 00:10:52,280
+Daha sık dışarı
+çıkmalısın, Doktor.
+
+130
+00:10:54,840 --> 00:10:56,200
+Sonra görüşürüz!
+
+131
+00:10:56,520 --> 00:10:57,640
+Kendine iyi bak.
+
+132
+00:11:05,040 --> 00:11:06,960
+Anne! Ben geldim.
+
+133
+00:11:07,640 --> 00:11:10,000
+Nerede kaldın sen?
+Sırılsıklam olmuşsun!
+
+134
+00:11:10,080 --> 00:11:12,720
+Yalnızca doktora
+uğradım anne, iyiyim ben.
+
+135
+00:11:21,960 --> 00:11:26,520
+--Siyahlar içindeki Adam
+yakında gelecek...--
+
+136
+00:11:26,600 --> 00:11:28,640
+Doktor nasıl, iyi mi canım?
+
+137
+00:11:28,720 --> 00:11:31,080
+-İyi.
+-İçeri davet ettin mi?
+
+138
+00:11:31,120 --> 00:11:33,280
+Denedim. Adam için
+kötü hissediyorum.
+
+139
+00:11:33,760 --> 00:11:36,000
+-Neyi varmış?
+--...Seni lime lime edecek!--
+
+140
+00:11:36,040 --> 00:11:38,400
+-Bence bir şeyler kullanıyor.
+--Sen çıktın.--
+
+141
+00:11:38,440 --> 00:11:40,720
+--Bekle de gör,
+çok uzun sürmez...--
+
+142
+00:11:53,480 --> 00:11:56,000
+--Ne de güzel bir topun var.--
+
+143
+00:11:56,800 --> 00:11:59,520
+-Yemek hazır, canım!
+-Tamam, bir dakika.
+
+144
+00:11:59,960 --> 00:12:00,960
+Alo?
+
+145
+00:12:01,320 --> 00:12:03,000
+--Bıraktığın için sağol, Doktor.--
+
+146
+00:12:03,080 --> 00:12:06,160
+--Gelmek istemediğine emin misin?
+Anneme bir selam verseydin.--
+
+147
+00:12:06,240 --> 00:12:07,240
+Bu da ne...
+
+148
+00:12:07,400 --> 00:12:08,400
+Kimsiniz?
+
+149
+00:12:08,840 --> 00:12:10,640
+--Daha sık dışarı
+çıkmalısın, Doktor.--
+
+150
+00:12:11,120 --> 00:12:13,800
+Ne-- bu da ne? Sen kimsin?!
+
+151
+00:12:13,880 --> 00:12:15,840
+--Anne! Ben geldim.--
+
+152
+00:12:59,520 --> 00:13:00,760
+Merhaba?
+
+153
+00:13:54,320 --> 00:13:56,960
+İşin arkasındaki kişi
+cenazeci miymiş?
+
+154
+00:13:57,120 --> 00:14:00,720
+Yaklaştın... O çantada ne olabilir?
+
+155
+00:14:00,800 --> 00:14:03,640
+Para... altın... elmas mı?
+
+156
+00:14:04,080 --> 00:14:06,440
+Bunun parayla bir ilgisi
+olduğunu sanmıyorum.
+
+157
+00:14:06,480 --> 00:14:07,600
+Bomba olabilir mi?
+
+158
+00:14:07,640 --> 00:14:10,080
+Bomba olsaydı kafama
+çantayla vurmazdı.
+
+159
+00:14:10,120 --> 00:14:11,960
+Belki de Archibald'ın
+kesilmiş başı vardır-
+
+160
+00:14:12,000 --> 00:14:13,240
+Yeter, Soldier!
+
+161
+00:14:13,320 --> 00:14:16,160
+Eğer yerini bulamazsak
+ikimizin de başını alacaklar.
+
+162
+00:14:17,040 --> 00:14:20,120
+-Ne yaptığını sanıyorsun?
+-Kime soracağımı biliyorum.
+
+163
+00:14:20,400 --> 00:14:23,000
+Soldier, o şey yalnızca
+tek taraflı çalışır.
+
+164
+00:14:23,080 --> 00:14:27,240
+Ben 185. Çalıntı cenaze
+aracı ile ilgili rapor istiyorum.
+
+165
+00:14:27,320 --> 00:14:29,520
+--Anlaşıldı 185. Ben 187..--
+
+166
+00:14:29,560 --> 00:14:31,960
+--Brixton'a doğru giden siyah
+bir cenaze aracı tespit ettim.--
+
+167
+00:14:32,000 --> 00:14:33,600
+10-4. Peşine takıl!
+
+168
+00:14:34,160 --> 00:14:37,880
+--Purgatory Avenue önünde
+kenara çekti. İnip bir bakacağım.--
+
+169
+00:14:38,320 --> 00:14:39,320
+Soldier...
+
+170
+00:14:40,040 --> 00:14:44,080
+--Bayım, lütfen camınızı
+indirin. Sizi net göremiyorum.--
+
+171
+00:14:50,520 --> 00:14:51,880
+Hangi sokak demişti?
+
+172
+00:14:51,920 --> 00:14:52,960
+Purgatory.
+
+173
+00:15:35,080 --> 00:15:36,640
+Bir halt göremiyorum...
+
+174
+00:15:36,880 --> 00:15:39,960
+Unut gitsin. Tüm ekipleri
+şehir merkezine çağırıyorlar.
+
+175
+00:15:40,000 --> 00:15:41,440
+Ne gece ama...
+
+176
+00:16:53,560 --> 00:16:55,160
+Alo?
+
+177
+00:16:55,200 --> 00:16:56,480
+--Şey, Doktor?--
+
+178
+00:16:56,560 --> 00:16:59,280
+Şükürler olsun, Scout! İyi misin?
+
+179
+00:16:59,320 --> 00:17:01,400
+--Geç olduğunu biliyorum...--
+
+180
+00:17:01,440 --> 00:17:03,000
+--...ama sana bir şey
+sorabilir miyim?--
+
+181
+00:17:03,040 --> 00:17:06,000
+Ne? Scout, neredesin?
+
+182
+00:17:06,400 --> 00:17:09,560
+--Hiç izleniyormuşsun
+hissine kapıldığın oluyor mu?--
+
+183
+00:17:15,480 --> 00:17:17,320
+Ne yaptınız ona?!
+
+184
+00:17:26,200 --> 00:17:30,560
+--CONAGHER MEZBAHASI--
+
+185
+00:17:32,960 --> 00:17:35,000
+--ÜÇÜNCÜ BÖLÜM--
+
+186
+00:17:35,040 --> 00:17:37,520
+--CİNNET ODASI--
+
+187
+00:17:40,480 --> 00:17:43,160
+Otuz yılı aşkın merkezde
+görev yapıyorum...
+
+188
+00:17:43,240 --> 00:17:45,360
+...ama bu kadar
+kötüsünü görmemiştim.
+
+189
+00:17:45,400 --> 00:17:46,720
+Pelizzari vurulmuş.
+
+190
+00:17:46,800 --> 00:17:49,360
+Endişelenme. Birkaç güne
+kalmaz iyileşirsin.
+
+191
+00:17:49,400 --> 00:17:52,440
+Sağlık ekibi dışında kimse
+buraya adımını atmasın.
+
+192
+00:17:52,480 --> 00:17:55,400
+Biri de şu soytarıları suç
+mahallinden uzaklaştırsın.
+
+193
+00:17:55,440 --> 00:17:57,640
+Son kez söylüyorum,
+biz federal ajanız!
+
+194
+00:17:57,680 --> 00:18:00,160
+Ben Dedektif Mannix,
+o da Teğmen Columbo.
+
+195
+00:18:00,240 --> 00:18:02,800
+Çok tehlikeli bir
+suçlunun peşindeyiz!
+
+196
+00:18:02,840 --> 00:18:05,600
+Biri şu ikisinin
+kimliklerini doğrulasın...
+
+197
+00:18:05,640 --> 00:18:08,326
+...FBI olmalarına imkan yok.
+
+198
+00:18:08,486 --> 00:18:10,286
+Vurulan şuradaki mi?
+Onunla konuşmak istiyorum.
+
+199
+00:18:10,359 --> 00:18:12,560
+Yo, hayatta olmaz!
+
+200
+00:18:12,576 --> 00:18:13,189
+-SÖZLEŞME FESHİ-
+İlgili makam ve kişilere
+24 Ekim 1968 tarihinde yaşanan olayları takiben yürütülen soruşturma
+sonucunda Builders Leage United Şirketi ile olan iş sözleşmeniz Yönetim Kurulu tarafından feshedilmiştir. Sözleşmenin 13. maddesinin
+B54 fıkrasından hareketle iş yerinde yaşanan kazalar sonucunda meydana gelen herhangi bir yaralanma veya can kaybından Yönetim
+Kurulu sorumlu değildir. İşbu maddeyi takiben herhangi bir tazminat alma hakkınız bulunmamaktadır. Canlandırma makinesi, %99'luk başarı oranına
+sahiptir. %1'lik istisnai durumlar, sigorta kapsamı dışındadır.
+
+201
+00:18:13,200 --> 00:18:15,440
+Sen, neler olduğunu anlat.
+
+202
+00:18:15,960 --> 00:18:18,120
+Uyuşturucu falan almış olmalı...
+
+203
+00:18:18,160 --> 00:18:21,880
+-İMZA, Blutarch Mann,-
+-BLU Endüstrileri CEO'su-
+Üzerine bir şarjör boşalttım
+ama mermilere aldırmadı.
+
+204
+00:18:22,040 --> 00:18:23,480
+Bir kabus gibiydi.
+
+205
+00:18:23,520 --> 00:18:26,600
+Herif adamı kendi
+silahıyla karnından vurmuş.
+
+206
+00:18:26,720 --> 00:18:30,120
+Amirim, 187'nin cesedini
+çöpün içinde buldular.
+
+207
+00:18:30,400 --> 00:18:32,160
+Tanrı aşkına.
+
+208
+00:18:33,320 --> 00:18:35,640
+Ah! Çok fena acıyor!
+
+209
+00:18:35,680 --> 00:18:37,560
+Nasıl kaçtı? Aracını tarif et-
+
+210
+00:18:37,600 --> 00:18:40,400
+Bence yeterince soru sordun, ahbap.
+
+211
+00:18:40,440 --> 00:18:41,440
+...Ambulans!
+
+212
+00:18:41,520 --> 00:18:43,520
+Bak, adam doktor istiyor.
+O yüzden...
+
+213
+00:18:43,560 --> 00:18:47,320
+Kahrolası herif bir
+ambulans... kullanıyordu!
+
+214
+00:18:48,120 --> 00:18:52,000
+Pekala, herkes dışarı.
+Tıklım tıklım ettiniz burayı...
+
+215
+00:18:52,440 --> 00:18:53,680
+Soldier!
+
+216
+00:18:56,200 --> 00:18:57,720
+Arabaya bin.
+
+217
+00:19:20,400 --> 00:19:22,680
+-CONAGHER MEZBAHASI-
+
+218
+00:20:14,600 --> 00:20:16,360
+Tuvaleti kontrol et.
+
+219
+00:20:22,880 --> 00:20:24,560
+Fırtınadan elektrik gitmiş.
+
+220
+00:20:25,592 --> 00:20:26,802
+Ayna paramparça olmuş.
+
+221
+00:20:26,840 --> 00:20:28,620
+-CONAGHER MEZBAHASI-
+Lavabo kana bulanmış.
+
+222
+00:20:30,280 --> 00:20:31,640
+Tanrım...
+
+223
+00:20:32,400 --> 00:20:34,160
+Bir kavga yaşanmış herha-
+
+224
+00:20:36,640 --> 00:20:37,840
+Yüce Tanrım...
+
+225
+00:20:38,320 --> 00:20:40,080
+...kurbanlarından biri!
+
+226
+00:20:40,800 --> 00:20:42,640
+Sadece bir maket, seni aptal!
+
+227
+00:20:45,720 --> 00:20:47,880
+Bu durum sandığımdan da kötü.
+
+228
+00:20:48,160 --> 00:20:51,040
+Şey... bana da bundan
+bir kutu vermişlerdi.
+
+229
+00:20:51,080 --> 00:20:52,960
+Halüsinasyon gördüğüm için.
+
+230
+00:20:53,040 --> 00:20:55,040
+İlaç işe yaradı mı bari?
+
+231
+00:20:55,080 --> 00:20:57,240
+Bilmem ki, hiç almadım.
+
+232
+00:20:57,280 --> 00:20:58,520
+Anladım...
+
+233
+00:21:03,280 --> 00:21:04,520
+Dur, açma!
+
+234
+00:21:05,160 --> 00:21:06,160
+Alo?
+
+235
+00:21:06,240 --> 00:21:08,720
+--Alo? Kimsiniz?--
+
+236
+00:21:08,800 --> 00:21:10,960
+Ben mi? Asıl sen kimsin?
+
+237
+00:21:11,000 --> 00:21:12,560
+-Kimsiniz?
+--Ne?--
+
+238
+00:21:12,600 --> 00:21:13,680
+Bu o!
+
+239
+00:21:13,760 --> 00:21:17,040
+Beni iyi dinle, serseri.
+Steteskopunu ellerimle...
+
+240
+00:21:17,080 --> 00:21:20,520
+...o boynuna doladığımda da
+böyle dalga geçebilecek misin?
+
+241
+00:21:20,560 --> 00:21:21,360
+--Kimsiniz?!--
+
+242
+00:21:21,400 --> 00:21:25,520
+Tanrı'nın sesiyim, şerefsiz herif.
+Bekle beni, geliyorum!
+
+243
+00:22:04,160 --> 00:22:07,160
+--İKMAL--
+
+244
+00:24:59,880 --> 00:25:01,120
+Scout, bekle!
+
+245
+00:25:01,160 --> 00:25:02,960
+Yardım etmeye çalışıyorum!
+
+246
+00:25:03,480 --> 00:25:07,320
+Silahım olsaydı seni delik
+deşik ederdim, ruh hastası herif!
+
+247
+00:25:07,560 --> 00:25:09,040
+Hayır, dur!
+
+248
+00:25:47,320 --> 00:25:49,200
+Kaybolmuş gibisin, evlat.
+
+249
+00:25:52,320 --> 00:25:53,760
+Kardeşim...
+
+250
+00:25:53,960 --> 00:25:57,200
+...o tabutu kilitlemeni
+söylediğimi hatırlıyorum.
+
+251
+00:25:57,240 --> 00:26:00,720
+Öyle de yaptım, kardeşim.
+Tam istediğin gibi.
+
+252
+00:26:01,800 --> 00:26:03,560
+Öyleyse nasıl kaçtı?
+
+253
+00:26:05,440 --> 00:26:06,480
+Salak.
+
+254
+00:26:07,520 --> 00:26:08,760
+Pekala...
+
+255
+00:26:10,000 --> 00:26:11,360
+...konuş bakalım.
+
+256
+00:26:18,160 --> 00:26:20,680
+Öyle olsun, seni kim saldıysa...
+
+257
+00:26:21,160 --> 00:26:23,360
+...saldığına çok sevindim.
+
+258
+00:26:23,640 --> 00:26:25,280
+Bana eşlik et bakalım.
+
+259
+00:26:32,560 --> 00:26:34,680
+Ne diye hep o eğleniyor?
+
+260
+00:27:16,160 --> 00:27:17,840
+Ambulansı kontrol et.
+
+261
+00:27:25,840 --> 00:27:26,840
+Boş.
+
+262
+00:27:26,880 --> 00:27:28,680
+Destek çağırmamız lazım.
+
+263
+00:27:28,960 --> 00:27:30,880
+Benim desteğim yanımda.
+
+264
+00:27:34,960 --> 00:27:37,440
+O şey bunca zamandır
+arabamda mıydı?
+
+265
+00:27:38,160 --> 00:27:39,480
+Acil durumlar için.
+
+266
+00:27:40,160 --> 00:27:41,880
+Ne işine yarayacak ki bu?
+
+267
+00:27:44,320 --> 00:27:46,600
+Bunu kullanıp karşıya zıplayacağım.
+
+268
+00:27:46,640 --> 00:27:48,720
+Demek sonunda aklını kaçırdın.
+
+269
+00:27:48,760 --> 00:27:50,680
+Ne? Daha önce yaptım!
+
+270
+00:27:50,720 --> 00:27:53,080
+Bizi öldürmeden
+önce indir şu şeyi!
+
+271
+00:27:58,560 --> 00:27:59,720
+Eğil!
+
+272
+00:28:53,880 --> 00:28:56,080
+Hey Dell! Bayadır aramıyordun!
+
+273
+00:28:56,160 --> 00:28:58,120
+Dustbowl'da işler nasıl kardeşim?
+
+274
+00:28:58,160 --> 00:28:59,760
+--Dustbowl artık yok.--
+
+275
+00:29:00,000 --> 00:29:00,960
+Yok mu?!
+
+276
+00:29:01,000 --> 00:29:03,240
+--Evet. Geride hiçbir şey kalmadı.--
+-Nasıl?
+
+277
+00:29:03,320 --> 00:29:06,000
+--Öğrenmeye çalışıyoruz.
+Durum iyi görünmüyor.--
+
+278
+00:29:06,040 --> 00:29:08,320
+Peki ya küçük kardeşim? O iyi mi?
+
+279
+00:29:08,360 --> 00:29:11,560
+--Mezbahaya varmak
+üzereyim. Çanta güvende mi?--
+
+280
+00:29:12,080 --> 00:29:13,200
+Evet.
+
+281
+00:29:13,720 --> 00:29:15,920
+Eğer kardeşime bir şey
+olduysa yemin ederim ki-
+
+282
+00:29:15,960 --> 00:29:16,960
+--Sus ve dinle...--
+
+283
+00:29:17,000 --> 00:29:19,560
+--...denekleri unut, sanırım
+gizliliğimiz ifşa oldu!--
+
+284
+00:29:19,600 --> 00:29:21,720
+Beceriksiz adamın tekisin.
+
+285
+00:29:22,240 --> 00:29:23,960
+KAPA ÇENENİ!
+
+286
+00:29:24,000 --> 00:29:25,240
+Kaçmış mı?
+
+287
+00:29:25,280 --> 00:29:27,240
+Evet, kim bilir nasıl...
+
+288
+00:29:29,120 --> 00:29:30,480
+Ne zaman varırsın?
+
+289
+00:29:30,560 --> 00:29:32,200
+Kurtar bizi bu işten.
+
+290
+00:29:32,240 --> 00:29:34,560
+--Gözünüzü çantadan ayırmayın!--
+
+291
+00:29:34,600 --> 00:29:36,440
+Peki ya kardeşim-
+
+292
+00:31:20,480 --> 00:31:22,160
+--ÖĞÜTÜCÜ--
+
+293
+00:32:58,640 --> 00:33:00,880
+Orada neler oluyor?
+
+294
+00:33:02,960 --> 00:33:05,120
+Sana bir soru sordum, salak.
+
+295
+00:33:05,160 --> 00:33:06,960
+Orada ne yapıyo...
+
+296
+00:33:08,720 --> 00:33:10,800
+Evlat, tuttuğun oyuncak değil...
+
+297
+00:33:10,840 --> 00:33:12,320
+...bırak şunu.
+
+298
+00:33:13,080 --> 00:33:14,400
+Hemen.
+
+299
+00:33:15,560 --> 00:33:17,880
+Aptalca bir şey
+yapayım deme evlat...
+
+300
+00:33:17,920 --> 00:33:20,160
+...karşında kim var bilmiyorsun!
+
+301
+00:33:40,800 --> 00:33:42,400
+Az kalsın gidiyordun...
+
+302
+00:34:31,800 --> 00:34:34,600
+--DÖRDÜNCÜ BÖLÜM--
+
+303
+00:34:34,640 --> 00:34:37,880
+--KESİŞEN YOLLAR--
+
+304
+00:34:48,160 --> 00:34:51,400
+Archibald'ı bu bok çukurunda
+asla bulamayacağız.
+
+305
+00:34:51,640 --> 00:34:55,640
+Cephedeyken vaktimiz hep bunun
+gibi leş kokulu siperlerde geçerdi.
+
+306
+00:34:55,680 --> 00:34:57,720
+Dizlerimize kadar suya batardık.
+
+307
+00:34:57,760 --> 00:35:02,400
+Enleri iki metreyi geçmezdi ama
+gözün görebildiği kadar uzanırdı.
+
+308
+00:35:02,440 --> 00:35:04,480
+Kafama sık da kurtulayım.
+
+309
+00:35:09,320 --> 00:35:11,880
+Şu anda neyin içinde
+olduğumuzdan haberin yok!
+
+310
+00:35:11,960 --> 00:35:14,120
+Gayet iyi bildiğimi düşünüyorum.
+
+311
+00:35:14,560 --> 00:35:16,320
+Destek çağırmalıydık.
+
+312
+00:35:16,400 --> 00:35:18,120
+Ben ne yapıyorum burada?
+
+313
+00:35:18,160 --> 00:35:20,320
+Az önce vurulmaktan
+kurtardım seni!
+
+314
+00:35:20,360 --> 00:35:22,920
+Peki buraya geldiğimizi
+onlara belli eden kimdi?
+
+315
+00:35:22,960 --> 00:35:26,000
+Bunca vakit ipuçlarını yok eden
+ve polisi işin içine sokan kimdi?
+
+316
+00:35:26,080 --> 00:35:28,400
+Tüm operasyonun içine ettin!
+
+317
+00:35:28,440 --> 00:35:30,120
+Peki ya o fotoğraflar?
+
+318
+00:35:30,160 --> 00:35:32,080
+Delil olarak
+kullanabilirler, değil mi?
+
+319
+00:35:32,160 --> 00:35:34,200
+Hepsi arabadaydı, seni aptal!
+
+320
+00:35:34,280 --> 00:35:35,600
+Şimdi elim bomboş kaldı!
+
+321
+00:35:35,640 --> 00:35:36,840
+Hepsi senin yüzünden!
+
+322
+00:35:36,880 --> 00:35:39,720
+Seni beceriksiz, amatör herif!
+
+323
+00:35:41,120 --> 00:35:44,520
+Umarım yüzme biliyorsundur
+çünkü geri dönüyorsun!
+
+324
+00:35:45,440 --> 00:35:46,560
+Beni vuracak mısın?
+
+325
+00:35:46,640 --> 00:35:48,200
+Seninle işim bitti.
+
+326
+00:35:48,240 --> 00:35:50,920
+Hangi taburun askeri
+olduğun umurumda değil...
+
+327
+00:35:50,960 --> 00:35:53,040
+..benimle gelmiyorsun!
+
+328
+00:35:53,080 --> 00:35:55,120
+Daha önce kendinden
+birini vurduğun oldu mu?
+
+329
+00:35:55,160 --> 00:35:56,840
+Çekil yolumdan.
+
+330
+00:35:56,880 --> 00:35:59,520
+İnfaz etmeyi
+Archibald'dan mı öğrendin?
+
+331
+00:36:05,440 --> 00:36:06,760
+Tanrım!
+
+332
+00:36:18,000 --> 00:36:21,040
+O silahı bırak yoksa
+birazdan yanına gelip ağzına-
+
+333
+00:36:22,160 --> 00:36:23,600
+Kim var orada?
+
+334
+00:36:23,640 --> 00:36:26,960
+Ray Charles piyanoyu bırakıp
+bir M40 kapıp gelmiş belli ki.
+
+335
+00:36:27,000 --> 00:36:29,480
+-Ne?
+-Bir fikrim var.
+
+336
+00:36:37,160 --> 00:36:39,080
+Kör müsün nesin?
+
+337
+00:36:39,600 --> 00:36:41,760
+Gel, tam buradan. Vur da göre-
+
+338
+00:36:59,640 --> 00:37:02,040
+Hazırlıksız geldiğimi mi sandın?
+
+339
+00:37:02,080 --> 00:37:04,720
+Başını hedef almayacağını
+nereden biliyordun?
+
+340
+00:37:04,760 --> 00:37:06,280
+Bilmiyordum.
+
+341
+00:37:16,400 --> 00:37:19,160
+Şunun işini bitirelim hemen.
+
+342
+00:37:21,560 --> 00:37:23,080
+Acısını dindirme.
+
+343
+00:38:29,600 --> 00:38:31,400
+Asıl sen bırak.
+
+344
+00:38:33,440 --> 00:38:34,960
+Maskeyi çıkar.
+
+345
+00:38:44,800 --> 00:38:46,120
+Soldier!
+
+346
+00:38:46,160 --> 00:38:47,960
+Beni burada bırakma!
+
+347
+00:39:59,640 --> 00:40:02,040
+Burada neler döndüğünü
+bilmek istiyorum.
+
+348
+00:40:02,080 --> 00:40:03,320
+Ben ne bileyim?
+
+349
+00:40:03,360 --> 00:40:06,400
+Adamı çoktan lime
+lime etmişlerdir!
+
+350
+00:40:06,640 --> 00:40:10,120
+Bir adamımı zaten kaybettim,
+birini daha kaybedemem.
+
+351
+00:40:10,560 --> 00:40:12,360
+Kendini ölü say o zaman!
+
+352
+00:40:12,800 --> 00:40:15,120
+Bir gözün hâlâ yerinde, Tepegöz.
+
+353
+00:40:15,160 --> 00:40:17,040
+Neler gördün, söyle!
+
+354
+00:40:23,320 --> 00:40:25,480
+-Bunun için zamanım yok.
+-Bekle!
+
+355
+00:40:25,520 --> 00:40:27,040
+Beni buradan çıkarmalısın.
+
+356
+00:40:27,080 --> 00:40:28,800
+Neden çıkaracak mışım?
+
+357
+00:41:28,560 --> 00:41:29,720
+Soldier!
+
+358
+00:41:29,800 --> 00:41:32,120
+Artık burasıyla bir işin kalmadı.
+
+359
+00:42:28,520 --> 00:42:29,680
+Hey!
+
+360
+00:42:32,840 --> 00:42:34,560
+Bir yudum alabilir miyim?
+
+361
+00:42:55,040 --> 00:42:57,480
+Jules Archibald'ı arıyorum.
+
+362
+00:42:57,640 --> 00:42:58,720
+Kim soruyor?
+
+363
+00:42:58,800 --> 00:42:59,920
+Cankurtaranı.
+
+364
+00:42:59,960 --> 00:43:01,880
+Korkarım ki hiç şansın yok.
+
+365
+00:43:01,960 --> 00:43:04,120
+Burada neler döndüğünü
+bilmek istiyorum.
+
+366
+00:43:04,160 --> 00:43:05,280
+Ben ne bileyim?
+
+367
+00:43:05,320 --> 00:43:07,880
+Adamı çoktan lime
+lime etmişlerdir!
+
+368
+00:43:07,920 --> 00:43:11,200
+Bir adamımı zaten kaybettim,
+birini daha kaybedemem.
+
+369
+00:43:11,240 --> 00:43:12,680
+Kendini ölü say o zaman!
+
+370
+00:43:12,720 --> 00:43:15,440
+Bir gözün hâlâ yerinde, Tepegöz.
+
+371
+00:43:15,480 --> 00:43:17,160
+Neler gördün, söyle!
+
+372
+00:43:17,240 --> 00:43:18,600
+Conagher Kardeşler.
+
+373
+00:43:18,760 --> 00:43:21,480
+Onlar işletiyor olabilir
+ama burası RED bölgesi.
+
+374
+00:43:21,760 --> 00:43:23,200
+Artık değil.
+
+375
+00:43:23,240 --> 00:43:25,240
+Az önce konuştuğun adam kimdi?
+
+376
+00:43:25,520 --> 00:43:26,800
+Hangi adam?
+
+377
+00:43:31,280 --> 00:43:33,000
+Bunun için zamanım yok.
+
+378
+00:43:33,240 --> 00:43:34,320
+Bekle!
+
+379
+00:43:35,120 --> 00:43:36,720
+Beni buradan çıkarmalısın.
+
+380
+00:43:36,800 --> 00:43:38,240
+Neden çıkaracak mışım?
+
+381
+00:43:38,560 --> 00:43:42,160
+Üst kattaki odada
+kilitli bir yığın silah var.
+
+382
+00:43:42,640 --> 00:43:44,560
+Seni oraya sokabilirim.
+
+383
+00:45:19,840 --> 00:45:21,880
+--AĞIR SİLAH CEPHANELİĞİ--
+
+384
+00:45:34,920 --> 00:45:37,080
+--Sandığından da uzun...--
+
+385
+00:45:37,600 --> 00:45:39,720
+--Öteki tarafı gördüm...--
+
+386
+00:45:40,000 --> 00:45:42,080
+--Sandığından da uzun...--
+
+387
+00:46:42,480 --> 00:46:43,760
+Gel hadi.
+
+388
+00:46:46,160 --> 00:46:48,040
+--ELVEDA--
+
+389
+00:48:09,760 --> 00:48:11,080
+Kes şunu!
+
+390
+00:48:13,240 --> 00:48:14,640
+Anlamıyor musun?
+
+391
+00:48:16,080 --> 00:48:17,520
+Kapana kısıldık.
+
+392
+00:48:20,480 --> 00:48:22,520
+Ölmemizi istiyorlar.
+
+393
+00:49:46,920 --> 00:49:50,440
+--Hastamız kalbe isabet eden
+bir mermiden hayatını kaybetmiş.--
+
+394
+00:49:50,480 --> 00:49:54,840
+--Genelde ameliyattan önce bazı
+kağıtlar imzalamamız gerekir...
+
+395
+00:49:54,880 --> 00:49:56,720
+...neyse ne.--
+
+396
+00:49:57,240 --> 00:50:00,560
+--Helix'in canı cehenneme.
+Yaşlı bunaklar.--
+
+397
+00:50:01,160 --> 00:50:03,320
+--Bunu hak etmiyorlar.--
+
+398
+00:50:08,000 --> 00:50:09,400
+--Tanrım!--
+
+399
+00:50:25,080 --> 00:50:27,320
+Builders League...
+
+400
+00:51:08,120 --> 00:51:09,680
+Sorun ne?
+
+401
+00:51:12,240 --> 00:51:13,360
+Merhaba?
+
+402
+00:51:13,400 --> 00:51:15,160
+Biri yardım etsin!
+
+403
+00:51:45,400 --> 00:51:47,240
+Vur şunu! Vur gitsin!
+
+404
+00:52:15,280 --> 00:52:16,560
+Hey!
+
+405
+00:52:33,640 --> 00:52:34,880
+Çabuk!
+
+406
+00:54:00,480 --> 00:54:03,400
+--BEŞİNCİ BÖLÜM--
+
+407
+00:54:03,480 --> 00:54:05,880
+--GEÇİT--
+
+408
+00:54:10,320 --> 00:54:12,400
+Onbaşı, gel yanıma şöyle.
+
+409
+00:54:14,640 --> 00:54:17,360
+Terfi mi istemiştin? Al bakalım.
+
+410
+00:54:18,240 --> 00:54:19,720
+Suçları ne?
+
+411
+00:54:20,520 --> 00:54:21,640
+İhanet.
+
+412
+00:54:31,160 --> 00:54:33,480
+Karşılığında ne istersin, onbaşı?
+
+413
+00:54:35,960 --> 00:54:37,840
+Yeni bir araba istiyorum.
+
+414
+00:54:38,960 --> 00:54:41,000
+Oldu bil. Başka bir şey?
+
+415
+00:54:43,720 --> 00:54:45,400
+Kendi kişisel asistanım.
+
+416
+00:54:46,640 --> 00:54:48,680
+Yeter ki sen iste, onbaşı.
+
+417
+00:54:54,360 --> 00:54:56,960
+Bir tatile ne dersin, eski dostum?
+
+418
+00:54:58,320 --> 00:55:00,240
+Galiba bunu hak ettim.
+
+419
+00:55:18,400 --> 00:55:21,200
+Bundan paçayı
+kurtaracağını mı sanıyorsun?
+
+420
+00:55:22,000 --> 00:55:25,280
+Builders League bu
+yaptığını yanına bırakmaz!
+
+421
+00:55:27,880 --> 00:55:30,120
+Duydun mu beni, dilsiz ucube?
+
+422
+00:55:30,160 --> 00:55:32,120
+Benim arkam boş değil!
+
+423
+00:55:35,080 --> 00:55:36,520
+Ne istiyorsun?
+
+424
+00:56:17,360 --> 00:56:18,880
+Şuna da bakın...
+
+425
+00:56:19,240 --> 00:56:20,600
+Kalk bakalım, Tepegöz.
+
+426
+00:56:20,960 --> 00:56:22,800
+Sanırım silahımı kaybettim.
+
+427
+00:56:23,600 --> 00:56:25,360
+Onun için geri dönemeyiz.
+
+428
+00:56:28,720 --> 00:56:31,200
+Conagher'lar için
+çalışmıyorsun, değil mi?
+
+429
+00:56:32,080 --> 00:56:33,920
+Conagher'ları öldürdüm.
+
+430
+00:56:36,160 --> 00:56:37,960
+Bu emri kimden aldın?
+
+431
+00:56:38,000 --> 00:56:41,240
+Beni öldürmeye
+çalıştılar. Yetmez mi?
+
+432
+00:56:44,080 --> 00:56:46,160
+O şey sana ait değil.
+
+433
+00:56:46,240 --> 00:56:47,800
+Açıklayabilirim.
+
+434
+00:56:48,080 --> 00:56:50,280
+Hiçbir şey göremiyorum!
+
+435
+00:56:51,160 --> 00:56:52,400
+Kımıldama.
+
+436
+00:57:01,800 --> 00:57:05,160
+Casus olduğuna eminim.
+Bunun gibileri iyi bilirim.
+
+437
+00:57:05,400 --> 00:57:08,400
+Gözleri ödümü koparıyor, adamım...
+
+438
+00:57:10,880 --> 00:57:12,800
+--ÖLDÜRÜN BENİ--
+
+439
+00:57:14,640 --> 00:57:16,040
+Ne kadar derine indik?
+
+440
+00:57:16,120 --> 00:57:18,120
+--TANRI YARDIMCIM OLSUN--
+
+441
+00:57:23,240 --> 00:57:24,440
+Duydun mu?
+
+442
+00:57:31,240 --> 00:57:32,640
+Bay Archibald?
+
+443
+00:57:37,000 --> 00:57:39,520
+Şükürler olsun! Yardım geldi!
+
+444
+00:57:39,560 --> 00:57:42,560
+Beni hemen çıkarın yoksa
+bir hastalık kapacağım!
+
+445
+00:57:42,640 --> 00:57:45,320
+-Yaralı mısınız, efendim?
+-Kalpten gitmeme az kaldı.
+
+446
+00:57:45,360 --> 00:57:49,280
+Orada boş boş dikilip durma da
+şu kahrolası kapıyı aç!
+
+447
+00:57:49,880 --> 00:57:52,760
+Tam da ait olduğun
+yerdesin, seni yağ tulumu!
+
+448
+00:57:52,800 --> 00:57:55,200
+Sen pek akıllı değilsin, değil mi?
+
+449
+00:57:55,240 --> 00:57:58,320
+Soldier, neden şu leş
+torbası ile birliktesin?
+
+450
+00:57:58,400 --> 00:57:59,920
+Bu adam bana ne dedi?
+
+451
+00:57:59,960 --> 00:58:02,600
+-Elinden iş geliyor, efendim.
+-Hiç eli kalmamış ki!
+
+452
+00:58:02,680 --> 00:58:04,720
+Düşmanla iş birliği mi
+yapıyorsun, Soldier?
+
+453
+00:58:04,760 --> 00:58:05,962
+-BAR-
+Yardım etmeye çalışıyorum, efendim.
+
+454
+00:58:06,000 --> 00:58:08,040
+O hâlde daha hızlı et!
+
+455
+00:58:48,800 --> 00:58:50,240
+Tetiği çekmemi istiyorsun...
+
+456
+00:58:50,280 --> 00:58:52,680
+...ama çekmeyeceğim,
+bana bunu yaptıramazsın...
+
+457
+00:58:52,800 --> 00:58:54,200
+...yaptıramazsın!
+
+458
+00:59:13,000 --> 00:59:14,360
+Bay Archibald?
+
+459
+00:59:15,520 --> 00:59:16,640
+Tepegöz?
+
+460
+00:59:35,640 --> 00:59:38,000
+--LABORATUVAR--
+
+461
+00:59:47,480 --> 00:59:48,840
+N'aber, Dell?
+
+462
+00:59:49,320 --> 00:59:51,120
+Ne uzun bir gece ama.
+
+463
+00:59:52,440 --> 00:59:54,240
+Sandığından da uzun.
+
+464
+00:59:56,160 --> 00:59:57,680
+Bir içeceğe ne dersin?
+
+465
+00:59:58,840 --> 01:00:00,200
+Hayır demem.
+
+466
+01:00:03,760 --> 01:00:06,760
+Çok uzaklardasın
+sanıyordum, adamım.
+
+467
+01:00:07,120 --> 01:00:08,760
+Nerede saklanıyordun?
+
+468
+01:00:10,640 --> 01:00:12,560
+Saklandığımı kim söyledi?
+
+469
+01:00:14,240 --> 01:00:16,640
+Kardeşlerin seni öldü sandılar.
+
+470
+01:00:22,200 --> 01:00:24,800
+Fazla kötümser
+olmamak lazım, değil mi?
+
+471
+01:00:25,280 --> 01:00:26,720
+Çok doğru.
+
+472
+01:00:40,440 --> 01:00:42,160
+"Sandığından da uzun..."
+
+473
+01:00:43,040 --> 01:00:44,280
+Öyle.
+
+474
+01:00:45,120 --> 01:00:46,320
+Ne?
+
+475
+01:00:48,320 --> 01:00:50,800
+Bizi geri getirmeyi
+öğrendiklerinde...
+
+476
+01:00:50,880 --> 01:00:54,880
+...öteki tarafta gördüklerimiz
+hakkında hikâyeler anlatırdık.
+
+477
+01:00:54,920 --> 01:00:57,800
+Eski dostları
+görürdük... ailelerimizi...
+
+478
+01:00:57,840 --> 01:00:59,720
+...ya da rastgele insanları.
+
+479
+01:00:59,960 --> 01:01:02,440
+Büyükbabamla sohbet ettim ben.
+
+480
+01:01:03,400 --> 01:01:05,680
+Kendisi otuz yıldır ölü.
+
+481
+01:01:07,960 --> 01:01:09,680
+Sana ne söyledi?
+
+482
+01:01:12,160 --> 01:01:14,640
+"Orada zaman geçmek bilmiyor."
+
+483
+01:01:43,320 --> 01:01:46,560
+--TERMİNAL--
+
+484
+01:02:24,160 --> 01:02:26,800
+--HELIX TEKNOLOJİLERİ--
+--CANLANDIRMA TERMİNALİ--
+--SÜRÜM 92.12.23--
+
+485
+01:02:29,320 --> 01:02:30,880
+> PROGRAM BAŞLATILIYOR...--
+
+486
+01:02:30,920 --> 01:02:32,920
+> VERİ SAPTANIYOR...--
+
+487
+01:02:32,960 --> 01:02:34,880
+> ARANIYOR...--
+
+488
+01:02:35,240 --> 01:02:36,840
+> [1] DOSYA BULUNDU--
+
+489
+01:02:36,880 --> 01:02:38,800
+> UYARI! DOSYA HATASI TESPİT EDİLDİ--
+
+490
+01:02:39,080 --> 01:02:42,240
+> DEVAM ET?[EVET/HAYIR]--
+
+491
+01:02:44,560 --> 01:02:46,720
+> DEVAM ET?[EVET/HAYIR]--
+
+492
+01:02:54,480 --> 01:02:55,360
+--Blutarch?--
+
+493
+01:02:55,440 --> 01:02:56,960
+--Blutarch, beni
+duyabiliyor musun?--
+
+494
+01:02:57,639 --> 01:03:01,008
+-YASAK BÖLGE-
+-YALNIZCA YETKİLİ PERSONEL-
+--Daha kısık sesle, Blutarch!
+Seni gayet iyi duyuyorum.--
+
+495
+01:03:01,080 --> 01:03:03,080
+-KOMUTA ODASI-
+--Sesim net geliyor mu?--
+
+496
+01:03:04,000 --> 01:03:06,280
+--Hayır, Blutarch, telefonda
+konuşuyoruz şu anda.--
+
+497
+01:03:06,560 --> 01:03:08,240
+--Postadan çok daha hızlı.--
+
+498
+01:03:08,720 --> 01:03:09,960
+--Blutarch, ben...--
+
+499
+01:03:10,240 --> 01:03:12,880
+--Ne demek "kimsiniz"?
+Ben Jules Archibald.--
+
+500
+01:03:12,960 --> 01:03:15,480
+--En son Dallas'ta, yaşananlardan
+sonra konuşmuştuk.--
+
+501
+01:03:15,560 --> 01:03:16,840
+--Hatırladın mı?--
+
+502
+01:03:16,880 --> 01:03:20,080
+--Evet, projemiz hakkında
+konuşmak için aradım.--
+
+503
+01:03:20,800 --> 01:03:23,680
+--Yo, hamilelik
+makinesi değil, diğeri!--
+
+504
+01:03:23,720 --> 01:03:26,120
+--Evet, küçük bir aksaklık
+yaşandı diyebiliriz.--
+
+505
+01:03:26,160 --> 01:03:30,080
+--Canlandırma Makinesi
+çalışıyor diyebiliriz. Ancak...--
+
+506
+01:03:30,480 --> 01:03:32,720
+--Hayır, sorun tam olarak da bu.--
+
+507
+01:03:32,800 --> 01:03:35,640
+--Deneklerin yüzde doksanını
+kaybettiğimizi öğrendik.--
+
+508
+01:03:35,720 --> 01:03:36,440
+--NE?!--
+
+509
+01:03:36,800 --> 01:03:39,960
+--Neden kızdığını anlıyorum
+Blutarch, ama iyi haber şu ki...--
+
+510
+01:03:40,040 --> 01:03:42,640
+--...canlandırmak için
+uygun on tanesini bulduk.--
+
+511
+01:03:43,480 --> 01:03:44,920
+--Ee, bir saniye...--
+
+512
+01:03:45,000 --> 01:03:46,680
+--Ne oluyor orada?--
+
+513
+01:03:47,400 --> 01:03:49,800
+--Kendini mi vurdu?
+Tanrı aşkına...--
+
+514
+01:03:49,880 --> 01:03:52,480
+--...diğerleriyle birlikte
+çukura atın gitsin.--
+
+515
+01:03:52,800 --> 01:03:54,920
+--Affedersin, dokuz, Blutarch.--
+
+516
+01:03:55,200 --> 01:03:57,040
+--Bana bir ordu sözün
+vardı, Archibald.--
+
+517
+01:03:57,080 --> 01:03:59,120
+--Ama ne kadar kâr
+edeceğini bir düşün!--
+
+518
+01:03:59,160 --> 01:04:01,400
+--Paralı askerler şu
+aralar hiç de ucuz değil.--
+
+519
+01:04:01,440 --> 01:04:05,160
+--Her cephede birer Canlandırma
+Makinesi ile hiçbir derdin kalmaz!--
+
+520
+01:04:05,240 --> 01:04:08,080
+--Mali yılın sonuna
+kalmadan zafer senin olur!--
+
+521
+01:04:08,120 --> 01:04:10,120
+--Makinelerin cephede hiç
+durmadan çalışması gerek!.--
+
+522
+01:04:10,160 --> 01:04:12,640
+--Hiç durmadan mı?
+Ciddi olamazsın!--
+
+523
+01:04:13,080 --> 01:04:15,960
+--Blutarch, b-benim
+gitmem lazım. Dinle...--
+
+524
+01:04:16,000 --> 01:04:19,080
+--...kalp, karaciğer veya dalak
+siparişi vermek ister misin?--
+
+525
+01:04:19,120 --> 01:04:23,320
+--Elimizde hiçbir işe yaramayan
+yaklaşık sekiz yüz bin ceset var.--
+
+526
+01:04:23,400 --> 01:04:24,840
+--Her birinden
+birer tane alırım.--
+
+527
+01:04:24,880 --> 01:04:27,320
+--Tamamdır. Faturaya
+ekleyeceğim.--
+
+528
+01:04:27,400 --> 01:04:29,320
+--Görüşürüz, Blutarch.--
+
+529
+01:04:30,560 --> 01:04:32,520
+--Redmond? Ben Jules Archibald.--
+
+530
+01:04:32,680 --> 01:04:34,440
+--Sana bir teklifim olacak.--
+
+531
+01:04:40,560 --> 01:04:42,080
+Lütfen.
+
+532
+01:04:45,560 --> 01:04:46,560
+> MANUEL CANLANMA BAŞLATILIYOR...--
+
+533
+01:04:46,640 --> 01:04:47,640
+> MANUEL CANLANMA BAŞLATILIYOR...--
+> KALITIM DİZİLİYOR...--
+
+534
+01:04:47,720 --> 01:04:48,280
+> MANUEL CANLANMA BAŞLATILIYOR...--
+> KALITIM DİZİLİYOR...--
+> ADONİN EKLENİYOR...--
+
+535
+01:04:48,320 --> 01:04:48,720
+> MANUEL CANLANMA BAŞLATILIYOR...--
+> KALITIM DİZİLİYOR...--
+> ADONİN EKLENİYOR...--
+> SİTOZİN EKLENİYOR...--
+
+536
+01:04:48,800 --> 01:04:49,200
+> MANUEL CANLANMA BAŞLATILIYOR...--
+> KALITIM DİZİLİYOR...--
+> ADONİN EKLENİYOR...--
+> SİTOZİN EKLENİYOR...--
+> GUANİN EKLENİYOR...--
+
+537
+01:04:49,240 --> 01:04:49,720
+> MANUEL CANLANMA BAŞLATILIYOR...--
+> KALITIM DİZİLİYOR...--
+> ADONİN EKLENİYOR...--
+> SİTOZİN EKLENİYOR...--
+> GUANİN EKLENİYOR...--
+> TİMİN EKLENİYOR...--
+
+538
+01:04:49,800 --> 01:04:51,720
+> ANATOMİ MODELİ OLUŞTURULUYOR...--
+
+539
+01:04:51,760 --> 01:04:52,360
+> ANATOMİ MODELİ OLUŞTURULUYOR...--
+> İSKELET İNŞA EDİLİYOR...--
+
+540
+01:04:52,440 --> 01:04:52,840
+> ANATOMİ MODELİ OLUŞTURULUYOR...--
+> İSKELET İNŞA EDİLİYOR...--
+> MERKEZÎ SİNİR SİSTEMİ EKLENİYOR...--
+
+541
+01:04:52,960 --> 01:04:53,840
+> ANATOMİ MODELİ OLUŞTURULUYOR...--
+> İSKELET İNŞA EDİLİYOR...--
+> MERKEZÎ SİNİR SİSTEMİ EKLENİYOR...--
+> KAS DOKUSU ÖRÜLÜYOR...--
+
+542
+01:05:03,960 --> 01:05:06,080
+> METABOLİZMA YENİDEN BAŞLATILIYOR...--
+
+543
+01:05:06,120 --> 01:05:07,400
+> CANLANDIRILIYOR...--
+
+544
+01:05:07,440 --> 01:05:09,920
+--UYARI! KRİTİK HATA!--
+
+545
+01:05:09,960 --> 01:05:13,640
+--BİLİNMEYEN VARLIK--
+
+546
+01:05:13,680 --> 01:05:16,160
+--CANLANMA--
+
+547
+01:05:46,760 --> 01:05:48,680
+--LABORATUVAR--
+
+548
+01:06:28,400 --> 01:06:30,720
+--Peşindeyim, kapana kıstırdım.--
+
+549
+01:06:32,160 --> 01:06:33,640
+--Cryo Laboratuvarı.--
+
+550
+01:06:34,160 --> 01:06:35,680
+--Fazla uzaklaşamaz.--
+
+551
+01:09:12,440 --> 01:09:14,280
+Dün gece yataktaydım işte...
+
+552
+01:09:14,640 --> 01:09:16,560
+...ve penceremin
+dışında birinin dur-
+
+553
+01:09:26,360 --> 01:09:28,120
+Dün gece yataktaydım işte...
+
+554
+01:09:28,160 --> 01:09:31,640
+...ve penceremin dışında
+birinin durduğunu gördüm.
+
+555
+01:09:34,320 --> 01:09:37,560
+Saçmalama, birisi geçip gitmiştir.
+
+556
+01:09:40,160 --> 01:09:43,000
+Bana yaptıkları için
+BLU'yu dava edeceğim.
+
+557
+01:09:43,120 --> 01:09:44,920
+İlk kurbanları sen değilsin.
+
+558
+01:09:44,960 --> 01:09:47,840
+Doktor, birisi sana
+vurdu diyelim...
+
+559
+01:09:47,880 --> 01:09:50,520
+...ona iki misliyle geri vur,
+duydun mu beni?
+
+560
+01:10:02,320 --> 01:10:05,040
+Şuna bir bak, kaset dükkanı
+falan mı soydun?
+
+561
+01:11:18,920 --> 01:11:20,080
+--Zarar Verme--
+
+562
+01:15:14,720 --> 01:15:17,720
+Goldman? Bir çıkmazın
+içindeyim ve beni kurtarman lazım.
+
+563
+01:15:17,760 --> 01:15:20,400
+--Mahkemeye çıkamam. Hayatta olmaz!
+
+564
+01:15:20,480 --> 01:15:22,800
+İhtiyarla zaten aramız bozuk...
+
+565
+01:15:22,840 --> 01:15:27,200
+...ve o tımarhane ile ilgili bir bilgi
+medyaya sızarsa açılacak davaları bir düşün!
+
+566
+01:15:27,240 --> 01:15:28,720
+Darağacına bile götürülebilirim!
+
+567
+01:15:28,800 --> 01:15:31,080
+Seçilmek için hiç şansım kalmaz!
+
+568
+01:15:31,160 --> 01:15:33,640
+Bir savaş suçundan
+dolayı kariyerim bitemez!
+
+569
+01:15:33,720 --> 01:15:35,560
+--O anlaşmadan uzak dur demiştim.--
+
+570
+01:15:35,640 --> 01:15:38,840
+İhtiyarın ikiziyle anlaşma
+yaptıysam ne olmuş yani?
+
+571
+01:15:38,880 --> 01:15:40,440
+Onların işi savaşmak,
+
+572
+01:15:40,480 --> 01:15:44,080
+...benimki de savaşı
+mümkün olduğunca uzatmak!
+
+573
+01:15:44,120 --> 01:15:48,440
+Bu... zalim döngü benim
+hayat damarım, Goldman!
+
+574
+01:15:49,240 --> 01:15:50,720
+--Tek yolu bu olabilir.--
+
+575
+01:15:51,320 --> 01:15:55,360
+Şey, bunu düşündüm
+tabi, son çare olarak.
+
+576
+01:15:55,640 --> 01:15:59,640
+Eğer ortadan kaybolmamı
+sağlayacaksa bu riski almam gerek.
+
+577
+01:16:03,480 --> 01:16:05,320
+Nereden mi arıyorum?
+
+578
+01:16:05,360 --> 01:16:07,880
+Salak mısın? Nerede
+olduğumu gayet iyi biliyorsun!
+
+579
+01:16:07,960 --> 01:16:10,000
+--Jules, kaçırıldığını
+duyduk! Ne oldu?--
+
+580
+01:16:10,080 --> 01:16:12,920
+Kaçırılmak mı? Ben
+öyle bir şey duymadım.
+
+581
+01:16:12,960 --> 01:16:14,640
+Beni iyi dinle, Goldman.
+
+582
+01:16:14,720 --> 01:16:17,040
+Sanırım birileri beni
+öldürmeye çalışıyor!
+
+583
+01:16:17,080 --> 01:16:19,520
+Üstüne üstelik, bu Valium aslında-
+
+584
+01:16:19,560 --> 01:16:22,400
+--Konuşmaya devam
+etmek için lütfen 5 cent atın.--
+
+585
+01:16:22,440 --> 01:16:23,800
+Hay, senin!
+
+586
+01:16:53,080 --> 01:16:54,520
+Sen de kimsin?
+
+587
+01:16:55,400 --> 01:16:57,360
+Tanımadın mı, Jules?
+
+588
+01:16:58,200 --> 01:17:02,360
+Şükürler olsun, Onbaşı!
+Beni kurtarmaya geldin!
+
+589
+01:17:02,400 --> 01:17:03,600
+Öyle mi?
+
+590
+01:17:04,160 --> 01:17:06,880
+Sürekli paçanı
+kurtarıp durdum, Archie.
+
+591
+01:17:07,200 --> 01:17:09,800
+Ne kadar kirli iş varsa hep
+bana yaptırdın...
+
+592
+01:17:09,840 --> 01:17:11,040
+...ve ne hâle geldim!
+
+593
+01:17:11,080 --> 01:17:12,720
+Yüce Tanrım!
+
+594
+01:17:13,640 --> 01:17:16,480
+Beni kurtaracak
+kimse yoktu, Jules.
+
+595
+01:17:16,640 --> 01:17:18,840
+Kendinden başkasını
+hiç düşünmedin!
+
+596
+01:17:18,880 --> 01:17:22,520
+Onbaşı, dur! Lütfen, aklını
+başına topla!
+
+597
+01:17:22,880 --> 01:17:26,760
+İşte bak, artık seni de
+kurtaracak kimse yok.
+
+598
+01:17:26,800 --> 01:17:30,120
+Ama... s-sana ne
+istediysen verdim!
+
+599
+01:17:30,160 --> 01:17:33,120
+Ben de şimdi sana hak
+ettiğin şeyi vereceğim.
+
+600
+01:18:01,720 --> 01:18:03,320
+--JULES ARCHIBALD VAKFI--
+
+601
+01:18:04,400 --> 01:18:06,560
+--Kayıtta mıyız? Pekala.--
+
+602
+01:18:07,440 --> 01:18:08,480
+--Tekrardan merhaba.--
+
+603
+01:18:08,560 --> 01:18:11,520
+--Eğer bunu izliyorsanız
+bilmenizi isterim ki...--
+
+604
+01:18:11,560 --> 01:18:14,920
+--...Canlandırma için uygun
+olduğunuzu kanıtladınız.--
+
+605
+01:18:14,960 --> 01:18:16,360
+--Tebrik ederim!--
+
+606
+01:18:16,440 --> 01:18:19,000
+--Kafanız karıştıysa
+açıklamama izin verin.--
+
+607
+01:18:19,080 --> 01:18:22,840
+--Devlet tarafından idam edilmeden
+önce bir anlaşma imzaladınız...-
+
+608
+01:18:22,880 --> 01:18:26,640
+--...ve naaşınızın tıbbi bir deney
+için kullanılmasına izin verdiniz.--
+
+609
+01:18:26,680 --> 01:18:29,520
+--İyi haber şu ki artık
+idam cezanız yok...--
+
+610
+01:18:29,560 --> 01:18:31,880
+--...çünkü teknik
+olarak zaten ölüsünüz.--
+
+611
+01:18:31,920 --> 01:18:34,560
+--Bu da demek oluyor
+ki artık şirkete aitsiniz...--
+
+612
+01:18:34,640 --> 01:18:35,880
+--...ancak endişelenmeyin,--
+
+613
+01:18:35,960 --> 01:18:39,760
+--...söz verildiği gibi dışarıda
+hepinizin güzel bir işi olacak.--
+
+614
+01:18:39,800 --> 01:18:43,240
+--Artık paranın satın alabileceği en
+iyi on paralı askerden birisiniz...--
+
+615
+01:18:43,320 --> 01:18:46,400
+--...ve fedakarlığınızın karşılığını
+zaman içinde alacaksınız.--
+
+616
+01:18:46,480 --> 01:18:48,800
+--Öteki tarafta görüşmek üzere.--
+
+617
+01:18:49,240 --> 01:18:50,720
+--Tanrı aşkına!--
+
+618
+01:19:32,560 --> 01:19:35,320
+Gerçekten o yağ tulumu
+için ölecek misin?
+
+619
+01:19:40,840 --> 01:19:44,480
+Uğruna ölmeye değer bir
+şey için ölmek istemez miydin?
+
+620
+01:19:49,080 --> 01:19:52,000
+Bu an için ne kadar
+beklediğimden haberin var mı?
+
+621
+01:19:52,680 --> 01:19:54,600
+Sandığından da uzun.
+
+622
+01:20:02,560 --> 01:20:04,240
+Neden bu kadar uzun sürdü?
+
+623
+01:20:30,880 --> 01:20:32,760
+Öteki tarafta görüşürüz.
+
+624
+01:20:40,800 --> 01:20:42,160
+Neden buradasınız?
+
+625
+01:20:43,600 --> 01:20:45,720
+Birini kurtarmaya çalışıyorduk.
+
+626
+01:20:48,080 --> 01:20:49,320
+Ben de öyle.
+
+627
+01:20:55,400 --> 01:20:56,920
+Burada oyalanamayız.
+
+628
+01:21:07,560 --> 01:21:10,240
+--EMESIS TIBBİ ÜRÜNLERİ--
+
+629
+01:21:31,320 --> 01:21:33,640
+--ALTINCI BÖLÜM--
+
+630
+01:21:33,680 --> 01:21:36,560
+--CEHENNEME YOLCULUK--
+
+631
+01:21:42,320 --> 01:21:44,240
+İyi günler, Doktor.
+
+632
+01:21:52,080 --> 01:21:53,400
+Aç şunu.
+
+633
+01:21:53,800 --> 01:21:54,800
+Yapamam!
+
+634
+01:21:55,240 --> 01:21:56,920
+Israr ediyorum.
+
+635
+01:21:57,440 --> 01:21:58,560
+Benim değil ki!
+
+636
+01:21:58,600 --> 01:21:59,640
+Yalancı!
+
+637
+01:21:59,680 --> 01:22:02,200
+Çantanın nasıl eline
+geçtiğini anlat, Fritz.
+
+638
+01:22:02,240 --> 01:22:03,520
+Onu çaldım.
+
+639
+01:22:04,320 --> 01:22:05,720
+Mümkün değil.
+
+640
+01:22:05,760 --> 01:22:06,640
+Unut gitsin!
+
+641
+01:22:06,680 --> 01:22:07,880
+Archibald nerede?
+
+642
+01:22:07,960 --> 01:22:09,960
+Archibald öldü!
+
+643
+01:22:10,480 --> 01:22:13,120
+Bu adam yalandan
+dolandan başka bir şey değil.
+
+644
+01:22:13,160 --> 01:22:14,720
+Onu o öldürdü....
+
+645
+01:22:14,760 --> 01:22:16,400
+...ve çocuğu da!
+
+646
+01:22:16,760 --> 01:22:17,800
+Bu doğru değil...
+
+647
+01:22:17,840 --> 01:22:19,840
+Peki senin için gerçek ne?
+
+648
+01:22:19,880 --> 01:22:21,360
+Peki ya sen?
+
+649
+01:22:21,400 --> 01:22:23,560
+Beni bırakıp kaçmana ne demeli?
+
+650
+01:22:25,520 --> 01:22:28,160
+Burada aklı başında
+bir ben varım.
+
+651
+01:22:28,480 --> 01:22:30,200
+Senin için vurulmayı göze aldım.
+
+652
+01:22:30,960 --> 01:22:33,040
+Seni orada kendim vurmalıydım.
+
+653
+01:22:40,080 --> 01:22:41,280
+Önce sen.
+
+654
+01:23:12,160 --> 01:23:14,080
+Başaracaksın, Fritz.
+
+655
+01:23:14,760 --> 01:23:16,160
+Biliyorum.
+
+656
+01:23:17,480 --> 01:23:18,480
+HAYIR!
+
+657
+01:23:21,560 --> 01:23:24,240
+Elveda, Dr. Ludwig.
+
+658
+01:23:27,000 --> 01:23:29,680
+Artık nasıl
+hissettiğimi biliyorsun.
+
+659
+01:23:32,160 --> 01:23:35,320
+Kazandın. Git hadi.
+
+660
+01:23:38,960 --> 01:23:40,480
+Soldier?
+
+661
+01:23:41,960 --> 01:23:44,080
+Cenazede görüşürüz.
+
+662
+01:26:30,320 --> 01:26:33,560
+Asıl düşmanımız
+henüz ortaya çıkmadı.
+
+663
+01:32:46,480 --> 01:32:48,960
+Bay Doe, Ben Ajan Stemmons.
+
+664
+01:32:49,800 --> 01:32:53,720
+Beni tanımıyorsunuz ama ben
+hakkınızdaki her şeyi biliyorum.
+
+665
+01:32:53,960 --> 01:32:57,040
+Yaşadığınız olay ile ilgili
+konuşmak için buradayım.
+
+666
+01:32:57,360 --> 01:32:59,680
+Conagher Mezbahası artık yok.
+
+667
+01:32:59,800 --> 01:33:01,400
+Geride hiçbir şey kalmadı...
+
+668
+01:33:01,480 --> 01:33:03,720
+...ve böyle olması
+hepimiz için en iyisi.
+
+669
+01:33:03,760 --> 01:33:06,560
+Aslında aylar önce
+yıkılması planlanıyordu...
+
+670
+01:33:06,640 --> 01:33:09,640
+...ancak Vali Archibald
+buna engel oldu.
+
+671
+01:33:09,920 --> 01:33:12,400
+O, sırları olan biriydi, Bay Doe.
+
+672
+01:33:12,480 --> 01:33:14,640
+Ancak sizin keşfettiğiniz şey...
+
+673
+01:33:14,680 --> 01:33:16,640
+...oldukça rahatsız edici.
+
+674
+01:33:17,160 --> 01:33:18,640
+Keşfettiğiniz şey...
+
+675
+01:33:18,680 --> 01:33:21,520
+...bu şirketin temellerini
+sarsacak türden.
+
+676
+01:33:22,000 --> 01:33:25,680
+Conagher Mezbahasının içinde
+tanıklık ettiğiniz şeylerden...
+
+677
+01:33:25,720 --> 01:33:27,800
+...kimseye bahsetmeyeceksiniz.
+
+678
+01:33:28,480 --> 01:33:29,560
+Kimseciklere.
+
+679
+01:33:30,560 --> 01:33:32,520
+Yeterince açık konuştum mu?
+
+680
+01:33:34,320 --> 01:33:35,560
+Güzel.
+
+681
+01:33:36,080 --> 01:33:38,480
+Söylemek istediğiniz
+başka bir şey var mı?
+
+682
+01:33:47,160 --> 01:33:50,040
+Vali Archibald'ın
+cenazesi Pazar günü.
+
+683
+01:33:50,800 --> 01:33:52,120
+Siyah giyinin.
+
+684
+01:33:58,880 --> 01:34:00,640
+Neşelenin, Bay Doe.
+
+685
+01:34:00,840 --> 01:34:02,960
+Eminim ki arkadaşınız başaracaktır.
+
+686
+01:34:16,920 --> 01:34:19,040
+--YEDİNCİ BÖLÜM--
+
+687
+01:34:19,080 --> 01:34:23,360
+--KAN KARDEŞLERİ--
+
+688
+01:34:31,000 --> 01:34:33,280
+Başarabildiğinize
+çok sevindim, Dedektif.
+
+689
+01:34:33,320 --> 01:34:36,800
+Başınız sağolsun.
+Çok yakındınız diye duydum.
+
+690
+01:34:41,000 --> 01:34:43,080
+--TALİMATLARA BAĞLI KAL--
+
+691
+01:34:45,640 --> 01:34:48,640
+Ah, işte geldi. Onur konuğumuz.
+
+692
+01:34:48,800 --> 01:34:50,680
+Kim olduğumu bilirsiniz.
+
+693
+01:34:50,720 --> 01:34:52,600
+Blutarch Mann.
+
+694
+01:34:52,760 --> 01:34:54,840
+Sizinle tanışmak büyük bir zevk.
+
+695
+01:34:54,920 --> 01:34:56,880
+Dostum Jules'ı tanır mıydın?
+
+696
+01:34:58,000 --> 01:35:00,320
+Herkesten daha iyi hem de.
+
+697
+01:35:00,560 --> 01:35:04,400
+Daha 58 yaşındaydı,
+çok erken öldü zavallı.
+
+698
+01:35:04,440 --> 01:35:08,400
+Onunla 1960'ta tanışmıştım.
+Seçimden hemen sonra.
+
+699
+01:35:08,560 --> 01:35:10,600
+Sürekli deyip dururdu:
+
+700
+01:35:10,640 --> 01:35:12,880
+"Baştaki bu şerefsizden
+nasıl kurtuluruz?"
+
+701
+01:35:13,480 --> 01:35:15,160
+Size oturacak bir yer
+bulalım mı, Bay Mann?
+
+702
+01:35:15,240 --> 01:35:18,280
+Ah, tabii tabii, oturmam lazım.
+
+703
+01:35:25,040 --> 01:35:27,800
+Cenazeler tam bir para israfı.
+
+704
+01:35:28,640 --> 01:35:30,160
+Savaş gibi mi?
+
+705
+01:35:30,880 --> 01:35:35,600
+Kardeşimin canını ben alamazsan elbet
+bir gün Tanrı alır sanıyordum...
+
+706
+01:35:35,640 --> 01:35:39,520
+...ama Redmond'u yenmeye yüz
+yıl önce olduğum kadar uzağım!
+
+707
+01:35:39,560 --> 01:35:41,720
+İyi insan...
+
+708
+01:35:41,800 --> 01:35:43,240
+...lafının üstüne gelirmiş.
+
+709
+01:35:43,360 --> 01:35:46,040
+Ben de burası neden
+ölü gibi kokuyor diyordum!
+
+710
+01:35:46,080 --> 01:35:49,160
+Yalnızca başsağlığı
+dilemeye geldim, Blutarch.
+
+711
+01:35:49,240 --> 01:35:53,120
+Saçmalık! Dostumun senin
+bölgende ne işi vardı, Redmond?
+
+712
+01:35:53,160 --> 01:35:55,240
+Neden bahsettiğin
+hakkında hiçbir fikrim yok!
+
+713
+01:35:55,280 --> 01:35:57,600
+Senin olabildiğinden
+çok daha iyi bir kardeşti o!
+
+714
+01:35:57,640 --> 01:35:59,840
+Onu sen öldürdün, itiraf et!
+
+715
+01:35:59,880 --> 01:36:01,320
+Baylar.
+
+716
+01:36:06,080 --> 01:36:08,720
+Geldiğiniz için hepinize
+teşekkür ederim.
+
+717
+01:36:09,560 --> 01:36:13,280
+Burada Jules Archibald'ı
+anmak üzere bulunuyoruz.
+
+718
+01:36:13,400 --> 01:36:18,240
+Ani ölümü, eminim ki
+hepinizi şoke etmiştir.
+
+719
+01:36:18,960 --> 01:36:22,840
+Jules, Builders League'i ileriye
+taşımak için her gün çalıştı.
+
+720
+01:36:22,880 --> 01:36:24,360
+Artık aramızda yok...
+
+721
+01:36:24,400 --> 01:36:28,520
+...ancak bu şirket için yaptıklarını
+hiçbir zaman unutmayacağız.
+
+722
+01:36:28,960 --> 01:36:31,200
+Övgü faslını da geride
+bıraktığımıza göre...
+
+723
+01:36:31,240 --> 01:36:33,480
+...eminim ki ne olduğunu
+bilmek istiyorsunuzdur.
+
+724
+01:36:33,560 --> 01:36:38,760
+Bildiğiniz gibi Jules, gizli bir
+tarikat tarafından kaçırılmıştı.
+
+725
+01:36:38,800 --> 01:36:41,320
+Kurtarma operasyonu ters gitti.
+
+726
+01:36:41,400 --> 01:36:44,880
+Ben ve meslektaşım
+kurtulabildik...
+
+727
+01:36:45,320 --> 01:36:46,640
+...ancak Jules...
+
+728
+01:36:47,280 --> 01:36:48,560
+...öldü.
+
+729
+01:36:49,160 --> 01:36:52,760
+Meslektaşım neler olduğunu
+size daha iyi anlatacaktır.
+
+730
+01:37:25,080 --> 01:37:27,080
+Affınızı diliyorum!
+
+731
+01:37:27,240 --> 01:37:30,000
+Jules Archibald,
+cinayete kurban gitti!
+
+732
+01:37:35,520 --> 01:37:37,240
+Bu adam da sorumlusu!
+
+733
+01:37:37,320 --> 01:37:41,480
+Dr. Fritz Ludwig, eski
+çalışanlarımızdan biri.
+
+734
+01:37:41,520 --> 01:37:45,800
+Kendi ilacına bağımlı,
+şizofrenik bir psikopat.
+
+735
+01:37:45,880 --> 01:37:49,640
+Kendi hastalarına
+da oldukça düşkündü.
+
+736
+01:37:49,760 --> 01:37:52,760
+Bu çocuk, Cadılar Bayramı
+gecesinden beri kayıp.
+
+737
+01:37:52,800 --> 01:37:56,040
+Annesi bir testere ile başı
+kesilmiş hâlde bulundu!
+
+738
+01:37:56,080 --> 01:37:58,280
+Bu gerçekten gerekli mi?
+
+739
+01:37:58,360 --> 01:38:03,400
+Niyetim, bu adamın kaçırmaya ve
+cinayete meyilli olduğunu göstermek!
+
+740
+01:38:04,360 --> 01:38:06,560
+Bunun olmasına nasıl izin verdik?
+
+741
+01:38:06,880 --> 01:38:11,600
+Archibald öldü...
+ve bunun sorumlusu bizleriz.
+
+742
+01:38:11,640 --> 01:38:13,080
+Onu öldürdün mü?
+
+743
+01:38:14,240 --> 01:38:16,160
+Affedersiniz?
+
+744
+01:38:18,840 --> 01:38:21,240
+O alçak herifi öldürdün mü?
+
+745
+01:38:22,240 --> 01:38:23,880
+Hayır...
+
+746
+01:38:23,960 --> 01:38:26,440
+...bir ödlek gibi
+kendi canına kıydı.
+
+747
+01:38:26,640 --> 01:38:29,200
+Korkunç bir suç silsilesi!
+
+748
+01:38:29,760 --> 01:38:34,640
+Şirketimize yapılan bu zalimce
+saldırı, karşılıksız kalmayacak!
+
+749
+01:38:34,680 --> 01:38:39,400
+O yüzden Archibald'ın
+ölümü ve vasiyeti üzerine...
+
+750
+01:38:39,440 --> 01:38:42,160
+...Yönetim Kurulu'nun
+başında onun yerini alacağım...
+
+751
+01:38:42,200 --> 01:38:45,800
+...ve tüm bu ihanet ve
+yolsuzluklara bir son vereceğim!
+
+752
+01:39:03,400 --> 01:39:05,040
+Uçur beni buradan!
+
+753
+01:40:03,560 --> 01:40:04,920
+Durdurun onu!
+
+754
+01:40:04,960 --> 01:40:06,920
+Kaçmasına izin vermeyin!
+
+755
+01:40:10,400 --> 01:40:12,240
+Daha hızlı gidemez misin?
+
+756
+01:40:12,280 --> 01:40:13,760
+Gazı köklüyorum, efendim!
+
+757
+01:40:13,800 --> 01:40:16,080
+Ateş altındayız!
+Kırmızı ışıklardan geç!
+
+758
+01:40:16,160 --> 01:40:18,040
+...bir işe yaradıkları yok zaten!
+
+759
+01:40:18,080 --> 01:40:19,200
+Dikkat et!
+
+760
+01:40:25,240 --> 01:40:27,520
+Yardım edin...
+
+761
+01:41:15,960 --> 01:41:17,640
+Lütfen yapma!
+
+762
+01:41:22,760 --> 01:41:24,800
+Sen! Ellerini göreyim!
+
+763
+01:41:27,160 --> 01:41:28,360
+Johnny!
+
+764
+01:41:30,080 --> 01:41:31,400
+Amirim!
+
+765
+01:41:42,720 --> 01:41:44,480
+Çakıllar aşkına!
+
+766
+01:41:44,640 --> 01:41:46,200
+Kazandım!
+
+767
+01:41:46,280 --> 01:41:48,200
+Senden uzun yaşadım, kardeşim!
+
+768
+01:41:48,240 --> 01:41:50,600
+Ayakta kalan son adam beni-
+
+769
+01:42:15,520 --> 01:42:21,040
+--MANN KARDEŞLER SUİKASTE UĞRADI--
+--CENAZE SALDIRISI 9 KİŞİNİN ÖLÜMÜYLE SONUÇLANDI--
+
+770
+01:43:02,720 --> 01:43:06,760
+--DELL'İN MEKANI--
+
+771
+01:43:17,440 --> 01:43:19,800
+Kaybolmuş gibisin, yabancı.
+
+772
+01:43:20,960 --> 01:43:22,320
+Öyleyim.
+
+773
+01:43:23,720 --> 01:43:24,960
+Yol ne tarafa?
+
+774
+01:43:27,560 --> 01:43:28,880
+Bilmiyorum.
+
+775
+01:43:29,720 --> 01:43:31,520
+En yakın kasaba öteki yolda.
+
+776
+01:43:31,680 --> 01:43:33,360
+Gittiğim yer orası değil.
+
+777
+01:43:33,920 --> 01:43:35,520
+O zaman neresi?
+
+778
+01:43:38,400 --> 01:43:40,240
+Telefonunuz var mıydı?
+
+779
+01:43:40,400 --> 01:43:41,600
+Yok.
+
+780
+01:43:42,560 --> 01:43:44,640
+Sanırım kusmak üzereyim.
+
+781
+01:43:45,520 --> 01:43:47,480
+Tuvalet hemen köşede.
+
+782
+01:44:51,240 --> 01:44:52,840
+Tanrı yardımcım olsun.
+
+783
+01:46:23,400 --> 01:46:24,720
+Hey, Doktor.
+

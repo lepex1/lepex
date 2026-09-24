@@ -1,0 +1,457 @@
+/* EMESIS BLUE release page — rutracker-style post adapted to site MD3 theme */
+
+.md3-main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   TOPIC TITLE HEADER (аккуратный заголовок темы трекера)
+   ══════════════════════════════════════════════════════════════ */
+.rt-topic-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.25rem;
+    background: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-medium);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.45;
+    color: var(--md-sys-color-primary);
+}
+
+.rt-topic-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   MAIN POST CARD
+   ══════════════════════════════════════════════════════════════ */
+.rt-post {
+    background: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-large);
+    padding: 2rem;
+    color: var(--md-sys-color-on-surface);
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rt-post-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--md-sys-color-on-surface-variant);
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.25rem;
+}
+
+.rt-post-author {
+    color: var(--md-sys-color-primary);
+    font-weight: 700;
+}
+
+.rt-title {
+    text-align: center;
+    color: #e53935;
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    margin: 0.2rem 0 0;
+}
+
+.rt-original-title {
+    text-align: center;
+    color: var(--md-sys-color-on-surface-variant);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.rt-poster {
+    float: right;
+    width: 300px;
+    max-width: 40vw;
+    margin: 0 0 1.25rem 1.5rem;
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-medium);
+    box-shadow: 0 8px 24px var(--md-sys-color-shadow);
+}
+
+/* Спецификации раздачи */
+.rt-specs {
+    margin: 0 0 1rem;
+    font-size: 0.92rem;
+}
+
+.rt-specs > div {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.rt-specs dt {
+    color: var(--md-sys-color-on-surface-variant);
+    flex: 0 0 11.5em;
+    font-weight: 600;
+}
+
+.rt-specs dd {
+    margin: 0;
+    color: var(--md-sys-color-on-surface);
+}
+
+.rt-h2 {
+    clear: both;
+    color: var(--md-sys-color-primary);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+    padding-bottom: 0.4rem;
+    margin: 1.75rem 0 0.85rem;
+}
+
+.rt-post p {
+    line-height: 1.6;
+    margin: 0.5rem 0;
+}
+
+.rt-note {
+    font-size: 0.88rem;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   MIRRORS & BUTTONS (с микроанимацией .chip-arrow)
+   ══════════════════════════════════════════════════════════════ */
+.rt-mirrors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.75rem 0;
+}
+
+.rt-mirror {
+    text-decoration: none;
+    font-size: 0.88rem;
+    height: 44px;
+    padding: 0 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rt-mirror.is-disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.rt-soon {
+    font-size: 0.72em;
+    opacity: 0.85;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    padding: 0.1em 0.55em;
+    margin-left: 0.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.rt-file-line {
+    font-family: "Space Mono", ui-monospace, monospace;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    overflow-wrap: anywhere;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CHECKSUMS (SHA-256 с копированием в 1 клик)
+   ══════════════════════════════════════════════════════════════ */
+.rt-checksum-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 0.5rem 0;
+}
+
+.rt-checksum-box {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--md-sys-color-surface-container-low);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-medium);
+    padding: 0.4rem 0.6rem 0.4rem 1rem;
+}
+
+.rt-code--hash {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--md-sys-color-primary);
+    overflow-x: auto;
+    white-space: nowrap;
+    user-select: all;
+    font-family: "Space Mono", monospace;
+}
+
+.rt-copy-btn {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+}
+
+.rt-copy-btn .material-symbols-outlined {
+    font-size: 1.2rem;
+}
+
+.rt-file-name {
+    font-family: "Space Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.rt-code {
+    background: var(--md-sys-color-surface-container-low);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-medium);
+    padding: 0.8rem 1rem;
+    font-family: "Space Mono", ui-monospace, monospace;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    overflow-x: auto;
+    white-space: pre;
+    color: var(--md-sys-color-on-surface);
+}
+
+.rt-spoiler {
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-medium);
+    background: var(--md-sys-color-surface-container-low);
+    overflow: hidden;
+}
+
+.rt-spoiler summary {
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+    color: var(--md-sys-color-primary);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    user-select: none;
+}
+
+.rt-spoiler .rt-code {
+    border: none;
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: 0;
+    margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SUBTITLES TABLE (с адаптивным скроллом и названиями языков)
+   ══════════════════════════════════════════════════════════════ */
+.rt-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.rt-files {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Space Mono", ui-monospace, monospace;
+    font-size: 0.82rem;
+}
+
+.rt-files th {
+    text-align: left;
+    font-weight: 700;
+    color: var(--md-sys-color-on-surface-variant);
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+    padding: 0.6rem 0.85rem;
+}
+
+.rt-files td {
+    padding: 0.4rem 0.85rem;
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+    vertical-align: middle;
+}
+
+.rt-files tr:last-child td {
+    border-bottom: none;
+}
+
+.rt-files td.rt-size,
+.rt-files th.rt-size {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.rt-files td.rt-date {
+    white-space: nowrap;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.rt-files a {
+    color: var(--md-sys-color-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 700;
+}
+
+.rt-files a::after {
+    content: " \2B07";
+    font-size: 0.85em;
+}
+
+.rt-lang-name {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-family: 'Satoshi', 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.rt-files tbody tr:hover td {
+    background: var(--md-sys-color-surface-container);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SCREENSHOTS GRID (с интерактивным hover)
+   ══════════════════════════════════════════════════════════════ */
+.rt-shots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.rt-shot-link {
+    display: block;
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-medium);
+    overflow: hidden;
+    position: relative;
+    transition:
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.4s var(--md-transition-bounce),
+        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rt-shot-link:hover {
+    border-color: var(--md-sys-color-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px var(--md-sys-color-shadow);
+}
+
+.rt-shot-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Ссылки на первоисточники */
+.rt-links {
+    margin: 0.5rem 0;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.rt-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--md-sys-color-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    .md3-main-content {
+        padding: 1rem;
+    }
+
+    .rt-topic-header {
+        font-size: 0.85rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .rt-poster {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 1.25rem;
+    }
+
+    .rt-specs dt {
+        flex-basis: 8.5em;
+    }
+
+    .rt-shots {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .rt-post {
+        padding: 1.25rem;
+    }
+
+    .rt-title {
+        font-size: 1.8rem;
+    }
+
+    .rt-specs > div {
+        flex-direction: column;
+        gap: 0.15rem;
+        padding: 0.35rem 0;
+    }
+
+    .rt-specs dt {
+        flex: none;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .rt-shots {
+        grid-template-columns: 1fr;
+    }
+
+    .rt-checksum-box {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .rt-copy-btn {
+        align-self: flex-end;
+    }
+}

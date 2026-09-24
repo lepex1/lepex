@@ -1,6 +1,7 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "trailingSlash": true,
   "rewrites": [
     {
       "source": "/portfolio/subtitles/config.yml",

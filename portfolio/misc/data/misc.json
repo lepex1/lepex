@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tactical-medicine",
+    "icon": "medical_services",
+    "color": "#e57373",
+    "date": "2026-09-23",
+    "title": "Tactical Medicine — materials",
+    "titleRu": "Тактическая медицина - материалы",
+    "desc": "Originals + bookmarked versions: fighter handbook and combat surgery guidelines",
+    "descRu": "Медицинские материалы для улучшения ролевой отыгровки.",
+    "link": "/portfolio/misc/tactical-medicine/",
+    "tags": [
+      "Medicine",
+      "SCP",
+      "Docs"
+    ]
+  },
+  {
+    "id": "emesis-blue",
+    "icon": "movie",
+    "color": "#ff8a65",
+    "date": "2026-09-18",
+    "title": "EMESIS BLUE [4K] EN+RU",
+    "titleRu": "EMESIS BLUE [4K] EN+RU",
+    "desc": "Fan-assembled MKV: 4K video, original English + Watchman Voice Russian dub, 19 subtitle tracks",
+    "descRu": "Фанатская сборка MKV: 4K-видео, оригинал EN + дубляж Watchman Voice, 19 дорожек субтитров",
+    "link": "/portfolio/misc/emesis-blue/",
+    "tags": [
+      "Video",
+      "TF2",
+      "Release"
+    ]
+  }
+]

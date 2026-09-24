@@ -74,5 +74,19 @@
       "Python",
       "Xray-core"
     ]
+  },
+  {
+    "id": "misc",
+    "icon": "inventory_2",
+    "color": "#a5d6a7",
+    "date": "2026-09-18",
+    "title": "Miscellaneous",
+    "titleRu": "Всячина",
+    "desc": "Stuff I liked: releases, materials, articles, media",
+    "descRu": "Понравившиеся штуки: релизы, материалы, статьи, медиа",
+    "link": "/portfolio/misc/",
+    "tags": [
+      "Misc"
+    ]
   }
 ]
