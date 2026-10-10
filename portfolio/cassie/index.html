@@ -62,7 +62,7 @@
         <div class="cassie-app">
 
             <!-- Hero / Description Banner -->
-            <div class="cassie-description reveal-card">
+            <div class="cassie-description">
                 <div class="cassie-description-inner">
                     <div class="card-icon-wrapper">
                         <span class="material-symbols-outlined card-main-icon">info</span>
@@ -91,7 +91,7 @@
             <section class="search-container">
                 <div class="search-bento-card">
                     <span class="material-symbols-outlined search-icon" aria-hidden="true">search</span>
-                    <input type="text" id="searchInput" class="search-input" placeholder="Поиск по модулям, командам, тексту..." data-placeholder-ru="Поиск по модулям, командам, тексту..." data-placeholder-en="Search modules, commands, text...">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Поиск по модулям, категориям, тегам, командам..." data-placeholder-ru="Поиск по модулям, категориям, тегам, командам..." data-placeholder-en="Search modules, categories, tags, commands...">
                 </div>
             </section>
 
@@ -105,6 +105,8 @@
 
         <footer class="md3-footer">
             <p class="footer-text">lepex &copy; <span id="year"></span></p>
+<p class="footer-email i18n-container"><span class="lang-ru">Почта: <a href="mailto:lepexmail@gmail.com">lepexmail@gmail.com</a></span><span class="lang-en">Email: <a href="mailto:lepexmail@gmail.com">lepexmail@gmail.com</a></span></p>
+
             <p class="footer-credit i18n-container"><span class="lang-ru">Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</span><span class="lang-en">Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.</span></p>
         </footer>
     </div>
@@ -118,7 +120,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             initializeGifTheme();
-            initializeScrollAndLayout();
             initCassie();
         });
         document.addEventListener('languagechange', function() { updateCassieLanguage(); });

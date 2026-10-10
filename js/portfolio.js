@@ -127,7 +127,7 @@ async function loadPortfolio() {
             }
 
             return `
-                <div class="md3-portfolio-card reveal-card" data-index="${index}" data-video="${safeLink}" role="button" tabindex="0">
+                <div class="md3-portfolio-card" data-index="${index}" data-video="${safeLink}" role="button" tabindex="0">
                     <div class="portfolio-card-thumbnail">
                         <img src="${imageSrc}"
                              class="item-img"
@@ -154,16 +154,6 @@ async function loadPortfolio() {
                 </div>
             `;
         }).join('');
-
-        const newCards = container.querySelectorAll('.reveal-card');
-        const cardObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                }
-            });
-        }, { threshold: 0.05 });
-        newCards.forEach(c => cardObserver.observe(c));
 
         switchLanguage(currentLanguage);
         initializePortfolioCards();

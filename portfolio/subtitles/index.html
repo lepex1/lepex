@@ -68,7 +68,7 @@
                     <div class="md3-bento-grid">
                         
                         <!-- UNIFIED HERO & GOAL CARD (2 Columns Wide) -->
-                        <div class="md3-bento-card hero-card reveal-card">
+                        <div class="md3-bento-card hero-card">
                             <div class="hero-card-bg-gradient"></div>
                             
                             <!-- Subtitles translation visualization -->
@@ -102,7 +102,7 @@
                         </div>
 
                         <!-- CONTACT CARD (1 Column Wide) -->
-                        <div class="md3-bento-card info-card contact-bento-card reveal-card">
+                        <div class="md3-bento-card info-card contact-bento-card">
                             <div class="card-icon-wrapper accent-color">
                                 <span class="material-symbols-outlined card-main-icon">alternate_email</span>
                             </div>
@@ -116,7 +116,7 @@
                         </div>
 
                         <!-- FREE BANNER (2 Columns Wide) -->
-                        <div class="md3-bento-card info-card free-badge-card reveal-card">
+                        <div class="md3-bento-card info-card free-badge-card">
                             <div class="card-icon-wrapper secondary-color">
                                 <span class="material-symbols-outlined card-main-icon">volunteer_activism</span>
                             </div>
@@ -125,7 +125,7 @@
                         </div>
 
                         <!-- SUPPORT CARD (1 Column Wide) -->
-                        <div class="md3-bento-card info-card support-card reveal-card">
+                        <div class="md3-bento-card info-card support-card">
                             <div class="card-icon-wrapper">
                                 <span class="material-symbols-outlined card-main-icon">paid</span>
                             </div>
@@ -141,7 +141,7 @@
 
                 <!-- PORTFOLIO SECTION -->
                 <section class="md3-portfolio-section" id="portfolio">
-                    <div class="portfolio-section-header reveal-card">
+                    <div class="portfolio-section-header">
                         <span class="material-symbols-outlined header-icon">grid_view</span>
                         <h2 class="i18n-container"><span class="lang-ru">Мои работы</span><span class="lang-en">My Works</span></h2>
                     </div>
@@ -155,6 +155,8 @@
             <!-- FOOTER -->
             <footer class="md3-footer">
                 <p class="footer-text">lepex &copy; <span id="year"></span></p>
+<p class="footer-email i18n-container"><span class="lang-ru">Почта: <a href="mailto:lepexmail@gmail.com">lepexmail@gmail.com</a></span><span class="lang-en">Email: <a href="mailto:lepexmail@gmail.com">lepexmail@gmail.com</a></span></p>
+
                 <p class="footer-credit i18n-container"><span class="lang-ru">Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</span><span class="lang-en">Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.</span></p>
             </footer>
         </div>
@@ -168,7 +170,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             initializeGifTheme();
-            initializeScrollAndLayout();
             initializeUSDT();
             initializeVideoModal();
             loadPortfolio();

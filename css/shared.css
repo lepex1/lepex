@@ -354,21 +354,6 @@ html:not([data-lang]) .i18n-container > .lang-en {
     box-shadow: 0 8px 16px var(--md-sys-color-shadow);
 }
 
-.reveal-card {
-    opacity: 0;
-    transform: translateY(40px) scale(0.96);
-    transition: opacity 0.8s var(--md-transition-easing),
-                transform 0.8s var(--md-transition-easing),
-                background-color var(--md-transition-duration) var(--md-transition-easing),
-                border-color var(--md-transition-duration) var(--md-transition-easing),
-                box-shadow var(--md-transition-duration) var(--md-transition-easing);
-}
-
-.reveal-card.in-view {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
 .md3-footer {
     max-width: 1400px;
     margin: 0 auto;
@@ -376,11 +361,6 @@ html:not([data-lang]) .i18n-container > .lang-en {
     text-align: center;
     font-size: 0.85rem;
     color: var(--md-sys-color-on-surface-variant);
-    opacity: 0;
-    animation: footerFadeIn 0.4s 0.85s var(--md-transition-easing) forwards;
-}
-@keyframes footerFadeIn {
-    to { opacity: 1; }
 }
 
 .footer-text {
@@ -403,6 +383,23 @@ html:not([data-lang]) .i18n-container > .lang-en {
 }
 
 .footer-credit a:hover {
+    text-decoration: underline;
+}
+
+.footer-email {
+    font-size: 0.85rem;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-bottom: 0.5rem;
+}
+
+.footer-email a {
+    color: var(--md-sys-color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+
+.footer-email a:hover {
     text-decoration: underline;
 }
 

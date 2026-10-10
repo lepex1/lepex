@@ -24,7 +24,7 @@ function renderMiscCards() {
         const title = currentLanguage === 'ru' ? p.titleRu : p.title;
         const desc = currentLanguage === 'ru' ? p.descRu : p.desc;
         return `
-            <a href="${p.link}" class="hub-card reveal-card">
+            <a href="${p.link}" class="hub-card">
                 <div class="hub-card-icon" style="background:${p.color}">
                     <span class="material-symbols-outlined">${p.icon}</span>
                 </div>
@@ -35,8 +35,6 @@ function renderMiscCards() {
         `;
     }).join('');
     layoutMiscGrid();
-    const observer = new IntersectionObserver(e => e.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in-view'); } }), {threshold:0.05});
-    container.querySelectorAll('.reveal-card').forEach(c => observer.observe(c));
 }
 
 function updateMiscLanguage() {
@@ -62,7 +60,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
 document.addEventListener('languagechange', function() { if (miscItems.length) updateMiscLanguage(); });
 document.addEventListener('DOMContentLoaded', () => {
     initializeGifTheme();
-    initializeScrollAndLayout();
     loadMisc();
 });
 initializeLanguage();

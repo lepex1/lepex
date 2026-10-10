@@ -58,7 +58,7 @@
         <main class="md3-main-content">
 
             <!-- Заголовок темы раздачи (оформлен как аккуратный блок темы) -->
-            <div class="rt-topic-header reveal-card">
+            <div class="rt-topic-header">
                 <span class="material-symbols-outlined rt-topic-icon">movie</span>
                 <span class="i18n-container">
                     <span class="lang-ru">EMESIS BLUE [SFM] (Fortress Films) [2023, мультфильм, ужасы, мистика, 2160p] Original Eng + Dub Rus (Watchman Voice) + Sub (19 langs)</span>
@@ -66,7 +66,7 @@
                 </span>
             </div>
 
-            <article class="rt-post reveal-card">
+            <article class="rt-post">
                 <div class="rt-post-head">
                     <span class="rt-post-date">18-Sep-2026</span>
                     <span class="rt-post-author">lepex</span>
@@ -254,6 +254,8 @@
 
         <footer class="md3-footer">
             <p class="footer-text">lepex &copy; <span id="year"></span></p>
+<p class="footer-email i18n-container"><span class="lang-ru">Почта: <a href="mailto:lepexmail@gmail.com">lepexmail@gmail.com</a></span><span class="lang-en">Email: <a href="mailto:lepexmail@gmail.com">lepexmail@gmail.com</a></span></p>
+
             <p class="footer-credit i18n-container"><span class="lang-ru">Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</span><span class="lang-en">Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.</span></p>
         </footer>
     </div>
@@ -266,7 +268,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             initializeGifTheme();
-            initializeScrollAndLayout();
 
             // Копирование хеша SHA-256 в один клик
             const copyHashBtn = document.getElementById('copyHashBtn');

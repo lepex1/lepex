@@ -351,6 +351,23 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
     margin-top: 0.25rem;
 }
 
+.contact-bento-card {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.contact-bento-card .contact-cta {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+    overflow-wrap: anywhere;
+}
+
+.contact-bento-card .contact-cta span:not(.material-symbols-outlined) {
+    overflow-wrap: anywhere;
+    min-width: 0;
+}
+
 .usdt-title.i18n-container {
     display: inline;
 }

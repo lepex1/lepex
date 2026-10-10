@@ -256,11 +256,6 @@ function renderDiscord(data) {
         activity.innerHTML = '<div class="md3-discord__activity-skeleton">' + emptyMessage + '</div>';
     }
 
-    const card = document.getElementById('discordCard');
-    if (card) {
-        setTimeout(() => card.classList.add('in-view'), 100);
-    }
-
     updateAllProgress();
     if (!window._progressInterval) {
         window._progressInterval = setInterval(updateAllProgress, 1000);

@@ -61,7 +61,7 @@
         <main class="md3-main-content">
 
 <!-- Hero Section -->
-            <section class="vpn-hero-card reveal-card">
+            <section class="vpn-hero-card">
                 <h1 class="vpn-hero-title i18n-container">
                     <span class="lang-ru">Автоматический чекер и генератор VPN-подписок</span>
                     <span class="lang-en">Automated Proxy Validator & Subscription Builder</span>
@@ -88,7 +88,7 @@
             <!-- Features Bento Grid -->
             <section class="vpn-features-grid">
 
-                <div class="vpn-feature-card reveal-card">
+                <div class="vpn-feature-card">
                     <div class="card-icon-wrapper">
                         <span class="material-symbols-outlined card-main-icon">network_check</span>
                     </div>
@@ -102,7 +102,7 @@
                     </p>
                 </div>
 
-                <div class="vpn-feature-card reveal-card">
+                <div class="vpn-feature-card">
                     <div class="card-icon-wrapper">
                         <span class="material-symbols-outlined card-main-icon">public</span>
                     </div>
@@ -116,7 +116,7 @@
                     </p>
                 </div>
 
-                <div class="vpn-feature-card reveal-card">
+                <div class="vpn-feature-card">
                     <div class="card-icon-wrapper">
                         <span class="material-symbols-outlined card-main-icon">sync</span>
                     </div>
@@ -130,7 +130,7 @@
                     </p>
                 </div>
 
-                <div class="vpn-feature-card reveal-card">
+                <div class="vpn-feature-card">
                     <div class="card-icon-wrapper">
                         <span class="material-symbols-outlined card-main-icon">devices</span>
                     </div>
@@ -147,7 +147,7 @@
             </section>
 
             <!-- Quick Start Guide -->
-            <section class="vpn-guide-card reveal-card">
+            <section class="vpn-guide-card">
                 <h2 class="card-title i18n-container">
                     <span class="lang-ru">Как пользоваться программой</span>
                     <span class="lang-en">How to Use</span>
@@ -190,6 +190,8 @@
 
         <footer class="md3-footer">
             <p class="footer-text">lepex &copy; <span id="year"></span></p>
+<p class="footer-email i18n-container"><span class="lang-ru">Почта: <a href="mailto:lepexmail@gmail.com">lepexmail@gmail.com</a></span><span class="lang-en">Email: <a href="mailto:lepexmail@gmail.com">lepexmail@gmail.com</a></span></p>
+
             <p class="footer-credit i18n-container">
                 <span class="lang-ru">Дизайн вдохновлён <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> от hrdq. Цветовые схемы, гифки и хедер позаимствованы оттуда же.</span>
                 <span class="lang-en">Design inspired by <a href='https://github.com/h6rd/Dota2PornFxWeb' target='_blank' rel='noopener'>Dota2PornFxWeb</a> by hrdq. Color schemes, GIFs and header borrowed from there.</span>
@@ -205,7 +207,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             initializeGifTheme();
-            initializeScrollAndLayout();
         });
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>

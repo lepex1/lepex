@@ -1,4 +1,5 @@
 let globalCassieData = [];
+let cassieTags = { categories: {}, modules: {} };
 let searchFilter = "";
 let sectionFilter = "";
 
@@ -41,6 +42,7 @@ function fetchAndRender() {
     const contentArea = document.getElementById("content-area");
 
     const sources = ['data/cassie_standard.md', 'data/cassie_reglament.md'];
+    fetch('data/cassie_tags.json').then(r => r.ok ? r.json() : null).then(j => { if (j) cassieTags = j; }).catch(() => {});
     Promise.all(sources.map(url => fetch(url).then(r => {
         if (!r.ok) throw new Error((currentLanguage === 'en' ? 'Failed to load ' : 'Ошибка загрузки ') + url + ' (' + (currentLanguage === 'en' ? 'Status' : 'Статус') + ': ' + r.status + ')');
         return r.text();
@@ -62,7 +64,8 @@ function parseMarkdown(content) {
     const items = [];
 
     let lastSection = "";
-    let lastHeader = "";
+    let lastModule = "";
+    let lastCategory = "";
     let currentCalloutType = "note";
     let lastDescription = "";
 
@@ -78,8 +81,11 @@ function parseMarkdown(content) {
             continue;
         }
 
-        if (trimmed.startsWith("###")) {
-            lastHeader = trimmed.replace(/^#+\s+/, "");
+        if (trimmed.startsWith("####")) {
+            lastCategory = trimmed.replace(/^#+\s+/, "");
+        } else if (trimmed.startsWith("###")) {
+            lastModule = trimmed.replace(/^#+\s+/, "");
+            lastCategory = "";
         }
 
         const calloutMatch = trimmed.match(/^\[!([a-zA-Z0-9_-]+)\]/i);
@@ -97,7 +103,8 @@ function parseMarkdown(content) {
 
             items.push({
                 section: lastSection,
-                category: lastHeader || "Общее",
+                module: lastModule || "",
+                category: lastCategory || lastModule || "Общее",
                 callout: currentCalloutType,
                 title: lastDescription || "Команда CASSIE",
                 command: cleanCommand,
@@ -264,9 +271,9 @@ function render() {
     globalCassieData.forEach(item => {
         if (sectionFilter && item.section !== sectionFilter) return;
         if (searchFilter) {
-            const matchTitle = normalize(item.title).includes(nf);
-            const matchCommand = normalize(item.command).includes(nf);
-            if (!matchTitle && !matchCommand) return;
+            const tags = ((cassieTags.categories && cassieTags.categories[item.category]) || []).concat((cassieTags.modules && cassieTags.modules[item.module]) || []);
+            const hay = normalize(item.title + " " + item.command + " " + (item.module || "") + " " + (item.category || "") + " " + tags.join(" "));
+            if (!hay.includes(nf)) return;
         }
 
         const key = item.section || "Стандартные";
@@ -290,16 +297,26 @@ function render() {
         sectionHeader.textContent = tSection(section);
         sectionEl.appendChild(sectionHeader);
 
-        const innerGroup = {};
+        const moduleGroup = {};
 
         items.forEach(item => {
-            if (!innerGroup[item.category]) {
-                innerGroup[item.category] = [];
-            }
-            innerGroup[item.category].push(item);
+            const mk = item.module || item.category || "Общее";
+            if (!moduleGroup[mk]) moduleGroup[mk] = {};
+            const ck = item.category || "Общее";
+            if (!moduleGroup[mk][ck]) moduleGroup[mk][ck] = [];
+            moduleGroup[mk][ck].push(item);
         });
 
-        for (const [category, catItems] of Object.entries(innerGroup)) {
+        for (const [module, cats] of Object.entries(moduleGroup)) {
+            const modHeader = document.createElement("div");
+            modHeader.className = "module-header";
+            const modText = document.createElement("span");
+            modText.className = "module-text";
+            modText.textContent = module;
+            modHeader.appendChild(modText);
+            sectionEl.appendChild(modHeader);
+
+            for (const [category, catItems] of Object.entries(cats)) {
             const catHeader = document.createElement("div");
             catHeader.className = "category-header";
 
@@ -323,10 +340,20 @@ function render() {
                 title.textContent = item.title;
                 card.appendChild(title);
 
+                const previewLabel = document.createElement("div");
+                previewLabel.className = "md3-card__block-label";
+                previewLabel.textContent = currentLanguage === 'en' ? "Preview" : "Предпросмотр";
+                card.appendChild(previewLabel);
+
                 const preview = document.createElement("div");
                 preview.className = "md3-card__preview";
                 preview.innerHTML = parseUnityRichText(item.command, item.strict);
                 card.appendChild(preview);
+
+                const cmdLabel = document.createElement("div");
+                cmdLabel.className = "md3-card__block-label";
+                cmdLabel.textContent = currentLanguage === 'en' ? "Command (click copy to use)" : "Команда (нажми «Копировать»)";
+                card.appendChild(cmdLabel);
 
                 const cmdSection = document.createElement("div");
                 cmdSection.className = "md3-card__command";
@@ -362,8 +389,36 @@ function render() {
 
                 cmdSection.appendChild(copyBtn);
                 card.appendChild(cmdSection);
+
+                const tagList = ((cassieTags.categories && cassieTags.categories[item.category]) || []).concat((cassieTags.modules && cassieTags.modules[item.module]) || []).filter((v, i, a) => a.indexOf(v) === i).slice(0, 6);
+                if (tagList.length) {
+                    const tagsRow = document.createElement("div");
+                    tagsRow.className = "md3-card__tags";
+                    tagList.forEach(tag => {
+                        const chip = document.createElement("button");
+                        chip.type = "button";
+                        chip.className = "md3-card__tag";
+                        chip.textContent = "#" + tag;
+                        chip.addEventListener("click", () => {
+                            const si = document.getElementById("searchInput");
+                            if (si) {
+                                si.value = tag;
+                                searchFilter = tag;
+                                render();
+                                si.focus();
+                            }
+                        });
+                        tagsRow.appendChild(chip);
+                    });
+                    const tagsLabel = document.createElement("span");
+                    tagsLabel.className = "md3-card__tags-label";
+                    tagsLabel.textContent = currentLanguage === 'en' ? "Tags:" : "Теги:";
+                    tagsRow.prepend(tagsLabel);
+                    card.appendChild(tagsRow);
+                }
                 sectionEl.appendChild(card);
             });
+            }
         }
 
         contentArea.appendChild(sectionEl);
