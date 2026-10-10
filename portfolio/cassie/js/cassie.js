@@ -297,26 +297,15 @@ function render() {
         sectionHeader.textContent = tSection(section);
         sectionEl.appendChild(sectionHeader);
 
-        const moduleGroup = {};
+        const innerGroup = {};
 
         items.forEach(item => {
-            const mk = item.module || item.category || "Общее";
-            if (!moduleGroup[mk]) moduleGroup[mk] = {};
             const ck = item.category || "Общее";
-            if (!moduleGroup[mk][ck]) moduleGroup[mk][ck] = [];
-            moduleGroup[mk][ck].push(item);
+            if (!innerGroup[ck]) innerGroup[ck] = [];
+            innerGroup[ck].push(item);
         });
 
-        for (const [module, cats] of Object.entries(moduleGroup)) {
-            const modHeader = document.createElement("div");
-            modHeader.className = "module-header";
-            const modText = document.createElement("span");
-            modText.className = "module-text";
-            modText.textContent = module;
-            modHeader.appendChild(modText);
-            sectionEl.appendChild(modHeader);
-
-            for (const [category, catItems] of Object.entries(cats)) {
+        for (const [category, catItems] of Object.entries(innerGroup)) {
             const catHeader = document.createElement("div");
             catHeader.className = "category-header";
 
@@ -340,20 +329,10 @@ function render() {
                 title.textContent = item.title;
                 card.appendChild(title);
 
-                const previewLabel = document.createElement("div");
-                previewLabel.className = "md3-card__block-label";
-                previewLabel.textContent = currentLanguage === 'en' ? "Preview" : "Предпросмотр";
-                card.appendChild(previewLabel);
-
                 const preview = document.createElement("div");
                 preview.className = "md3-card__preview";
                 preview.innerHTML = parseUnityRichText(item.command, item.strict);
                 card.appendChild(preview);
-
-                const cmdLabel = document.createElement("div");
-                cmdLabel.className = "md3-card__block-label";
-                cmdLabel.textContent = currentLanguage === 'en' ? "Command (click copy to use)" : "Команда (нажми «Копировать»)";
-                card.appendChild(cmdLabel);
 
                 const cmdSection = document.createElement("div");
                 cmdSection.className = "md3-card__command";
@@ -418,7 +397,6 @@ function render() {
                 }
                 sectionEl.appendChild(card);
             });
-            }
         }
 
         contentArea.appendChild(sectionEl);
