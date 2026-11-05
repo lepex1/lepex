@@ -194,16 +194,6 @@
     align-items: end;
 }
 
-.vpn-visual-copy {
-    grid-column: 1 / -1;
-    color: var(--md-sys-color-on-surface-variant);
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.35rem;
-    font-weight: 700;
-    line-height: 1.25;
-    max-width: 30rem;
-}
-
 .vpn-banner-lang {
     grid-column: 1 / -1;
 }
@@ -387,9 +377,6 @@ html:not([data-lang]) .vpn-banner-lang > .lang-en {
     }
     .vpn-visuals-section {
         gap: 1rem;
-    }
-    .vpn-visual-copy {
-        font-size: 1.1rem;
     }
     .vpn-terminal-body {
         padding: 1rem;
