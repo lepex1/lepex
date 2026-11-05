@@ -204,6 +204,25 @@
     max-width: 30rem;
 }
 
+.vpn-banner-lang {
+    grid-column: 1 / -1;
+}
+
+/* Banner switches like text i18n, but hide via display:none — an absolutely
+   positioned hidden img would still create scrollable overflow */
+.vpn-banner-lang > .lang-ru,
+.vpn-banner-lang > .lang-en {
+    display: block;
+}
+html[data-lang="ru"] .vpn-banner-lang > .lang-en,
+html[data-lang="en"] .vpn-banner-lang > .lang-ru,
+html:not([data-lang]) .vpn-banner-lang > .lang-en {
+    position: static;
+    visibility: visible;
+    pointer-events: auto;
+    display: none;
+}
+
 .vpn-project-banner,
 .vpn-screenshot-wrap {
     width: 100%;
@@ -213,7 +232,6 @@
 }
 
 .vpn-project-banner {
-    grid-column: 1 / -1;
     display: block;
     height: auto;
 }
