@@ -6,8 +6,8 @@ function layoutMiscGrid() {
     const n = miscItems.length;
     const w = window.innerWidth;
     let cols;
-    if (w >= 1200) cols = Math.min(4, n);
-    else if (w >= 768) cols = Math.min(2, n);
+    if (w > 1024) cols = Math.min(3, n);
+    else if (w > 768) cols = Math.min(2, n);
     else cols = 1;
     container.style.setProperty('--hub-cols', cols);
 }
