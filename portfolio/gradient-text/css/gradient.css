@@ -16,16 +16,7 @@
     transition:
         background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
         border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.4s var(--md-transition-bounce),
-        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.gradient-editor-card:hover {
-    background-color: var(--md-sys-color-surface-container-high);
-    border-color: var(--md-sys-color-primary);
-    box-shadow: 0 12px 24px var(--md-sys-color-shadow);
-    transform: translateY(-4px);
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gradient-display-card {
@@ -59,7 +50,7 @@
 }
 
 .card-title {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Satoshi', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.2px;
@@ -71,7 +62,7 @@
     color: var(--md-sys-color-on-surface-variant);
     letter-spacing: 0.3px;
     text-transform: uppercase;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Satoshi', sans-serif;
 }
 
 .gradient-textarea {
@@ -83,7 +74,7 @@
     padding: 1rem;
     resize: none;
     font-size: 1rem;
-    font-family: 'Satoshi', 'Plus Jakarta Sans', 'Outfit', sans-serif;
+    font-family: 'Satoshi', sans-serif;
     outline: none;
     transition: border-color var(--md-transition-duration) var(--md-transition-easing),
                 box-shadow var(--md-transition-duration) var(--md-transition-bounce);
@@ -169,7 +160,7 @@
     color: var(--md-sys-color-on-surface-variant);
     font-size: 0.85rem;
     font-weight: 600;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Satoshi', sans-serif;
     text-transform: capitalize;
 }
 

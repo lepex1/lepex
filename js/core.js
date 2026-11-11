@@ -62,28 +62,17 @@ function initializeGifTheme() {
         switcher.setAttribute('tabindex', '0');
 
         const switchTheme = () => {
-            switcher.classList.add('clicked', 'no-hover');
+            currentIndex = (currentIndex + 1) % GIF_CONFIG.gifs.length;
+            const newTheme = GIF_CONFIG.themes[currentIndex];
 
-            setTimeout(() => {
-                switcher.classList.remove('clicked');
-                currentIndex = (currentIndex + 1) % GIF_CONFIG.gifs.length;
-                const newTheme = GIF_CONFIG.themes[currentIndex];
+            gifElement.src = GIF_CONFIG.gifs[currentIndex];
+            html.setAttribute('data-gif-theme', newTheme);
+            localStorage.setItem('gifIndex', currentIndex.toString());
 
-                gifElement.src = GIF_CONFIG.gifs[currentIndex];
-                html.setAttribute('data-gif-theme', newTheme);
-                localStorage.setItem('gifIndex', currentIndex.toString());
-
-                const themeColorMeta = document.getElementById('theme-color-meta');
-                if (themeColorMeta && GIF_THEME_COLORS[newTheme]) {
-                    themeColorMeta.setAttribute('content', GIF_THEME_COLORS[newTheme]);
-                }
-
-                switcher.classList.add('appear');
-                setTimeout(() => {
-                    switcher.classList.remove('appear');
-                    setTimeout(() => switcher.classList.remove('no-hover'), 160);
-                }, 160);
-            }, 160);
+            const themeColorMeta = document.getElementById('theme-color-meta');
+            if (themeColorMeta && GIF_THEME_COLORS[newTheme]) {
+                themeColorMeta.setAttribute('content', GIF_THEME_COLORS[newTheme]);
+            }
 
             if (navigator.vibrate) navigator.vibrate(10);
         };

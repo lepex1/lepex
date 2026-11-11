@@ -8,16 +8,11 @@
     margin-bottom: 2.5rem;
 }
 .hub-header h1 {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Satoshi', sans-serif;
     font-size: 2.5rem;
     font-weight: 900;
     letter-spacing: -1px;
     color: var(--md-sys-color-on-background);
-}
-.hub-header p {
-    color: var(--md-sys-color-on-surface-variant);
-    font-size: 1.05rem;
-    margin-top: 0.5rem;
 }
 .hub-grid {
     display: grid;
@@ -50,22 +45,8 @@
     transform: translateY(-4px);
     box-shadow: 0 16px 32px var(--md-sys-color-shadow);
 }
-.hub-card-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: var(--md-shape-corner-medium);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-.hub-card-icon .material-symbols-outlined {
-    font-size: 1.75rem;
-    font-variation-settings: 'FILL' 1;
-    color: rgba(0,0,0,0.7);
-}
 .hub-card-title {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Satoshi', sans-serif;
     font-size: 1.35rem;
     font-weight: 700;
     letter-spacing: -0.3px;
@@ -102,7 +83,7 @@
     right: 1rem;
     color: var(--md-sys-color-on-surface-variant);
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .hub-card:hover .hub-card-arrow {
     opacity: 1;
@@ -112,7 +93,6 @@
     .md3-main-content { padding: 1rem 0.75rem; }
     .hub-header { margin-bottom: 1.5rem; }
     .hub-header h1 { font-size: 1.6rem; }
-    .hub-header p { font-size: 0.9rem; }
     .hub-card { padding: 1.25rem; min-height: auto; }
     .hub-grid { --hub-cols: 1; }
 }

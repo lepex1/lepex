@@ -12,8 +12,6 @@
 
 [data-gif-theme="ursa"] {
     --md-sys-color-primary: #d0bcff;
-    --md-sys-color-shit: #b190ff;
-    --md-sys-color-shit-light: #c8b0ff;
     --md-sys-color-on-primary: #220a32;
     --md-sys-color-primary-container: #4f378b;
     --md-sys-color-on-primary-container: #f4e7ff;
@@ -47,8 +45,6 @@
 
 [data-gif-theme="brew"] {
     --md-sys-color-primary: #fac898;
-    --md-sys-color-shit: #f8b774;
-    --md-sys-color-shit-light: #fbd3a7;
     --md-sys-color-on-primary: #3a1f00;
     --md-sys-color-primary-container: #5c3b00;
     --md-sys-color-on-primary-container: #ffddb7;
@@ -82,8 +78,6 @@
 
 [data-gif-theme="fura"] {
     --md-sys-color-primary: #b1f9a4;
-    --md-sys-color-shit: #9bf38a;
-    --md-sys-color-shit-light: #c6fbbd;
     --md-sys-color-on-primary: #00390e;
     --md-sys-color-primary-container: #0a5d1d;
     --md-sys-color-on-primary-container: #c8ffc0;
@@ -117,8 +111,6 @@
 
 [data-gif-theme="storm"] {
     --md-sys-color-primary: #c7dbf0;
-    --md-sys-color-shit: #b5d0ec;
-    --md-sys-color-shit-light: #d9e8f6;
     --md-sys-color-on-primary: #10283e;
     --md-sys-color-primary-container: #334b61;
     --md-sys-color-on-primary-container: #e9f3ff;
@@ -152,8 +144,6 @@
 
 [data-gif-theme="invoker"] {
     --md-sys-color-primary: #ffffff;
-    --md-sys-color-shit: #e0e0e0;
-    --md-sys-color-shit-light: #f0f0f0;
     --md-sys-color-on-primary: #000000;
     --md-sys-color-primary-container: #404040;
     --md-sys-color-on-primary-container: #ffffff;
@@ -187,8 +177,6 @@
 
 [data-gif-theme="meepo"] {
     --md-sys-color-primary: #ffb0c8;
-    --md-sys-color-shit: #ff8fb3;
-    --md-sys-color-shit-light: #ffc6db;
     --md-sys-color-on-primary: #5e0029;
     --md-sys-color-primary-container: #83003e;
     --md-sys-color-on-primary-container: #ffd9e3;
@@ -222,8 +210,6 @@
 
 [data-gif-theme="bh"] {
     --md-sys-color-primary: #f1d783;
-    --md-sys-color-shit: #ebcc6d;
-    --md-sys-color-shit-light: #f5e5b0;
     --md-sys-color-on-primary: #3a2e00;
     --md-sys-color-primary-container: #574600;
     --md-sys-color-on-primary-container: #ffe8b8;
@@ -257,8 +243,6 @@
 
 [data-gif-theme="axe"] {
     --md-sys-color-primary: #ffb4a9;
-    --md-sys-color-shit: #ff897a;
-    --md-sys-color-shit-light: #ffc4ba;
     --md-sys-color-on-primary: #680003;
     --md-sys-color-primary-container: #930006;
     --md-sys-color-on-primary-container: #ffdad4;

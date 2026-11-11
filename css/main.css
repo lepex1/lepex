@@ -24,16 +24,7 @@
     transition:
         background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
         border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.4s var(--md-transition-easing),
-        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.md3-bento-card:hover {
-    background-color: var(--md-sys-color-surface-container-high);
-    border-color: var(--md-sys-color-primary);
-    box-shadow: 0 16px 32px var(--md-sys-color-shadow);
-    transform: translateY(-4px);
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .md3-bento-card--full {
@@ -86,12 +77,6 @@
 .md3-discord__status.idle      { background: #faa61a; }
 .md3-discord__status.dnd       { background: #f04747; }
 .md3-discord__status.offline   { background: #747f8d; }
-
-@keyframes statusPulse {
-    0% { box-shadow: 0 0 0 0 rgba(67, 181, 129, 0.4); }
-    70% { box-shadow: 0 0 0 6px rgba(67, 181, 129, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(67, 181, 129, 0); }
-}
 
 .md3-discord__info {
     display: flex;
@@ -350,7 +335,7 @@
     font-size: 1.6rem;
     font-weight: 800;
     color: var(--md-sys-color-primary);
-    font-family: 'Satoshi', 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Satoshi', sans-serif;
 }
 
 .discord-activity__elapsed {

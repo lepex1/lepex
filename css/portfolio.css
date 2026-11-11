@@ -29,23 +29,14 @@
     transition:
         background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
         border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.4s var(--md-transition-bounce),
-        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.md3-bento-card:hover {
-    background-color: var(--md-sys-color-surface-container-high);
-    border-color: var(--md-sys-color-primary);
-    box-shadow: 0 12px 24px var(--md-sys-color-shadow);
-    transform: translateY(-4px);
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .md3-badge {
     display: inline-flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.85);
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
     padding: 0.35rem 0.85rem;
     border-radius: var(--md-shape-corner-full);
     font-size: 0.8rem;
@@ -53,11 +44,9 @@
     margin-bottom: 1.5rem;
     letter-spacing: 0.75px;
     text-transform: uppercase;
-    border: 1px solid rgba(255, 255, 255, 0.12);
     z-index: 2;
     position: relative;
     align-self: flex-start;
-    backdrop-filter: blur(8px);
 }
 
 .portfolio-section-header .i18n-container {
@@ -76,22 +65,7 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
     min-height: 380px;
     justify-content: center;
     border: none;
-}
-
-.hero-card-bg-gradient {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(-45deg, #6750A4, #7D5260, #381E72, #B3261E);
-    background-size: 300% 300%;
-    animation: gradientAnimation 12s ease infinite;
-    opacity: 0.45;
-    z-index: 1;
-}
-
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    background-color: var(--md-sys-color-primary-container);
 }
 
 .hero-content {
@@ -110,7 +84,7 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
     font-weight: 900;
     line-height: 1.15;
     letter-spacing: -1.5px;
-    color: #FFFFFF;
+    color: var(--md-sys-color-on-primary-container);
     margin-bottom: 1rem;
     z-index: 2;
     position: relative;
@@ -120,7 +94,8 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
     font-size: 1.05rem;
     font-weight: 500;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--md-sys-color-on-primary-container);
+    opacity: 0.85;
     margin-top: 1rem;
     max-width: 70%;
 }
@@ -144,17 +119,15 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
 .video-player-mockup {
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: var(--md-sys-color-surface-container);
+    border: 1px solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-shape-corner-large);
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 24px var(--md-sys-color-shadow);
     overflow: hidden;
 }
 
@@ -167,7 +140,7 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.25);
+    background: var(--md-sys-color-outline);
 }
 
 .mockup-cc-badge {
@@ -203,9 +176,9 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
 }
 
 .origin-bubble {
-    background: rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface-variant);
+    border: 1px solid var(--md-sys-color-outline-variant);
 }
 
 .sub-arrow {
@@ -220,13 +193,12 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
     color: var(--md-sys-color-on-primary);
     box-shadow: 0 4px 12px var(--md-sys-color-shadow);
     font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mockup-timeline {
     width: 100%;
     height: 4px;
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--md-sys-color-outline-variant);
     border-radius: 100px;
     position: relative;
 }
@@ -239,7 +211,6 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
     width: 55%;
     background: var(--md-sys-color-primary);
     border-radius: 100px;
-    animation: progressMove 5s ease-in-out infinite alternate;
 }
 
 .timeline-handle {
@@ -252,17 +223,6 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
     background: var(--md-sys-color-primary);
     border-radius: 50%;
     box-shadow: 0 0 8px var(--md-sys-color-primary);
-    animation: handleMove 5s ease-in-out infinite alternate;
-}
-
-@keyframes progressMove {
-    0% { width: 35%; }
-    100% { width: 85%; }
-}
-
-@keyframes handleMove {
-    0% { left: 35%; }
-    100% { left: 85%; }
 }
 
 .info-card {
@@ -329,7 +289,7 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
 
 .support-card .usdt-address {
     width: 100%;
-    font-family: 'Space Mono', 'Courier New', monospace;
+    font-family: ui-monospace, 'Consolas', 'Courier New', monospace;
     font-size: 0.75rem;
     color: var(--md-sys-color-on-surface);
     word-break: break-all;
@@ -422,9 +382,9 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
 }
 
 .md3-portfolio-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-4px);
     border-color: var(--md-sys-color-primary);
-    box-shadow: 0 20px 40px var(--md-sys-color-shadow);
+    box-shadow: 0 12px 24px var(--md-sys-color-shadow);
 }
 
 .portfolio-card-thumbnail {
@@ -461,7 +421,7 @@ html[data-lang="en"] .portfolio-section-header .i18n-container > .lang-en {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s var(--md-transition-bounce);
+    transition: opacity 0.3s var(--md-transition-bounce), transform 0.3s var(--md-transition-bounce);
     z-index: 2;
 }
 

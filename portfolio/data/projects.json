@@ -1,8 +1,6 @@
 [
   {
     "id": "cassie",
-    "icon": "smart_toy",
-    "color": "#d0bcff",
     "date": "2026-05-10",
     "title": "CASSIE Command Browser",
     "titleRu": "Браузер команд CASSIE",
@@ -16,8 +14,6 @@
   },
   {
     "id": "subtitles",
-    "icon": "subtitles",
-    "color": "#c7dbf0",
     "date": "2026-04-18",
     "title": "Russian Subtitles",
     "titleRu": "Русские субтитры",
@@ -31,8 +27,6 @@
   },
   {
     "id": "gradient-text",
-    "icon": "auto_awesome",
-    "color": "#fac898",
     "date": "2026-03-22",
     "title": "Gradient Text Generator",
     "titleRu": "Генератор градиентного текста",
@@ -46,8 +40,6 @@
   },
   {
     "id": "img2tggif",
-    "icon": "gif_box",
-    "color": "#c9d8ff",
     "date": "2026-06-15",
     "title": "Img2TgGif",
     "titleRu": "Img2TgGif",
@@ -61,8 +53,6 @@
   },
   {
     "id": "free-vpn-checker",
-    "icon": "vpn_key",
-    "color": "#8c64ff",
     "date": "2026-08-27",
     "title": "Free VPN Checker",
     "titleRu": "Free VPN Checker",
@@ -77,8 +67,6 @@
   },
   {
     "id": "misc",
-    "icon": "inventory_2",
-    "color": "#a5d6a7",
     "date": "2026-09-18",
     "title": "Miscellaneous",
     "titleRu": "Всячина",
