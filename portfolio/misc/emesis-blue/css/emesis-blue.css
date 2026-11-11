@@ -65,7 +65,7 @@
 .rt-title {
     text-align: center;
     color: #e53935;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Satoshi', sans-serif;
     font-size: 2.2rem;
     font-weight: 900;
     letter-spacing: 0.05em;
@@ -75,7 +75,7 @@
 .rt-original-title {
     text-align: center;
     color: var(--md-sys-color-on-surface-variant);
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Satoshi', sans-serif;
     font-weight: 600;
     margin-bottom: 1.5rem;
 }
@@ -117,7 +117,7 @@
 .rt-h2 {
     clear: both;
     color: var(--md-sys-color-primary);
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Satoshi', sans-serif;
     font-size: 1.25rem;
     font-weight: 700;
     border-bottom: 1px solid var(--md-sys-color-outline-variant);
@@ -172,7 +172,7 @@
 }
 
 .rt-file-line {
-    font-family: "Space Mono", ui-monospace, monospace;
+    font-family: ui-monospace, monospace;
     font-size: 0.85rem;
     margin-top: 0.5rem;
     overflow-wrap: anywhere;
@@ -209,7 +209,7 @@
     overflow-x: auto;
     white-space: nowrap;
     user-select: all;
-    font-family: "Space Mono", monospace;
+    font-family: ui-monospace, monospace;
 }
 
 .rt-copy-btn {
@@ -223,7 +223,7 @@
 }
 
 .rt-file-name {
-    font-family: "Space Mono", monospace;
+    font-family: ui-monospace, monospace;
     font-size: 0.8rem;
     color: var(--md-sys-color-on-surface-variant);
 }
@@ -233,7 +233,7 @@
     border: 1px solid var(--md-sys-color-outline-variant);
     border-radius: var(--md-shape-corner-medium);
     padding: 0.8rem 1rem;
-    font-family: "Space Mono", ui-monospace, monospace;
+    font-family: ui-monospace, monospace;
     font-size: 0.78rem;
     line-height: 1.55;
     overflow-x: auto;
@@ -252,7 +252,7 @@
     cursor: pointer;
     padding: 0.75rem 1.25rem;
     color: var(--md-sys-color-primary);
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Satoshi', sans-serif;
     font-weight: 700;
     user-select: none;
 }
@@ -276,7 +276,7 @@
 .rt-files {
     width: 100%;
     border-collapse: collapse;
-    font-family: "Space Mono", ui-monospace, monospace;
+    font-family: ui-monospace, monospace;
     font-size: 0.82rem;
 }
 
@@ -324,7 +324,7 @@
 .rt-lang-name {
     display: inline-block;
     margin-left: 0.4rem;
-    font-family: 'Satoshi', 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Satoshi', sans-serif;
     font-size: 0.8rem;
     color: var(--md-sys-color-on-surface-variant);
 }

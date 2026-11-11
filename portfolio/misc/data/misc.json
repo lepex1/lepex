@@ -1,8 +1,6 @@
 [
   {
     "id": "tactical-medicine",
-    "icon": "medical_services",
-    "color": "#e57373",
     "date": "2026-09-23",
     "title": "Tactical Medicine — materials",
     "titleRu": "Тактическая медицина - материалы",
@@ -17,8 +15,6 @@
   },
   {
     "id": "emesis-blue",
-    "icon": "movie",
-    "color": "#ff8a65",
     "date": "2026-09-18",
     "title": "EMESIS BLUE [4K] EN+RU",
     "titleRu": "EMESIS BLUE [4K] EN+RU",

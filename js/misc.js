@@ -25,9 +25,6 @@ function renderMiscCards() {
         const desc = currentLanguage === 'ru' ? p.descRu : p.desc;
         return `
             <a href="${p.link}" class="hub-card">
-                <div class="hub-card-icon" style="background:${p.color}">
-                    <span class="material-symbols-outlined">${p.icon}</span>
-                </div>
                 <div class="hub-card-title">${title}</div>
                 <div class="hub-card-desc">${desc}</div>
                 <span class="material-symbols-outlined hub-card-arrow">arrow_outward</span>
