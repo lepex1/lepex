@@ -1,1 +1,7 @@
-tmp_*
+node_modules/
+dist/
+tmp/
+.vercel
+.env*
+*.log
+repomix-output.xml

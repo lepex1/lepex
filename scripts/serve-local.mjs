@@ -3,7 +3,6 @@
 // Any extensionless URL that maps to a directory with index.html
 // (e.g. /portfolio) gets a 301 redirect to the slashed form (/portfolio/).
 // File URLs (.css, .js, .pdf, ...) are served as-is, no redirects.
-// Mirrors the production rewrites from vercel.json (config.yml).
 //
 // Usage: node scripts/serve-local.mjs [--host 127.0.0.1] [--port 4173] [--dir dist] [--open]
 import http from 'node:http';
@@ -23,11 +22,6 @@ const HOST = opt('--host', '127.0.0.1');
 const PORT = Number(opt('--port', '4173'));
 const distDir = path.resolve(repoRoot, opt('--dir', 'dist'));
 const OPEN = argv.includes('--open');
-
-// Same mapping as vercel.json rewrites (prod parity for local preview).
-const REWRITES = {
-    '/portfolio/subtitles/config.yml': '/portfolio/subtitles/admin/config.yml',
-};
 
 const MIME = {
     '.html': 'text/html; charset=utf-8',
@@ -81,7 +75,7 @@ const server = http.createServer((req, res) => {
         return;
     }
     const url = new URL(req.url, 'http://localhost');
-    let p = REWRITES[url.pathname] || decodeURIComponent(url.pathname);
+    const p = decodeURIComponent(url.pathname);
 
     // Block path escape: resolved path must stay inside dist.
     const fsPath = path.normalize(path.join(distDir, p));

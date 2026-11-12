@@ -2,12 +2,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "trailingSlash": true,
-  "rewrites": [
-    {
-      "source": "/portfolio/subtitles/config.yml",
-      "destination": "/portfolio/subtitles/admin/config.yml"
-    }
-  ],
   "headers": [
     {
       "source": "/sw.js",

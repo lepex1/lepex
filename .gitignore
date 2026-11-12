@@ -3,12 +3,12 @@ node_modules/
 .DS_Store
 Thumbs.db
 repomix-output.xml
-admin/secret.txt
 tree.txt
 
 .vercel
 .env*
+!.env.example
 
 dist/
-tmp_*
+tmp/
 *.log
