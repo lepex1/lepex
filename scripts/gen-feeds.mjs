@@ -63,7 +63,7 @@ ${itemsXml}
 writeFileSync('rss.xml', xml);
 console.log(`rss.xml generated: ${all.length} items`);
 
-// Sitemap covers the indexable pages only: 404.html/offline.html carry noindex.
+// Sitemap covers the indexable pages only: 404.html carries noindex.
 // vercel.json sets trailingSlash: true, so every URL is emitted with a trailing slash.
 const sitemapPaths = [
     '/',
