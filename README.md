@@ -1,34 +1,26 @@
-<p align="center">
-  <b>Русский</b> · <a href="README.en.md">English</a>
-</p>
+<div align="center">
 
-# lepex
+  <p><b>Русский</b> · <a href="README.en.md">English</a></p>
 
-<p align="center">
-  <img src="assets/banner.png" alt="lepex: личный сайт с профилем и портфолио проектов" width="1280">
-</p>
+  <img src=".github/assets/banner.svg" alt="lepex — личный сайт: профиль и портфолио мини-инструментов" width="100%">
 
-<p align="center">
-  <b>Личный сайт: профиль, портфолио мини-инструментов.<br>
-  Чистый HTML/CSS/JS, без фреймворков.</b>
-</p>
-<p align="center">
-  <a href="https://lepex.vercel.app/">Открыть сайт</a>
-</p>
+  <h3>Личный сайт: профиль, портфолио мини-инструментов</h3>
 
----
+  <p>
+    <a href="https://lepex.vercel.app/"><img src=".github/assets/btn-site.svg" alt="Открыть сайт" height="40"></a>
+    <a href="https://github.com/lepex1"><img src=".github/assets/btn-github.svg" alt="GitHub" height="40"></a>
+  </p>
 
-## Скриншот
+  <p>
+    <a href="https://github.com/lepex1/lepex/commits/main"><img alt="Последний коммит" src="https://img.shields.io/github/last-commit/lepex1/lepex?style=flat&labelColor=211f26&color=4a4458"></a>
+    <a href="LICENSE"><img alt="Лицензия: MIT" src="https://img.shields.io/github/license/lepex1/lepex?style=flat&labelColor=211f26&color=633b48"></a>
+  </p>
 
-<p align="center">
-  <img src="assets/screenshot.ru.png" alt="Главная страница lepex.vercel.app по-русски: профиль, статус Discord и ссылки" width="1432">
-</p>
+</div>
 
-## О проекте
+<h3><img src=".github/assets/h-about.svg" alt="О проекте" width="100%"></h3>
 
-Моя личная страничка, на которой можно ознакомиться с моими проектами и вещами, которые мне просто нравятся.
-
-Показывает мою текущую Discord активность через Lanyard.
+Моя личная страничка, на которой можно ознакомиться с моими проектами и вещами, которые мне просто нравятся. Показывает мою текущую Discord активность через Lanyard.
 
 | Параметр | Значение |
 |---|---|
@@ -39,7 +31,25 @@
 | Сборка | Vite 6, Node 22 |
 | Хостинг | Vercel, раздача статики из `dist/` |
 
-## Запуск локально
+<h3><img src=".github/assets/h-inside.svg" alt="Что внутри" width="100%"></h3>
+
+<p align="center">
+  <img src=".github/assets/features.svg" alt="Три карточки: портфолио, всячина, без фреймворков" width="100%">
+</p>
+
+- [**Портфолио**](https://lepex.vercel.app/portfolio/) — проверка публичных VPN-подписок, генератор градиентного текста, image → MP4 для Telegram и база команд CASSIE.
+- [**Всячина**](https://lepex.vercel.app/portfolio/misc/) — релизы, PDF-справочники и другие понравившиеся штуки.
+- **Без фреймворков** — ванильные HTML, CSS и ES-модули; сборка только для склейки и минификации.
+
+<h3><img src=".github/assets/h-screenshot.svg" alt="Скриншот" width="100%"></h3>
+
+<p align="center">
+  <img src="assets/screenshot.ru.png" alt="Главная страница lepex.vercel.app по-русски: профиль, статус Discord и ссылки" width="100%">
+  <br>
+  <img src=".github/assets/shot-home.svg" alt="Главная страница" height="34">
+</p>
+
+<h3><img src=".github/assets/h-run.svg" alt="Запуск локально" width="100%"></h3>
 
 ```bash
 git clone https://github.com/lepex1/lepex.git
@@ -50,7 +60,7 @@ npm run dev
 
 Сборка — `npm run build`, результат в `dist/`.
 
-## Лицензия
+<h3><img src=".github/assets/h-license.svg" alt="Лицензия" width="100%"></h3>
 
 Код — [MIT](LICENSE). Не мои материалы, чьи права у авторов, в [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 
