@@ -21,7 +21,7 @@
 ## Скриншот
 
 <p align="center">
-  <img src="assets/screenshot.png" alt="Главная страница lepex.vercel.app: профиль, статус Discord и ссылки" width="1432">
+  <img src="assets/screenshot.ru.png" alt="Главная страница lepex.vercel.app по-русски: профиль, статус Discord и ссылки" width="1432">
 </p>
 
 ## О проекте
