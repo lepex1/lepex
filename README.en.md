@@ -30,15 +30,13 @@ My personal page where you can see my projects and things I simply like.
 
 It shows my current Discord activity through Lanyard.
 
-Works offline after the first visit and installs on a phone as a PWA.
-
 | Parameter | Value |
 |---|---|
 | Browsers | current Chrome, Edge, Firefox, Safari |
 | Viewports | 375 px to 1920 px; grids reflow to 1 / 2 / 3 columns |
 | Frameworks | none: hand-written HTML, CSS and ES modules |
 | External dependencies | only the Material Symbols icon font (Google Fonts); Satoshi ships locally |
-| Build | Vite 6, Node 20+ (Node 22 on Vercel) |
+| Build | Vite 6, Node 22 |
 | Hosting | Vercel, serving static files from `dist/` |
 
 ## Run locally
