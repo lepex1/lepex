@@ -7,7 +7,6 @@ tree.txt
 
 .vercel
 .env*
-!.env.example
 
 dist/
 tmp/

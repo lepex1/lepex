@@ -17,6 +17,8 @@ export default defineConfig({
         { src: "offline.html", dest: "." },
         { src: "manifest.json", dest: "." },
         { src: "rss.xml", dest: "." },
+        { src: "robots.txt", dest: "." },
+        { src: "sitemap.xml", dest: "." },
         { src: "portfolio/**/*", dest: "." },
       ],
     }),

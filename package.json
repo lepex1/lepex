@@ -4,9 +4,12 @@
   "version": "1.0.0",
   "description": "lepex profile page with MD3 design",
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/gen-rss.mjs",
+    "prebuild": "node scripts/gen-feeds.mjs",
     "build": "vite build",
     "preview": "vite preview"
   },
