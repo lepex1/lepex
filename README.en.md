@@ -5,11 +5,11 @@
 # lepex
 
 <p align="center">
-  <img src="assets/banner.en.png" alt="lepex: a personal site with a profile, portfolio and subtitles" width="1280">
+  <img src="assets/banner.en.png" alt="lepex: a personal site with a profile and a portfolio of projects" width="1280">
 </p>
 
 <p align="center">
-  <b>A personal site: profile, a portfolio of small tools and Russian subtitles.<br>
+  <b>A personal site: profile, a portfolio of small tools.<br>
   Plain HTML/CSS/JS, no frameworks.</b>
 </p>
 <p align="center">

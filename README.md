@@ -5,7 +5,7 @@
 # lepex
 
 <p align="center">
-  <img src="assets/banner.png" alt="lepex: личный сайт с профилем, портфолио и субтитрами" width="1280">
+  <img src="assets/banner.png" alt="lepex: личный сайт с профилем и портфолио проектов" width="1280">
 </p>
 
 <p align="center">
