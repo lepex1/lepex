@@ -47,4 +47,6 @@ Satoshi используется только для этого личного �
 
 Цветовые схемы, типографика и хедер вдохновлены [Dota2PornFxWeb](https://github.com/h6rd/Dota2PornFxWeb) от h6rd и Material Design 3. Код оттуда не копировался.
 
+Декоративные фигуры в SVG-плашках README (`scripts/badge_shapes.py`) взяты из README-ассетов того же проекта — это часть того же визуального языка. Текст, вёрстка и сами плашки собраны в `scripts/gen-badges.py`.
+
 Сайт не аффилирован с SCP: Secret Laboratory, Northwood Studios, FoxGame, Valve, New Blood Interactive, Fortress Films и Indian Type Foundry.
