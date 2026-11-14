@@ -11,4 +11,5 @@ tree.txt
 
 dist/
 tmp/
+scripts/
 *.log

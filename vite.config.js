@@ -14,7 +14,6 @@ export default defineConfig({
         { src: "assets/**/*", dest: "." },
         { src: "sw.js", dest: "." },
         { src: "404.html", dest: "." },
-        { src: "rss.xml", dest: "." },
         { src: "robots.txt", dest: "." },
         { src: "sitemap.xml", dest: "." },
         { src: "portfolio/**/*", dest: "." },

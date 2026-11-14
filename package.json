@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/gen-feeds.mjs",
+    "prebuild": "node scripts/gen-sitemap.mjs",
     "build": "vite build",
     "preview": "vite preview"
   },
