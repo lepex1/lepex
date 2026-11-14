@@ -16,6 +16,11 @@
     <a href="LICENSE">
       <img alt="Лицензия: MIT" src="https://img.shields.io/github/license/lepex1/lepex?style=flat&labelColor=211f26&color=633b48">
     </a>
+    <a href="https://lepex.vercel.app/rss.xml">
+      <img alt="RSS-лента" src="https://img.shields.io/badge/RSS-4f378b?style=flat">
+    </a>
+    <img alt="Двуязычный: русский и английский" src="https://img.shields.io/badge/i18n-RU%2FEN-4a4458?style=flat&labelColor=211f26">
+    <img alt="Без аналитики и трекеров" src="https://img.shields.io/badge/privacy-no_analytics-633b48?style=flat&labelColor=211f26">
   </p>
 
   <p>
