@@ -7,7 +7,6 @@
 
   <p>
     <a href="https://lepex.vercel.app/"><img src=".github/assets/btn-site.en.svg" alt="Open the site" height="40"></a>
-    <a href="https://github.com/lepex1"><img src=".github/assets/btn-github.svg" alt="GitHub" height="40"></a>
   </p>
 
   <p>
@@ -47,7 +46,7 @@ My personal page where you can see my projects and things I simply like. It show
   <img src=".github/assets/features.en.svg" alt="Three cards: portfolio, misc, no frameworks" width="100%">
 </p>
 
-- [**Portfolio**](https://lepex.vercel.app/portfolio/) — public VPN subscription checks, a gradient text generator, image → MP4 for Telegram and the CASSIE command set.
+- [**Portfolio**](https://lepex.vercel.app/portfolio/) — public VPN subscription checks, a gradient text generator, an image and video to GIF converter for Telegram and the CASSIE command set.
 - [**Misc**](https://lepex.vercel.app/portfolio/misc/) — releases, PDF handbooks and other things I simply like.
 - **No frameworks** — vanilla HTML, CSS and ES modules; the build only bundles and minifies.
 
@@ -75,7 +74,7 @@ Build with `npm run build`; the output lands in `dist/`.
 - **[h6rd](https://github.com/h6rd/Dota2PornFxWeb)** — the site's design and the structure of this README
 - **Indian Type Foundry** — the [Satoshi](https://www.fontshare.com/fonts/satoshi) typeface
 - **Google** — the [Material Symbols](https://fonts.google.com/icons) icon font
-- **FFmpeg** and [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm) — video handling in image → MP4
+- **FFmpeg** and [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm) — image and video transcoding in the browser
 
 <details>
 <summary><b>Third-party material</b></summary>

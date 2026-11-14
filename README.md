@@ -7,7 +7,6 @@
 
   <p>
     <a href="https://lepex.vercel.app/"><img src=".github/assets/btn-site.svg" alt="Открыть сайт" height="40"></a>
-    <a href="https://github.com/lepex1"><img src=".github/assets/btn-github.svg" alt="GitHub" height="40"></a>
   </p>
 
   <p>
@@ -47,7 +46,7 @@
   <img src=".github/assets/features.svg" alt="Три карточки: портфолио, всячина, без фреймворков" width="100%">
 </p>
 
-- [**Портфолио**](https://lepex.vercel.app/portfolio/) — проверка публичных VPN-подписок, генератор градиентного текста, image → MP4 для Telegram и база команд CASSIE.
+- [**Портфолио**](https://lepex.vercel.app/portfolio/) — проверка публичных VPN-подписок, генератор градиентного текста, конвертер картинок и видео в GIF для Telegram и база команд CASSIE.
 - [**Всячина**](https://lepex.vercel.app/portfolio/misc/) — релизы, PDF-справочники и другие понравившиеся штуки.
 - **Без фреймворков** — ванильные HTML, CSS и ES-модули; сборка только для склейки и минификации.
 
@@ -75,7 +74,7 @@ npm run dev
 - **[h6rd](https://github.com/h6rd/Dota2PornFxWeb)** — дизайн сайта и структура этого README
 - **Indian Type Foundry** — шрифт [Satoshi](https://www.fontshare.com/fonts/satoshi)
 - **Google** — шрифт иконок [Material Symbols](https://fonts.google.com/icons)
-- **FFmpeg** и [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm) — обработка видео в image → MP4
+- **FFmpeg** и [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm) — перекодирование картинок и видео в MP4/GIF прямо в браузере
 
 <details>
 <summary><b>Чужие материалы</b></summary>

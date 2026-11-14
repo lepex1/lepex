@@ -37,8 +37,6 @@ SURFACE_CONT = "#211F26"
 OUTLINE = "#49454F"
 PRIMARY = "#D0BCFF"
 ON_PRIMARY = "#381E72"
-SEC_CONT = "#4A4458"
-ON_SEC_CONT = "#E8DEF8"
 SECONDARY = "#CCC2DC"
 TERTIARY = "#EFB8C8"
 
@@ -277,14 +275,12 @@ def banner(lang):
 
 # --------------------------------------------------------------------------- pills
 
-def pill(text, filled=True):
-    """40 px tall button, 24 px padding each side of the ink."""
+def pill(text):
+    """40 px tall filled button, 24 px padding each side of the ink."""
     ink_left, cap, height = 24.2, 11.2, 40
-    fill = PRIMARY if filled else SEC_CONT
-    color = ON_PRIMARY if filled else ON_SEC_CONT
-    markup, width, _ = line(text, color, cap, left=ink_left, top=14.1)
+    markup, width, _ = line(text, ON_PRIMARY, cap, left=ink_left, top=14.1)
     total = round(width + 2 * ink_left)
-    body = f'<rect x="0" y="0" width="{total}" height="{height}" rx="{height / 2:.0f}" fill="{fill}"/>{markup}'
+    body = f'<rect x="0" y="0" width="{total}" height="{height}" rx="{height / 2:.0f}" fill="{PRIMARY}"/>{markup}'
     return svg(total, height, body, text)
 
 
@@ -378,7 +374,7 @@ CONTENT = {
         },
         "features_alt": "Три карточки: портфолио, всячина, без фреймворков",
         "cards": [
-            ("Портфолио", ["Проверка VPN-подписок,", "генератор градиентного", "текста и image → MP4."]),
+            ("Портфолио", ["Проверка VPN-подписок,", "генератор градиентного", "текста и медиа в GIF."]),
             ("Всячина", ["Релизы, PDF-справочники", "и другие понравившиеся", "штуки в одном хабе."]),
             ("Без фреймворков", ["HTML, CSS и ES-модули", "вручную; сетки 1 / 2 / 3", "колонки от 375 px."]),
         ],
@@ -399,7 +395,7 @@ CONTENT = {
         },
         "features_alt": "Three cards: portfolio, misc, no frameworks",
         "cards": [
-            ("Portfolio", ["VPN subscription checks,", "a gradient text generator,", "and image → MP4."]),
+            ("Portfolio", ["VPN subscription checks,", "a gradient text generator,", "and media files into GIFs."]),
             ("Misc", ["Releases, PDF handbooks", "and other things I simply", "like, gathered in one hub."]),
             ("No frameworks", ["Hand-written HTML, CSS", "and ES modules; grids", "reflow to 1 / 2 / 3."]),
         ],
@@ -428,15 +424,13 @@ def main():
 
         banner(lang)
 
-        write(f"btn-site{suffix}.svg", pill(CONTENT[lang]["buttons"]["site"], filled=True))
+        write(f"btn-site{suffix}.svg", pill(CONTENT[lang]["buttons"]["site"]))
         for key, shape_key, accent in HEADERS:
             write(f"h-{key}{suffix}.svg", section_header(CONTENT[lang]["headers"][key], shape_key, accent))
         for key in CHIPS:
             write(f"chip-{key}{suffix}.svg", chip(CONTENT[lang]["headers"][key]))
         features(lang)
         write(f"shot-home{suffix}.svg", shot_chip(CONTENT[lang]["caption"]))
-
-    write("btn-github.svg", pill("GitHub", filled=False))
 
     # a too-wide line would silently stick out of its card — catch it here
     for lang in ("ru", "en"):
