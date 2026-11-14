@@ -314,6 +314,18 @@ def shot_chip(text):
     return svg(w, h, body, text)
 
 
+def chip(text):
+    """32 px nav chip that jumps to a section."""
+    h, cap = 32, 10.4
+    markup, width, _ = line(text, "#CAC4D0", cap, weight=600, left=16.9, top=10.7)
+    total = round(width + 2 * 16.9)
+    body = (
+        f'<rect x="0.5" y="0.5" width="{total - 1}" height="{h - 1}" rx="8" '
+        f'fill="{SURFACE_CONT}" stroke="{OUTLINE}" stroke-width="1"/>{markup}'
+    )
+    return svg(total, h, body, text)
+
+
 # --------------------------------------------------------------------------- cards
 
 CARD_W, CARD_H, CARD_GAP = 304, 192, 24
@@ -354,13 +366,14 @@ CONTENT = {
     "ru": {
         "banner_alt": "lepex — личный сайт: профиль и портфолио мини-инструментов",
         "banner_title": "lepex",
-        "banner_sub": "Личный сайт: профиль, портфолио мини-инструментов",
+        "banner_sub": "профиль · портфолио · всячина",
         "buttons": {"site": "Открыть сайт"},
         "headers": {
             "about": "О проекте",
             "inside": "Что внутри",
             "screenshot": "Скриншот",
             "run": "Запуск локально",
+            "thanks": "Благодарности",
             "license": "Лицензия",
         },
         "features_alt": "Три карточки: портфолио, всячина, без фреймворков",
@@ -374,13 +387,14 @@ CONTENT = {
     "en": {
         "banner_alt": "lepex — a personal site: a profile and a portfolio of small tools",
         "banner_title": "lepex",
-        "banner_sub": "A personal site: a profile and a portfolio of small tools",
+        "banner_sub": "profile · portfolio · misc",
         "buttons": {"site": "Open the site"},
         "headers": {
             "about": "About",
             "inside": "What is inside",
             "screenshot": "Screenshot",
             "run": "Run locally",
+            "thanks": "Thanks",
             "license": "License",
         },
         "features_alt": "Three cards: portfolio, misc, no frameworks",
@@ -398,8 +412,12 @@ HEADERS = [
     ("inside", "dd0b5db5", TERTIARY),
     ("screenshot", "8bcc60b2", SECONDARY),
     ("run", "ccac7225", TERTIARY),
+    ("thanks", "5f785996", PRIMARY),
     ("license", "2be8b523", PRIMARY),
 ]
+
+# nav chips under the buttons; the intro section is left out, as in the reference
+CHIPS = ["inside", "screenshot", "run", "thanks", "license"]
 
 MAX_TEXT_W = CARD_W - 2 * 28.4
 
@@ -413,6 +431,8 @@ def main():
         write(f"btn-site{suffix}.svg", pill(CONTENT[lang]["buttons"]["site"], filled=True))
         for key, shape_key, accent in HEADERS:
             write(f"h-{key}{suffix}.svg", section_header(CONTENT[lang]["headers"][key], shape_key, accent))
+        for key in CHIPS:
+            write(f"chip-{key}{suffix}.svg", chip(CONTENT[lang]["headers"][key]))
         features(lang)
         write(f"shot-home{suffix}.svg", shot_chip(CONTENT[lang]["caption"]))
 

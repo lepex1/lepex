@@ -1,5 +1,4 @@
 <div align="center">
-
   <p><b>Русский</b> · <a href="README.en.md">English</a></p>
 
   <img src=".github/assets/banner.svg" alt="lepex — личный сайт: профиль и портфолио мини-инструментов" width="100%">
@@ -12,13 +11,24 @@
   </p>
 
   <p>
-    <a href="https://github.com/lepex1/lepex/commits/main"><img alt="Последний коммит" src="https://img.shields.io/github/last-commit/lepex1/lepex?style=flat&labelColor=211f26&color=4a4458"></a>
-    <a href="LICENSE"><img alt="Лицензия: MIT" src="https://img.shields.io/github/license/lepex1/lepex?style=flat&labelColor=211f26&color=633b48"></a>
+    <a href="https://github.com/lepex1/lepex/commits/main">
+      <img alt="Последний коммит" src="https://img.shields.io/github/last-commit/lepex1/lepex?style=flat&labelColor=211f26&color=4a4458">
+    </a>
+    <a href="LICENSE">
+      <img alt="Лицензия: MIT" src="https://img.shields.io/github/license/lepex1/lepex?style=flat&labelColor=211f26&color=633b48">
+    </a>
   </p>
 
+  <p>
+    <a href="#inside"><img src=".github/assets/chip-inside.svg" alt="Что внутри" height="32"></a>
+    <a href="#screenshot"><img src=".github/assets/chip-screenshot.svg" alt="Скриншот" height="32"></a>
+    <a href="#run"><img src=".github/assets/chip-run.svg" alt="Запуск локально" height="32"></a>
+    <a href="#thanks"><img src=".github/assets/chip-thanks.svg" alt="Благодарности" height="32"></a>
+    <a href="#license"><img src=".github/assets/chip-license.svg" alt="Лицензия" height="32"></a>
+  </p>
 </div>
 
-<h3><img src=".github/assets/h-about.svg" alt="О проекте" width="100%"></h3>
+<h3><a name="about"></a><img src=".github/assets/h-about.svg" alt="О проекте" width="100%"></h3>
 
 Моя личная страничка, на которой можно ознакомиться с моими проектами и вещами, которые мне просто нравятся. Показывает мою текущую Discord активность через Lanyard.
 
@@ -31,7 +41,7 @@
 | Сборка | Vite 6, Node 22 |
 | Хостинг | Vercel, раздача статики из `dist/` |
 
-<h3><img src=".github/assets/h-inside.svg" alt="Что внутри" width="100%"></h3>
+<h3><a name="inside"></a><img src=".github/assets/h-inside.svg" alt="Что внутри" width="100%"></h3>
 
 <p align="center">
   <img src=".github/assets/features.svg" alt="Три карточки: портфолио, всячина, без фреймворков" width="100%">
@@ -41,15 +51,15 @@
 - [**Всячина**](https://lepex.vercel.app/portfolio/misc/) — релизы, PDF-справочники и другие понравившиеся штуки.
 - **Без фреймворков** — ванильные HTML, CSS и ES-модули; сборка только для склейки и минификации.
 
-<h3><img src=".github/assets/h-screenshot.svg" alt="Скриншот" width="100%"></h3>
+<h3><a name="screenshot"></a><img src=".github/assets/h-screenshot.svg" alt="Скриншот" width="100%"></h3>
 
 <p align="center">
   <img src="assets/screenshot.ru.png" alt="Главная страница lepex.vercel.app по-русски: профиль, статус Discord и ссылки" width="100%">
   <br>
-  <img src=".github/assets/shot-home.svg" alt="Главная страница" height="34">
+  <img src=".github/assets/shot-home.svg" alt="Главная" width="240">
 </p>
 
-<h3><img src=".github/assets/h-run.svg" alt="Запуск локально" width="100%"></h3>
+<h3><a name="run"></a><img src=".github/assets/h-run.svg" alt="Запуск локально" width="100%"></h3>
 
 ```bash
 git clone https://github.com/lepex1/lepex.git
@@ -60,9 +70,26 @@ npm run dev
 
 Сборка — `npm run build`, результат в `dist/`.
 
-<h3><img src=".github/assets/h-license.svg" alt="Лицензия" width="100%"></h3>
+<h3><a name="thanks"></a><img src=".github/assets/h-thanks.svg" alt="Благодарности" width="100%"></h3>
 
-Код — [MIT](LICENSE). Не мои материалы, чьи права у авторов, в [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+- **[h6rd](https://github.com/h6rd/Dota2PornFxWeb)** — дизайн сайта и структура этого README
+- **Indian Type Foundry** — шрифт [Satoshi](https://www.fontshare.com/fonts/satoshi)
+- **Google** — шрифт иконок [Material Symbols](https://fonts.google.com/icons)
+- **FFmpeg** и [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm) — обработка видео в image → MP4
+
+<details>
+<summary><b>Чужие материалы</b></summary>
+
+<br>
+
+Шрифты, PDF-справочники, субтитры и гифки принадлежат их авторам и лицензией проекта не покрыты. Полный список — [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+
+</details>
+
+<h3><a name="license"></a><img src=".github/assets/h-license.svg" alt="Лицензия" width="100%"></h3>
+
+- **Код** — [MIT](LICENSE)
+- **Не мои материалы** — чьи права у авторов; список в [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)
 
 ---
 
