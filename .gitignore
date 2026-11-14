@@ -11,5 +11,5 @@ tree.txt
 
 dist/
 tmp/
-scripts/
+scripts/*.py
 *.log
