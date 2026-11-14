@@ -86,7 +86,7 @@ def cap_size(cap):
     return round(cap / cap_ratio() * 2) / 2
 
 
-def outline(text, weight, tracking=0.0):
+def outline(text, weight):
     """Outlines one line; returns (path data, font bbox, advance) in font units."""
     font = font_for(text, weight)
     upem = font["head"].unitsPerEm
@@ -107,17 +107,16 @@ def outline(text, weight, tracking=0.0):
         if bounds.bounds:
             x0, y0, x1, y1 = bounds.bounds
             box = [min(box[0], x + x0), min(box[1], y0), max(box[2], x + x1), max(box[3], y1)]
-        x += font["hmtx"][name][0] + (tracking * upem if tracking else 0)
+        x += font["hmtx"][name][0]
 
     return pen.getCommands(), box, x, upem
 
 
-def line(text, fill, cap, weight=700, *, left=None, top=None, center=None,
-         anchor_y="top", max_width=None):
+def line(text, fill, cap, weight=700, *, left=None, top=None, center=None, max_width=None):
     """One outlined line placed by its ink box.
 
     left  — desired ink left edge;  center — desired ink horizontal centre
-    top   — desired ink top edge;   anchor_y="baseline" puts the baseline there
+    top   — desired ink top edge
     max_width — shrink the type until the ink fits (long labels would overflow)
     """
     d, box, advance, upem = outline(text, weight)
@@ -133,10 +132,7 @@ def line(text, fill, cap, weight=700, *, left=None, top=None, center=None,
     else:
         tx = center - s * (box[0] + box[2]) / 2
 
-    if anchor_y == "baseline":
-        ty = top
-    else:
-        ty = top + s * box[3]
+    ty = top + s * box[3]
 
     return (
         f'<path aria-hidden="true" fill="{fill}" transform="translate({tx:.2f} {ty:.2f}) '
@@ -305,18 +301,6 @@ def section_header(text, key, accent):
         f"</g>"
     )
     return svg(w, h, body, text)
-
-
-def chip(text):
-    """Small caption chip under a screenshot."""
-    h, cap = 32, 10.4
-    markup, width, _ = line(text, "#CAC4D0", cap, weight=600, left=16.9, top=10.7)
-    total = round(width + 2 * 16.9)
-    body = (
-        f'<rect x="0.5" y="0.5" width="{total - 1}" height="{h - 1}" rx="8" '
-        f'fill="{SURFACE_CONT}" stroke="{OUTLINE}" stroke-width="1"/>{markup}'
-    )
-    return svg(total, h, body, text)
 
 
 def shot_chip(text):
