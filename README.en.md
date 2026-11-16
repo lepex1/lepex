@@ -31,7 +31,7 @@
 
 <h3><a name="about"></a><img src=".github/assets/h-about.en.svg" alt="About" width="100%"></h3>
 
-My personal page where you can see my projects and things I simply like. It shows my current Discord activity through Lanyard.
+My personal site for projects and things I like. It shows my current Discord activity through Lanyard.
 
 | Parameter | Value |
 |---|---|
@@ -49,8 +49,8 @@ My personal page where you can see my projects and things I simply like. It show
 </p>
 
 - [**Portfolio**](https://lepex.vercel.app/portfolio/) — public VPN subscription checks, a gradient text generator, an image and video to GIF converter for Telegram and the CASSIE command set.
-- [**Misc**](https://lepex.vercel.app/portfolio/misc/) — releases, PDF handbooks and other things I simply like.
-- **No frameworks** — vanilla HTML, CSS and ES modules; the build only bundles and minifies.
+- [**Misc**](https://lepex.vercel.app/portfolio/misc/) — releases, PDF handbooks and other materials.
+- **No frameworks.** The site uses vanilla HTML, CSS and ES modules. The build only bundles and minifies the files.
 
 <h3><a name="screenshot"></a><img src=".github/assets/h-screenshot.en.svg" alt="Screenshot" width="100%"></h3>
 
