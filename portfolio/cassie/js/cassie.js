@@ -27,8 +27,8 @@ function initCassie() {
     const savedSection = localStorage.getItem("sectionFilter");
     if (savedSection) sectionFilter = savedSection;
 
-    const savedIndex = parseInt(localStorage.getItem('gifIndex') || '3', 10);
-    const themeName = GIF_CONFIG.themes[savedIndex] || "storm";
+    const savedIndex = parseInt(localStorage.getItem('gifIndex') || '0', 10);
+    const themeName = GIF_CONFIG.themes[savedIndex] || "ursa";
     updateThemeColorMeta(themeName);
 
     document.addEventListener('gifThemeChanged', (e) => {
@@ -453,8 +453,8 @@ function setupCassieListeners() {
     if (gifElement) {
         gifElement.addEventListener('click', () => {
             setTimeout(() => {
-                const idx = parseInt(localStorage.getItem('gifIndex') || '3', 10);
-                const themeName = GIF_CONFIG.themes[idx] || "storm";
+                const idx = parseInt(localStorage.getItem('gifIndex') || '0', 10);
+                const themeName = GIF_CONFIG.themes[idx] || "ursa";
                 updateThemeColorMeta(themeName);
 
                 const event = new CustomEvent('gifThemeChanged', { detail: { theme: themeName } });

@@ -31,7 +31,7 @@
 
 <h3><a name="about"></a><img src=".github/assets/h-about.svg" alt="О проекте" width="100%"></h3>
 
-Мой личный сайт с проектами и вещами, которые мне нравятся. Текущая активность в Discord отображается через Lanyard.
+Мой личный сайт с проектами и вещами, которые мне нравятся. Текущая активность в Discord отображается через Lanyard. Ниже ссылок — карточка fastfetch с конфигурацией моих устройств: ПК, S24 Ultra и POCO X3 Pro.
 
 | Параметр | Значение |
 |---|---|
@@ -55,7 +55,7 @@
 <h3><a name="screenshot"></a><img src=".github/assets/h-screenshot.svg" alt="Скриншот" width="100%"></h3>
 
 <p align="center">
-  <img src="assets/screenshot.ru.png" alt="Главная страница lepex.vercel.app по-русски: профиль, статус Discord и ссылки" width="100%">
+  <img src="assets/screenshot.ru.png" alt="Главная страница lepex.vercel.app по-русски: профиль, статус Discord, ссылки и карточка fastfetch с конфигурацией ПК" width="100%">
   <br>
   <img src=".github/assets/shot-home.svg" alt="Главная" width="240">
 </p>

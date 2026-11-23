@@ -1,9 +1,26 @@
 import { defineConfig } from "vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
+// Mirrors vercel.json "trailingSlash": true, which only the Vercel host applies.
+const trailingSlash = () => (req, res, next) => {
+  const [path, query] = req.url.split("?");
+  if (path.endsWith("/") || /\.[^/]+$/.test(path)) return next();
+  res.writeHead(308, { Location: `${path}/${query ? `?${query}` : ""}` });
+  res.end();
+};
+
 export default defineConfig({
   appType: "mpa",
   plugins: [
+    {
+      name: "trailing-slash",
+      configureServer(server) {
+        server.middlewares.use(trailingSlash());
+      },
+      configurePreviewServer(server) {
+        server.middlewares.use(trailingSlash());
+      },
+    },
     viteStaticCopy({
       targets: [
         { src: "css/*", dest: "." },

@@ -31,7 +31,7 @@
 
 <h3><a name="about"></a><img src=".github/assets/h-about.en.svg" alt="About" width="100%"></h3>
 
-My personal site for projects and things I like. It shows my current Discord activity through Lanyard.
+My personal site for projects and things I like. It shows my current Discord activity through Lanyard. Below the links there is a fastfetch card with my devices' specs: a PC, an S24 Ultra and a POCO X3 Pro.
 
 | Parameter | Value |
 |---|---|
@@ -55,7 +55,7 @@ My personal site for projects and things I like. It shows my current Discord act
 <h3><a name="screenshot"></a><img src=".github/assets/h-screenshot.en.svg" alt="Screenshot" width="100%"></h3>
 
 <p align="center">
-  <img src="assets/screenshot.en.png" alt="The lepex.vercel.app home page in English: profile, Discord status and links" width="100%">
+  <img src="assets/screenshot.en.png" alt="The lepex.vercel.app home page in English: profile, Discord status, links and a fastfetch card with the PC specs" width="100%">
   <br>
   <img src=".github/assets/shot-home.en.svg" alt="Home page" width="240">
 </p>

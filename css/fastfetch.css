@@ -1,0 +1,140 @@
+/* Fastfetch card on the homepage. Colors come from the MD3 theme variables so the
+   block follows all eight gif themes and the light/dark toggle. */
+.md3-fastfetch {
+    gap: 1rem;
+}
+
+.ff-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.ff-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ff-title .material-symbols-outlined {
+    color: var(--md-sys-color-primary);
+    font-size: 1.4rem;
+}
+
+.ff-heading {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.ff-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.ff-tab {
+    padding: 0.35rem 0.9rem;
+    border-radius: var(--md-shape-corner-full);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    background: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface-variant);
+    font: 700 0.8rem/1.2 'Satoshi', sans-serif;
+    cursor: pointer;
+    transition:
+        background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ff-tab:hover {
+    border-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-surface);
+}
+
+.ff-tab.is-active {
+    background: var(--md-sys-color-primary);
+    border-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+}
+
+.ff-terminal {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 1.25rem;
+    padding: 1rem 1.25rem;
+    background: var(--md-sys-color-surface-container-high);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-shape-corner-medium);
+    font-family: ui-monospace, 'Cascadia Mono', 'Cascadia Code', Consolas, 'DejaVu Sans Mono', monospace;
+    font-variant-ligatures: none;
+    font-feature-settings: 'liga' 0, 'calt' 0;
+}
+
+.ff-logo {
+    margin: 0;
+    font: inherit;
+    font-size: 0.56rem;
+    line-height: 1.15;
+    color: var(--md-sys-color-primary);
+}
+
+.ff-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+}
+
+.ff-host {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--md-sys-color-on-surface);
+}
+
+.ff-accent {
+    color: var(--md-sys-color-primary);
+}
+
+.ff-sep {
+    color: var(--md-sys-color-outline-variant);
+}
+
+.ff-lines {
+    font-size: 0.76rem;
+    line-height: 1.45;
+    color: var(--md-sys-color-on-surface-variant);
+    overflow-wrap: break-word;
+}
+
+.ff-k {
+    color: var(--md-sys-color-primary);
+    font-weight: 700;
+}
+
+.ff-pct {
+    font-weight: 700;
+}
+
+.ff-ok   { color: #5cf5a9; }
+.ff-warn { color: #ffd54f; }
+.ff-crit { color: #ff6b6b; }
+
+html[data-theme='light'] .ff-ok   { color: #137333; }
+html[data-theme='light'] .ff-warn { color: #8c6000; }
+html[data-theme='light'] .ff-crit { color: #ba1a1a; }
+
+/* Below ~580px the ASCII logo eats the width the specs need, so it steps aside. */
+@media (max-width: 580px) {
+    .ff-terminal {
+        grid-template-columns: 1fr;
+        padding: 0.9rem 1rem;
+    }
+
+    .ff-logo {
+        display: none;
+    }
+}

@@ -34,6 +34,16 @@ const GIF_THEME_COLORS = {
     axe: "#1a1110"
 };
 
+// Colour transitions are for hovers. On a theme switch they leave half the page fading
+// from the old palette while elements without a transition have already repainted, so
+// the switch runs with transitions off for one paint.
+function withoutColorTransitions(mutate) {
+    const root = document.documentElement;
+    root.classList.add('theme-switching');
+    mutate();
+    requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove('theme-switching')));
+}
+
 function initializeGifTheme() {
     // ~200 KB of GIFs; defer until idle so they never compete with first paint
     const idle = window.requestIdleCallback
@@ -46,7 +56,7 @@ function initializeGifTheme() {
 
     if (!gifElement) return;
 
-    let currentIndex = 3;
+    let currentIndex = 0;
     const savedIndex = localStorage.getItem('gifIndex');
     if (savedIndex !== null) {
         currentIndex = parseInt(savedIndex, 10);
@@ -66,7 +76,7 @@ function initializeGifTheme() {
             const newTheme = GIF_CONFIG.themes[currentIndex];
 
             gifElement.src = GIF_CONFIG.gifs[currentIndex];
-            html.setAttribute('data-gif-theme', newTheme);
+            withoutColorTransitions(() => html.setAttribute('data-gif-theme', newTheme));
             localStorage.setItem('gifIndex', currentIndex.toString());
 
             const themeColorMeta = document.getElementById('theme-color-meta');
@@ -170,7 +180,7 @@ function initializeThemeToggle() {
             const current = document.documentElement.getAttribute('data-theme') || 'dark';
             const newTheme = current === 'light' ? 'dark' : 'light';
 
-            document.documentElement.setAttribute('data-theme', newTheme);
+            withoutColorTransitions(() => document.documentElement.setAttribute('data-theme', newTheme));
             themeToggle.querySelector('.material-symbols-outlined').textContent =
                 newTheme === 'light' ? 'dark_mode' : 'light_mode';
             localStorage.setItem('theme', newTheme);

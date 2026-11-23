@@ -33,6 +33,13 @@ html {
     scrollbar-gutter: stable;
 }
 
+/* Paired with withoutColorTransitions() in js/core.js: one paint without colour fades. */
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+    transition: none !important;
+}
+
 body {
     font-family: 'Satoshi', sans-serif;
     background-color: var(--md-sys-color-background);

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://repomix.com/schemas/latest/schema.json",
+  "output": {
+    "filePath": "repomix-output.xml",
+    "style": "xml"
+  },
+  "ignore": {
+    "customPatterns": [
+      "portfolio/img2tggif/vendor/**",
+      "portfolio/misc/emesis-blue/subs/**",
+      ".github/assets/**"
+    ]
+  }
+}
